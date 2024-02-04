@@ -1,0 +1,4 @@
+﻿  PakForm.cpp
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\PakForm.cpp(7,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  PakForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Pak_reserve1.vcxproj -> C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\x64\Debug\Pak_reserve1.exe

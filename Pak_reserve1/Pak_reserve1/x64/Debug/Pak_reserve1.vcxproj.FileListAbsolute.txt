@@ -1,0 +1,3 @@
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pak_reserve1.vcxproj.AssemblyReference.cache
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pakreserve1.PakForm.resources
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pak_reserve1.vcxproj.GenerateResource.cache
