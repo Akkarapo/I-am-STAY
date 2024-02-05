@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -122,12 +122,16 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="PakForm.cpp" />
+    <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PakForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ToeyMenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PakForm.resx">
       <DependentUpon>PakForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToeyMenu.resx">
+      <DependentUpon>ToeyMenu.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
