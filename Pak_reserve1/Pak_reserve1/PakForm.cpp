@@ -8,6 +8,7 @@ void main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     Pakreserve1::PakForm form;
-    Application::Run(% form);
+    Pakreserve1::Login form2;
+    Application::Run(% form2);
 
 }
