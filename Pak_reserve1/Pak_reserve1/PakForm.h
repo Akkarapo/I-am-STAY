@@ -71,10 +71,13 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->label1);
 			this->Name = L"PakForm";
 			this->Text = L"PakForm";
+			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void PakForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
