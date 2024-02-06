@@ -14,3 +14,5 @@ C:\Users\gong6\OneDrive - Chiang Mai University\Documents\GitHub\I-am-STAY\Pak_r
 C:\Users\gong6\OneDrive - Chiang Mai University\Documents\GitHub\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pakreserve1.PakForm.resources
 C:\Users\gong6\OneDrive - Chiang Mai University\Documents\GitHub\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pakreserve1.ToeyMenu.resources
 C:\Users\gong6\OneDrive - Chiang Mai University\Documents\GitHub\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pak_reserve1.vcxproj.GenerateResource.cache
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pakreserve1.Login.resources
+C:\Users\akkar\OneDrive - Chiang Mai University\IamSTAY\I-am-STAY\Pak_reserve1\Pak_reserve1\x64\Debug\Pakreserve1.ToeyMenu.resources
