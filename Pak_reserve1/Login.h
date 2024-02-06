@@ -46,7 +46,7 @@ namespace Pakreserve1 {
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
+
 
 	protected:
 
@@ -71,7 +71,6 @@ namespace Pakreserve1 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -138,22 +137,13 @@ namespace Pakreserve1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
 			// 
-			// button3
-			// 
-			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
-			this->button3->Enabled = false;
-			this->button3->Location = System::Drawing::Point(-6, -37);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(557, 720);
-			this->button3->TabIndex = 12;
-			this->button3->UseVisualStyleBackColor = true;
-			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::WhiteSmoke;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->button1);
@@ -163,6 +153,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
 			this->Text = L"Login";
 			this->ResumeLayout(false);
