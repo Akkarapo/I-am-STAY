@@ -46,6 +46,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Panel^ panel1;
 	protected:
 
 	private:
@@ -74,6 +75,7 @@ namespace Pakreserve1 {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -204,12 +206,20 @@ namespace Pakreserve1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
 			// 
+			// panel1
+			// 
+			this->panel1->Location = System::Drawing::Point(204, 59);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(98, 2);
+			this->panel1->TabIndex = 12;
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
