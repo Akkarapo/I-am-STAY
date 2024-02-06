@@ -70,9 +70,9 @@ namespace Pakreserve1 {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
+			this->label2->Size = System::Drawing::Size(176, 16);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"label2";
+			this->label2->Text = L"AHHHHHHHHHHHHHHHH";
 			// 
 			// PakForm
 			// 
