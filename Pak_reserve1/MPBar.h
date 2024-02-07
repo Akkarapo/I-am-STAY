@@ -57,9 +57,12 @@ namespace Pakreserve1 {
 			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Name = L"MPBar";
 			this->Text = L"MPBar";
+			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

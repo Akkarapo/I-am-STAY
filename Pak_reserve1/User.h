@@ -10,5 +10,4 @@ public:
 	String^ email;
 	String^ password;
 
-
 };

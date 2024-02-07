@@ -1,5 +1,7 @@
 #pragma once
 #include "User.h"
+#include "regist.h"
+#include "PakForm.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -50,6 +52,9 @@ namespace Pakreserve1 {
 
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ signUPtext;
+	private: System::Windows::Forms::Label^ registLable;
+
 
 
 
@@ -77,6 +82,8 @@ namespace Pakreserve1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->signUPtext = (gcnew System::Windows::Forms::Label());
+			this->registLable = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -142,12 +149,13 @@ namespace Pakreserve1 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(852, 598);
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->Location = System::Drawing::Point(1208, 12);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(220, 49);
+			this->button2->Size = System::Drawing::Size(42, 39);
 			this->button2->TabIndex = 11;
-			this->button2->Text = L"Exit";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Text = L"X";
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
 			// 
 			// label3
@@ -176,13 +184,41 @@ namespace Pakreserve1 {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
+			// signUPtext
+			// 
+			this->signUPtext->AutoSize = true;
+			this->signUPtext->BackColor = System::Drawing::Color::Transparent;
+			this->signUPtext->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10));
+			this->signUPtext->Location = System::Drawing::Point(1491, 401);
+			this->signUPtext->Name = L"signUPtext";
+			this->signUPtext->Size = System::Drawing::Size(70, 23);
+			this->signUPtext->TabIndex = 15;
+			this->signUPtext->Text = L"Sign Up";
+			this->signUPtext->Click += gcnew System::EventHandler(this, &Login::label4_Click);
+			// 
+			// registLable
+			// 
+			this->registLable->AutoSize = true;
+			this->registLable->BackColor = System::Drawing::Color::Transparent;
+			this->registLable->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->registLable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->registLable->Location = System::Drawing::Point(703, 529);
+			this->registLable->Name = L"registLable";
+			this->registLable->Size = System::Drawing::Size(83, 27);
+			this->registLable->TabIndex = 16;
+			this->registLable->Text = L"Sign Up";
+			this->registLable->Click += gcnew System::EventHandler(this, &Login::registLable_Click);
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->registLable);
+			this->Controls->Add(this->signUPtext);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button2);
@@ -195,7 +231,9 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -207,7 +245,7 @@ namespace Pakreserve1 {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
-		
+	
 }
 public: User^ user = nullptr;
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
@@ -233,7 +271,10 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			user->username = reader->GetString(1);
 			user->email = reader->GetString(2);
 			user->password = reader->GetString(3);
-			this->Close();
+			this->Hide();
+			PakForm^ pakf = gcnew PakForm();
+			pakf->Show();
+
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
@@ -245,5 +286,15 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		MessageBox::Show("Fail to connect to database","Error",MessageBoxButtons::OK);
 	}
 }
+private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+
+private: System::Void registLable_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	
+	}
 };
 }
