@@ -34,7 +34,7 @@ namespace Pakreserve1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Label^ label2;
 	protected:
 
@@ -52,27 +52,16 @@ namespace Pakreserve1 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PakForm::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(130, 47);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"label1";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(176, 16);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"AHHHHHHHHHHHHHHHH";
 			// 
 			// PakForm
 			// 
@@ -80,7 +69,7 @@ namespace Pakreserve1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1252, 673);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"PakForm";
 			this->Text = L"PakForm";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
