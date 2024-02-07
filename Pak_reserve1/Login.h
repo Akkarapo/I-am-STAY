@@ -205,6 +205,11 @@ namespace Pakreserve1 {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
+	//saiodhjaasjdghjsjfkaoljdhiakdhas
+	/*
+	sadijuhjaskldalsdjaksl
+	asijdhkmasldaslkdas[pd
+	*/
 }
 };
 }
