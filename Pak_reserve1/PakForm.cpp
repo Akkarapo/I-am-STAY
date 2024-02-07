@@ -9,6 +9,16 @@ void main(array<String^>^ args) {
     Application::SetCompatibleTextRenderingDefault(false);
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
-    Application::Run(% form2);
+   
+    form2.ShowDialog();
+    User^ user = form2.user;
+
+    if (user != nullptr) {
+        Application::Run(% form);
+    }
+    else {
+        MessageBox::Show("WTF","WTF",MessageBoxButtons::OK);
+    }
+
 
 }

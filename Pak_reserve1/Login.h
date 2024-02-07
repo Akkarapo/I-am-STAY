@@ -1,5 +1,5 @@
 #pragma once
-
+#include "User.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -209,6 +209,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	Application::Exit();
 		
 }
+public: User^ user = nullptr;
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = textBox1->Text;
 	String^ password = textBox2->Text;
@@ -227,6 +228,12 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		SqlDataReader^ reader = command.ExecuteReader();
 		if (reader->Read()) {
 			MessageBox::Show("Welcome "+username, "Log in successful",MessageBoxButtons::OK );
+			user = gcnew User;
+			user->id = reader->GetInt32(0);
+			user->username = reader->GetString(1);
+			user->email = reader->GetString(2);
+			user->password = reader->GetString(3);
+			this->Close();
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
