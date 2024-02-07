@@ -8,6 +8,7 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for Login
@@ -130,11 +131,11 @@ namespace Pakreserve1 {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Bell MT", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(904, 75);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(112, 39);
+			this->label8->Size = System::Drawing::Size(111, 38);
 			this->label8->TabIndex = 10;
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -173,6 +174,7 @@ namespace Pakreserve1 {
 			this->button1->Size = System::Drawing::Size(438, 56);
 			this->button1->TabIndex = 14;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
 			// Login
 			// 
@@ -205,11 +207,36 @@ namespace Pakreserve1 {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
-	//saiodhjaasjdghjsjfkaoljdhiakdhas
-	/*
-	sadijuhjaskldalsdjaksl
-	asijdhkmasldaslkdas[pd
-	*/
+		
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	String^ username = textBox1->Text;
+	String^ password = textBox2->Text;
+	if (username->Length == 0 || password->Length == 0) {
+		MessageBox::Show("Plase Enter both username and password","username or password is empty",MessageBoxButtons::OK);
+	}
+	try {
+		String^ connString = "Data Source=GONGZ\\SQLEXPRESS;Initial Catalog=StayData;Integrated Security=True;Encrypt=False";
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+		String^ sqlQuery = "SELECT * FROM users WHERE username = @username AND password = @pwd;";
+		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@username", username);
+		command.Parameters->AddWithValue("@pwd",password);
+
+		SqlDataReader^ reader = command.ExecuteReader();
+		if (reader->Read()) {
+			MessageBox::Show("Welcome "+username, "Log in successful",MessageBoxButtons::OK );
+		}
+		else {
+			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
+		}
+
+
+	}
+	catch (Exception^ e) {
+		MessageBox::Show("Fail to connect to database","Error",MessageBoxButtons::OK);
+	}
 }
 };
 }
