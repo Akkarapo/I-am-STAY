@@ -13,7 +13,7 @@ void main(array<String^>^ args) {
     Pakreserve1::Login form2;
     Pakreserve1::MPBar mpform;
     Pakreserve1::regist registForm;
-    form2.ShowDialog();
+    registForm.switchToLogin = true;
     while (true) {
         if (form2.switchToRegister) {
             registForm.ShowDialog();
