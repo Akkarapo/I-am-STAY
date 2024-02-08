@@ -67,7 +67,7 @@ namespace Pakreserve1 {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1252, 673);
+			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"PakForm";
