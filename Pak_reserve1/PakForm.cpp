@@ -9,6 +9,7 @@ void main(array<String^>^ args) {
     Application::SetCompatibleTextRenderingDefault(false);
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
-    Application::Run(% form2);
+
+    Application::Run(% form);
 
 }

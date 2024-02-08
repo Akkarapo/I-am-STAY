@@ -69,7 +69,7 @@ namespace Pakreserve1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->label2);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"PakForm";
 			this->Text = L"PakForm";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
