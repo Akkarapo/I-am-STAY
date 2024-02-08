@@ -11,7 +11,6 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Data::SqlClient;
-
 	/// <summary>
 	/// Summary for Login
 	/// </summary>
@@ -203,6 +202,8 @@ namespace Pakreserve1 {
 			this->registLable->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->registLable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->registLable->Location = System::Drawing::Point(703, 529);
 			this->registLable->Name = L"registLable";
 			this->registLable->Size = System::Drawing::Size(83, 27);
@@ -232,7 +233,7 @@ namespace Pakreserve1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Login";
+			this->Text = L"r";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -264,6 +265,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		command.Parameters->AddWithValue("@pwd",password);
 
 		SqlDataReader^ reader = command.ExecuteReader();
+	
 		if (reader->Read()) {
 			MessageBox::Show("Welcome "+username, "Log in successful",MessageBoxButtons::OK );
 			user = gcnew User;
@@ -274,7 +276,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			this->Hide();
 			PakForm^ pakf = gcnew PakForm();
 			pakf->Show();
-
+			this->Close();
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
@@ -291,10 +293,10 @@ private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 }
-
+public: bool switchToRegister;
 private: System::Void registLable_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	
+	this->switchToRegister = true;
+	this->Close();
 	}
 };
 }

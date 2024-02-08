@@ -258,9 +258,10 @@ namespace Pakreserve1 {
 			this->label10->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label10->Location = System::Drawing::Point(737, 464);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(93, 28);
+			this->label10->Size = System::Drawing::Size(170, 28);
 			this->label10->TabIndex = 12;
-			this->label10->Text = L"Password";
+			this->label10->Text = L"Confirm password";
+			this->label10->Click += gcnew System::EventHandler(this, &regist::label10_Click);
 			// 
 			// textBox4
 			// 
@@ -319,6 +320,7 @@ namespace Pakreserve1 {
 			this->Name = L"regist";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sign Up";
+			this->Load += gcnew System::EventHandler(this, &regist::regist_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
@@ -345,32 +347,39 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Please fill all forms", "form empty", MessageBoxButtons::OK);
 		return;
 	}
-	else if (password != password2) {
+	else if ((password != password2)&& password->Length < 7) {
 		MessageBox::Show("Password and confirm password doesn't match", "please check the password again", MessageBoxButtons::OK);
 		return;
 	}
 	try {
 		String^ connString = "Data Source=GONGZ\\SQLEXPRESS;Initial Catalog=StayData;Integrated Security=True;Encrypt=False";
-		SqlConnection sqlConn2(connString);
-		sqlConn2.Open();
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
 
-		String^ sqlQuery = "INSERT INTO users "+ "(username,email,password)" + "(@username,@email,@password);";
-		SqlCommand command(sqlQuery, % sqlConn2);
+		String^ sqlQuery = "INSERT INTO users " + "(username,email,password) VALUES" + "(@username,@email,@password);";
+		SqlCommand command(sqlQuery, % sqlConn);
 		command.Parameters->AddWithValue("@username", username);
 		command.Parameters->AddWithValue("@email",email);
 		command.Parameters->AddWithValue("@password",password);
 
 		command.ExecuteNonQuery();
-		MessageBox::Show("Successfully create username","Welcome"+username,MessageBoxButtons::OK);
+		MessageBox::Show("Successfully create username","Welcome "+username,MessageBoxButtons::OK);
 	}
 	catch (Exception^ e) {
 		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
 
 	}
 }
+public : bool switchToLogin = false;
 private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToLogin = true;
+	this->Close();
 	
-	
+}
+
+private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void regist_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
