@@ -215,28 +215,32 @@ namespace Pakreserve1 {
 			// 
 			// textBox1
 			// 
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->textBox1->Location = System::Drawing::Point(765, 204);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 45);
+			this->textBox1->Size = System::Drawing::Size(430, 38);
 			this->textBox1->TabIndex = 8;
 			// 
 			// textBox2
 			// 
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->textBox2->Location = System::Drawing::Point(765, 304);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 45);
+			this->textBox2->Size = System::Drawing::Size(430, 38);
 			this->textBox2->TabIndex = 9;
 			// 
 			// textBox3
 			// 
+			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->textBox3->Location = System::Drawing::Point(765, 404);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(430, 45);
+			this->textBox3->Size = System::Drawing::Size(430, 38);
 			this->textBox3->TabIndex = 10;
 			this->textBox3->UseSystemPasswordChar = true;
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &regist::textBox3_TextChanged);
 			// 
 			// label9
 			// 
@@ -265,10 +269,11 @@ namespace Pakreserve1 {
 			// 
 			// textBox4
 			// 
+			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
 			this->textBox4->Location = System::Drawing::Point(765, 504);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(430, 45);
+			this->textBox4->Size = System::Drawing::Size(430, 38);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->UseSystemPasswordChar = true;
 			// 
@@ -347,12 +352,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Please fill all forms", "form empty", MessageBoxButtons::OK);
 		return;
 	}
-	else if ((password != password2)&& password->Length < 7) {
+	else if (password != password2) {
 		MessageBox::Show("Password and confirm password doesn't match", "please check the password again", MessageBoxButtons::OK);
 		return;
 	}
+	else if ( password->Length < 7) {
+		MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+		return;
+	}
 	try {
-		String^ connString = "Data Source=GONGZ\\SQLEXPRESS;Initial Catalog=StayData;Integrated Security=True;Encrypt=False";
+		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
 
@@ -380,6 +389,8 @@ private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void regist_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

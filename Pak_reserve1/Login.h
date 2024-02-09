@@ -249,6 +249,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	
 }
 public: User^ user = nullptr;
+public: bool switchToPakForm = false;
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = textBox1->Text;
 	String^ password = textBox2->Text;
@@ -256,7 +257,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 		MessageBox::Show("Plase Enter both username and password","username or password is empty",MessageBoxButtons::OK);
 	}
 	try {
-		String^ connString = "Data Source=GONGZ\\SQLEXPRESS;Initial Catalog=StayData;Integrated Security=True;Encrypt=False";
+		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
 		String^ sqlQuery = "SELECT * FROM users WHERE username = @username AND password = @pwd;";
@@ -273,10 +274,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			user->username = reader->GetString(1);
 			user->email = reader->GetString(2);
 			user->password = reader->GetString(3);
-			this->Hide();
-			PakForm^ pakf = gcnew PakForm();
-			pakf->Show();
 			this->Close();
+			switchToPakForm = true;
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);

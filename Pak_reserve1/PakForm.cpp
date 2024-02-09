@@ -26,6 +26,10 @@ void main(array<String^>^ args) {
             form2.ShowDialog();
             registForm.switchToLogin = false;
         }
+        else if (form2.switchToPakForm) {
+            form.ShowDialog();
+            form2.switchToPakForm = false;
+        }
         else {
             break;
         }
