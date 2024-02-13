@@ -292,7 +292,7 @@ private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 }
-public: bool switchToRegister;
+public: bool switchToRegister =false;
 private: System::Void registLable_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToRegister = true;
 	this->Close();
