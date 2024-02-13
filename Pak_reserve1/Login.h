@@ -134,7 +134,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(904, 75);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(112, 39);
+			this->label8->Size = System::Drawing::Size(112, 37);
 			this->label8->TabIndex = 10;
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -173,6 +173,7 @@ namespace Pakreserve1 {
 			this->button1->Size = System::Drawing::Size(438, 56);
 			this->button1->TabIndex = 14;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
 			// Login
 			// 
@@ -205,6 +206,8 @@ namespace Pakreserve1 {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
