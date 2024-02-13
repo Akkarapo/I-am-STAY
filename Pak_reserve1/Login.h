@@ -37,7 +37,8 @@ namespace Pakreserve1 {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ tbUsername;
+	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::TextBox^ tbPassword;
 
 
@@ -61,6 +62,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Button^ btnExit;
 
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::TextBox^ textBox1;
 
 	protected:
 
@@ -79,7 +81,7 @@ namespace Pakreserve1 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->tbUsername = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnSignIn = (gcnew System::Windows::Forms::Button());
@@ -91,6 +93,7 @@ namespace Pakreserve1 {
 			this->registLable = (gcnew System::Windows::Forms::Label());
 			this->btnExit = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -107,24 +110,22 @@ namespace Pakreserve1 {
 			this->label1->Text = L"Username";
 			this->label1->Click += gcnew System::EventHandler(this, &Login::label1_Click);
 			// 
-			// tbUsername
+			// textBox2
 			// 
-			this->tbUsername->AllowDrop = true;
-			this->tbUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->tbUsername->Location = System::Drawing::Point(745, 305);
-			this->tbUsername->Name = L"textBox1";
-			this->tbUsername->Size = System::Drawing::Size(430, 36);
-			this->tbUsername->TabIndex = 1;
+			this->textBox2->AllowDrop = true;
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->textBox2->Location = System::Drawing::Point(745, 305);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(430, 36);
+			this->textBox2->TabIndex = 1;
 			// 
 			// tbPassword
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
-			this->textBox2->Location = System::Drawing::Point(745, 385);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 39);
-			this->textBox2->TabIndex = 2;
-			this->textBox2->UseSystemPasswordChar = true;
+			this->tbPassword->Location = System::Drawing::Point(0, 0);
+			this->tbPassword->Name = L"tbPassword";
+			this->tbPassword->Size = System::Drawing::Size(100, 25);
+			this->tbPassword->TabIndex = 17;
 			// 
 			// label2
 			// 
@@ -164,7 +165,7 @@ namespace Pakreserve1 {
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// btnExit
+			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->Location = System::Drawing::Point(1208, 12);
@@ -229,6 +230,31 @@ namespace Pakreserve1 {
 			this->registLable->Text = L"Sign Up";
 			this->registLable->Click += gcnew System::EventHandler(this, &Login::registLable_Click);
 			// 
+			// btnExit
+			// 
+			this->btnExit->Location = System::Drawing::Point(0, 0);
+			this->btnExit->Name = L"btnExit";
+			this->btnExit->Size = System::Drawing::Size(75, 23);
+			this->btnExit->TabIndex = 0;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(0, 0);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 0;
+			// 
+			// textBox1
+			// 
+			this->textBox1->AllowDrop = true;
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->textBox1->Location = System::Drawing::Point(745, 394);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(430, 36);
+			this->textBox1->TabIndex = 18;
+			this->textBox1->UseSystemPasswordChar = true;
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
@@ -236,6 +262,7 @@ namespace Pakreserve1 {
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->registLable);
 			this->Controls->Add(this->signUPtext);
 			this->Controls->Add(this->button1);
@@ -244,11 +271,12 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->tbPassword);
-			this->Controls->Add(this->tbUsername);
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Location = System::Drawing::Point(745, 385);
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"r";
@@ -269,8 +297,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 public: User^ user = nullptr;
 public: bool switchToPakForm = false;
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	String^ username = textBox1->Text;
-	String^ password = textBox2->Text;
+	String^ username = textBox2->Text;
+	String^ password = textBox1->Text;
 	if (username->Length == 0 || password->Length == 0) {
 		MessageBox::Show("Plase Enter both username and password","username or password is empty",MessageBoxButtons::OK);
 	}
