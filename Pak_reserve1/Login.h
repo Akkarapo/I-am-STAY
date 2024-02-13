@@ -37,9 +37,12 @@ namespace Pakreserve1 {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ tbUsername;
+	private: System::Windows::Forms::TextBox^ tbPassword;
+
+
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ btnSignIn;
 
 
 
@@ -55,7 +58,9 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ registLable;
 
 
+	private: System::Windows::Forms::Button^ btnExit;
 
+	private: System::Windows::Forms::Button^ button3;
 
 	protected:
 
@@ -74,15 +79,18 @@ namespace Pakreserve1 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->tbUsername = (gcnew System::Windows::Forms::TextBox());
+			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->btnSignIn = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->signUPtext = (gcnew System::Windows::Forms::Label());
 			this->registLable = (gcnew System::Windows::Forms::Label());
+			this->btnExit = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -99,17 +107,17 @@ namespace Pakreserve1 {
 			this->label1->Text = L"Username";
 			this->label1->Click += gcnew System::EventHandler(this, &Login::label1_Click);
 			// 
-			// textBox1
+			// tbUsername
 			// 
-			this->textBox1->AllowDrop = true;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->textBox1->Location = System::Drawing::Point(745, 305);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 36);
-			this->textBox1->TabIndex = 1;
+			this->tbUsername->AllowDrop = true;
+			this->tbUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->tbUsername->Location = System::Drawing::Point(745, 305);
+			this->tbUsername->Name = L"textBox1";
+			this->tbUsername->Size = System::Drawing::Size(430, 36);
+			this->tbUsername->TabIndex = 1;
 			// 
-			// textBox2
+			// tbPassword
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14));
 			this->textBox2->Location = System::Drawing::Point(745, 385);
@@ -130,6 +138,16 @@ namespace Pakreserve1 {
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Password";
 			// 
+			// btnSignIn
+			// 
+			this->btnSignIn->Location = System::Drawing::Point(659, 491);
+			this->btnSignIn->Name = L"btnSignIn";
+			this->btnSignIn->Size = System::Drawing::Size(390, 49);
+			this->btnSignIn->TabIndex = 4;
+			this->btnSignIn->Text = L"Sign In";
+			this->btnSignIn->UseVisualStyleBackColor = true;
+			this->btnSignIn->Click += gcnew System::EventHandler(this, &Login::button1_Click);
+			// 
 			// label8
 			// 
 			this->label8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -146,7 +164,7 @@ namespace Pakreserve1 {
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// button2
+			// btnExit
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->Location = System::Drawing::Point(1208, 12);
@@ -225,8 +243,8 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->tbPassword);
+			this->Controls->Add(this->tbUsername);
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));

@@ -28,6 +28,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="regist.cpp">
+    <ClCompile Include="NepjuneCalender1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,6 +49,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="regist.h">
+    <ClInclude Include="NepjuneCalender1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
