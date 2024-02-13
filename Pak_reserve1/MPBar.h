@@ -1,5 +1,8 @@
 #pragma once
-
+#include "PakForm.h"
+#include "Login.h"
+#include "MPBar.h"
+#include "Profile.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -190,6 +193,7 @@ namespace Pakreserve1 {
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 7;
 			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &MPBar::pictureBox2_Click_1);
 			// 
 			// CustomerName
 			// 
@@ -335,5 +339,12 @@ namespace Pakreserve1 {
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 	}
-	};
+
+	public: bool switchToProfile = false;
+	private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this -> switchToProfile = true;
+		this->Close();
+		
+	}
+};
 }
