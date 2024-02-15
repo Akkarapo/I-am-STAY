@@ -2,6 +2,7 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "regist.h"
+#include "NepjuneCalender.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -13,10 +14,10 @@ void main(array<String^>^ args) {
     Pakreserve1::Login form2;
     Pakreserve1::MPBar mpform;
     Pakreserve1::regist registForm;
-
-
+    Pakreserve1::NepjuneCalender nepForm;
+    nepForm.ShowDialog();
     registForm.switchToLogin = true;
-    
+    /*
     while (true) {
         if (form2.switchToRegister) {
             registForm.ShowDialog();
@@ -36,7 +37,7 @@ void main(array<String^>^ args) {
 
     }
 
-
+    */
     
 
 }

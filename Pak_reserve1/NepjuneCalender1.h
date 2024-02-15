@@ -41,6 +41,9 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
 	protected:
 
 	private:
@@ -63,15 +66,18 @@ namespace Pakreserve1 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(115, 75);
+			this->button1->Location = System::Drawing::Point(379, 137);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 100);
+			this->button1->Size = System::Drawing::Size(80, 80);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
@@ -82,34 +88,34 @@ namespace Pakreserve1 {
 			this->pictureBox1->BackColor = System::Drawing::Color::Black;
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1440, 90);
+			this->pictureBox1->Size = System::Drawing::Size(1280, 56);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &NepjuneCalender::pictureBox1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(245, 75);
+			this->button2->Location = System::Drawing::Point(499, 137);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 100);
+			this->button2->Size = System::Drawing::Size(80, 80);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(375, 75);
+			this->button3->Location = System::Drawing::Point(619, 137);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(100, 100);
+			this->button3->Size = System::Drawing::Size(80, 80);
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(505, 75);
+			this->button4->Location = System::Drawing::Point(739, 137);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 100);
+			this->button4->Size = System::Drawing::Size(80, 80);
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"button4";
 			this->button4->UseVisualStyleBackColor = true;
@@ -118,9 +124,9 @@ namespace Pakreserve1 {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::LightGray;
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox2->Location = System::Drawing::Point(64, 147);
+			this->pictureBox2->Location = System::Drawing::Point(55, 110);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(255, 380);
+			this->pictureBox2->Size = System::Drawing::Size(230, 343);
 			this->pictureBox2->TabIndex = 5;
 			this->pictureBox2->TabStop = false;
 			// 
@@ -128,18 +134,50 @@ namespace Pakreserve1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Location = System::Drawing::Point(96, 178);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Bell MT", 48, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(67, 126);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 32);
+			this->label1->Size = System::Drawing::Size(205, 184);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Bar \r\nNo.1";
 			this->label1->Click += gcnew System::EventHandler(this, &NepjuneCalender::label1_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(859, 137);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(80, 80);
+			this->button5->TabIndex = 7;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(979, 137);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(80, 80);
+			this->button6->TabIndex = 8;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(1099, 137);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(80, 80);
+			this->button7->TabIndex = 9;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// NepjuneCalender
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->button7);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->button4);
@@ -156,7 +194,10 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
+	public: bool switchToPakForm = false;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->switchToPakForm = true;
+		this->Close();
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
