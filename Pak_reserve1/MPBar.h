@@ -109,6 +109,7 @@ namespace Pakreserve1 {
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(1280, 64);
@@ -186,6 +187,7 @@ namespace Pakreserve1 {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(1205, 11);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -337,14 +339,14 @@ namespace Pakreserve1 {
 		}
 #pragma endregion
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 
 	public: bool switchToProfile = false;
 	private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
-		this -> switchToProfile = true;
+		this->switchToProfile = true;
 		this->Close();
-		
+
 	}
-};
+	};
 }
