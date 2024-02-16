@@ -11,6 +11,9 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Data::SqlClient;
+
+	using namespace System::Web;
+	using namespace System::Net::Mail;
 	/// <summary>
 	/// Summary for Login
 	/// </summary>
@@ -20,6 +23,7 @@ namespace Pakreserve1 {
 		Login(void)
 		{
 			InitializeComponent();
+
 			//
 			//TODO: Add the constructor code here
 			//
@@ -39,7 +43,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 
-	private: System::Windows::Forms::TextBox^ tbPassword;
+
 
 
 	private: System::Windows::Forms::Label^ label2;
@@ -64,6 +68,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TextBox^ textBox1;
 
+
 	protected:
 
 	private:
@@ -82,7 +87,6 @@ namespace Pakreserve1 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnSignIn = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -119,13 +123,6 @@ namespace Pakreserve1 {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(430, 36);
 			this->textBox2->TabIndex = 1;
-			// 
-			// tbPassword
-			// 
-			this->tbPassword->Location = System::Drawing::Point(0, 0);
-			this->tbPassword->Name = L"tbPassword";
-			this->tbPassword->Size = System::Drawing::Size(100, 25);
-			this->tbPassword->TabIndex = 17;
 			// 
 			// label2
 			// 
@@ -270,7 +267,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->tbPassword);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -281,6 +277,7 @@ namespace Pakreserve1 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"r";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::Login_KeyDown);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -294,8 +291,10 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	Application::Exit();
 	
 }
-public: User^ user = nullptr;
+
+//public: User^ user = nullptr;
 public: bool switchToPakForm = false;
+
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = textBox2->Text;
 	String^ password = textBox1->Text;
@@ -315,13 +314,13 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	
 		if (reader->Read()) {
 			MessageBox::Show("Welcome "+username, "Log in successful",MessageBoxButtons::OK );
-			user = gcnew User;
+			/*user = gcnew User;
 			user->id = reader->GetInt32(0);
 			user->username = reader->GetString(1);
 			user->email = reader->GetString(2);
 			user->password = reader->GetString(3);
 			this->Close();
-			switchToPakForm = true;
+			switchToPakForm = true;*/
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
@@ -343,5 +342,11 @@ private: System::Void registLable_Click(System::Object^ sender, System::EventArg
 	this->switchToRegister = true;
 	this->Close();
 	}
+private: System::Void Login_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Alt) {
+		MessageBox::Show("Escape Pressed","esc",MessageBoxButtons::OK);
+	}
+
+}
 };
 }

@@ -125,6 +125,7 @@
     <ClCompile Include="NepjuneCalender1.cpp" />
     <ClCompile Include="PakForm.cpp" />
     <ClCompile Include="regist.cpp" />
+    <ClCompile Include="sendMail.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="regist.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="sendMail.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ToeyMenu.h">
@@ -163,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="regist.resx">
       <DependentUpon>regist.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendMail.resx">
+      <DependentUpon>sendMail.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToeyMenu.resx">
       <DependentUpon>ToeyMenu.h</DependentUpon>
