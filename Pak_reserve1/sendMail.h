@@ -225,8 +225,6 @@ namespace Pakreserve1 {
 			else {
 				MessageBox::Show("Plese provide correct email", "no email found", MessageBoxButtons::OK);
 			}
-
-
 		}
 		catch (Exception^ e) {
 			MessageBox::Show("Can't send mail", "Error", MessageBoxButtons::OK);
