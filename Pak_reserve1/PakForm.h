@@ -23,6 +23,9 @@ namespace Pakreserve1 {
 			A3Table2PGreen->Hide();
 			B1Table2PGreen->Hide();
 			B2Table4PGreen->Hide();
+			B3Table4PGreen->Hide();
+			B4Table4PGreen->Hide();
+
 			//
 			//TODO: Add the constructor code here
 			//
@@ -54,6 +57,18 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ B1Table2P;
 	private: System::Windows::Forms::PictureBox^ B2Table4P;
 	private: System::Windows::Forms::PictureBox^ B2Table4PGreen;
+	private: System::Windows::Forms::PictureBox^ B3Table4PGreen;
+
+	private: System::Windows::Forms::PictureBox^ B3Table4P;
+	private: System::Windows::Forms::PictureBox^ B4Table4PGreen;
+	private: System::Windows::Forms::PictureBox^ B4Table4P;
+
+
+
+
+
+
+
 
 
 
@@ -87,6 +102,10 @@ namespace Pakreserve1 {
 			this->B1Table2P = (gcnew System::Windows::Forms::PictureBox());
 			this->B2Table4P = (gcnew System::Windows::Forms::PictureBox());
 			this->B2Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->B3Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->B3Table4P = (gcnew System::Windows::Forms::PictureBox());
+			this->B4Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->B4Table4P = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -98,6 +117,10 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B2Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B2Table4PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table4PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table4P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B4Table4PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B4Table4P))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -196,7 +219,7 @@ namespace Pakreserve1 {
 			this->B1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->B1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table2PGreen.BackgroundImage")));
 			this->B1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->B1Table2PGreen->Location = System::Drawing::Point(439, 224);
+			this->B1Table2PGreen->Location = System::Drawing::Point(432, 224);
 			this->B1Table2PGreen->Name = L"B1Table2PGreen";
 			this->B1Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->B1Table2PGreen->TabIndex = 11;
@@ -208,7 +231,7 @@ namespace Pakreserve1 {
 			this->B1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->B1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table2P.BackgroundImage")));
 			this->B1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->B1Table2P->Location = System::Drawing::Point(439, 224);
+			this->B1Table2P->Location = System::Drawing::Point(432, 224);
 			this->B1Table2P->Name = L"B1Table2P";
 			this->B1Table2P->Size = System::Drawing::Size(33, 75);
 			this->B1Table2P->TabIndex = 10;
@@ -239,11 +262,63 @@ namespace Pakreserve1 {
 			this->B2Table4PGreen->TabStop = false;
 			this->B2Table4PGreen->Click += gcnew System::EventHandler(this, &PakForm::B2Table4PGreen_Click);
 			// 
+			// B3Table4PGreen
+			// 
+			this->B3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4PGreen.BackgroundImage")));
+			this->B3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B3Table4PGreen->Location = System::Drawing::Point(729, 224);
+			this->B3Table4PGreen->Name = L"B3Table4PGreen";
+			this->B3Table4PGreen->Size = System::Drawing::Size(75, 75);
+			this->B3Table4PGreen->TabIndex = 15;
+			this->B3Table4PGreen->TabStop = false;
+			this->B3Table4PGreen->Click += gcnew System::EventHandler(this, &PakForm::B3Table4PGreen_Click);
+			// 
+			// B3Table4P
+			// 
+			this->B3Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4P.BackgroundImage")));
+			this->B3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B3Table4P->Location = System::Drawing::Point(729, 224);
+			this->B3Table4P->Name = L"B3Table4P";
+			this->B3Table4P->Size = System::Drawing::Size(75, 75);
+			this->B3Table4P->TabIndex = 14;
+			this->B3Table4P->TabStop = false;
+			this->B3Table4P->Click += gcnew System::EventHandler(this, &PakForm::B3Table4P_Click);
+			// 
+			// B4Table4PGreen
+			// 
+			this->B4Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PGreen.BackgroundImage")));
+			this->B4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B4Table4PGreen->Location = System::Drawing::Point(899, 224);
+			this->B4Table4PGreen->Name = L"B4Table4PGreen";
+			this->B4Table4PGreen->Size = System::Drawing::Size(75, 75);
+			this->B4Table4PGreen->TabIndex = 17;
+			this->B4Table4PGreen->TabStop = false;
+			this->B4Table4PGreen->Click += gcnew System::EventHandler(this, &PakForm::B4Table4PGreen_Click);
+			// 
+			// B4Table4P
+			// 
+			this->B4Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4P.BackgroundImage")));
+			this->B4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B4Table4P->Location = System::Drawing::Point(899, 224);
+			this->B4Table4P->Name = L"B4Table4P";
+			this->B4Table4P->Size = System::Drawing::Size(75, 75);
+			this->B4Table4P->TabIndex = 16;
+			this->B4Table4P->TabStop = false;
+			this->B4Table4P->Click += gcnew System::EventHandler(this, &PakForm::B4Table4P_Click);
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->B4Table4PGreen);
+			this->Controls->Add(this->B4Table4P);
+			this->Controls->Add(this->B3Table4PGreen);
+			this->Controls->Add(this->B3Table4P);
 			this->Controls->Add(this->B2Table4PGreen);
 			this->Controls->Add(this->B2Table4P);
 			this->Controls->Add(this->B1Table2PGreen);
@@ -271,6 +346,10 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B1Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B2Table4P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B2Table4PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table4PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table4P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B4Table4PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B4Table4P))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -318,5 +397,22 @@ namespace Pakreserve1 {
 		B2Table4PGreen->Hide();
 		B2Table4P->Show();
 }
+	private: System::Void B3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table4P->Hide();
+		B3Table4PGreen->Show();
+}
+	private: System::Void B3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table4PGreen->Hide();
+		B3Table4P->Show();
+}
+	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4P->Hide();
+		B4Table4PGreen->Show();
+}
+	private: System::Void B4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4PGreen->Hide();
+		B4Table4P->Show();
+}
+
 };
 }
