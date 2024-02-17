@@ -58,9 +58,9 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
+
+
 
 
 
@@ -92,9 +92,6 @@ namespace Pakreserve1 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -187,7 +184,6 @@ namespace Pakreserve1 {
 			this->label1->Size = System::Drawing::Size(94, 39);
 			this->label1->TabIndex = 19;
 			this->label1->Text = L"Toey";
-			this->label1->Click += gcnew System::EventHandler(this, &ToeyMenu::label1_Click_1);
 			// 
 			// label2
 			// 
@@ -212,47 +208,10 @@ namespace Pakreserve1 {
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
-			// textBox1
-			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(650, 231);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(326, 53);
-			this->textBox1->TabIndex = 22;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &ToeyMenu::textBox1_TextChanged);
-			// 
-			// button1
-			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(701, 338);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(213, 66);
-			this->button1->TabIndex = 23;
-			this->button1->Text = L"Enter";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &ToeyMenu::button1_Click);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(61, 362);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(140, 42);
-			this->button2->TabIndex = 24;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &ToeyMenu::button2_Click_1);
-			this->button2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &ToeyMenu::button2_MouseMove);
-			// 
 			// ToeyMenu
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -301,8 +260,7 @@ private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void pictureBox4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -310,14 +268,8 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	label1->Text = textBox1->Text;
 }
-private: System::Void pictureBox5_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	button2->Hide();
-}
-private: System::Void pictureBox5_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	button2->Show();
-}
+private: System::Void label1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}	label1->Text = "Nicesu";
+}
 };
 }
