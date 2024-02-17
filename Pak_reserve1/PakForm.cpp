@@ -2,6 +2,7 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "regist.h"
+
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
