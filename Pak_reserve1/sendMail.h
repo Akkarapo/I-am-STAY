@@ -20,7 +20,7 @@ namespace Pakreserve1 {
 		sendMail(void)
 		{
 			InitializeComponent();
-			
+
 			//
 			//TODO: Add the constructor code here
 			//
@@ -41,7 +41,15 @@ namespace Pakreserve1 {
 	protected:
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
+
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Panel^ panel2;
+
+
+
 
 	private:
 		/// <summary>
@@ -56,61 +64,117 @@ namespace Pakreserve1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(sendMail::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(260, 476);
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->Location = System::Drawing::Point(728, 287);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(239, 60);
+			this->button1->Size = System::Drawing::Size(445, 66);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Send Info !";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &sendMail::button1_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(260, 413);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
+			this->textBox1->Location = System::Drawing::Point(728, 216);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(672, 38);
+			this->textBox1->Size = System::Drawing::Size(445, 41);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(255, 365);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24));
+			this->label1->Location = System::Drawing::Point(802, 63);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(312, 29);
+			this->label1->Size = System::Drawing::Size(322, 46);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"Enter email to get password";
+			this->label1->Text = L"Forget Password";
+			this->label1->Click += gcnew System::EventHandler(this, &sendMail::label1_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label3->Location = System::Drawing::Point(723, 176);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(58, 25);
+			this->label3->TabIndex = 4;
+			this->label3->Text = L"email";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label4->Location = System::Drawing::Point(879, 120);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(182, 25);
+			this->label4->TabIndex = 5;
+			this->label4->Text = L"xxxxxxxxxxxxxxxxx";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(295, 286);
+			this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->label2->Location = System::Drawing::Point(1020, 370);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"label2";
+			this->label2->Size = System::Drawing::Size(138, 25);
+			this->label2->TabIndex = 6;
+			this->label2->Text = L"Back To Login";
+			this->label2->Click += gcnew System::EventHandler(this, &sendMail::label2_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(640, 720);
+			this->pictureBox1->TabIndex = 7;
+			this->pictureBox1->TabStop = false;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->Location = System::Drawing::Point(941, 35);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(41, 25);
+			this->panel2->TabIndex = 9;
 			// 
 			// sendMail
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
+			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Name = L"sendMail";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"sendMail";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -142,7 +206,6 @@ namespace Pakreserve1 {
 				user->password = reader->GetString(3);
 				MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 				String^ text = user->username + " " + user->password;
-				label2->Text = text;
 				MailMessage^ mail = gcnew MailMessage(senderUsername, user->email);
 				mail->Subject = "Password Recovery";
 				mail->Body = text;
@@ -169,5 +232,13 @@ namespace Pakreserve1 {
 			MessageBox::Show("Can't send mail", "Error", MessageBoxButtons::OK);
 		}
 	}
-	};
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+public: bool switchToLogin = false;
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	//back to login here
+	switchToLogin = true;
+	this->Close();
+}
+};
 }

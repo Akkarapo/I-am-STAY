@@ -67,6 +67,9 @@ namespace Pakreserve1 {
 
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label4;
+
 
 
 	protected:
@@ -98,6 +101,9 @@ namespace Pakreserve1 {
 			this->btnExit = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -252,6 +258,31 @@ namespace Pakreserve1 {
 			this->textBox1->TabIndex = 18;
 			this->textBox1->UseSystemPasswordChar = true;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(640, 720);
+			this->pictureBox1->TabIndex = 19;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->label4->Location = System::Drawing::Point(1089, 529);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(161, 27);
+			this->label4->TabIndex = 20;
+			this->label4->Text = L"Forget Password";
+			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click_1);
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
@@ -259,6 +290,8 @@ namespace Pakreserve1 {
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->registLable);
 			this->Controls->Add(this->signUPtext);
@@ -275,9 +308,9 @@ namespace Pakreserve1 {
 			this->Location = System::Drawing::Point(745, 385);
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"r";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::Login_KeyDown);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -321,6 +354,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 			user->password = reader->GetString(3);
 			this->Close();
 			switchToPakForm = true;*/
+			this->Close();
+			switchToPakForm = true;
 		}
 		else {
 			MessageBox::Show("Wrong username or password","log in unsuccessful",MessageBoxButtons::OK);
@@ -347,6 +382,13 @@ private: System::Void Login_KeyDown(System::Object^ sender, System::Windows::For
 		MessageBox::Show("Escape Pressed","esc",MessageBoxButtons::OK);
 	}
 
+}
+public: bool switchToForgetPwd = false;
+private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToForgetPwd = true;
+	this->Close();
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

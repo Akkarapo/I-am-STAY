@@ -184,7 +184,7 @@ namespace Pakreserve1 {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Location = System::Drawing::Point(985, 52);
+			this->panel2->Location = System::Drawing::Point(975, 52);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(41, 25);
 			this->panel2->TabIndex = 6;

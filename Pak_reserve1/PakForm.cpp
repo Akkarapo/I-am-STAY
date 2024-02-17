@@ -16,22 +16,27 @@ void main(array<String^>^ args) {
     Pakreserve1::MPBar mpform;
     Pakreserve1::regist registForm;
     Pakreserve1::sendMail mailForm;
-    Application::Run(% form);
-    mailForm.ShowDialog();
-    //registForm.switchToLogin = true;
+    //Application::Run(% form);
+    //mailForm.ShowDialog();
+    registForm.switchToLogin = true;
     
     while (true) {
         if (form2.switchToRegister) {
             registForm.ShowDialog();
             form2.switchToRegister = false;
         }
-        else if (registForm.switchToLogin) {
+        else if (registForm.switchToLogin || mailForm.switchToLogin) {
             form2.ShowDialog();
             registForm.switchToLogin = false;
+            mailForm.switchToLogin = false;
         }
         else if (form2.switchToPakForm) {
             form.ShowDialog();
             form2.switchToPakForm = false;
+        }
+        else if (form2.switchToForgetPwd) {
+            mailForm.ShowDialog();
+            form2.switchToForgetPwd = false;
         }
         else {
             break;
