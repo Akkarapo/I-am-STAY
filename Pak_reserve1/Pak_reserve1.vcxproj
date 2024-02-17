@@ -122,8 +122,10 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MPBar.cpp" />
-    <ClCompile Include="NepjuneCalender1.cpp" />
+    <ClCompile Include="NepjuneCalender.cpp" />
+    <ClCompile Include="nj.cpp" />
     <ClCompile Include="PakForm.cpp" />
+    <ClCompile Include="Pakky.cpp" />
     <ClCompile Include="regist.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
@@ -134,10 +136,13 @@
     <ClInclude Include="MPBar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="NepjuneCalender1.h">
+    <ClInclude Include="nj.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PakForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Pakky.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="regist.h">
@@ -155,8 +160,8 @@
     <EmbeddedResource Include="MPBar.resx">
       <DependentUpon>MPBar.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NepjuneCalender1.resx">
-      <DependentUpon>NepjuneCalender1.h</DependentUpon>
+    <EmbeddedResource Include="nj.resx">
+      <DependentUpon>nj.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PakForm.resx">
       <DependentUpon>PakForm.h</DependentUpon>

@@ -2,7 +2,8 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "regist.h"
-#include "NepjuneCalender.h"
+#include "nj.h"
+#include "Pakky.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -14,30 +15,26 @@ void main(array<String^>^ args) {
     Pakreserve1::Login form2;
     Pakreserve1::MPBar mpform;
     Pakreserve1::regist registForm;
-    Pakreserve1::NepjuneCalender nepForm;
-    nepForm.ShowDialog();
-    registForm.switchToLogin = true;
-    /*
+    Pakreserve1::nj njForm;
+    Pakreserve1::Pakky PkForm;
+    PkForm.switchToCalender = true;
+    //njForm.ShowDialog();
     while (true) {
-        if (form2.switchToRegister) {
-            registForm.ShowDialog();
-            form2.switchToRegister = false;
+        if (PkForm.switchToCalender) {
+            njForm.ShowDialog();
+            PkForm.switchToCalender = false;
         }
-        else if (registForm.switchToLogin) {
-            form2.ShowDialog();
-            registForm.switchToLogin = false;
+        else if (njForm.switchToPkForm) {
+            PkForm.ShowDialog();
+            njForm.switchToPkForm = false;
         }
-        else if (form2.switchToPakForm) {
-            form.ShowDialog();
-            form2.switchToPakForm = false;
-        }
+
         else {
             break;
         }
 
     }
 
-    */
     
 
 }

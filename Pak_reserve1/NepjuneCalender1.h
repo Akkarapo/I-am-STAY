@@ -42,8 +42,12 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::TextBox^ textBox1;
+
+
 	protected:
 
 	private:
@@ -67,10 +71,13 @@ namespace Pakreserve1 {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -145,21 +152,12 @@ namespace Pakreserve1 {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(859, 137);
+			this->button5->Location = System::Drawing::Point(860, 137);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(80, 80);
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"button5";
 			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(979, 137);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(80, 80);
-			this->button6->TabIndex = 8;
-			this->button6->Text = L"button6";
-			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// button7
 			// 
@@ -170,11 +168,37 @@ namespace Pakreserve1 {
 			this->button7->Text = L"button7";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(979, 137);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(80, 80);
+			this->button6->TabIndex = 8;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Location = System::Drawing::Point(1210, 12);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(40, 38);
+			this->pictureBox3->TabIndex = 10;
+			this->pictureBox3->TabStop = false;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(1060, 28);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->TabIndex = 11;
+			// 
 			// NepjuneCalender
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
@@ -189,6 +213,7 @@ namespace Pakreserve1 {
 			this->Text = L"NepjuneCalender";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -203,6 +228,8 @@ namespace Pakreserve1 {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void NepjuneCalender_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
 
