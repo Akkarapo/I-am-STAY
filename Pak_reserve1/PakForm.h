@@ -40,6 +40,13 @@ namespace Pakreserve1 {
 			G1Table2PGreen->Hide();
 			G2Table2PGreen->Hide();
 			G3Table2PGreen->Hide();
+			H1Table1PGreen->Hide();
+			H2Table1PGreen->Hide();
+			H3Table1PGreen->Hide();
+			H4Table1PGreen->Hide();
+			H5Table1PGreen->Hide();
+			H6Table1PGreen->Hide();
+			H7Table1PGreen->Hide();
 
 			//
 			//TODO: Add the constructor code here
@@ -116,6 +123,17 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ H2Table1P;
 private: System::Windows::Forms::PictureBox^ H3Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H3Table1P;
+private: System::Windows::Forms::PictureBox^ H4Table1PGreen;
+private: System::Windows::Forms::PictureBox^ H4Table1P;
+private: System::Windows::Forms::PictureBox^ H5Table1PGreen;
+private: System::Windows::Forms::PictureBox^ H5Table1P;
+private: System::Windows::Forms::PictureBox^ H6Table1PGreen;
+private: System::Windows::Forms::PictureBox^ H6Table1P;
+private: System::Windows::Forms::PictureBox^ H7Table1PGreen;
+private: System::Windows::Forms::PictureBox^ H7Table1P;
+
+
+
 
 
 
@@ -203,6 +221,14 @@ private: System::Windows::Forms::PictureBox^ H3Table1P;
 			this->H2Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->H3Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H3Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H4Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H4Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H5Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H5Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H6Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H6Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -254,6 +280,14 @@ private: System::Windows::Forms::PictureBox^ H3Table1P;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H4Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H4Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H5Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H5Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1P))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -875,11 +909,115 @@ private: System::Windows::Forms::PictureBox^ H3Table1P;
 			this->H3Table1P->TabStop = false;
 			this->H3Table1P->Click += gcnew System::EventHandler(this, &PakForm::H3Table1P_Click);
 			// 
+			// H4Table1PGreen
+			// 
+			this->H4Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H4Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H4Table1PGreen.BackgroundImage")));
+			this->H4Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H4Table1PGreen->Location = System::Drawing::Point(1081, 421);
+			this->H4Table1PGreen->Name = L"H4Table1PGreen";
+			this->H4Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H4Table1PGreen->TabIndex = 55;
+			this->H4Table1PGreen->TabStop = false;
+			this->H4Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H4Table1PGreen_Click);
+			// 
+			// H4Table1P
+			// 
+			this->H4Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H4Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H4Table1P.BackgroundImage")));
+			this->H4Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H4Table1P->Location = System::Drawing::Point(1081, 421);
+			this->H4Table1P->Name = L"H4Table1P";
+			this->H4Table1P->Size = System::Drawing::Size(27, 29);
+			this->H4Table1P->TabIndex = 54;
+			this->H4Table1P->TabStop = false;
+			this->H4Table1P->Click += gcnew System::EventHandler(this, &PakForm::H4Table1P_Click);
+			// 
+			// H5Table1PGreen
+			// 
+			this->H5Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H5Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H5Table1PGreen.BackgroundImage")));
+			this->H5Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H5Table1PGreen->Location = System::Drawing::Point(1081, 449);
+			this->H5Table1PGreen->Name = L"H5Table1PGreen";
+			this->H5Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H5Table1PGreen->TabIndex = 57;
+			this->H5Table1PGreen->TabStop = false;
+			this->H5Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H5Table1PGreen_Click);
+			// 
+			// H5Table1P
+			// 
+			this->H5Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H5Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H5Table1P.BackgroundImage")));
+			this->H5Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H5Table1P->Location = System::Drawing::Point(1081, 449);
+			this->H5Table1P->Name = L"H5Table1P";
+			this->H5Table1P->Size = System::Drawing::Size(27, 29);
+			this->H5Table1P->TabIndex = 56;
+			this->H5Table1P->TabStop = false;
+			this->H5Table1P->Click += gcnew System::EventHandler(this, &PakForm::H5Table1P_Click);
+			// 
+			// H6Table1PGreen
+			// 
+			this->H6Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H6Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H6Table1PGreen.BackgroundImage")));
+			this->H6Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H6Table1PGreen->Location = System::Drawing::Point(1081, 477);
+			this->H6Table1PGreen->Name = L"H6Table1PGreen";
+			this->H6Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H6Table1PGreen->TabIndex = 59;
+			this->H6Table1PGreen->TabStop = false;
+			this->H6Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H6Table1PGreen_Click);
+			// 
+			// H6Table1P
+			// 
+			this->H6Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H6Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H6Table1P.BackgroundImage")));
+			this->H6Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H6Table1P->Location = System::Drawing::Point(1081, 477);
+			this->H6Table1P->Name = L"H6Table1P";
+			this->H6Table1P->Size = System::Drawing::Size(27, 29);
+			this->H6Table1P->TabIndex = 58;
+			this->H6Table1P->TabStop = false;
+			this->H6Table1P->Click += gcnew System::EventHandler(this, &PakForm::H6Table1P_Click);
+			// 
+			// H7Table1PGreen
+			// 
+			this->H7Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H7Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H7Table1PGreen.BackgroundImage")));
+			this->H7Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H7Table1PGreen->Location = System::Drawing::Point(1081, 505);
+			this->H7Table1PGreen->Name = L"H7Table1PGreen";
+			this->H7Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H7Table1PGreen->TabIndex = 61;
+			this->H7Table1PGreen->TabStop = false;
+			this->H7Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H7Table1PGreen_Click);
+			// 
+			// H7Table1P
+			// 
+			this->H7Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H7Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H7Table1P.BackgroundImage")));
+			this->H7Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H7Table1P->Location = System::Drawing::Point(1081, 505);
+			this->H7Table1P->Name = L"H7Table1P";
+			this->H7Table1P->Size = System::Drawing::Size(27, 29);
+			this->H7Table1P->TabIndex = 60;
+			this->H7Table1P->TabStop = false;
+			this->H7Table1P->Click += gcnew System::EventHandler(this, &PakForm::H7Table1P_Click);
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->H7Table1PGreen);
+			this->Controls->Add(this->H7Table1P);
+			this->Controls->Add(this->H6Table1PGreen);
+			this->Controls->Add(this->H6Table1P);
+			this->Controls->Add(this->H5Table1PGreen);
+			this->Controls->Add(this->H5Table1P);
+			this->Controls->Add(this->H4Table1PGreen);
+			this->Controls->Add(this->H4Table1P);
 			this->Controls->Add(this->H3Table1PGreen);
 			this->Controls->Add(this->H3Table1P);
 			this->Controls->Add(this->H2Table1PGreen);
@@ -987,6 +1125,14 @@ private: System::Windows::Forms::PictureBox^ H3Table1P;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H4Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H4Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H5Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H5Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1P))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1156,44 +1302,76 @@ private: System::Windows::Forms::PictureBox^ H3Table1P;
 		G1Table2P->Show();
 }
 	private: System::Void G2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
-		G2Table2PGreen->Hide();
-		G2Table2P->Show();
+		G2Table2P->Hide();
+		G2Table2PGreen->Show();
 }
 	private: System::Void G2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G2Table2PGreen->Hide();
 		G2Table2P->Show();
 }
 	private: System::Void G3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
-		G3Table2PGreen->Hide();
-		G3Table2P->Show();
+		G3Table2P->Hide();
+		G3Table2PGreen->Show();
 }
 	private: System::Void G3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2PGreen->Hide();
 		G3Table2P->Show();
 }
 	private: System::Void H1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
-		H1Table1PGreen->Hide();
-		H1Table1P->Show();
+		H1Table1P->Hide();
+		H1Table1PGreen->Show();
 }
 	private: System::Void H1Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H1Table1PGreen->Hide();
 		H1Table1P->Show();
 }
 	private: System::Void H2Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
-		H2Table1PGreen->Hide();
-		H2Table1P->Show();
+		H2Table1P->Hide();
+		H2Table1PGreen->Show();
 }
 	private: System::Void H2Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H2Table1PGreen->Hide();
 		H2Table1P->Show();
 }
 	private: System::Void H3Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
-		H3Table1PGreen->Hide();
-		H3Table1P->Show();
+		H3Table1P->Hide();
+		H3Table1PGreen->Show();
 }
 	private: System::Void H3Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H3Table1PGreen->Hide();
 		H3Table1P->Show();
+}
+	private: System::Void H4Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H4Table1P->Hide();
+		H4Table1PGreen->Show();
+}
+	private: System::Void H4Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H4Table1PGreen->Hide();
+		H4Table1P->Show();
+}
+	private: System::Void H5Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H5Table1P->Hide();
+		H5Table1PGreen->Show();
+}
+	private: System::Void H5Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H5Table1PGreen->Hide();
+		H5Table1P->Show();
+}
+	private: System::Void H6Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H6Table1P->Hide();
+		H6Table1PGreen->Show();
+}
+	private: System::Void H6Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H6Table1PGreen->Hide();
+		H6Table1P->Show();
+}
+	private: System::Void H7Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H7Table1P->Hide();
+		H7Table1PGreen->Show();
+}
+	private: System::Void H7Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H7Table1PGreen->Hide();
+		H7Table1P->Show();
 }
 };
 }
