@@ -110,6 +110,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ G2Table2P;
 	private: System::Windows::Forms::PictureBox^ G3Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ G3Table2P;
+	private: System::Windows::Forms::PictureBox^ H1Table1P;
+	private: System::Windows::Forms::PictureBox^ H1Table1PGreen;
+	private: System::Windows::Forms::PictureBox^ H2Table1PGreen;
+	private: System::Windows::Forms::PictureBox^ H2Table1P;
+private: System::Windows::Forms::PictureBox^ H3Table1PGreen;
+private: System::Windows::Forms::PictureBox^ H3Table1P;
+
 
 
 
@@ -190,6 +197,12 @@ namespace Pakreserve1 {
 			this->G2Table2P = (gcnew System::Windows::Forms::PictureBox());
 			this->G3Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->G3Table2P = (gcnew System::Windows::Forms::PictureBox());
+			this->H1Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H1Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H2Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H2Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->H3Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->H3Table1P = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -235,6 +248,12 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G3Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G3Table2P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H1Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H1Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1P))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -784,11 +803,89 @@ namespace Pakreserve1 {
 			this->G3Table2P->TabStop = false;
 			this->G3Table2P->Click += gcnew System::EventHandler(this, &PakForm::G3Table2P_Click);
 			// 
+			// H1Table1P
+			// 
+			this->H1Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H1Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H1Table1P.BackgroundImage")));
+			this->H1Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H1Table1P->Location = System::Drawing::Point(1081, 338);
+			this->H1Table1P->Name = L"H1Table1P";
+			this->H1Table1P->Size = System::Drawing::Size(27, 29);
+			this->H1Table1P->TabIndex = 48;
+			this->H1Table1P->TabStop = false;
+			this->H1Table1P->Click += gcnew System::EventHandler(this, &PakForm::H1Table1P_Click);
+			// 
+			// H1Table1PGreen
+			// 
+			this->H1Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H1Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H1Table1PGreen.BackgroundImage")));
+			this->H1Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H1Table1PGreen->Location = System::Drawing::Point(1081, 338);
+			this->H1Table1PGreen->Name = L"H1Table1PGreen";
+			this->H1Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H1Table1PGreen->TabIndex = 49;
+			this->H1Table1PGreen->TabStop = false;
+			this->H1Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H1Table1PGreen_Click);
+			// 
+			// H2Table1PGreen
+			// 
+			this->H2Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H2Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H2Table1PGreen.BackgroundImage")));
+			this->H2Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H2Table1PGreen->Location = System::Drawing::Point(1081, 365);
+			this->H2Table1PGreen->Name = L"H2Table1PGreen";
+			this->H2Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H2Table1PGreen->TabIndex = 51;
+			this->H2Table1PGreen->TabStop = false;
+			this->H2Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H2Table1PGreen_Click);
+			// 
+			// H2Table1P
+			// 
+			this->H2Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H2Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H2Table1P.BackgroundImage")));
+			this->H2Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H2Table1P->Location = System::Drawing::Point(1081, 365);
+			this->H2Table1P->Name = L"H2Table1P";
+			this->H2Table1P->Size = System::Drawing::Size(27, 29);
+			this->H2Table1P->TabIndex = 50;
+			this->H2Table1P->TabStop = false;
+			this->H2Table1P->Click += gcnew System::EventHandler(this, &PakForm::H2Table1P_Click);
+			// 
+			// H3Table1PGreen
+			// 
+			this->H3Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->H3Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H3Table1PGreen.BackgroundImage")));
+			this->H3Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H3Table1PGreen->Location = System::Drawing::Point(1081, 393);
+			this->H3Table1PGreen->Name = L"H3Table1PGreen";
+			this->H3Table1PGreen->Size = System::Drawing::Size(27, 29);
+			this->H3Table1PGreen->TabIndex = 53;
+			this->H3Table1PGreen->TabStop = false;
+			this->H3Table1PGreen->Click += gcnew System::EventHandler(this, &PakForm::H3Table1PGreen_Click);
+			// 
+			// H3Table1P
+			// 
+			this->H3Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->H3Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H3Table1P.BackgroundImage")));
+			this->H3Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H3Table1P->Location = System::Drawing::Point(1081, 393);
+			this->H3Table1P->Name = L"H3Table1P";
+			this->H3Table1P->Size = System::Drawing::Size(27, 29);
+			this->H3Table1P->TabIndex = 52;
+			this->H3Table1P->TabStop = false;
+			this->H3Table1P->Click += gcnew System::EventHandler(this, &PakForm::H3Table1P_Click);
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->H3Table1PGreen);
+			this->Controls->Add(this->H3Table1P);
+			this->Controls->Add(this->H2Table1PGreen);
+			this->Controls->Add(this->H2Table1P);
+			this->Controls->Add(this->H1Table1PGreen);
+			this->Controls->Add(this->H1Table1P);
 			this->Controls->Add(this->G3Table2PGreen);
 			this->Controls->Add(this->G3Table2P);
 			this->Controls->Add(this->G2Table2PGreen);
@@ -884,6 +981,12 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G2Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G3Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->G3Table2P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H1Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H1Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H2Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H3Table1P))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1067,6 +1170,30 @@ namespace Pakreserve1 {
 	private: System::Void G3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2PGreen->Hide();
 		G3Table2P->Show();
+}
+	private: System::Void H1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H1Table1PGreen->Hide();
+		H1Table1P->Show();
+}
+	private: System::Void H1Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H1Table1PGreen->Hide();
+		H1Table1P->Show();
+}
+	private: System::Void H2Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H2Table1PGreen->Hide();
+		H2Table1P->Show();
+}
+	private: System::Void H2Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H2Table1PGreen->Hide();
+		H2Table1P->Show();
+}
+	private: System::Void H3Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		H3Table1PGreen->Hide();
+		H3Table1P->Show();
+}
+	private: System::Void H3Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		H3Table1PGreen->Hide();
+		H3Table1P->Show();
 }
 };
 }
