@@ -44,7 +44,7 @@
     <ClInclude Include="MPBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Toeybarsignin.h">
+    <ClInclude Include="Barreg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

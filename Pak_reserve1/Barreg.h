@@ -10,12 +10,12 @@ namespace Pakreserve1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Toeybarsignin
+	/// Summary for Barreg
 	/// </summary>
-	public ref class Toeybarsignin : public System::Windows::Forms::Form
+	public ref class Barreg : public System::Windows::Forms::Form
 	{
 	public:
-		Toeybarsignin(void)
+		Barreg(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace Pakreserve1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Toeybarsignin()
+		~Barreg()
 		{
 			if (components)
 			{
@@ -35,7 +35,6 @@ namespace Pakreserve1 {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label2;
@@ -44,13 +43,15 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Button^ button1;
+		   protected
 
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -59,7 +60,7 @@ namespace Pakreserve1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Toeybarsignin::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Barreg::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -68,6 +69,7 @@ namespace Pakreserve1 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -92,16 +94,14 @@ namespace Pakreserve1 {
 			this->label1->Size = System::Drawing::Size(151, 42);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Sign Up";
-			this->label1->Click += gcnew System::EventHandler(this, &Toeybarsignin::label1_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(107, 152);
+			this->textBox1->Location = System::Drawing::Point(107, 42);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(298, 47);
 			this->textBox1->TabIndex = 2;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Toeybarsignin::textBox1_TextChanged);
 			// 
 			// label2
 			// 
@@ -113,7 +113,6 @@ namespace Pakreserve1 {
 			this->label2->Size = System::Drawing::Size(80, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Bar Name";
-			this->label2->Click += gcnew System::EventHandler(this, &Toeybarsignin::label2_Click);
 			// 
 			// label3
 			// 
@@ -139,7 +138,7 @@ namespace Pakreserve1 {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(107, 41);
+			this->textBox2->Location = System::Drawing::Point(107, 155);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(298, 47);
@@ -147,6 +146,7 @@ namespace Pakreserve1 {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->textBox3);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->textBox1);
@@ -157,6 +157,17 @@ namespace Pakreserve1 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(524, 463);
 			this->panel1->TabIndex = 7;
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(107, 378);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(298, 57);
+			this->button1->TabIndex = 8;
+			this->button1->Text = L"Confirm";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// textBox3
 			// 
@@ -183,12 +194,7 @@ namespace Pakreserve1 {
 			this->PerformLayout();
 
 		}
-#pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-};
 }
+#pragma endregion
+
+};

@@ -136,7 +136,7 @@
     <ClInclude Include="PakForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Toeybarsignin.h">
+    <ClInclude Include="Barreg.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ToeyMenu.h">
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="PakForm.resx">
       <DependentUpon>PakForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Toeybarsignin.resx">
-      <DependentUpon>Toeybarsignin.h</DependentUpon>
+    <EmbeddedResource Include="Barreg.resx">
+      <DependentUpon>Barreg.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToeyMenu.resx">
       <DependentUpon>ToeyMenu.h</DependentUpon>
