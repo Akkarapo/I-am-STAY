@@ -8,6 +8,8 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
+
 
 	using namespace System::Web;
 	using namespace System::Net::Mail;
@@ -171,6 +173,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->button1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"sendMail";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"sendMail";

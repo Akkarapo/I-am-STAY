@@ -1,6 +1,5 @@
 #pragma once
-#include"Login.h"
-
+//#include"Login.h"
 using namespace System;
 
 public ref class User {

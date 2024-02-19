@@ -56,10 +56,10 @@ namespace Pakreserve1 {
 
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Button^ button2;
+
 
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Label^ signUPtext;
 	private: System::Windows::Forms::Label^ registLable;
 
@@ -70,6 +70,10 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Panel^ panel2;
+
 
 
 
@@ -94,9 +98,7 @@ namespace Pakreserve1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnSignIn = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->signUPtext = (gcnew System::Windows::Forms::Label());
 			this->registLable = (gcnew System::Windows::Forms::Label());
 			this->btnExit = (gcnew System::Windows::Forms::Button());
@@ -104,7 +106,11 @@ namespace Pakreserve1 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -124,12 +130,14 @@ namespace Pakreserve1 {
 			// textBox2
 			// 
 			this->textBox2->AllowDrop = true;
+			this->textBox2->BackColor = System::Drawing::Color::White;
 			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
 			this->textBox2->Location = System::Drawing::Point(745, 305);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(430, 36);
 			this->textBox2->TabIndex = 1;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &Login::textBox2_TextChanged);
 			// 
 			// label2
 			// 
@@ -169,17 +177,6 @@ namespace Pakreserve1 {
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->Location = System::Drawing::Point(1208, 12);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(42, 39);
-			this->button2->TabIndex = 11;
-			this->button2->Text = L"X";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &Login::button2_Click);
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
@@ -192,19 +189,6 @@ namespace Pakreserve1 {
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Enter your username and password to access your account";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// button1
-			// 
-			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->button1->Location = System::Drawing::Point(741, 460);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(438, 56);
-			this->button1->TabIndex = 14;
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
 			// signUPtext
 			// 
@@ -251,6 +235,7 @@ namespace Pakreserve1 {
 			// textBox1
 			// 
 			this->textBox1->AllowDrop = true;
+			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
 			this->textBox1->Location = System::Drawing::Point(745, 394);
@@ -258,6 +243,7 @@ namespace Pakreserve1 {
 			this->textBox1->Size = System::Drawing::Size(430, 36);
 			this->textBox1->TabIndex = 18;
 			this->textBox1->UseSystemPasswordChar = true;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
 			// 
 			// pictureBox1
 			// 
@@ -284,6 +270,38 @@ namespace Pakreserve1 {
 			this->label4->Text = L"Forget Password";
 			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click_1);
 			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->Location = System::Drawing::Point(741, 460);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(430, 48);
+			this->pictureBox2->TabIndex = 21;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &Login::pictureBox2_Click_1);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(1244, 9);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(24, 28);
+			this->label5->TabIndex = 22;
+			this->label5->Text = L"X";
+			this->label5->Click += gcnew System::EventHandler(this, &Login::label5_Click);
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->Location = System::Drawing::Point(934, 47);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(41, 25);
+			this->panel2->TabIndex = 23;
+			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
@@ -291,14 +309,15 @@ namespace Pakreserve1 {
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->registLable);
 			this->Controls->Add(this->signUPtext);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox2);
@@ -312,6 +331,7 @@ namespace Pakreserve1 {
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::Login_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -327,8 +347,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 //public: User^ user = nullptr;
-public: bool switchToPakForm = false;
 
+/*
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = textBox2->Text;
 	String^ password = textBox1->Text;
@@ -348,13 +368,13 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	
 		if (reader->Read()) {
 			MessageBox::Show("Welcome "+username, "Log in successful",MessageBoxButtons::OK );
-			/*user = gcnew User;
+			user = gcnew User;
 			user->id = reader->GetInt32(0);
 			user->username = reader->GetString(1);
 			user->email = reader->GetString(2);
 			user->password = reader->GetString(3);
 			this->Close();
-			switchToPakForm = true;*/
+			switchToPakForm = true;
 			this->Close();
 			switchToPakForm = true;
 		}
@@ -366,8 +386,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	}
 	catch (Exception^ e) {
 		MessageBox::Show("Fail to connect to database","Error",MessageBoxButtons::OK);
-	}
-}
+	} 
+}*/
 private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -390,6 +410,61 @@ private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ 
 	this->Close();
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox2->ForeColor = Color::Black;
+}
+
+public: bool switchToPakForm = false;
+public: User^ user = nullptr;
+private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	String^ username = textBox2->Text;
+	String^ password = textBox1->Text;
+	if (username->Length == 0 || password->Length == 0) {
+		MessageBox::Show("Plase Enter both username and password", "username or password is empty", MessageBoxButtons::OK);
+		return;
+	}
+	try {
+		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+		String^ sqlQuery = "SELECT * FROM users WHERE username = @username AND password = @pwd;";
+		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@username", username);
+		command.Parameters->AddWithValue("@pwd", password);
+
+		SqlDataReader^ reader = command.ExecuteReader();
+
+		if (reader->Read()) {
+			MessageBox::Show("Welcome " + username, "Log in successful", MessageBoxButtons::OK);
+			user = gcnew User;
+			user->id = reader->GetInt32(0);
+			user->username = reader->GetString(1);
+			user->email = reader->GetString(2);
+			user->password = reader->GetString(3);
+			this->Close();
+			switchToPakForm = true;
+			/*this->Close();
+			switchToPakForm = true;*/
+		}
+		else {
+			textBox1->ForeColor = Color::Red;
+			textBox2->ForeColor = Color::Red;
+			//MessageBox::Show("Wrong username or password", "log in unsuccessful", MessageBoxButtons::OK);
+		}
+
+
+	}
+	catch (Exception^ e) {
+		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
+	}
+}
+
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->ForeColor = Color::Black;
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
 }
 };
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Login.h"
+#include <string>
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -53,8 +54,10 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::TextBox^ textBox4;
 
 
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 	protected:
 
 	private:
@@ -87,9 +90,10 @@ namespace Pakreserve1 {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -221,6 +225,7 @@ namespace Pakreserve1 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(430, 38);
 			this->textBox1->TabIndex = 8;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &regist::textBox1_TextChanged);
 			// 
 			// textBox2
 			// 
@@ -230,6 +235,7 @@ namespace Pakreserve1 {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(430, 38);
 			this->textBox2->TabIndex = 9;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &regist::textBox2_TextChanged);
 			// 
 			// textBox3
 			// 
@@ -276,18 +282,7 @@ namespace Pakreserve1 {
 			this->textBox4->Size = System::Drawing::Size(430, 38);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->UseSystemPasswordChar = true;
-			// 
-			// button1
-			// 
-			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->ForeColor = System::Drawing::Color::Transparent;
-			this->button1->Location = System::Drawing::Point(765, 570);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(433, 54);
-			this->button1->TabIndex = 15;
-			this->button1->Text = L"Sign UP";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &regist::button1_Click);
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &regist::textBox4_TextChanged);
 			// 
 			// label11
 			// 
@@ -302,12 +297,23 @@ namespace Pakreserve1 {
 			this->label11->Text = L"back to login";
 			this->label11->Click += gcnew System::EventHandler(this, &regist::label11_Click);
 			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->Location = System::Drawing::Point(765, 570);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(430, 48);
+			this->pictureBox2->TabIndex = 22;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &regist::pictureBox2_Click);
+			// 
 			// regist
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label11);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label9);
@@ -321,6 +327,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel1);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"regist";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -328,6 +335,7 @@ namespace Pakreserve1 {
 			this->Load += gcnew System::EventHandler(this, &regist::regist_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -344,40 +352,7 @@ private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Form
 
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ username = textBox1->Text;
-	String^ email = textBox2->Text;
-	String^ password = textBox3->Text;
-	String^ password2 = textBox4->Text;
-	if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
-		MessageBox::Show("Please fill all forms", "form empty", MessageBoxButtons::OK);
-		return;
-	}
-	else if (password != password2) {
-		MessageBox::Show("Password and confirm password doesn't match", "please check the password again", MessageBoxButtons::OK);
-		return;
-	}
-	else if ( password->Length < 7) {
-		MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
-		return;
-	}
-	try {
-		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
-		SqlConnection sqlConn(connString);
-		sqlConn.Open();
 
-		String^ sqlQuery = "INSERT INTO users " + "(username,email,password) VALUES" + "(@username,@email,@password);";
-		SqlCommand command(sqlQuery, % sqlConn);
-		command.Parameters->AddWithValue("@username", username);
-		command.Parameters->AddWithValue("@email",email);
-		command.Parameters->AddWithValue("@password",password);
-
-		command.ExecuteNonQuery();
-		MessageBox::Show("Successfully create username","Welcome "+username,MessageBoxButtons::OK);
-	}
-	catch (Exception^ e) {
-		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
-
-	}
 }
 public : bool switchToLogin = false;
 private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -391,6 +366,81 @@ private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void regist_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->BackColor = Color::White;
+	textBox3->ForeColor = Color::Black;
 }
+
+
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ username = textBox1->Text;
+	String^ email = textBox2->Text;
+	String^ password = textBox3->Text;
+	String^ password2 = textBox4->Text;
+	String^ at = "@";
+	int a = email->CompareTo(at);
+	if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
+		if (username->Length == 0) {
+			textBox1->BackColor = Color::Red;
+		}
+		if (email->Length == 0) {
+			textBox2->BackColor = Color::Red;
+		}
+		if (password->Length == 0) {
+			textBox3->BackColor = Color::Red;
+		}
+		if (password2->Length == 0) {
+			textBox4->BackColor = Color::Red;
+		}
+		return;
+	}
+	else if (email->IndexOf("@gmail") == -1) {
+		textBox2->ForeColor = Color::Red;
+		return;
+	}
+	else if (password != password2) {
+		textBox3->ForeColor = Color::Red;
+		textBox4->ForeColor = Color::Red;
+		return;
+	}
+	else if (password->Length < 7) {
+		textBox3->ForeColor = Color::Red;
+		textBox4->ForeColor = Color::Red;
+		//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+		return;
+	}
+	try {
+		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+
+		String^ sqlQuery = "INSERT INTO users " + "(username,email,password) VALUES" + "(@username,@email,@password);";
+		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@username", username);
+		command.Parameters->AddWithValue("@email", email);
+		command.Parameters->AddWithValue("@password", password);
+
+		command.ExecuteNonQuery();
+		switchToLogin = true;
+		this->Close();
+	}
+	catch (Exception^ e) {
+		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
+
+	}
+}
+
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->BackColor = Color::White;
+	textBox1->ForeColor = Color::Black;
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox2->BackColor = Color::White;
+	textBox2->ForeColor = Color::Black;
+}
+private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox4->BackColor = Color::White;
+	textBox4->ForeColor = Color::Black;
+}
+
 };
 }
