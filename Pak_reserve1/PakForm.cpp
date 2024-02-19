@@ -4,6 +4,8 @@
 #include "regist.h"
 #include "sendMail.h"
 #include "MoveToMp.h"
+#include "partnerRegist.h"
+#include "User.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -12,16 +14,19 @@ using namespace System::Windows::Forms;
 void main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
+
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
     Pakreserve1::MPBar mpform;
-    Pakreserve1::regist registForm;
     Pakreserve1::sendMail mailForm;
     Pakreserve1::MoveToMp movetoMpForm;
-    //Application::Run(% form);
-    //mailForm.ShowDialog();
-    registForm.switchToLogin = true;
-    
+    Pakreserve1::partnerRegist regist2Form;
+    Pakreserve1::regist registForm;
+
+    form2.ShowDialog();
+    User^ user = form2.user;
+    //registForm.switchToLogin = true;
+
     while (true) {
         if (form2.switchToRegister) {
             registForm.ShowDialog();
@@ -43,6 +48,10 @@ void main(array<String^>^ args) {
         else if (form.switchToMP) {
             movetoMpForm.ShowDialog();
             form.switchToMP = false;
+        }
+        else if (registForm.switchToReg2) {
+            registForm.switchToReg2 = false;
+            regist2Form.ShowDialog();
         }
         else {
             break;

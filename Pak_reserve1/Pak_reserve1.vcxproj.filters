@@ -8,6 +8,8 @@
     <ClCompile Include="regist.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
     <ClCompile Include="sendMail.cpp" />
+    <ClCompile Include="MoveToMp.cpp" />
+    <ClCompile Include="partnerRegist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h" />
@@ -18,5 +20,7 @@
     <ClInclude Include="ToeyMenu.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="sendMail.h" />
+    <ClInclude Include="MoveToMp.h" />
+    <ClInclude Include="partnerRegist.h" />
   </ItemGroup>
 </Project>

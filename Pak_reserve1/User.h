@@ -4,9 +4,9 @@ using namespace System;
 
 public ref class User {
 public:
-	int id;
-	String^ username;
-	String^ email;
-	String^ password;
+	int id = 99999999;
+	String^ username = "AAAA";
+	String^ email = "AAAA";
+	String^ password = "AAAA";
 
 };

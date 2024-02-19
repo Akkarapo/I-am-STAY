@@ -68,11 +68,18 @@ namespace Pakreserve1 {
 
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label11;
+
 
 
 
@@ -104,13 +111,18 @@ namespace Pakreserve1 {
 			this->btnExit = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -170,7 +182,7 @@ namespace Pakreserve1 {
 			this->label8->BackColor = System::Drawing::Color::Transparent;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(904, 75);
+			this->label8->Location = System::Drawing::Point(936, 75);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(111, 38);
 			this->label8->TabIndex = 10;
@@ -183,7 +195,7 @@ namespace Pakreserve1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(758, 120);
+			this->label3->Location = System::Drawing::Point(812, 113);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(359, 19);
 			this->label3->TabIndex = 13;
@@ -244,15 +256,7 @@ namespace Pakreserve1 {
 			this->textBox1->TabIndex = 18;
 			this->textBox1->UseSystemPasswordChar = true;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(640, 720);
-			this->pictureBox1->TabIndex = 19;
-			this->pictureBox1->TabStop = false;
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::textBox1_KeyDown);
 			// 
 			// label4
 			// 
@@ -284,6 +288,7 @@ namespace Pakreserve1 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(1244, 9);
@@ -297,10 +302,83 @@ namespace Pakreserve1 {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Location = System::Drawing::Point(934, 47);
+			this->panel2->Location = System::Drawing::Point(971, 47);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(41, 25);
 			this->panel2->TabIndex = 23;
+			// 
+			// panel3
+			// 
+			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			this->panel3->Controls->Add(this->label6);
+			this->panel3->Controls->Add(this->label7);
+			this->panel3->Controls->Add(this->label9);
+			this->panel3->Controls->Add(this->label10);
+			this->panel3->Controls->Add(this->label11);
+			this->panel3->Location = System::Drawing::Point(0, 0);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(640, 720);
+			this->panel3->TabIndex = 24;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
+			this->label6->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label6->Location = System::Drawing::Point(23, 624);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(416, 23);
+			this->label6->TabIndex = 4;
+			this->label6->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label7->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label7->Location = System::Drawing::Point(22, 19);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(135, 28);
+			this->label7->TabIndex = 0;
+			this->label7->Text = L"I stay you stay";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label9->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label9->Location = System::Drawing::Point(18, 570);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(213, 54);
+			this->label9->TabIndex = 3;
+			this->label9->Text = L"Experience";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label10->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label10->Location = System::Drawing::Point(18, 462);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(164, 54);
+			this->label10->TabIndex = 1;
+			this->label10->Text = L"Simplify";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label11->Location = System::Drawing::Point(18, 516);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(317, 54);
+			this->label11->TabIndex = 2;
+			this->label11->Text = L"Your Reservation";
 			// 
 			// Login
 			// 
@@ -309,11 +387,11 @@ namespace Pakreserve1 {
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->registLable);
 			this->Controls->Add(this->signUPtext);
@@ -330,8 +408,9 @@ namespace Pakreserve1 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::Login_KeyDown);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -389,6 +468,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	} 
 }*/
 private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -417,6 +497,7 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 
 public: bool switchToPakForm = false;
 public: User^ user = nullptr;
+
 private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = textBox2->Text;
 	String^ password = textBox1->Text;
@@ -465,6 +546,9 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
+}
+private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	
 }
 };
 }
