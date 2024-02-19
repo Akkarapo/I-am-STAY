@@ -3,6 +3,7 @@
 #include "MPBar.h"
 #include "regist.h"
 #include "sendMail.h"
+#include "MoveToMp.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -16,6 +17,7 @@ void main(array<String^>^ args) {
     Pakreserve1::MPBar mpform;
     Pakreserve1::regist registForm;
     Pakreserve1::sendMail mailForm;
+    Pakreserve1::MoveToMp movetoMpForm;
     //Application::Run(% form);
     //mailForm.ShowDialog();
     registForm.switchToLogin = true;
@@ -37,6 +39,10 @@ void main(array<String^>^ args) {
         else if (form2.switchToForgetPwd) {
             mailForm.ShowDialog();
             form2.switchToForgetPwd = false;
+        }
+        else if (form.switchToMP) {
+            movetoMpForm.ShowDialog();
+            form.switchToMP = false;
         }
         else {
             break;

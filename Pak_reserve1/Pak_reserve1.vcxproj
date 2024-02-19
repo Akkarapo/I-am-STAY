@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
+    <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="NepjuneCalender1.cpp" />
     <ClCompile Include="PakForm.cpp" />
@@ -132,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MoveToMp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MPBar.h">
@@ -157,6 +161,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveToMp.resx">
+      <DependentUpon>MoveToMp.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPBar.resx">
       <DependentUpon>MPBar.h</DependentUpon>

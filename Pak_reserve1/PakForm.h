@@ -66,7 +66,9 @@ namespace Pakreserve1 {
 		}
 
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ ConfirmTableNo1;
+
+
 	private: System::Windows::Forms::PictureBox^ A1Table2P;
 	private: System::Windows::Forms::PictureBox^ A1Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ A2Table2PGreen;
@@ -170,7 +172,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PakForm::typeid));
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->ConfirmTableNo1 = (gcnew System::Windows::Forms::PictureBox());
 			this->A1Table2P = (gcnew System::Windows::Forms::PictureBox());
 			this->A1Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->A2Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
@@ -229,7 +231,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H6Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2PGreen))->BeginInit();
@@ -295,19 +297,20 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
 			// 
-			// pictureBox1
+			// ConfirmTableNo1
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->pictureBox1->Location = System::Drawing::Point(36, 611);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(267, 66);
-			this->pictureBox1->TabIndex = 2;
-			this->pictureBox1->TabStop = false;
+			this->ConfirmTableNo1->BackColor = System::Drawing::Color::Transparent;
+			this->ConfirmTableNo1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmTableNo1.BackgroundImage")));
+			this->ConfirmTableNo1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ConfirmTableNo1->Location = System::Drawing::Point(36, 594);
+			this->ConfirmTableNo1->Name = L"ConfirmTableNo1";
+			this->ConfirmTableNo1->Size = System::Drawing::Size(267, 66);
+			this->ConfirmTableNo1->TabIndex = 2;
+			this->ConfirmTableNo1->TabStop = false;
+			this->ConfirmTableNo1->Click += gcnew System::EventHandler(this, &PakForm::ConfirmTableNo1_Click);
 			// 
 			// A1Table2P
 			// 
@@ -1009,7 +1012,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
 			this->Controls->Add(this->H6Table1PGreen);
@@ -1067,14 +1070,16 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->Controls->Add(this->A2Table2PGreen);
 			this->Controls->Add(this->A1Table2PGreen);
 			this->Controls->Add(this->A1Table2P);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->ConfirmTableNo1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->A2Table2P);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"PakForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PakForm";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2PGreen))->EndInit();
@@ -1372,6 +1377,12 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 	private: System::Void H7Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H7Table1PGreen->Hide();
 		H7Table1P->Show();
+}
+
+public: bool switchToMP = false;
+private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
+	switchToMP = true;
+	this->Close();
 }
 };
 }
