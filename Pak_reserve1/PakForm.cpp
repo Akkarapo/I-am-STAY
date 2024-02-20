@@ -53,6 +53,10 @@ void main(array<String^>^ args) {
             registForm.switchToReg2 = false;
             regist2Form.ShowDialog();
         }
+        else if (movetoMpForm.switchToPakForm) {
+            form.ShowDialog();
+            movetoMpForm.switchToPakForm = false;
+        }
         else {
             break;
         }

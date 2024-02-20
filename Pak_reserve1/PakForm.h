@@ -133,6 +133,8 @@ private: System::Windows::Forms::PictureBox^ H6Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H6Table1P;
 private: System::Windows::Forms::PictureBox^ H7Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H7Table1P;
+private: System::Windows::Forms::Label^ label1;
+
 
 
 
@@ -231,6 +233,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H6Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -305,6 +308,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->ConfirmTableNo1->BackColor = System::Drawing::Color::Transparent;
 			this->ConfirmTableNo1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmTableNo1.BackgroundImage")));
 			this->ConfirmTableNo1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ConfirmTableNo1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->ConfirmTableNo1->Location = System::Drawing::Point(36, 594);
 			this->ConfirmTableNo1->Name = L"ConfirmTableNo1";
 			this->ConfirmTableNo1->Size = System::Drawing::Size(267, 66);
@@ -317,6 +321,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->A1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table2P.BackgroundImage")));
 			this->A1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A1Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table2P->Location = System::Drawing::Point(496, 157);
 			this->A1Table2P->Name = L"A1Table2P";
 			this->A1Table2P->Size = System::Drawing::Size(33, 75);
@@ -329,6 +334,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->A1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table2PGreen.BackgroundImage")));
 			this->A1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A1Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table2PGreen->Location = System::Drawing::Point(496, 157);
 			this->A1Table2PGreen->Name = L"A1Table2PGreen";
 			this->A1Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -341,6 +347,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A2Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->A2Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table2PGreen.BackgroundImage")));
 			this->A2Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A2Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table2PGreen->Location = System::Drawing::Point(665, 157);
 			this->A2Table2PGreen->Name = L"A2Table2PGreen";
 			this->A2Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -353,6 +360,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A2Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->A2Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table2P.BackgroundImage")));
 			this->A2Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A2Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table2P->Location = System::Drawing::Point(665, 157);
 			this->A2Table2P->Name = L"A2Table2P";
 			this->A2Table2P->Size = System::Drawing::Size(33, 75);
@@ -365,6 +373,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A3Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->A3Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table2P.BackgroundImage")));
 			this->A3Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A3Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table2P->Location = System::Drawing::Point(834, 157);
 			this->A3Table2P->Name = L"A3Table2P";
 			this->A3Table2P->Size = System::Drawing::Size(33, 75);
@@ -377,6 +386,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->A3Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->A3Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table2PGreen.BackgroundImage")));
 			this->A3Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A3Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table2PGreen->Location = System::Drawing::Point(834, 157);
 			this->A3Table2PGreen->Name = L"A3Table2PGreen";
 			this->A3Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -389,6 +399,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->B1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table2PGreen.BackgroundImage")));
 			this->B1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B1Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table2PGreen->Location = System::Drawing::Point(432, 224);
 			this->B1Table2PGreen->Name = L"B1Table2PGreen";
 			this->B1Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -401,6 +412,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->B1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table2P.BackgroundImage")));
 			this->B1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B1Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table2P->Location = System::Drawing::Point(432, 224);
 			this->B1Table2P->Name = L"B1Table2P";
 			this->B1Table2P->Size = System::Drawing::Size(33, 75);
@@ -413,6 +425,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B2Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->B2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4P.BackgroundImage")));
 			this->B2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4P->Location = System::Drawing::Point(559, 224);
 			this->B2Table4P->Name = L"B2Table4P";
 			this->B2Table4P->Size = System::Drawing::Size(75, 75);
@@ -425,6 +438,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B2Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->B2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4PGreen.BackgroundImage")));
 			this->B2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4PGreen->Location = System::Drawing::Point(559, 224);
 			this->B2Table4PGreen->Name = L"B2Table4PGreen";
 			this->B2Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -437,6 +451,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->B3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4PGreen.BackgroundImage")));
 			this->B3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table4PGreen->Location = System::Drawing::Point(729, 224);
 			this->B3Table4PGreen->Name = L"B3Table4PGreen";
 			this->B3Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -449,6 +464,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B3Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->B3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4P.BackgroundImage")));
 			this->B3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table4P->Location = System::Drawing::Point(729, 224);
 			this->B3Table4P->Name = L"B3Table4P";
 			this->B3Table4P->Size = System::Drawing::Size(75, 75);
@@ -461,6 +477,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B4Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->B4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PGreen.BackgroundImage")));
 			this->B4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4PGreen->Location = System::Drawing::Point(897, 224);
 			this->B4Table4PGreen->Name = L"B4Table4PGreen";
 			this->B4Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -473,6 +490,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->B4Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->B4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4P.BackgroundImage")));
 			this->B4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4P->Location = System::Drawing::Point(897, 224);
 			this->B4Table4P->Name = L"B4Table4P";
 			this->B4Table4P->Size = System::Drawing::Size(75, 75);
@@ -485,6 +503,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->C1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table2PGreen.BackgroundImage")));
 			this->C1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C1Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table2PGreen->Location = System::Drawing::Point(496, 292);
 			this->C1Table2PGreen->Name = L"C1Table2PGreen";
 			this->C1Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -497,6 +516,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->C1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table2P.BackgroundImage")));
 			this->C1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C1Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table2P->Location = System::Drawing::Point(496, 292);
 			this->C1Table2P->Name = L"C1Table2P";
 			this->C1Table2P->Size = System::Drawing::Size(33, 75);
@@ -509,6 +529,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C2Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->C2Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table2PGreen.BackgroundImage")));
 			this->C2Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C2Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table2PGreen->Location = System::Drawing::Point(665, 292);
 			this->C2Table2PGreen->Name = L"C2Table2PGreen";
 			this->C2Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -521,6 +542,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C2Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->C2Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table2P.BackgroundImage")));
 			this->C2Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C2Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table2P->Location = System::Drawing::Point(665, 292);
 			this->C2Table2P->Name = L"C2Table2P";
 			this->C2Table2P->Size = System::Drawing::Size(33, 75);
@@ -533,6 +555,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C3Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->C3Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table2PGreen.BackgroundImage")));
 			this->C3Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C3Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table2PGreen->Location = System::Drawing::Point(834, 292);
 			this->C3Table2PGreen->Name = L"C3Table2PGreen";
 			this->C3Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -545,6 +568,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->C3Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->C3Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table2P.BackgroundImage")));
 			this->C3Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C3Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table2P->Location = System::Drawing::Point(834, 292);
 			this->C3Table2P->Name = L"C3Table2P";
 			this->C3Table2P->Size = System::Drawing::Size(33, 75);
@@ -557,6 +581,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D1Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->D1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D1Table4PGreen.BackgroundImage")));
 			this->D1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D1Table4PGreen->Location = System::Drawing::Point(559, 359);
 			this->D1Table4PGreen->Name = L"D1Table4PGreen";
 			this->D1Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -569,6 +594,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D1Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->D1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D1Table4P.BackgroundImage")));
 			this->D1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D1Table4P->Location = System::Drawing::Point(559, 359);
 			this->D1Table4P->Name = L"D1Table4P";
 			this->D1Table4P->Size = System::Drawing::Size(75, 75);
@@ -581,6 +607,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D2Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->D2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D2Table4PGreen.BackgroundImage")));
 			this->D2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D2Table4PGreen->Location = System::Drawing::Point(729, 359);
 			this->D2Table4PGreen->Name = L"D2Table4PGreen";
 			this->D2Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -593,6 +620,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D2Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->D2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D2Table4P.BackgroundImage")));
 			this->D2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D2Table4P->Location = System::Drawing::Point(729, 359);
 			this->D2Table4P->Name = L"D2Table4P";
 			this->D2Table4P->Size = System::Drawing::Size(75, 75);
@@ -605,6 +633,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->D3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D3Table4PGreen.BackgroundImage")));
 			this->D3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D3Table4PGreen->Location = System::Drawing::Point(897, 359);
 			this->D3Table4PGreen->Name = L"D3Table4PGreen";
 			this->D3Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -617,6 +646,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->D3Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->D3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D3Table4P.BackgroundImage")));
 			this->D3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->D3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D3Table4P->Location = System::Drawing::Point(897, 359);
 			this->D3Table4P->Name = L"D3Table4P";
 			this->D3Table4P->Size = System::Drawing::Size(75, 75);
@@ -629,6 +659,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->E1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E1Table2PGreen.BackgroundImage")));
 			this->E1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E1Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E1Table2PGreen->Location = System::Drawing::Point(496, 426);
 			this->E1Table2PGreen->Name = L"E1Table2PGreen";
 			this->E1Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -641,6 +672,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->E1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E1Table2P.BackgroundImage")));
 			this->E1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E1Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E1Table2P->Location = System::Drawing::Point(496, 426);
 			this->E1Table2P->Name = L"E1Table2P";
 			this->E1Table2P->Size = System::Drawing::Size(33, 75);
@@ -653,6 +685,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E2Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->E2Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E2Table2PGreen.BackgroundImage")));
 			this->E2Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E2Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E2Table2PGreen->Location = System::Drawing::Point(665, 426);
 			this->E2Table2PGreen->Name = L"E2Table2PGreen";
 			this->E2Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -665,6 +698,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E2Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->E2Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E2Table2P.BackgroundImage")));
 			this->E2Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E2Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E2Table2P->Location = System::Drawing::Point(665, 426);
 			this->E2Table2P->Name = L"E2Table2P";
 			this->E2Table2P->Size = System::Drawing::Size(33, 75);
@@ -677,6 +711,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E3Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->E3Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E3Table2PGreen.BackgroundImage")));
 			this->E3Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E3Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E3Table2PGreen->Location = System::Drawing::Point(834, 426);
 			this->E3Table2PGreen->Name = L"E3Table2PGreen";
 			this->E3Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -689,6 +724,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->E3Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->E3Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E3Table2P.BackgroundImage")));
 			this->E3Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->E3Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E3Table2P->Location = System::Drawing::Point(834, 426);
 			this->E3Table2P->Name = L"E3Table2P";
 			this->E3Table2P->Size = System::Drawing::Size(33, 75);
@@ -701,6 +737,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F1Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->F1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F1Table4PGreen.BackgroundImage")));
 			this->F1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F1Table4PGreen->Location = System::Drawing::Point(559, 494);
 			this->F1Table4PGreen->Name = L"F1Table4PGreen";
 			this->F1Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -713,6 +750,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F1Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->F1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F1Table4P.BackgroundImage")));
 			this->F1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F1Table4P->Location = System::Drawing::Point(559, 494);
 			this->F1Table4P->Name = L"F1Table4P";
 			this->F1Table4P->Size = System::Drawing::Size(75, 75);
@@ -725,6 +763,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F2Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->F2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F2Table4PGreen.BackgroundImage")));
 			this->F2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F2Table4PGreen->Location = System::Drawing::Point(729, 494);
 			this->F2Table4PGreen->Name = L"F2Table4PGreen";
 			this->F2Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -737,6 +776,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F2Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->F2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F2Table4P.BackgroundImage")));
 			this->F2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F2Table4P->Location = System::Drawing::Point(729, 494);
 			this->F2Table4P->Name = L"F2Table4P";
 			this->F2Table4P->Size = System::Drawing::Size(75, 75);
@@ -749,6 +789,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->F3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F3Table4PGreen.BackgroundImage")));
 			this->F3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F3Table4PGreen->Location = System::Drawing::Point(897, 494);
 			this->F3Table4PGreen->Name = L"F3Table4PGreen";
 			this->F3Table4PGreen->Size = System::Drawing::Size(75, 75);
@@ -761,6 +802,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->F3Table4P->BackColor = System::Drawing::Color::Transparent;
 			this->F3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"F3Table4P.BackgroundImage")));
 			this->F3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->F3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->F3Table4P->Location = System::Drawing::Point(897, 494);
 			this->F3Table4P->Name = L"F3Table4P";
 			this->F3Table4P->Size = System::Drawing::Size(75, 75);
@@ -773,6 +815,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G1Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->G1Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G1Table2PGreen.BackgroundImage")));
 			this->G1Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G1Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G1Table2PGreen->Location = System::Drawing::Point(496, 561);
 			this->G1Table2PGreen->Name = L"G1Table2PGreen";
 			this->G1Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -785,6 +828,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G1Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->G1Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G1Table2P.BackgroundImage")));
 			this->G1Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G1Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G1Table2P->Location = System::Drawing::Point(496, 561);
 			this->G1Table2P->Name = L"G1Table2P";
 			this->G1Table2P->Size = System::Drawing::Size(33, 75);
@@ -797,6 +841,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G2Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->G2Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G2Table2PGreen.BackgroundImage")));
 			this->G2Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G2Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G2Table2PGreen->Location = System::Drawing::Point(665, 561);
 			this->G2Table2PGreen->Name = L"G2Table2PGreen";
 			this->G2Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -809,6 +854,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G2Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->G2Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G2Table2P.BackgroundImage")));
 			this->G2Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G2Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G2Table2P->Location = System::Drawing::Point(665, 561);
 			this->G2Table2P->Name = L"G2Table2P";
 			this->G2Table2P->Size = System::Drawing::Size(33, 75);
@@ -821,6 +867,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G3Table2PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->G3Table2PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G3Table2PGreen.BackgroundImage")));
 			this->G3Table2PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G3Table2PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G3Table2PGreen->Location = System::Drawing::Point(834, 561);
 			this->G3Table2PGreen->Name = L"G3Table2PGreen";
 			this->G3Table2PGreen->Size = System::Drawing::Size(33, 75);
@@ -833,6 +880,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->G3Table2P->BackColor = System::Drawing::Color::Transparent;
 			this->G3Table2P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"G3Table2P.BackgroundImage")));
 			this->G3Table2P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->G3Table2P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->G3Table2P->Location = System::Drawing::Point(834, 561);
 			this->G3Table2P->Name = L"G3Table2P";
 			this->G3Table2P->Size = System::Drawing::Size(33, 75);
@@ -845,6 +893,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H1Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H1Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H1Table1P.BackgroundImage")));
 			this->H1Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H1Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H1Table1P->Location = System::Drawing::Point(1081, 338);
 			this->H1Table1P->Name = L"H1Table1P";
 			this->H1Table1P->Size = System::Drawing::Size(27, 29);
@@ -857,6 +906,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H1Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H1Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H1Table1PGreen.BackgroundImage")));
 			this->H1Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H1Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H1Table1PGreen->Location = System::Drawing::Point(1081, 338);
 			this->H1Table1PGreen->Name = L"H1Table1PGreen";
 			this->H1Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -869,6 +919,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H2Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H2Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H2Table1PGreen.BackgroundImage")));
 			this->H2Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H2Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H2Table1PGreen->Location = System::Drawing::Point(1081, 365);
 			this->H2Table1PGreen->Name = L"H2Table1PGreen";
 			this->H2Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -881,6 +932,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H2Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H2Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H2Table1P.BackgroundImage")));
 			this->H2Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H2Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H2Table1P->Location = System::Drawing::Point(1081, 365);
 			this->H2Table1P->Name = L"H2Table1P";
 			this->H2Table1P->Size = System::Drawing::Size(27, 29);
@@ -893,6 +945,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H3Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H3Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H3Table1PGreen.BackgroundImage")));
 			this->H3Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H3Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H3Table1PGreen->Location = System::Drawing::Point(1081, 393);
 			this->H3Table1PGreen->Name = L"H3Table1PGreen";
 			this->H3Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -905,6 +958,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H3Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H3Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H3Table1P.BackgroundImage")));
 			this->H3Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H3Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H3Table1P->Location = System::Drawing::Point(1081, 393);
 			this->H3Table1P->Name = L"H3Table1P";
 			this->H3Table1P->Size = System::Drawing::Size(27, 29);
@@ -917,6 +971,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H4Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H4Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H4Table1PGreen.BackgroundImage")));
 			this->H4Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H4Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H4Table1PGreen->Location = System::Drawing::Point(1081, 421);
 			this->H4Table1PGreen->Name = L"H4Table1PGreen";
 			this->H4Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -929,6 +984,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H4Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H4Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H4Table1P.BackgroundImage")));
 			this->H4Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H4Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H4Table1P->Location = System::Drawing::Point(1081, 421);
 			this->H4Table1P->Name = L"H4Table1P";
 			this->H4Table1P->Size = System::Drawing::Size(27, 29);
@@ -941,6 +997,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H5Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H5Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H5Table1PGreen.BackgroundImage")));
 			this->H5Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H5Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H5Table1PGreen->Location = System::Drawing::Point(1081, 449);
 			this->H5Table1PGreen->Name = L"H5Table1PGreen";
 			this->H5Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -953,6 +1010,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H5Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H5Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H5Table1P.BackgroundImage")));
 			this->H5Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H5Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H5Table1P->Location = System::Drawing::Point(1081, 449);
 			this->H5Table1P->Name = L"H5Table1P";
 			this->H5Table1P->Size = System::Drawing::Size(27, 29);
@@ -965,6 +1023,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H6Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H6Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H6Table1PGreen.BackgroundImage")));
 			this->H6Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H6Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H6Table1PGreen->Location = System::Drawing::Point(1081, 477);
 			this->H6Table1PGreen->Name = L"H6Table1PGreen";
 			this->H6Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -977,6 +1036,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H6Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H6Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H6Table1P.BackgroundImage")));
 			this->H6Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H6Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H6Table1P->Location = System::Drawing::Point(1081, 477);
 			this->H6Table1P->Name = L"H6Table1P";
 			this->H6Table1P->Size = System::Drawing::Size(27, 29);
@@ -989,6 +1049,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H7Table1PGreen->BackColor = System::Drawing::Color::Transparent;
 			this->H7Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H7Table1PGreen.BackgroundImage")));
 			this->H7Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H7Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H7Table1PGreen->Location = System::Drawing::Point(1081, 505);
 			this->H7Table1PGreen->Name = L"H7Table1PGreen";
 			this->H7Table1PGreen->Size = System::Drawing::Size(27, 29);
@@ -1001,6 +1062,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H7Table1P->BackColor = System::Drawing::Color::Transparent;
 			this->H7Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"H7Table1P.BackgroundImage")));
 			this->H7Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->H7Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->H7Table1P->Location = System::Drawing::Point(1081, 505);
 			this->H7Table1P->Name = L"H7Table1P";
 			this->H7Table1P->Size = System::Drawing::Size(27, 29);
@@ -1008,11 +1070,21 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H7Table1P->TabStop = false;
 			this->H7Table1P->Click += gcnew System::EventHandler(this, &PakForm::H7Table1P_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(436, 117);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(44, 16);
+			this->label1->TabIndex = 62;
+			this->label1->Text = L"label1";
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
 			this->Controls->Add(this->H6Table1PGreen);
@@ -1142,247 +1214,321 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->PerformLayout();
 
 		}
+
+public:
+	array<bool>^ dataTable;
+	
 #pragma endregion
+		bool A1Table2PGreenCheck = true;
 	private: System::Void PakForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataTable = gcnew array<bool>(29);
 	}
 	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2P->Hide();
 		A1Table2PGreen->Show();
+		A1Table2PGreenCheck = false;
+		dataTable[0] = !dataTable[0];
 	}
 	private: System::Void A1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2PGreen->Hide();
 		A1Table2P->Show();
+		A1Table2PGreenCheck = true;
+		dataTable[0] = !dataTable[0];
 }
 	private: System::Void A2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2P->Hide();
 		A2Table2PGreen->Show();
+		dataTable[1] = !dataTable[1];
 }
 	private: System::Void A2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2PGreen->Hide();
 		A2Table2P->Show();
+		dataTable[1] = !dataTable[1];
 }
 	private: System::Void A3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A3Table2P->Hide();
 		A3Table2PGreen->Show();
+		dataTable[2] = !dataTable[2];
 }
 	private: System::Void A3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A3Table2PGreen->Hide();
 		A3Table2P->Show();
+		dataTable[2] = !dataTable[2];
 }
 	private: System::Void B1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B1Table2P->Hide();
 		B1Table2PGreen->Show();
+		dataTable[3] = !dataTable[3];
 }
 	private: System::Void B1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B1Table2PGreen->Hide();
 		B1Table2P->Show();
+		dataTable[3] = !dataTable[3];
 }
 	private: System::Void B2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B2Table4P->Hide();
 		B2Table4PGreen->Show();
+		dataTable[4] = !dataTable[4];
 }
 	private: System::Void B2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B2Table4PGreen->Hide();
 		B2Table4P->Show();
+		dataTable[4] = !dataTable[4];
 }
 	private: System::Void B3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B3Table4P->Hide();
 		B3Table4PGreen->Show();
+		dataTable[5] = !dataTable[5];
 }
 	private: System::Void B3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B3Table4PGreen->Hide();
 		B3Table4P->Show();
+		dataTable[5] = !dataTable[5];
 }
 	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B4Table4P->Hide();
 		B4Table4PGreen->Show();
+		dataTable[6] = !dataTable[6];
 }
 	private: System::Void B4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B4Table4PGreen->Hide();
 		B4Table4P->Show();
+		dataTable[6] = !dataTable[6];
 }
 
 	private: System::Void C1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C1Table2P->Hide();
 		C1Table2PGreen->Show();
+		dataTable[7] = !dataTable[7];
 }
 	private: System::Void C1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C1Table2PGreen->Hide();
 		C1Table2P->Show();
+		dataTable[7] = !dataTable[7];
 }
 	private: System::Void C2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C2Table2P->Hide();
 		C2Table2PGreen->Show();
+		dataTable[8] = !dataTable[8];
 }
 	private: System::Void C2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C2Table2PGreen->Hide();
 		C2Table2P->Show();
+		dataTable[8] = !dataTable[8];
 }
 	private: System::Void C3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C3Table2P->Hide();
 		C3Table2PGreen->Show();
+		dataTable[9] = !dataTable[9];
 }
 	private: System::Void C3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C3Table2PGreen->Hide();
 		C3Table2P->Show();
+		dataTable[9] = !dataTable[9];
 }
 	private: System::Void D1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D1Table4P->Hide();
 		D1Table4PGreen->Show();
+		dataTable[10] = !dataTable[10];
 }
 	private: System::Void D1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D1Table4PGreen->Hide();
 		D1Table4P->Show();
+		dataTable[10] = !dataTable[10];
 }
 	private: System::Void D2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D2Table4P->Hide();
 		D2Table4PGreen->Show();
+		dataTable[11] = !dataTable[11];
 }
 	private: System::Void D2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D2Table4PGreen->Hide();
 		D2Table4P->Show();
+		dataTable[11] = !dataTable[11];
 }
 	private: System::Void D3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D3Table4P->Hide();
 		D3Table4PGreen->Show();
+		dataTable[12] = !dataTable[12];
 }
 	private: System::Void D3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D3Table4PGreen->Hide();
 		D3Table4P->Show();
+		dataTable[12] = !dataTable[12];
 }
 	private: System::Void E1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E1Table2P->Hide();
 		E1Table2PGreen->Show();
+		dataTable[13] = !dataTable[13];
 }
 	private: System::Void E1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E1Table2PGreen->Hide();
 		E1Table2P->Show();
+		dataTable[13] = !dataTable[13];
 }
 	private: System::Void E2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E2Table2P->Hide();
 		E2Table2PGreen->Show();
+		dataTable[14] = !dataTable[14];
 }
 	private: System::Void E2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E2Table2PGreen->Hide();
 		E2Table2P->Show();
+		dataTable[14] = !dataTable[14];
 }
 	private: System::Void E3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E3Table2P->Hide();
 		E3Table2PGreen->Show();
+		dataTable[15] = !dataTable[15];
 }
 	private: System::Void E3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E3Table2PGreen->Hide();
 		E3Table2P->Show();
+		dataTable[15] = !dataTable[15];
 }
 	private: System::Void F1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F1Table4P->Hide();
 		F1Table4PGreen->Show();
+		dataTable[16] = !dataTable[16];
 }
 	private: System::Void F1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F1Table4PGreen->Hide();
 		F1Table4P->Show();
+		dataTable[16] = !dataTable[16];
 }
 	private: System::Void F2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F2Table4P->Hide();
 		F2Table4PGreen->Show();
+		dataTable[17] = !dataTable[17];
 }
 	private: System::Void F2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F2Table4PGreen->Hide();
 		F2Table4P->Show();
+		dataTable[17] = !dataTable[17];
 }
 	private: System::Void F3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F3Table4P->Hide();
 		F3Table4PGreen->Show();
+		dataTable[18] = !dataTable[18];
 }
 	private: System::Void F3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F3Table4PGreen->Hide();
 		F3Table4P->Show();
+		dataTable[18] = !dataTable[18];
 }
 	private: System::Void G1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G1Table2P->Hide();
 		G1Table2PGreen->Show();
+		dataTable[19] = !dataTable[19];
 }
 	private: System::Void G1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G1Table2PGreen->Hide();
 		G1Table2P->Show();
+		dataTable[19] = !dataTable[19];
 }
 	private: System::Void G2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G2Table2P->Hide();
 		G2Table2PGreen->Show();
+		dataTable[20] = !dataTable[20];
 }
 	private: System::Void G2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G2Table2PGreen->Hide();
 		G2Table2P->Show();
+		dataTable[20] = !dataTable[20];
 }
 	private: System::Void G3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2P->Hide();
 		G3Table2PGreen->Show();
+		dataTable[21] = !dataTable[21];
 }
 	private: System::Void G3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2PGreen->Hide();
 		G3Table2P->Show();
+		dataTable[21] = !dataTable[21];
 }
 	private: System::Void H1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H1Table1P->Hide();
 		H1Table1PGreen->Show();
+		dataTable[22] = !dataTable[22];
 }
 	private: System::Void H1Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H1Table1PGreen->Hide();
 		H1Table1P->Show();
+		dataTable[22] = !dataTable[22];
 }
 	private: System::Void H2Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H2Table1P->Hide();
 		H2Table1PGreen->Show();
+		dataTable[23] = !dataTable[23];
 }
 	private: System::Void H2Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H2Table1PGreen->Hide();
 		H2Table1P->Show();
+		dataTable[23] = !dataTable[23];
 }
 	private: System::Void H3Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H3Table1P->Hide();
 		H3Table1PGreen->Show();
+		dataTable[24] = !dataTable[24];
 }
 	private: System::Void H3Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H3Table1PGreen->Hide();
 		H3Table1P->Show();
+		dataTable[24] = !dataTable[24];
 }
 	private: System::Void H4Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H4Table1P->Hide();
 		H4Table1PGreen->Show();
+		dataTable[25] = !dataTable[25];
 }
 	private: System::Void H4Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H4Table1PGreen->Hide();
 		H4Table1P->Show();
+		dataTable[25] = !dataTable[25];
 }
 	private: System::Void H5Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H5Table1P->Hide();
 		H5Table1PGreen->Show();
+		dataTable[26] = !dataTable[26];
 }
 	private: System::Void H5Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H5Table1PGreen->Hide();
 		H5Table1P->Show();
+		dataTable[26] = !dataTable[26];
 }
 	private: System::Void H6Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H6Table1P->Hide();
 		H6Table1PGreen->Show();
+		dataTable[27] = !dataTable[27];
 }
 	private: System::Void H6Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H6Table1PGreen->Hide();
 		H6Table1P->Show();
+		dataTable[27] = !dataTable[27];
 }
 	private: System::Void H7Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H7Table1P->Hide();
 		H7Table1PGreen->Show();
+		dataTable[28] = !dataTable[28];
 }
 	private: System::Void H7Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H7Table1PGreen->Hide();
 		H7Table1P->Show();
+		dataTable[28] = !dataTable[28];
 }
 
 public: bool switchToMP = false;
 private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
-	switchToMP = true;
-	this->Close();
+	String^ a ="";
+
+	for (int i = 0; i < 29; i++) {
+		a += (dataTable[i] ? "1" : "0");
+	}
+	label1->Text = a;
+	//switchToMP = true;
+	//this->Close();
+}
+private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
