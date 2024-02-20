@@ -133,6 +133,7 @@ private: System::Windows::Forms::PictureBox^ H6Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H6Table1P;
 private: System::Windows::Forms::PictureBox^ H7Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H7Table1P;
+private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -232,6 +233,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H6Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -1068,11 +1070,21 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->H7Table1P->TabStop = false;
 			this->H7Table1P->Click += gcnew System::EventHandler(this, &PakForm::H7Table1P_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(436, 117);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(44, 16);
+			this->label1->TabIndex = 62;
+			this->label1->Text = L"label1";
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
 			this->Controls->Add(this->H6Table1PGreen);
@@ -1202,254 +1214,319 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 			this->PerformLayout();
 
 		}
+
+public:
+	array<bool>^ dataTable;
+	
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
 	private: System::Void PakForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataTable = gcnew array<bool>(29);
 	}
 	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2P->Hide();
 		A1Table2PGreen->Show();
 		A1Table2PGreenCheck = false;
+		dataTable[0] = !dataTable[0];
 	}
 	private: System::Void A1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2PGreen->Hide();
 		A1Table2P->Show();
 		A1Table2PGreenCheck = true;
+		dataTable[0] = !dataTable[0];
 }
 	private: System::Void A2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2P->Hide();
 		A2Table2PGreen->Show();
+		dataTable[1] = !dataTable[1];
 }
 	private: System::Void A2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2PGreen->Hide();
 		A2Table2P->Show();
+		dataTable[1] = !dataTable[1];
 }
 	private: System::Void A3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A3Table2P->Hide();
 		A3Table2PGreen->Show();
+		dataTable[2] = !dataTable[2];
 }
 	private: System::Void A3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A3Table2PGreen->Hide();
 		A3Table2P->Show();
+		dataTable[2] = !dataTable[2];
 }
 	private: System::Void B1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B1Table2P->Hide();
 		B1Table2PGreen->Show();
+		dataTable[3] = !dataTable[3];
 }
 	private: System::Void B1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B1Table2PGreen->Hide();
 		B1Table2P->Show();
+		dataTable[3] = !dataTable[3];
 }
 	private: System::Void B2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B2Table4P->Hide();
 		B2Table4PGreen->Show();
+		dataTable[4] = !dataTable[4];
 }
 	private: System::Void B2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B2Table4PGreen->Hide();
 		B2Table4P->Show();
+		dataTable[4] = !dataTable[4];
 }
 	private: System::Void B3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B3Table4P->Hide();
 		B3Table4PGreen->Show();
+		dataTable[5] = !dataTable[5];
 }
 	private: System::Void B3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B3Table4PGreen->Hide();
 		B3Table4P->Show();
+		dataTable[5] = !dataTable[5];
 }
 	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B4Table4P->Hide();
 		B4Table4PGreen->Show();
+		dataTable[6] = !dataTable[6];
 }
 	private: System::Void B4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		B4Table4PGreen->Hide();
 		B4Table4P->Show();
+		dataTable[6] = !dataTable[6];
 }
 
 	private: System::Void C1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C1Table2P->Hide();
 		C1Table2PGreen->Show();
+		dataTable[7] = !dataTable[7];
 }
 	private: System::Void C1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C1Table2PGreen->Hide();
 		C1Table2P->Show();
+		dataTable[7] = !dataTable[7];
 }
 	private: System::Void C2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C2Table2P->Hide();
 		C2Table2PGreen->Show();
+		dataTable[8] = !dataTable[8];
 }
 	private: System::Void C2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C2Table2PGreen->Hide();
 		C2Table2P->Show();
+		dataTable[8] = !dataTable[8];
 }
 	private: System::Void C3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C3Table2P->Hide();
 		C3Table2PGreen->Show();
+		dataTable[9] = !dataTable[9];
 }
 	private: System::Void C3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		C3Table2PGreen->Hide();
 		C3Table2P->Show();
+		dataTable[9] = !dataTable[9];
 }
 	private: System::Void D1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D1Table4P->Hide();
 		D1Table4PGreen->Show();
+		dataTable[10] = !dataTable[10];
 }
 	private: System::Void D1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D1Table4PGreen->Hide();
 		D1Table4P->Show();
+		dataTable[10] = !dataTable[10];
 }
 	private: System::Void D2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D2Table4P->Hide();
 		D2Table4PGreen->Show();
+		dataTable[11] = !dataTable[11];
 }
 	private: System::Void D2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D2Table4PGreen->Hide();
 		D2Table4P->Show();
+		dataTable[11] = !dataTable[11];
 }
 	private: System::Void D3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D3Table4P->Hide();
 		D3Table4PGreen->Show();
+		dataTable[12] = !dataTable[12];
 }
 	private: System::Void D3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		D3Table4PGreen->Hide();
 		D3Table4P->Show();
+		dataTable[12] = !dataTable[12];
 }
 	private: System::Void E1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E1Table2P->Hide();
 		E1Table2PGreen->Show();
+		dataTable[13] = !dataTable[13];
 }
 	private: System::Void E1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E1Table2PGreen->Hide();
 		E1Table2P->Show();
+		dataTable[13] = !dataTable[13];
 }
 	private: System::Void E2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E2Table2P->Hide();
 		E2Table2PGreen->Show();
+		dataTable[14] = !dataTable[14];
 }
 	private: System::Void E2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E2Table2PGreen->Hide();
 		E2Table2P->Show();
+		dataTable[14] = !dataTable[14];
 }
 	private: System::Void E3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		E3Table2P->Hide();
 		E3Table2PGreen->Show();
+		dataTable[15] = !dataTable[15];
 }
 	private: System::Void E3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		E3Table2PGreen->Hide();
 		E3Table2P->Show();
+		dataTable[15] = !dataTable[15];
 }
 	private: System::Void F1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F1Table4P->Hide();
 		F1Table4PGreen->Show();
+		dataTable[16] = !dataTable[16];
 }
 	private: System::Void F1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F1Table4PGreen->Hide();
 		F1Table4P->Show();
+		dataTable[16] = !dataTable[16];
 }
 	private: System::Void F2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F2Table4P->Hide();
 		F2Table4PGreen->Show();
+		dataTable[17] = !dataTable[17];
 }
 	private: System::Void F2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F2Table4PGreen->Hide();
 		F2Table4P->Show();
+		dataTable[17] = !dataTable[17];
 }
 	private: System::Void F3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		F3Table4P->Hide();
 		F3Table4PGreen->Show();
+		dataTable[18] = !dataTable[18];
 }
 	private: System::Void F3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		F3Table4PGreen->Hide();
 		F3Table4P->Show();
+		dataTable[18] = !dataTable[18];
 }
 	private: System::Void G1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G1Table2P->Hide();
 		G1Table2PGreen->Show();
+		dataTable[19] = !dataTable[19];
 }
 	private: System::Void G1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G1Table2PGreen->Hide();
 		G1Table2P->Show();
+		dataTable[19] = !dataTable[19];
 }
 	private: System::Void G2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G2Table2P->Hide();
 		G2Table2PGreen->Show();
+		dataTable[20] = !dataTable[20];
 }
 	private: System::Void G2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G2Table2PGreen->Hide();
 		G2Table2P->Show();
+		dataTable[20] = !dataTable[20];
 }
 	private: System::Void G3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2P->Hide();
 		G3Table2PGreen->Show();
+		dataTable[21] = !dataTable[21];
 }
 	private: System::Void G3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		G3Table2PGreen->Hide();
 		G3Table2P->Show();
+		dataTable[21] = !dataTable[21];
 }
 	private: System::Void H1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H1Table1P->Hide();
 		H1Table1PGreen->Show();
+		dataTable[22] = !dataTable[22];
 }
 	private: System::Void H1Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H1Table1PGreen->Hide();
 		H1Table1P->Show();
+		dataTable[22] = !dataTable[22];
 }
 	private: System::Void H2Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H2Table1P->Hide();
 		H2Table1PGreen->Show();
+		dataTable[23] = !dataTable[23];
 }
 	private: System::Void H2Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H2Table1PGreen->Hide();
 		H2Table1P->Show();
+		dataTable[23] = !dataTable[23];
 }
 	private: System::Void H3Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H3Table1P->Hide();
 		H3Table1PGreen->Show();
+		dataTable[24] = !dataTable[24];
 }
 	private: System::Void H3Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H3Table1PGreen->Hide();
 		H3Table1P->Show();
+		dataTable[24] = !dataTable[24];
 }
 	private: System::Void H4Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H4Table1P->Hide();
 		H4Table1PGreen->Show();
+		dataTable[25] = !dataTable[25];
 }
 	private: System::Void H4Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H4Table1PGreen->Hide();
 		H4Table1P->Show();
+		dataTable[25] = !dataTable[25];
 }
 	private: System::Void H5Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H5Table1P->Hide();
 		H5Table1PGreen->Show();
+		dataTable[26] = !dataTable[26];
 }
 	private: System::Void H5Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H5Table1PGreen->Hide();
 		H5Table1P->Show();
+		dataTable[26] = !dataTable[26];
 }
 	private: System::Void H6Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H6Table1P->Hide();
 		H6Table1PGreen->Show();
+		dataTable[27] = !dataTable[27];
 }
 	private: System::Void H6Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H6Table1PGreen->Hide();
 		H6Table1P->Show();
+		dataTable[27] = !dataTable[27];
 }
 	private: System::Void H7Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
 		H7Table1P->Hide();
 		H7Table1PGreen->Show();
+		dataTable[28] = !dataTable[28];
 }
 	private: System::Void H7Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		H7Table1PGreen->Hide();
 		H7Table1P->Show();
+		dataTable[28] = !dataTable[28];
 }
 
 public: bool switchToMP = false;
 private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (A1Table2PGreenCheck = false) {
-		A1Table2PGreen->Hide();
+	String^ a ="";
 
+	for (int i = 0; i < 29; i++) {
+		a += (dataTable[i] ? "1" : "0");
 	}
-	switchToMP = true;
-	this->Close();
+	label1->Text = a;
+	//switchToMP = true;
+	//this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
