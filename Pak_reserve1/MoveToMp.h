@@ -34,6 +34,8 @@ namespace Pakreserve1 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ MoveToPakForm;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +50,24 @@ namespace Pakreserve1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->MoveToPakForm = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// MoveToPakForm
+			// 
+			this->MoveToPakForm->Location = System::Drawing::Point(457, 242);
+			this->MoveToPakForm->Name = L"MoveToPakForm";
+			this->MoveToPakForm->Size = System::Drawing::Size(555, 208);
+			this->MoveToPakForm->TabIndex = 0;
+			this->MoveToPakForm->Text = L"button1";
+			this->MoveToPakForm->UseVisualStyleBackColor = true;
+			this->MoveToPakForm->Click += gcnew System::EventHandler(this, &MoveToMp::MoveToPakForm_Click);
 			// 
 			// MoveToMp
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->MoveToPakForm);
 			this->Name = L"MoveToMp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MoveToMp";
@@ -63,6 +77,11 @@ namespace Pakreserve1 {
 		}
 #pragma endregion
 	private: System::Void MoveToMp_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	public: bool switchToPakForm = false;
+	private: System::Void MoveToPakForm_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchToPakForm = true;
+		this->Close();
 	}
 	};
 }

@@ -155,6 +155,7 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 
 
 
+
 	protected:
 
 	private:
@@ -1202,15 +1203,18 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 
 		}
 #pragma endregion
+		bool A1Table2PGreenCheck = true;
 	private: System::Void PakForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2P->Hide();
 		A1Table2PGreen->Show();
+		A1Table2PGreenCheck = false;
 	}
 	private: System::Void A1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2PGreen->Hide();
 		A1Table2P->Show();
+		A1Table2PGreenCheck = true;
 }
 	private: System::Void A2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2P->Hide();
@@ -1440,8 +1444,14 @@ private: System::Windows::Forms::PictureBox^ H7Table1P;
 
 public: bool switchToMP = false;
 private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (A1Table2PGreenCheck = false) {
+		A1Table2PGreen->Hide();
+
+	}
 	switchToMP = true;
 	this->Close();
+}
+private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

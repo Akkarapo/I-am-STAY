@@ -44,6 +44,10 @@ void main(array<String^>^ args) {
             movetoMpForm.ShowDialog();
             form.switchToMP = false;
         }
+        else if (movetoMpForm.switchToPakForm) {
+            form.ShowDialog();
+            movetoMpForm.switchToPakForm = false;
+        }
         else {
             break;
         }
