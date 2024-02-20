@@ -484,7 +484,9 @@ private: System::Void Login_KeyDown(System::Object^ sender, System::Windows::For
 	}
 
 }
+
 public: bool switchToForgetPwd = false;
+
 private: System::Void label4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToForgetPwd = true;
 	this->Close();
