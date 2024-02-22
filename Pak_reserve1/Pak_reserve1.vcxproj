@@ -131,7 +131,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="MyTicketUserControl.cpp" />
+    <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="PakForm.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
@@ -146,7 +146,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyTicketUserControl.h">
+    <ClInclude Include="MyUserControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="PakForm.h">
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyTicketUserControl.resx">
-      <DependentUpon>MyTicketUserControl.h</DependentUpon>
+    <EmbeddedResource Include="MyUserControl.resx">
+      <DependentUpon>MyUserControl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PakForm.resx">
       <DependentUpon>PakForm.h</DependentUpon>

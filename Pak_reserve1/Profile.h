@@ -3,7 +3,6 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "Profile.h"
-#include "MyTicketUserControl.h"
 
 namespace Pakreserve1 {
 
@@ -47,6 +46,9 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ CustomerName;
 	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
 	private: System::Windows::Forms::Label^ CustomerMail;
+
+
+
 
 
 
@@ -167,6 +169,10 @@ namespace Pakreserve1 {
 		this->Close();
 	}
 private: System::Void Ticket1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void userControl1_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void userControl1_Load_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

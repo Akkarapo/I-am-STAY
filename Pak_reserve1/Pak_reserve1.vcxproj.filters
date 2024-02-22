@@ -33,7 +33,7 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyTicketUserControl.cpp">
+    <ClCompile Include="MyUserControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +56,7 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyTicketUserControl.h">
+    <ClInclude Include="MyUserControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

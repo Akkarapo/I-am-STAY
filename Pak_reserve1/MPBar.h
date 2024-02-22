@@ -44,26 +44,34 @@ namespace Pakreserve1 {
 
 	protected:
 
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Label^ BarName;
-	private: System::Windows::Forms::Label^ ReservedBy;
-	private: System::Windows::Forms::Label^ Table;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::Label^ CustomerName;
-	private: System::Windows::Forms::Label^ CustomerTabel;
 
-	private: System::Windows::Forms::Label^ TicketCustomerTable;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ Date;
+	private: System::Windows::Forms::Label^ Time;
+	private: System::Windows::Forms::Label^ Name;
+
+	private:
 
 
-	private: System::Windows::Forms::Label^ TicketCustomerName;
-	private: System::Windows::Forms::TextBox^ TicketCaution;
 
 
-	private: System::Windows::Forms::Label^ TicketTable;
 
-	private: System::Windows::Forms::Label^ TicketReservedBy;
-	private: System::Windows::Forms::PictureBox^ pictureBoxBarcode;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,205 +99,90 @@ namespace Pakreserve1 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MPBar::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->BarName = (gcnew System::Windows::Forms::Label());
-			this->ReservedBy = (gcnew System::Windows::Forms::Label());
-			this->Table = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->CustomerName = (gcnew System::Windows::Forms::Label());
-			this->CustomerTabel = (gcnew System::Windows::Forms::Label());
-			this->TicketCustomerTable = (gcnew System::Windows::Forms::Label());
-			this->TicketCustomerName = (gcnew System::Windows::Forms::Label());
-			this->TicketCaution = (gcnew System::Windows::Forms::TextBox());
-			this->TicketTable = (gcnew System::Windows::Forms::Label());
-			this->TicketReservedBy = (gcnew System::Windows::Forms::Label());
-			this->pictureBoxBarcode = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Time = (gcnew System::Windows::Forms::Label());
+			this->Date = (gcnew System::Windows::Forms::Label());
+			this->Name = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxBarcode))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->pictureBox1->BackColor = System::Drawing::Color::Black;
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1280, 64);
+			this->pictureBox1->Size = System::Drawing::Size(1280, 56);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->pictureBox3->Location = System::Drawing::Point(788, -41);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(480, 720);
-			this->pictureBox3->TabIndex = 2;
-			this->pictureBox3->TabStop = false;
-			// 
-			// BarName
-			// 
-			this->BarName->AutoSize = true;
-			this->BarName->BackColor = System::Drawing::Color::Transparent;
-			this->BarName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->BarName->Location = System::Drawing::Point(275, 304);
-			this->BarName->Name = L"BarName";
-			this->BarName->Size = System::Drawing::Size(139, 36);
-			this->BarName->TabIndex = 3;
-			this->BarName->Text = L"BarName";
-			// 
-			// ReservedBy
-			// 
-			this->ReservedBy->AutoSize = true;
-			this->ReservedBy->BackColor = System::Drawing::Color::Transparent;
-			this->ReservedBy->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ReservedBy->Location = System::Drawing::Point(120, 371);
-			this->ReservedBy->Name = L"ReservedBy";
-			this->ReservedBy->Size = System::Drawing::Size(147, 30);
-			this->ReservedBy->TabIndex = 4;
-			this->ReservedBy->Text = L"Reserved By";
-			// 
-			// Table
-			// 
-			this->Table->AutoSize = true;
-			this->Table->BackColor = System::Drawing::Color::Transparent;
-			this->Table->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table->Location = System::Drawing::Point(120, 431);
-			this->Table->Name = L"Table";
-			this->Table->Size = System::Drawing::Size(73, 30);
-			this->Table->TabIndex = 5;
-			this->Table->Text = L"Table";
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::ControlLight;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Enabled = false;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(123, 524);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(530, 76);
-			this->textBox1->TabIndex = 6;
-			this->textBox1->Text = L"Please check in within the next 3 hours, starting from 6 p.m. Otherwise, your res"
-				L"ervation will be canceled.";
-			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->pictureBox2->BackColor = System::Drawing::Color::Black;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(1205, 11);
+			this->pictureBox2->Location = System::Drawing::Point(1200, 6);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(35, 41);
+			this->pictureBox2->Size = System::Drawing::Size(45, 45);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 7;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &MPBar::pictureBox2_Click_1);
 			// 
-			// CustomerName
+			// panel1
 			// 
-			this->CustomerName->AutoSize = true;
-			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel1->Controls->Add(this->Name);
+			this->panel1->Controls->Add(this->Time);
+			this->panel1->Controls->Add(this->Date);
+			this->panel1->Location = System::Drawing::Point(110, 109);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1032, 488);
+			this->panel1->TabIndex = 9;
+			// 
+			// Time
+			// 
+			this->Time->AutoSize = true;
+			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CustomerName->Location = System::Drawing::Point(305, 371);
-			this->CustomerName->Name = L"CustomerName";
-			this->CustomerName->Size = System::Drawing::Size(188, 30);
-			this->CustomerName->TabIndex = 8;
-			this->CustomerName->Text = L"CustomerName";
+			this->Time->ForeColor = System::Drawing::Color::White;
+			this->Time->Location = System::Drawing::Point(409, 345);
+			this->Time->Name = L"Time";
+			this->Time->Size = System::Drawing::Size(94, 19);
+			this->Time->TabIndex = 1;
+			this->Time->Text = L"01.00 A.M.";
+			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// CustomerTabel
+			// Date
 			// 
-			this->CustomerTabel->AutoSize = true;
-			this->CustomerTabel->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerTabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Date->AutoSize = true;
+			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CustomerTabel->Location = System::Drawing::Point(233, 431);
-			this->CustomerTabel->Name = L"CustomerTabel";
-			this->CustomerTabel->Size = System::Drawing::Size(181, 30);
-			this->CustomerTabel->TabIndex = 9;
-			this->CustomerTabel->Text = L"CustomerTabel";
+			this->Date->ForeColor = System::Drawing::Color::White;
+			this->Date->Location = System::Drawing::Point(188, 345);
+			this->Date->Name = L"Date";
+			this->Date->Size = System::Drawing::Size(100, 19);
+			this->Date->TabIndex = 0;
+			this->Date->Text = L"22 Feb 2024";
+			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// TicketCustomerTable
+			// Name
 			// 
-			this->TicketCustomerTable->AutoSize = true;
-			this->TicketCustomerTable->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketCustomerTable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->TicketCustomerTable->Location = System::Drawing::Point(913, 371);
-			this->TicketCustomerTable->Name = L"TicketCustomerTable";
-			this->TicketCustomerTable->Size = System::Drawing::Size(181, 30);
-			this->TicketCustomerTable->TabIndex = 15;
-			this->TicketCustomerTable->Text = L"CustomerTable";
-			this->TicketCustomerTable->Click += gcnew System::EventHandler(this, &MPBar::TicketCustomerTable_Click);
-			// 
-			// TicketCustomerName
-			// 
-			this->TicketCustomerName->AutoSize = true;
-			this->TicketCustomerName->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketCustomerName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->TicketCustomerName->Location = System::Drawing::Point(998, 310);
-			this->TicketCustomerName->Name = L"TicketCustomerName";
-			this->TicketCustomerName->Size = System::Drawing::Size(188, 30);
-			this->TicketCustomerName->TabIndex = 14;
-			this->TicketCustomerName->Text = L"CustomerName";
-			// 
-			// TicketCaution
-			// 
-			this->TicketCaution->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketCaution->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TicketCaution->Enabled = false;
-			this->TicketCaution->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Name->AutoSize = true;
+			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TicketCaution->Location = System::Drawing::Point(816, 442);
-			this->TicketCaution->Multiline = true;
-			this->TicketCaution->Name = L"TicketCaution";
-			this->TicketCaution->ReadOnly = true;
-			this->TicketCaution->Size = System::Drawing::Size(413, 76);
-			this->TicketCaution->TabIndex = 13;
-			this->TicketCaution->Text = L"Please check in within the next 3 hours, starting from 6 p.m. Otherwise, your res"
-				L"ervation will be canceled.";
-			// 
-			// TicketTable
-			// 
-			this->TicketTable->AutoSize = true;
-			this->TicketTable->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketTable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->TicketTable->Location = System::Drawing::Point(811, 371);
-			this->TicketTable->Name = L"TicketTable";
-			this->TicketTable->Size = System::Drawing::Size(73, 30);
-			this->TicketTable->TabIndex = 12;
-			this->TicketTable->Text = L"Table";
-			// 
-			// TicketReservedBy
-			// 
-			this->TicketReservedBy->AutoSize = true;
-			this->TicketReservedBy->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketReservedBy->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->TicketReservedBy->Location = System::Drawing::Point(811, 310);
-			this->TicketReservedBy->Name = L"TicketReservedBy";
-			this->TicketReservedBy->Size = System::Drawing::Size(147, 30);
-			this->TicketReservedBy->TabIndex = 11;
-			this->TicketReservedBy->Text = L"Reserved By";
-			// 
-			// pictureBoxBarcode
-			// 
-			this->pictureBoxBarcode->Location = System::Drawing::Point(834, 569);
-			this->pictureBoxBarcode->Name = L"pictureBoxBarcode";
-			this->pictureBoxBarcode->Size = System::Drawing::Size(369, 84);
-			this->pictureBoxBarcode->TabIndex = 16;
-			this->pictureBoxBarcode->TabStop = false;
+			this->Name->ForeColor = System::Drawing::Color::White;
+			this->Name->Location = System::Drawing::Point(620, 345);
+			this->Name->Name = L"Name";
+			this->Name->Size = System::Drawing::Size(84, 19);
+			this->Name->TabIndex = 2;
+			this->Name->Text = L"CxCxNuT";
+			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MPBar
 			// 
@@ -297,32 +190,19 @@ namespace Pakreserve1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Controls->Add(this->pictureBoxBarcode);
-			this->Controls->Add(this->TicketCustomerTable);
-			this->Controls->Add(this->TicketCustomerName);
-			this->Controls->Add(this->TicketCaution);
-			this->Controls->Add(this->TicketTable);
-			this->Controls->Add(this->TicketReservedBy);
-			this->Controls->Add(this->CustomerTabel);
-			this->Controls->Add(this->CustomerName);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->Table);
-			this->Controls->Add(this->ReservedBy);
-			this->Controls->Add(this->BarName);
 			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MPBar";
+			//this->Name = L"MPBar";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MPBar";
 			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxBarcode))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 
@@ -343,7 +223,8 @@ namespace Pakreserve1 {
 private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
-	
+	this->Date->Text = DateTime::Now.ToString("dd MMM yyyy");
+	this->Time->Text = DateTime::Now.ToString("hh:mm tt");
 }
 };
 }
