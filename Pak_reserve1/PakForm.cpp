@@ -13,8 +13,7 @@ void main(array<String^>^ args) {
     Pakreserve1::Login form2;
     Pakreserve1::MPBar mpform;
     Pakreserve1::Profile profileform;
-    ///Application::Run(% mpform);
-
+    //Application::Run(% mainf);
     profileform.switchToBook = true;
 
     while (true) {

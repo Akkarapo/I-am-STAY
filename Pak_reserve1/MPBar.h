@@ -3,6 +3,8 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "Profile.h"
+#include <ctime>
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -11,7 +13,8 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Timers;
+	
 	/// <summary>
 	/// Summary for MPBar
 	/// </summary>
@@ -38,7 +41,7 @@ namespace Pakreserve1 {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::PictureBox^ BarLogo;
+
 	protected:
 
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -49,7 +52,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ CustomerName;
 	private: System::Windows::Forms::Label^ CustomerTabel;
-	private: System::Windows::Forms::PictureBox^ TicketBarLogo;
+
 	private: System::Windows::Forms::Label^ TicketCustomerTable;
 
 
@@ -60,7 +63,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ TicketTable;
 
 	private: System::Windows::Forms::Label^ TicketReservedBy;
-	private: System::Windows::Forms::PictureBox^ TicketBarcode;
+	private: System::Windows::Forms::PictureBox^ pictureBoxBarcode;
+
+
+
+
+
+
 
 
 
@@ -82,7 +91,6 @@ namespace Pakreserve1 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MPBar::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->BarLogo = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->BarName = (gcnew System::Windows::Forms::Label());
 			this->ReservedBy = (gcnew System::Windows::Forms::Label());
@@ -91,19 +99,16 @@ namespace Pakreserve1 {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerName = (gcnew System::Windows::Forms::Label());
 			this->CustomerTabel = (gcnew System::Windows::Forms::Label());
-			this->TicketBarLogo = (gcnew System::Windows::Forms::PictureBox());
 			this->TicketCustomerTable = (gcnew System::Windows::Forms::Label());
 			this->TicketCustomerName = (gcnew System::Windows::Forms::Label());
 			this->TicketCaution = (gcnew System::Windows::Forms::TextBox());
 			this->TicketTable = (gcnew System::Windows::Forms::Label());
 			this->TicketReservedBy = (gcnew System::Windows::Forms::Label());
-			this->TicketBarcode = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxBarcode = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarLogo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TicketBarLogo))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TicketBarcode))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxBarcode))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -115,17 +120,6 @@ namespace Pakreserve1 {
 			this->pictureBox1->Size = System::Drawing::Size(1280, 64);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			// 
-			// BarLogo
-			// 
-			this->BarLogo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BarLogo.Image")));
-			this->BarLogo->Location = System::Drawing::Point(286, 159);
-			this->BarLogo->Name = L"BarLogo";
-			this->BarLogo->Size = System::Drawing::Size(128, 128);
-			this->BarLogo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->BarLogo->TabIndex = 1;
-			this->BarLogo->TabStop = false;
-			this->BarLogo->Click += gcnew System::EventHandler(this, &MPBar::pictureBox2_Click);
 			// 
 			// pictureBox3
 			// 
@@ -139,6 +133,7 @@ namespace Pakreserve1 {
 			// BarName
 			// 
 			this->BarName->AutoSize = true;
+			this->BarName->BackColor = System::Drawing::Color::Transparent;
 			this->BarName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarName->Location = System::Drawing::Point(275, 304);
@@ -150,6 +145,7 @@ namespace Pakreserve1 {
 			// ReservedBy
 			// 
 			this->ReservedBy->AutoSize = true;
+			this->ReservedBy->BackColor = System::Drawing::Color::Transparent;
 			this->ReservedBy->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ReservedBy->Location = System::Drawing::Point(120, 371);
@@ -161,6 +157,7 @@ namespace Pakreserve1 {
 			// Table
 			// 
 			this->Table->AutoSize = true;
+			this->Table->BackColor = System::Drawing::Color::Transparent;
 			this->Table->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table->Location = System::Drawing::Point(120, 431);
@@ -200,6 +197,7 @@ namespace Pakreserve1 {
 			// CustomerName
 			// 
 			this->CustomerName->AutoSize = true;
+			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
 			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CustomerName->Location = System::Drawing::Point(305, 371);
@@ -211,6 +209,7 @@ namespace Pakreserve1 {
 			// CustomerTabel
 			// 
 			this->CustomerTabel->AutoSize = true;
+			this->CustomerTabel->BackColor = System::Drawing::Color::Transparent;
 			this->CustomerTabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CustomerTabel->Location = System::Drawing::Point(233, 431);
@@ -218,17 +217,6 @@ namespace Pakreserve1 {
 			this->CustomerTabel->Size = System::Drawing::Size(181, 30);
 			this->CustomerTabel->TabIndex = 9;
 			this->CustomerTabel->Text = L"CustomerTabel";
-			// 
-			// TicketBarLogo
-			// 
-			this->TicketBarLogo->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->TicketBarLogo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketBarLogo.Image")));
-			this->TicketBarLogo->Location = System::Drawing::Point(937, 97);
-			this->TicketBarLogo->Name = L"TicketBarLogo";
-			this->TicketBarLogo->Size = System::Drawing::Size(200, 200);
-			this->TicketBarLogo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->TicketBarLogo->TabIndex = 10;
-			this->TicketBarLogo->TabStop = false;
 			// 
 			// TicketCustomerTable
 			// 
@@ -241,6 +229,7 @@ namespace Pakreserve1 {
 			this->TicketCustomerTable->Size = System::Drawing::Size(181, 30);
 			this->TicketCustomerTable->TabIndex = 15;
 			this->TicketCustomerTable->Text = L"CustomerTable";
+			this->TicketCustomerTable->Click += gcnew System::EventHandler(this, &MPBar::TicketCustomerTable_Click);
 			// 
 			// TicketCustomerName
 			// 
@@ -261,11 +250,11 @@ namespace Pakreserve1 {
 			this->TicketCaution->Enabled = false;
 			this->TicketCaution->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TicketCaution->Location = System::Drawing::Point(647, 442);
+			this->TicketCaution->Location = System::Drawing::Point(816, 442);
 			this->TicketCaution->Multiline = true;
 			this->TicketCaution->Name = L"TicketCaution";
 			this->TicketCaution->ReadOnly = true;
-			this->TicketCaution->Size = System::Drawing::Size(530, 76);
+			this->TicketCaution->Size = System::Drawing::Size(413, 76);
 			this->TicketCaution->TabIndex = 13;
 			this->TicketCaution->Text = L"Please check in within the next 3 hours, starting from 6 p.m. Otherwise, your res"
 				L"ervation will be canceled.";
@@ -294,13 +283,13 @@ namespace Pakreserve1 {
 			this->TicketReservedBy->TabIndex = 11;
 			this->TicketReservedBy->Text = L"Reserved By";
 			// 
-			// TicketBarcode
+			// pictureBoxBarcode
 			// 
-			this->TicketBarcode->Location = System::Drawing::Point(834, 569);
-			this->TicketBarcode->Name = L"TicketBarcode";
-			this->TicketBarcode->Size = System::Drawing::Size(369, 84);
-			this->TicketBarcode->TabIndex = 16;
-			this->TicketBarcode->TabStop = false;
+			this->pictureBoxBarcode->Location = System::Drawing::Point(834, 569);
+			this->pictureBoxBarcode->Name = L"pictureBoxBarcode";
+			this->pictureBoxBarcode->Size = System::Drawing::Size(369, 84);
+			this->pictureBoxBarcode->TabIndex = 16;
+			this->pictureBoxBarcode->TabStop = false;
 			// 
 			// MPBar
 			// 
@@ -308,13 +297,12 @@ namespace Pakreserve1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Controls->Add(this->TicketBarcode);
+			this->Controls->Add(this->pictureBoxBarcode);
 			this->Controls->Add(this->TicketCustomerTable);
 			this->Controls->Add(this->TicketCustomerName);
 			this->Controls->Add(this->TicketCaution);
 			this->Controls->Add(this->TicketTable);
 			this->Controls->Add(this->TicketReservedBy);
-			this->Controls->Add(this->TicketBarLogo);
 			this->Controls->Add(this->CustomerTabel);
 			this->Controls->Add(this->CustomerName);
 			this->Controls->Add(this->pictureBox2);
@@ -322,21 +310,22 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->Table);
 			this->Controls->Add(this->ReservedBy);
 			this->Controls->Add(this->BarName);
-			this->Controls->Add(this->BarLogo);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pictureBox3);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MPBar";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MPBar";
+			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarLogo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TicketBarLogo))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TicketBarcode))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxBarcode))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
+
 #pragma endregion
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -348,5 +337,13 @@ namespace Pakreserve1 {
 		this->Close();
 
 	}
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
+	
+}
+};
 }
