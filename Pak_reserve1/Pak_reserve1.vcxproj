@@ -117,6 +117,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -129,15 +131,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
+    <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
-    <ClCompile Include="PakForm.cpp" />
     <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="NepjuneCalender1.cpp" />
+    <ClCompile Include="PakForm.cpp" />
+    <ClCompile Include="partnerRegist.cpp" />
+    <ClCompile Include="regist.cpp" />
+    <ClCompile Include="sendMail.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MoveToMp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MPBar.h">
@@ -149,19 +159,33 @@
     <ClInclude Include="MyUserControl.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="Profile.h">
+    <ClInclude Include="NepjuneCalender1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PakForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Profile.h">
+    <ClInclude Include="partnerRegist.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="regist.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="sendMail.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ToeyMenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveToMp.resx">
+      <DependentUpon>MoveToMp.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPBar.resx">
       <DependentUpon>MPBar.h</DependentUpon>
@@ -171,12 +195,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl.resx">
       <DependentUpon>MyUserControl.h</DependentUpon>
+    <EmbeddedResource Include="NepjuneCalender1.resx">
+      <DependentUpon>NepjuneCalender1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PakForm.resx">
       <DependentUpon>PakForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>
+    <EmbeddedResource Include="partnerRegist.resx">
+      <DependentUpon>partnerRegist.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regist.resx">
+      <DependentUpon>regist.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendMail.resx">
+      <DependentUpon>sendMail.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToeyMenu.resx">
       <DependentUpon>ToeyMenu.h</DependentUpon>
