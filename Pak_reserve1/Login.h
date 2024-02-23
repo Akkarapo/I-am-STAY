@@ -184,7 +184,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(936, 75);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(111, 38);
+			this->label8->Size = System::Drawing::Size(112, 37);
 			this->label8->TabIndex = 10;
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -204,181 +204,16 @@ namespace Pakreserve1 {
 			// 
 			// signUPtext
 			// 
-			this->signUPtext->AutoSize = true;
-			this->signUPtext->BackColor = System::Drawing::Color::Transparent;
-			this->signUPtext->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10));
-			this->signUPtext->Location = System::Drawing::Point(1491, 401);
-			this->signUPtext->Name = L"signUPtext";
-			this->signUPtext->Size = System::Drawing::Size(70, 23);
-			this->signUPtext->TabIndex = 15;
-			this->signUPtext->Text = L"Sign Up";
-			this->signUPtext->Click += gcnew System::EventHandler(this, &Login::label4_Click);
-			// 
-			// registLable
-			// 
-			this->registLable->AutoSize = true;
-			this->registLable->BackColor = System::Drawing::Color::Transparent;
-			this->registLable->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->registLable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->registLable->Location = System::Drawing::Point(703, 529);
-			this->registLable->Name = L"registLable";
-			this->registLable->Size = System::Drawing::Size(83, 27);
-			this->registLable->TabIndex = 16;
-			this->registLable->Text = L"Sign Up";
-			this->registLable->Click += gcnew System::EventHandler(this, &Login::registLable_Click);
-			// 
-			// btnExit
-			// 
-			this->btnExit->Location = System::Drawing::Point(0, 0);
-			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(75, 23);
-			this->btnExit->TabIndex = 0;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(0, 0);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 0;
-			// 
-			// textBox1
-			// 
-			this->textBox1->AllowDrop = true;
-			this->textBox1->BackColor = System::Drawing::Color::White;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->textBox1->Location = System::Drawing::Point(745, 394);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 36);
-			this->textBox1->TabIndex = 18;
-			this->textBox1->UseSystemPasswordChar = true;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
-			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Login::textBox1_KeyDown);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->label4->Location = System::Drawing::Point(1089, 529);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(161, 27);
-			this->label4->TabIndex = 20;
-			this->label4->Text = L"Forget Password";
-			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click_1);
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->Location = System::Drawing::Point(741, 460);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(430, 48);
-			this->pictureBox2->TabIndex = 21;
-			this->pictureBox2->TabStop = false;
-			this->pictureBox2->Click += gcnew System::EventHandler(this, &Login::pictureBox2_Click_1);
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1244, 9);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(24, 28);
-			this->label5->TabIndex = 22;
-			this->label5->Text = L"X";
-			this->label5->Click += gcnew System::EventHandler(this, &Login::label5_Click);
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Location = System::Drawing::Point(971, 47);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(41, 25);
-			this->panel2->TabIndex = 23;
-			// 
-			// panel3
-			// 
-			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->Controls->Add(this->label6);
-			this->panel3->Controls->Add(this->label7);
-			this->panel3->Controls->Add(this->label9);
-			this->panel3->Controls->Add(this->label10);
-			this->panel3->Controls->Add(this->label11);
-			this->panel3->Location = System::Drawing::Point(0, 0);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(640, 720);
-			this->panel3->TabIndex = 24;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
-			this->label6->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label6->Location = System::Drawing::Point(23, 624);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(416, 23);
-			this->label6->TabIndex = 4;
-			this->label6->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->label7->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label7->Location = System::Drawing::Point(22, 19);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(135, 28);
-			this->label7->TabIndex = 0;
-			this->label7->Text = L"I stay you stay";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
-			this->label9->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label9->Location = System::Drawing::Point(18, 570);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(213, 54);
-			this->label9->TabIndex = 3;
-			this->label9->Text = L"Experience";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
-			this->label10->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label10->Location = System::Drawing::Point(18, 462);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(164, 54);
-			this->label10->TabIndex = 1;
-			this->label10->Text = L"Simplify";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
-			this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label11->Location = System::Drawing::Point(18, 516);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(317, 54);
-			this->label11->TabIndex = 2;
-			this->label11->Text = L"Your Reservation";
+			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button1->Location = System::Drawing::Point(741, 460);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(438, 56);
+			this->button1->TabIndex = 14;
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Login::button1_Click_1);
 			// 
 			// Login
 			// 
@@ -551,6 +386,8 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

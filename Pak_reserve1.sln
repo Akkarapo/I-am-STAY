@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pak_reserve1", "Pak_reserve1\Pak_reserve1.vcxproj", "{1CEFA87E-4123-4AAB-8C5E-D4C7761AC95A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicketControl", "TicketControl\TicketControl.vcxproj", "{47FF16DC-6BD6-44C7-9944-8E6271C699B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{1CEFA87E-4123-4AAB-8C5E-D4C7761AC95A}.Release|x64.Build.0 = Release|x64
 		{1CEFA87E-4123-4AAB-8C5E-D4C7761AC95A}.Release|x86.ActiveCfg = Release|Win32
 		{1CEFA87E-4123-4AAB-8C5E-D4C7761AC95A}.Release|x86.Build.0 = Release|Win32
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Debug|x64.ActiveCfg = Debug|x64
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Debug|x64.Build.0 = Debug|x64
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Debug|x86.ActiveCfg = Debug|Win32
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Debug|x86.Build.0 = Debug|Win32
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Release|x64.ActiveCfg = Release|x64
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Release|x64.Build.0 = Release|x64
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Release|x86.ActiveCfg = Release|Win32
+		{47FF16DC-6BD6-44C7-9944-8E6271C699B7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
