@@ -46,6 +46,9 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ CustomerName;
 	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
 	private: System::Windows::Forms::Label^ CustomerMail;
+	private: System::Windows::Forms::Panel^ panel1;
+
+
 
 
 
@@ -73,9 +76,11 @@ namespace Pakreserve1 {
 			this->CustomerName = (gcnew System::Windows::Forms::Label());
 			this->CustomerPhoto = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerMail = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox2
@@ -104,11 +109,12 @@ namespace Pakreserve1 {
 			// 
 			this->CustomerName->AutoSize = true;
 			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CustomerName->Location = System::Drawing::Point(226, 142);
+			this->CustomerName->ForeColor = System::Drawing::Color::White;
+			this->CustomerName->Location = System::Drawing::Point(167, 70);
 			this->CustomerName->Name = L"CustomerName";
-			this->CustomerName->Size = System::Drawing::Size(188, 30);
+			this->CustomerName->Size = System::Drawing::Size(154, 24);
 			this->CustomerName->TabIndex = 14;
 			this->CustomerName->Text = L"CustomerName";
 			// 
@@ -116,9 +122,9 @@ namespace Pakreserve1 {
 			// 
 			this->CustomerPhoto->BackColor = System::Drawing::Color::Transparent;
 			this->CustomerPhoto->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CustomerPhoto.Image")));
-			this->CustomerPhoto->Location = System::Drawing::Point(57, 119);
+			this->CustomerPhoto->Location = System::Drawing::Point(35, 56);
 			this->CustomerPhoto->Name = L"CustomerPhoto";
-			this->CustomerPhoto->Size = System::Drawing::Size(128, 128);
+			this->CustomerPhoto->Size = System::Drawing::Size(110, 117);
 			this->CustomerPhoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->CustomerPhoto->TabIndex = 11;
 			this->CustomerPhoto->TabStop = false;
@@ -127,25 +133,39 @@ namespace Pakreserve1 {
 			// 
 			this->CustomerMail->AutoSize = true;
 			this->CustomerMail->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerMail->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->CustomerMail->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->CustomerMail->Location = System::Drawing::Point(226, 199);
+			this->CustomerMail->ForeColor = System::Drawing::Color::White;
+			this->CustomerMail->Location = System::Drawing::Point(168, 129);
 			this->CustomerMail->Name = L"CustomerMail";
-			this->CustomerMail->Size = System::Drawing::Size(168, 30);
+			this->CustomerMail->Size = System::Drawing::Size(109, 18);
 			this->CustomerMail->TabIndex = 15;
 			this->CustomerMail->Text = L"CustomerMail";
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->panel1->Controls->Add(this->CustomerMail);
+			this->panel1->Controls->Add(this->CustomerPhoto);
+			this->panel1->Controls->Add(this->CustomerName);
+			this->panel1->Location = System::Drawing::Point(39, 70);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(375, 218);
+			this->panel1->TabIndex = 18;
+			// 
 			// Profile
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
-			this->Controls->Add(this->CustomerMail);
-			this->Controls->Add(this->CustomerName);
-			this->Controls->Add(this->CustomerPhoto);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->panel1);
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Profile";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -154,8 +174,9 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -173,6 +194,8 @@ private: System::Void Ticket1_Paint(System::Object^ sender, System::Windows::For
 private: System::Void userControl1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void userControl1_Load_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -104,6 +104,7 @@ namespace TicketControl {
 			// 
 			// Ticket
 			// 
+			this->AllowDrop = true;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Transparent;
@@ -113,7 +114,6 @@ namespace TicketControl {
 			this->Controls->Add(this->BarNameTic);
 			this->Controls->Add(this->Date);
 			this->DoubleBuffered = true;
-			//this->Name = L"Ticket";
 			this->Size = System::Drawing::Size(877, 380);
 			this->Load += gcnew System::EventHandler(this, &Ticket::Ticket_Load);
 			this->ResumeLayout(false);

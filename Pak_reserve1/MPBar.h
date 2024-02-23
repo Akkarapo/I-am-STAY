@@ -55,6 +55,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ Date;
 	private: System::Windows::Forms::Label^ Time;
 	private: System::Windows::Forms::Label^ Name;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ Table;
+	private: System::Windows::Forms::Label^ BarName;
+
+
+
+
 
 	private:
 
@@ -101,12 +108,16 @@ namespace Pakreserve1 {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Name = (gcnew System::Windows::Forms::Label());
 			this->Time = (gcnew System::Windows::Forms::Label());
 			this->Date = (gcnew System::Windows::Forms::Label());
-			this->Name = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Table = (gcnew System::Windows::Forms::Label());
+			this->BarName = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -140,10 +151,25 @@ namespace Pakreserve1 {
 			this->panel1->Controls->Add(this->Name);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(110, 109);
+			this->panel1->Location = System::Drawing::Point(54, 620);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
+			this->panel1->MouseLeave += gcnew System::EventHandler(this, &MPBar::panel1_MouseLeave);
+			this->panel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MPBar::panel1_MouseMove);
+			// 
+			// Name
+			// 
+			this->Name->AutoSize = true;
+			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Name->ForeColor = System::Drawing::Color::White;
+			this->Name->Location = System::Drawing::Point(627, 362);
+			this->Name->Name = L"Name";
+			this->Name->Size = System::Drawing::Size(84, 19);
+			this->Name->TabIndex = 2;
+			this->Name->Text = L"CxCxNuT";
+			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time
 			// 
@@ -151,7 +177,7 @@ namespace Pakreserve1 {
 			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time->ForeColor = System::Drawing::Color::White;
-			this->Time->Location = System::Drawing::Point(409, 345);
+			this->Time->Location = System::Drawing::Point(409, 362);
 			this->Time->Name = L"Time";
 			this->Time->Size = System::Drawing::Size(94, 19);
 			this->Time->TabIndex = 1;
@@ -164,44 +190,73 @@ namespace Pakreserve1 {
 			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date->ForeColor = System::Drawing::Color::White;
-			this->Date->Location = System::Drawing::Point(188, 345);
+			this->Date->Location = System::Drawing::Point(188, 362);
 			this->Date->Name = L"Date";
 			this->Date->Size = System::Drawing::Size(100, 19);
 			this->Date->TabIndex = 0;
 			this->Date->Text = L"22 Feb 2024";
 			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Date->Click += gcnew System::EventHandler(this, &MPBar::Date_Click);
 			// 
-			// Name
+			// panel2
 			// 
-			this->Name->AutoSize = true;
-			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel2->Controls->Add(this->Table);
+			this->panel2->Controls->Add(this->BarName);
+			this->panel2->Location = System::Drawing::Point(110, 109);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1032, 488);
+			this->panel2->TabIndex = 10;
+			// 
+			// Table
+			// 
+			this->Table->AutoSize = true;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Name->ForeColor = System::Drawing::Color::White;
-			this->Name->Location = System::Drawing::Point(620, 345);
-			this->Name->Name = L"Name";
-			this->Name->Size = System::Drawing::Size(84, 19);
-			this->Name->TabIndex = 2;
-			this->Name->Text = L"CxCxNuT";
-			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(187, 162);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(91, 19);
+			this->Table->TabIndex = 3;
+			this->Table->Text = L"A1Table2P";
+			this->Table->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// BarName
+			// 
+			this->BarName->AutoSize = true;
+			this->BarName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->BarName->ForeColor = System::Drawing::Color::White;
+			this->BarName->Location = System::Drawing::Point(139, 64);
+			this->BarName->Name = L"BarName";
+			this->BarName->Size = System::Drawing::Size(127, 30);
+			this->BarName->TabIndex = 2;
+			this->BarName->Text = L"OverTime";
+			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MPBar
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->panel2);
+			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"MPBar";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MPBar";
 			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -225,6 +280,25 @@ private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::
 private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->Date->Text = DateTime::Now.ToString("dd MMM yyyy");
 	this->Time->Text = DateTime::Now.ToString("hh:mm tt");
+	this->panel1->Location = System::Drawing::Point(110, 109);
+	this->panel2->Location = System::Drawing::Point(110, 109);
+}
+private: System::Void Date_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void panel1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+
+	panel1->Hide();
+	panel2->Show();
+	//BarName->Show();
+	//Table->Show();
+}
+private: System::Void panel1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+
+	panel2->Hide();
+	panel1->Show();
+	//BarName->Hide();
+	//Table->Hide();
 }
 };
 }
