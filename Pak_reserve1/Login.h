@@ -417,6 +417,22 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
+
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -428,9 +444,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 //public: User^ user = nullptr;
 
-/*
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	String^ username = textBox2->Text;
+/*	String^ username = textBox2->Text;
 	String^ password = textBox1->Text;
 	if (username->Length == 0 || password->Length == 0) {
 		MessageBox::Show("Plase Enter both username and password","username or password is empty",MessageBoxButtons::OK);
@@ -467,7 +482,8 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	catch (Exception^ e) {
 		MessageBox::Show("Fail to connect to database","Error",MessageBoxButtons::OK);
 	} 
-}*/
+	*/
+	}
 private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
 
 }
@@ -502,13 +518,61 @@ public: bool switchToPakForm = false;
 public: User^ user = nullptr;
 
 private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	String^ username = textBox2->Text;
-	String^ password = textBox1->Text;
-	if (username->Length == 0 || password->Length == 0) {
+	using namespace std;
+	String^ temp1 = textBox2->Text;
+	String^ temp2 = textBox1->Text;
+	String^ tempPath = Application::StartupPath + "\\Data\\"+"\\UserData\\" + temp1 + ".txt";
+	string path;
+	string username;
+	string password;
+	string line;
+	if (temp1->Length == 0 || temp2->Length == 0) {
 		MessageBox::Show("Plase Enter both username and password", "username or password is empty", MessageBoxButtons::OK);
 		return;
 	}
-	try {
+	MarshalString(tempPath,path);
+	MarshalString(temp1,username);
+	MarshalString(temp2,password);
+	ifstream source(path);
+	if (source.is_open()) {
+		getline(source, line);
+		char userInput[100], pwd[100], email[100];
+		char format[] = "%s %s %s";
+		sscanf(line.c_str(), format, userInput, pwd, email);
+		if (username == userInput && password == pwd) {
+			user = gcnew User;
+			user->username = gcnew String(username.c_str());
+			user->email = gcnew String(email);
+			user->password = gcnew String(password.c_str());
+			this->Close();
+			switchToPakForm = true;
+		}
+		else{
+			textBox1->ForeColor = Color::Red;
+			textBox2->ForeColor = Color::Red;
+			return;
+		}
+	}
+	else {
+		textBox1->ForeColor = Color::Red;
+		textBox2->ForeColor = Color::Red;
+		//MessageBox::Show("Can't open file","Error",MessageBoxButtons::OK);
+		return;
+	}
+			/*this->Close();
+			switchToPakForm = true;
+
+			
+		}
+	}
+	else {
+		textBox1->ForeColor = Color::Red;
+		textBox2->ForeColor = Color::Red;
+		return;
+	}
+
+
+	/*try {
 		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
@@ -529,19 +593,21 @@ private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventA
 			this->Close();
 			switchToPakForm = true;
 			/*this->Close();
-			switchToPakForm = true;*/
+			switchToPakForm = true;
 		}
+	   
 		else {
 			textBox1->ForeColor = Color::Red;
 			textBox2->ForeColor = Color::Red;
 			//MessageBox::Show("Wrong username or password", "log in unsuccessful", MessageBoxButtons::OK);
 		}
-
+		
 
 	}
 	catch (Exception^ e) {
 		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
 	}
+	*/
 }
 
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -553,7 +619,6 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	
 }
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

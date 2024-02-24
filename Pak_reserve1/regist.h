@@ -2,6 +2,7 @@
 #include "User.h"
 #include "Login.h"
 #include <string>
+#include <fstream>
 
 namespace Pakreserve1 {
 
@@ -404,6 +405,21 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -436,6 +452,7 @@ private: System::Void textBox3_TextChanged(System::Object^ sender, System::Event
 
 
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
 	String^ username = textBox1->Text;
 	String^ email = textBox2->Text;
 	String^ password = textBox3->Text;
@@ -471,7 +488,17 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
 		return;
 	}
-	try {
+
+	String^ tempPath = Application::StartupPath + "\\Data\\" + "\\UserData\\" + username + ".txt";
+	string path,username2,password3,email2;
+	MarshalString(tempPath,path);
+	MarshalString(username, username2);
+	MarshalString(password,password3);
+	MarshalString(email,email2);
+	ofstream fileOut(path);
+	fileOut << username2 << " " << password3 << " " << email2;
+	MessageBox::Show("Successfully Create User","Welcome",MessageBoxButtons::OK);
+	/*try {
 		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
@@ -490,6 +517,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
 
 	}
+	*/
+
+
 }
 
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {

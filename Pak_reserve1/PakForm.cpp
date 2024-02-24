@@ -27,7 +27,7 @@ void main(array<String^>^ args) {
     Pakreserve1::regist registForm;
     Pakreserve1::Profile profileform;
 
-    form.ShowDialog();
+    form2.ShowDialog();
     //User^ user = form2.user;
     //profileform.switchToBook = true;
 
