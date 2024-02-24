@@ -158,7 +158,7 @@ namespace Pakreserve1 {
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(702, 353);
+			this->label2->Location = System::Drawing::Point(702, 373);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(97, 27);
 			this->label2->TabIndex = 3;
@@ -181,11 +181,10 @@ namespace Pakreserve1 {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(936, 75);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Angsana New", 36, System::Drawing::FontStyle::Bold));
+			this->label8->Location = System::Drawing::Point(905, 99);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(111, 38);
+			this->label8->Size = System::Drawing::Size(144, 83);
 			this->label8->TabIndex = 10;
 			this->label8->Text = L"Log in";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -194,11 +193,11 @@ namespace Pakreserve1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(812, 113);
+			this->label3->Location = System::Drawing::Point(735, 171);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(359, 19);
+			this->label3->Size = System::Drawing::Size(455, 23);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Enter your username and password to access your account";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -224,7 +223,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->registLable->Location = System::Drawing::Point(703, 529);
+			this->registLable->Location = System::Drawing::Point(742, 554);
 			this->registLable->Name = L"registLable";
 			this->registLable->Size = System::Drawing::Size(83, 27);
 			this->registLable->TabIndex = 16;
@@ -251,7 +250,7 @@ namespace Pakreserve1 {
 			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
-			this->textBox1->Location = System::Drawing::Point(745, 394);
+			this->textBox1->Location = System::Drawing::Point(745, 405);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(430, 36);
 			this->textBox1->TabIndex = 18;
@@ -268,7 +267,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->label4->Location = System::Drawing::Point(1089, 529);
+			this->label4->Location = System::Drawing::Point(1021, 554);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(161, 27);
 			this->label4->TabIndex = 20;
@@ -279,9 +278,10 @@ namespace Pakreserve1 {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->Location = System::Drawing::Point(741, 460);
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox2->Location = System::Drawing::Point(741, 497);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(430, 48);
+			this->pictureBox2->Size = System::Drawing::Size(438, 55);
 			this->pictureBox2->TabIndex = 21;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &Login::pictureBox2_Click_1);
@@ -303,7 +303,7 @@ namespace Pakreserve1 {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Location = System::Drawing::Point(971, 47);
+			this->panel2->Location = System::Drawing::Point(951, 47);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(41, 25);
 			this->panel2->TabIndex = 23;
@@ -327,7 +327,7 @@ namespace Pakreserve1 {
 			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
 			this->label6->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label6->Location = System::Drawing::Point(23, 624);
+			this->label6->Location = System::Drawing::Point(30, 670);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(416, 23);
 			this->label6->TabIndex = 4;
@@ -349,11 +349,11 @@ namespace Pakreserve1 {
 			// 
 			this->label9->AutoSize = true;
 			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label9->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label9->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label9->Location = System::Drawing::Point(18, 570);
+			this->label9->Location = System::Drawing::Point(18, 603);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(213, 54);
+			this->label9->Size = System::Drawing::Size(298, 69);
 			this->label9->TabIndex = 3;
 			this->label9->Text = L"Experience";
 			// 
@@ -361,11 +361,11 @@ namespace Pakreserve1 {
 			// 
 			this->label10->AutoSize = true;
 			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label10->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label10->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label10->Location = System::Drawing::Point(18, 462);
+			this->label10->Location = System::Drawing::Point(18, 483);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(164, 54);
+			this->label10->Size = System::Drawing::Size(227, 69);
 			this->label10->TabIndex = 1;
 			this->label10->Text = L"Simplify";
 			// 
@@ -373,11 +373,11 @@ namespace Pakreserve1 {
 			// 
 			this->label11->AutoSize = true;
 			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label11->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label11->Location = System::Drawing::Point(18, 516);
+			this->label11->Location = System::Drawing::Point(18, 543);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(317, 54);
+			this->label11->Size = System::Drawing::Size(446, 69);
 			this->label11->TabIndex = 2;
 			this->label11->Text = L"Your Reservation";
 			// 
