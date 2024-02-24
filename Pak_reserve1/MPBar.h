@@ -58,6 +58,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ Table;
 	private: System::Windows::Forms::Label^ BarName;
+	private: System::Windows::Forms::Label^ BarNameFront;
 
 
 
@@ -114,6 +115,7 @@ namespace Pakreserve1 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->Table = (gcnew System::Windows::Forms::Label());
 			this->BarName = (gcnew System::Windows::Forms::Label());
+			this->BarNameFront = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -148,10 +150,11 @@ namespace Pakreserve1 {
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel1->Controls->Add(this->BarNameFront);
 			this->panel1->Controls->Add(this->Name);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(54, 620);
+			this->panel1->Location = System::Drawing::Point(86, 633);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
@@ -236,6 +239,19 @@ namespace Pakreserve1 {
 			this->BarName->Text = L"OverTime";
 			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// BarNameFront
+			// 
+			this->BarNameFront->AutoSize = true;
+			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->BarNameFront->ForeColor = System::Drawing::Color::White;
+			this->BarNameFront->Location = System::Drawing::Point(389, 275);
+			this->BarNameFront->Name = L"BarNameFront";
+			this->BarNameFront->Size = System::Drawing::Size(127, 30);
+			this->BarNameFront->TabIndex = 3;
+			this->BarNameFront->Text = L"OverTime";
+			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// MPBar
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -277,9 +293,11 @@ namespace Pakreserve1 {
 	}
 private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	   //public: String name;
 private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->Date->Text = DateTime::Now.ToString("dd MMM yyyy");
 	this->Time->Text = DateTime::Now.ToString("hh:mm tt");
+	//this->Name->Text = name;
 	this->panel1->Location = System::Drawing::Point(110, 109);
 	this->panel2->Location = System::Drawing::Point(110, 109);
 }

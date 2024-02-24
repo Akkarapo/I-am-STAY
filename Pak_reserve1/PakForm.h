@@ -1525,8 +1525,8 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 		a += (dataTable[i] ? "1" : "0");
 	}
 	label1->Text = a;
-	//switchToMP = true;
-	//this->Close();
+	switchToMP = true;
+	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }

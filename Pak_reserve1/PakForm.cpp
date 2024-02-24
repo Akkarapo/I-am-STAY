@@ -25,10 +25,11 @@ void main(array<String^>^ args) {
     Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
+    Pakreserve1::Profile profileform;
 
-    //form2.ShowDialog();
+    form.ShowDialog();
     //User^ user = form2.user;
-    //registForm.switchToLogin = true;
+    //profileform.switchToBook = true;
 
     while (true) {
         if (profileform.switchToBook) {
@@ -38,6 +39,7 @@ void main(array<String^>^ args) {
         else if (mpform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
+        }
         else if (form2.switchToRegister) {
             registForm.ShowDialog();
             form2.switchToRegister = false;
@@ -56,7 +58,7 @@ void main(array<String^>^ args) {
             form2.switchToForgetPwd = false;
         }
         else if (form.switchToMP) {
-            movetoMpForm.ShowDialog();
+            mpform.ShowDialog();
             form.switchToMP = false;
         }
         else if (registForm.switchToReg2) {

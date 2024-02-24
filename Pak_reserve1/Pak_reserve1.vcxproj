@@ -160,6 +160,8 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Profile.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="NepjuneCalender1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -195,6 +197,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl.resx">
       <DependentUpon>MyUserControl.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NepjuneCalender1.resx">
       <DependentUpon>NepjuneCalender1.h</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +206,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="partnerRegist.resx">
       <DependentUpon>partnerRegist.h</DependentUpon>
     </EmbeddedResource>
