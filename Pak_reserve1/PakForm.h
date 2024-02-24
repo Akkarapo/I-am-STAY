@@ -1,5 +1,10 @@
 #pragma once
 
+#using <mscorlib.dll>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <vector>
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -9,15 +14,27 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
+	using namespace System::IO;
+
+
+
+
 	/// <summary>
 	/// Summary for PakForm
 	/// </summary>
+
+
 	public ref class PakForm : public System::Windows::Forms::Form
 	{
 	public:
 		PakForm(void)
 		{
 			InitializeComponent();
+			label1->Hide();
+			label3->Hide();
+			button1->Hide();
+
 			A1Table2PGreen->Hide();
 			A2Table2PGreen->Hide();
 			A3Table2PGreen->Hide();
@@ -134,6 +151,11 @@ private: System::Windows::Forms::PictureBox^ H6Table1P;
 private: System::Windows::Forms::PictureBox^ H7Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H7Table1P;
 private: System::Windows::Forms::Label^ label1;
+private: System::Windows::Forms::Label^ label3;
+private: System::Windows::Forms::Button^ button1;
+
+
+
 
 
 
@@ -234,6 +256,8 @@ private: System::Windows::Forms::Label^ label1;
 			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -1079,11 +1103,32 @@ private: System::Windows::Forms::Label^ label1;
 			this->label1->TabIndex = 62;
 			this->label1->Text = L"label1";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(996, 117);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(44, 16);
+			this->label3->TabIndex = 64;
+			this->label3->Text = L"label3";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(632, 60);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(298, 52);
+			this->button1->TabIndex = 63;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &PakForm::button1_Click);
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
@@ -1217,7 +1262,23 @@ private: System::Windows::Forms::Label^ label1;
 
 public:
 	array<bool>^ dataTable;
-	
+
+	void MarshalString(String^ s, std::string& os) {
+		using namespace Runtime::InteropServices;
+		const char* chars =
+			(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
+
+	void MarshalString(String^ s, std::wstring& os) {
+		using namespace Runtime::InteropServices;
+		const wchar_t* chars =
+			(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
+
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
 	private: System::Void PakForm_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1519,16 +1580,68 @@ public:
 
 public: bool switchToMP = false;
 private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ a ="";
+	using namespace std;
+	
+	System::String^ a ="";
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path,line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
 
 	for (int i = 0; i < 29; i++) {
 		a += (dataTable[i] ? "1" : "0");
 	}
+
 	label1->Text = a;
+	string newData;
+	MarshalString(a,newData);
 	switchToMP = true;
-	this->Close();
+	int targetline = 1 ;
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData; 
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+	if (fileOut.is_open()) {
+		label3->Text = "Successfully ReadFile";
+	}
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+	
+
+	fileOut.close();
+
+	//this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ c = gcnew String("abcd");
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path;
+	vector<string> lines;
+
+	MarshalString(temp,path);
+	ifstream fileIn(path);
+
+	if (fileIn.is_open()) {
+		label3->Text = "file Opened";
+	}
+
+
+
 }
 };
 }
