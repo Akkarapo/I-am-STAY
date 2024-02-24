@@ -20,25 +20,25 @@ void main(array<String^>^ args) {
 
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
-    Pakreserve1::MPBar mpform;
     Pakreserve1::sendMail mailForm;
     Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
     Pakreserve1::Profile profileform;
 
-    form.ShowDialog();
     //User^ user = form2.user;
+    form2.ShowDialog();
+    User^ user = form2.user;
     //profileform.switchToBook = true;
 
+    Pakreserve1::MPBar mpform(user);
+
     while (true) {
-        if (profileform.switchToBook) {
-            mpform.ShowDialog();
-            profileform.switchToBook = false;
-        }
-        else if (mpform.switchToProfile) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
+            form.switchToProfile = false;
+            profileform.switchToProfile = false;
         }
         else if (form2.switchToRegister) {
             registForm.ShowDialog();
