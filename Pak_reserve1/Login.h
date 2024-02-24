@@ -292,11 +292,11 @@ namespace Pakreserve1 {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1244, 9);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10));
+			this->label5->ForeColor = System::Drawing::SystemColors::ActiveBorder;
+			this->label5->Location = System::Drawing::Point(1252, 9);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(24, 28);
+			this->label5->Size = System::Drawing::Size(20, 23);
 			this->label5->TabIndex = 22;
 			this->label5->Text = L"X";
 			this->label5->Click += gcnew System::EventHandler(this, &Login::label5_Click);
@@ -385,10 +385,10 @@ namespace Pakreserve1 {
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(7, 17);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
@@ -403,6 +403,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
