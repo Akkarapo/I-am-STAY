@@ -145,10 +145,12 @@ namespace Pakreserve1 {
 			this->textBox2->AllowDrop = true;
 			this->textBox2->BackColor = System::Drawing::Color::White;
 			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->ForeColor = System::Drawing::Color::Black;
 			this->textBox2->Location = System::Drawing::Point(745, 305);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 36);
+			this->textBox2->Size = System::Drawing::Size(430, 40);
 			this->textBox2->TabIndex = 1;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &Login::textBox2_TextChanged);
 			// 
@@ -219,13 +221,13 @@ namespace Pakreserve1 {
 			this->registLable->AutoSize = true;
 			this->registLable->BackColor = System::Drawing::Color::Transparent;
 			this->registLable->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->registLable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->registLable->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->registLable->Location = System::Drawing::Point(742, 554);
 			this->registLable->Name = L"registLable";
-			this->registLable->Size = System::Drawing::Size(83, 27);
+			this->registLable->Size = System::Drawing::Size(70, 23);
 			this->registLable->TabIndex = 16;
 			this->registLable->Text = L"Sign Up";
 			this->registLable->Click += gcnew System::EventHandler(this, &Login::registLable_Click);
@@ -249,10 +251,10 @@ namespace Pakreserve1 {
 			this->textBox1->AllowDrop = true;
 			this->textBox1->BackColor = System::Drawing::Color::White;
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16));
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 18));
 			this->textBox1->Location = System::Drawing::Point(745, 405);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 36);
+			this->textBox1->Size = System::Drawing::Size(430, 40);
 			this->textBox1->TabIndex = 18;
 			this->textBox1->UseSystemPasswordChar = true;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
@@ -263,13 +265,13 @@ namespace Pakreserve1 {
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->label4->Location = System::Drawing::Point(1021, 554);
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->label4->Location = System::Drawing::Point(1045, 554);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(161, 27);
+			this->label4->Size = System::Drawing::Size(135, 23);
 			this->label4->TabIndex = 20;
 			this->label4->Text = L"Forget Password";
 			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click_1);
