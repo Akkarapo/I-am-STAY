@@ -27,7 +27,7 @@
     <ClCompile Include="MPBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Toeybarsignin.cpp">
+    <ClCompile Include="Barreg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

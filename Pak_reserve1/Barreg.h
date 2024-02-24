@@ -168,6 +168,7 @@ namespace Pakreserve1 {
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Confirm";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Barreg::button1_Click);
 			// 
 			// textBox3
 			// 
@@ -177,7 +178,7 @@ namespace Pakreserve1 {
 			this->textBox3->Size = System::Drawing::Size(298, 47);
 			this->textBox3->TabIndex = 7;
 			// 
-			// Toeybarsignin
+			// Barreg
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
@@ -185,7 +186,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"Toeybarsignin";
+			this->Name = L"Barreg";
 			this->Text = L"Toeybarsignin";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel1->ResumeLayout(false);
@@ -194,7 +195,9 @@ namespace Pakreserve1 {
 			this->PerformLayout();
 
 		}
-}
 #pragma endregion
-
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
 };
+}

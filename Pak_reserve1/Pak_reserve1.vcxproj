@@ -123,7 +123,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="PakForm.cpp" />
-    <ClCompile Include="Toeybarsignin.cpp" />
+    <ClCompile Include="Barreg.cpp" />
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
