@@ -1583,7 +1583,9 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	using namespace std;
 	
 	System::String^ a ="";
+
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	
 	string path,line;
 	MarshalString(temp, path);
 
@@ -1613,6 +1615,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	if (fileOut.is_open()) {
 		label3->Text = "Successfully ReadFile";
 	}
+
 	for (const auto& modifiedLine : lines) {
 		fileOut << modifiedLine << endl;
 	}
@@ -1620,7 +1623,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 	fileOut.close();
 
-	//this->Close();
+	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
