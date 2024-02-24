@@ -41,7 +41,7 @@ namespace Pakreserve1 {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 	private: System::Windows::Forms::Label^ CustomerName;
 	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
@@ -72,13 +72,11 @@ namespace Pakreserve1 {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Profile::typeid));
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerName = (gcnew System::Windows::Forms::Label());
 			this->CustomerPhoto = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerMail = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
@@ -88,22 +86,13 @@ namespace Pakreserve1 {
 			this->pictureBox2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(1196, 11);
+			this->pictureBox2->Location = System::Drawing::Point(1200, 6);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(35, 41);
+			this->pictureBox2->Size = System::Drawing::Size(45, 45);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 9;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &Profile::pictureBox2_Click);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->pictureBox1->Location = System::Drawing::Point(-9, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1280, 64);
-			this->pictureBox1->TabIndex = 8;
-			this->pictureBox1->TabStop = false;
 			// 
 			// CustomerName
 			// 
@@ -163,7 +152,6 @@ namespace Pakreserve1 {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -172,7 +160,6 @@ namespace Pakreserve1 {
 			this->Text = L"Profile";
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();

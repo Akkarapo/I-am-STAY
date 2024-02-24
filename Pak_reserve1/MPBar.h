@@ -40,13 +40,9 @@ namespace Pakreserve1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 	protected:
-
-
-
-
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
@@ -60,35 +56,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ BarName;
 	private: System::Windows::Forms::Label^ BarNameFront;
 
-
-
-
-
 	private:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -106,31 +74,19 @@ namespace Pakreserve1 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MPBar::typeid));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->BarNameFront = (gcnew System::Windows::Forms::Label());
 			this->Name = (gcnew System::Windows::Forms::Label());
 			this->Time = (gcnew System::Windows::Forms::Label());
 			this->Date = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->Table = (gcnew System::Windows::Forms::Label());
 			this->BarName = (gcnew System::Windows::Forms::Label());
-			this->BarNameFront = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Black;
-			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1280, 56);
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
 			// 
 			// pictureBox2
 			// 
@@ -160,6 +116,19 @@ namespace Pakreserve1 {
 			this->panel1->TabIndex = 9;
 			this->panel1->MouseLeave += gcnew System::EventHandler(this, &MPBar::panel1_MouseLeave);
 			this->panel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MPBar::panel1_MouseMove);
+			// 
+			// BarNameFront
+			// 
+			this->BarNameFront->AutoSize = true;
+			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->BarNameFront->ForeColor = System::Drawing::Color::White;
+			this->BarNameFront->Location = System::Drawing::Point(389, 275);
+			this->BarNameFront->Name = L"BarNameFront";
+			this->BarNameFront->Size = System::Drawing::Size(127, 30);
+			this->BarNameFront->TabIndex = 3;
+			this->BarNameFront->Text = L"OverTime";
+			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name
 			// 
@@ -239,19 +208,6 @@ namespace Pakreserve1 {
 			this->BarName->Text = L"OverTime";
 			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// BarNameFront
-			// 
-			this->BarNameFront->AutoSize = true;
-			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->BarNameFront->ForeColor = System::Drawing::Color::White;
-			this->BarNameFront->Location = System::Drawing::Point(389, 275);
-			this->BarNameFront->Name = L"BarNameFront";
-			this->BarNameFront->Size = System::Drawing::Size(127, 30);
-			this->BarNameFront->TabIndex = 3;
-			this->BarNameFront->Text = L"OverTime";
-			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// MPBar
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -260,14 +216,12 @@ namespace Pakreserve1 {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
