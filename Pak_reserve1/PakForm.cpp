@@ -28,8 +28,9 @@ using namespace System::Windows::Forms;
     // Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
+    Pakreserve1::ToeyMenu Toeyform;
 
-    form2.ShowDialog();
+    Toeyform.ShowDialog();
     // User^ user = form2.user;
     User ^ user = form2.user;
     // profileform.switchToBook = true;
