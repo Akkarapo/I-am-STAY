@@ -44,10 +44,10 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::PictureBox^ pictureBox9;
@@ -190,6 +190,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 
 
 
+
 	protected:
 
 	private:
@@ -216,10 +217,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
@@ -439,15 +438,17 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// pictureBox5
 			// 
 			this->pictureBox5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox5->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->Location = System::Drawing::Point(3, 3);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(230, 343);
 			this->pictureBox5->TabIndex = 16;
 			this->pictureBox5->TabStop = false;
+			this->pictureBox5->Click += gcnew System::EventHandler(this, &ToeyMenu::pictureBox5_Click);
 			// 
 			// pictureBox6
 			// 
+			this->pictureBox6->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
 			this->pictureBox6->Location = System::Drawing::Point(14, 76);
 			this->pictureBox6->Name = L"pictureBox6";
@@ -457,6 +458,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// 
 			// pictureBox7
 			// 
+			this->pictureBox7->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
 			this->pictureBox7->Location = System::Drawing::Point(14, 138);
 			this->pictureBox7->Name = L"pictureBox7";
@@ -467,8 +469,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(14, 20);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(94, 39);
@@ -478,8 +482,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(56, 81);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(66, 25);
@@ -489,33 +495,25 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(56, 131);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(152, 48);
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(49, 282);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(134, 37);
-			this->button1->TabIndex = 22;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &ToeyMenu::button1_Click);
-			// 
 			// panel1
 			// 
-			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->pictureBox6);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->pictureBox7);
 			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->pictureBox5);
+			this->panel1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel1->Location = System::Drawing::Point(22, 80);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(237, 350);
@@ -523,7 +521,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// 
 			// panel2
 			// 
-			this->panel2->Controls->Add(this->button2);
 			this->panel2->Controls->Add(this->pictureBox8);
 			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->pictureBox9);
@@ -535,18 +532,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			this->panel2->Size = System::Drawing::Size(237, 350);
 			this->panel2->TabIndex = 24;
 			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(49, 282);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(134, 37);
-			this->button2->TabIndex = 22;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &ToeyMenu::button2_Click);
-			// 
 			// pictureBox8
 			// 
+			this->pictureBox8->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
 			this->pictureBox8->Location = System::Drawing::Point(14, 76);
 			this->pictureBox8->Name = L"pictureBox8";
@@ -557,8 +545,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(56, 131);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(152, 48);
@@ -567,6 +557,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// 
 			// pictureBox9
 			// 
+			this->pictureBox9->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
 			this->pictureBox9->Location = System::Drawing::Point(14, 138);
 			this->pictureBox9->Name = L"pictureBox9";
@@ -577,8 +568,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::White;
 			this->label5->Location = System::Drawing::Point(56, 81);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(66, 25);
@@ -588,25 +581,25 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(14, 20);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(94, 39);
+			this->label6->Size = System::Drawing::Size(107, 39);
 			this->label6->TabIndex = 19;
-			this->label6->Text = L"Toey";
+			this->label6->Text = L"STAY";
 			// 
 			// pictureBox10
 			// 
 			this->pictureBox10->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->pictureBox10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.Image")));
 			this->pictureBox10->Location = System::Drawing::Point(3, 3);
 			this->pictureBox10->Name = L"pictureBox10";
 			this->pictureBox10->Size = System::Drawing::Size(230, 343);
 			this->pictureBox10->TabIndex = 16;
 			this->pictureBox10->TabStop = false;
-			this->pictureBox10->MouseLeave += gcnew System::EventHandler(this, &ToeyMenu::pictureBox10_MouseLeave);
-			this->pictureBox10->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &ToeyMenu::pictureBox10_MouseMove);
 			// 
 			// panel3
 			// 
@@ -1719,11 +1712,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ToeyMenu";
 			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
@@ -1811,32 +1804,33 @@ private: System::Windows::Forms::PictureBox^ pictureBox49;
 		}
 #pragma endregion
 private:System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	label6->Text = "NiceSu";
 }
 private:System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+	label1->Parent = pictureBox5;
+	label2->Parent = pictureBox5;
+	label3->Parent = pictureBox5;
+	pictureBox6->Parent = pictureBox5;
+	pictureBox7->Parent = pictureBox5;
+	label4->Parent = pictureBox10;
+	label5->Parent = pictureBox10;
+	label6->Parent = pictureBox10;
+	pictureBox8->Parent = pictureBox10;
+	pictureBox9->Parent = pictureBox10;
+
 }
 private: System::Void button3_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-	
 }
 private: System::Void pictureBox13_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-	
 }
 private: System::Void pictureBox13_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	
 }
 private: System::Void pictureBox13_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+}
+private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
-
-private: System::Void pictureBox10_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	button2->Show();
-	
-}
-private: System::Void pictureBox10_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	button2->Hide();
+private: System::Void panel1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
