@@ -377,6 +377,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->F1Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->F2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -465,6 +466,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F1Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F2Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -2252,7 +2254,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	label1->Text = a;
 	string newData;
 	MarshalString(a,newData);
-	switchToMP = true;
+	//switchToMP = true;
 	int targetline = 1 ;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData; 

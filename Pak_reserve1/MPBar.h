@@ -35,10 +35,10 @@ namespace Pakreserve1 {
 			//
 			//Name->Text = user->username;
 			
-			temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
+			temp = "D:\\gitgitgit\\I-am-STAY\\x64\\" + user->username + ".txt";
 			CultureInfo^ culture = gcnew CultureInfo("en-US");
 			String^ time = DateTime::Now.ToString("hh:mm tt");
-			String^ date = DateTime::Now.ToString("dd MMMM yyyy",culture);
+			String^ date = DateTime::Now.ToString(" dd MMMM yyyy",culture);
 			Time->Text = time;
 			Date->Text = date;
 			using namespace std;
