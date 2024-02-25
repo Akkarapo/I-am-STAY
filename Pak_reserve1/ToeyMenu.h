@@ -769,7 +769,7 @@ namespace Pakreserve1 {
 			this->pictureBox17->Size = System::Drawing::Size(32, 32);
 			this->pictureBox17->TabIndex = 17;
 			this->pictureBox17->TabStop = false;
-			this->pictureBox17->Click += gcnew System::EventHandler(this, &ToeyMenu::pictureBox17_Click);
+
 			// 
 			// label13
 			// 
@@ -816,7 +816,6 @@ namespace Pakreserve1 {
 			this->label15->Size = System::Drawing::Size(94, 39);
 			this->label15->TabIndex = 19;
 			this->label15->Text = L"Toey";
-			this->label15->Click += gcnew System::EventHandler(this, &ToeyMenu::label15_Click);
 			// 
 			// panel6
 			// 
@@ -1575,7 +1574,6 @@ namespace Pakreserve1 {
 			this->ForeColor = System::Drawing::Color::White;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ToeyMenu";
-			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1644,28 +1642,10 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
-private:System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	label6->Text = "NiceSu";
-}
-private:System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button3_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox13_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox13_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox13_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-}
-private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
+public: bool switchToPakForm = false;
 private: System::Void panel1_Click(System::Object^ sender, System::EventArgs^ e) {
-	label1->Text = "what";
-}
-private: System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox17_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToPakForm = true;
+	this->Close();
 }
 };
 }

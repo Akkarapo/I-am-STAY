@@ -78,6 +78,11 @@ using namespace System::Windows::Forms;
             form.switchToMP = false;
             mpform.ShowDialog();
         }
+        else if (Toeyform.switchToPakForm) 
+        {
+            Toeyform.switchToPakForm = false;
+            form.ShowDialog();
+        }
         else
         {
             break;
