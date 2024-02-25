@@ -19,12 +19,17 @@ namespace Pakreserve1 {
 	public ref class Profile : public System::Windows::Forms::Form
 	{
 	public:
-		Profile(void)
+		Profile(User^ user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			CustomerName->Text = user->username;
+			CustomerMail->Text = user->email;
+			Name->Text = user->username;
+			Time->Text = user->time;
+			Date->Text = user->date;
 		}
 
 	protected:
