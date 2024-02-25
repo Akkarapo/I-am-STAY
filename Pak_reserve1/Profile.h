@@ -25,11 +25,11 @@ namespace Pakreserve1 {
 			//
 			//TODO: Add the constructor code here
 			//
-			CustomerName->Text = user->username;
-			CustomerMail->Text = user->email;
-			Name->Text = user->username;
-			Time->Text = user->time;
-			Date->Text = user->date;
+			//CustomerName->Text = user->username;
+			//CustomerMail->Text = user->email;
+			//Name->Text = user->username;
+			//Time->Text = user->time;
+			//Date->Text = user->date;
 		}
 
 	protected:

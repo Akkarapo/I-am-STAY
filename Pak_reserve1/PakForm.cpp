@@ -33,6 +33,7 @@ void main(array<String^>^ args) {
 
     Pakreserve1::MPBar mpform(user);
     Pakreserve1::Profile profileform(user);
+    //mpform.ShowDialog();
     while (true) {
         if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile) {
             profileform.ShowDialog();
@@ -60,6 +61,10 @@ void main(array<String^>^ args) {
         else if (registForm.switchToReg2) {
             registForm.switchToReg2 = false;
             regist2Form.ShowDialog();
+        }
+        else if (form.switchToMP) {
+            form.switchToMP = false;
+            mpform.ShowDialog();
         }
         else {
             break;

@@ -5,6 +5,7 @@
 #include "Profile.h"
 #include "User.h"
 #include <ctime>
+#include <fstream>
 
 namespace Pakreserve1 {
 
@@ -15,20 +16,45 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Timers;
+	using namespace System::Globalization;
 	
 	/// <summary>
 	/// Summary for MPBar
 	/// </summary>
 	public ref class MPBar : public System::Windows::Forms::Form
 	{
+	public: String^ temp = "";
 	public:
+		
 		MPBar(User ^user)
 		{
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
-			Name->Text = user->username;
+			//Name->Text = user->username;
+			
+			temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
+			CultureInfo^ culture = gcnew CultureInfo("en-US");
+			String^ time = DateTime::Now.ToString("hh:mm tt");
+			String^ date = DateTime::Now.ToString("dd MMMM yyyy",culture);
+			Time->Text = time;
+			Date->Text = date;
+			using namespace std;
+			string path, line , datec , timec;
+			MarshalString(temp, path);
+			MarshalString(time, timec);
+			MarshalString(date, datec);
+			ifstream fileIn(path);
+			vector<string> lines;
+			while (getline(fileIn, line)) {
+				lines.push_back(line);
+			}
+			fileIn.close();
+			ofstream fileOut(path,ios::app);
+			fileOut << datec << " " << timec << endl;
+			fileOut.close();
 		}
 
 	protected:
@@ -57,6 +83,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ Table;
 	private: System::Windows::Forms::Label^ BarName;
 	private: System::Windows::Forms::Label^ BarNameFront;
+
 
 	private:
 
@@ -92,80 +119,131 @@ namespace Pakreserve1 {
 			// 
 			// pictureBox2
 			// 
-			resources->ApplyResources(this->pictureBox2, L"pictureBox2");
 			this->pictureBox2->BackColor = System::Drawing::Color::Black;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(1216, 6);
 			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(45, 45);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 7;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &MPBar::pictureBox2_Click_1);
 			// 
 			// panel1
 			// 
-			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->panel1->Controls->Add(this->BarNameFront);
 			this->panel1->Controls->Add(this->Name);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
+			this->panel1->Location = System::Drawing::Point(76, 615);
 			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1032, 488);
+			this->panel1->TabIndex = 9;
 			this->panel1->MouseLeave += gcnew System::EventHandler(this, &MPBar::panel1_MouseLeave);
 			this->panel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MPBar::panel1_MouseMove);
 			// 
 			// BarNameFront
 			// 
-			resources->ApplyResources(this->BarNameFront, L"BarNameFront");
+			this->BarNameFront->AutoSize = true;
+			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F));
 			this->BarNameFront->ForeColor = System::Drawing::Color::White;
+			this->BarNameFront->Location = System::Drawing::Point(389, 275);
 			this->BarNameFront->Name = L"BarNameFront";
+			this->BarNameFront->Size = System::Drawing::Size(127, 30);
+			this->BarNameFront->TabIndex = 3;
+			this->BarNameFront->Text = L"OverTime";
+			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name
 			// 
-			resources->ApplyResources(this->Name, L"Name");
+			this->Name->AutoSize = true;
+			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Name->ForeColor = System::Drawing::Color::White;
+			this->Name->Location = System::Drawing::Point(627, 362);
 			this->Name->Name = L"Name";
+			this->Name->Size = System::Drawing::Size(84, 19);
+			this->Name->TabIndex = 2;
+			this->Name->Text = L"CxCxNuT";
+			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time
 			// 
-			resources->ApplyResources(this->Time, L"Time");
+			this->Time->AutoSize = true;
+			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Time->ForeColor = System::Drawing::Color::White;
+			this->Time->Location = System::Drawing::Point(409, 362);
 			this->Time->Name = L"Time";
+			this->Time->Size = System::Drawing::Size(94, 19);
+			this->Time->TabIndex = 1;
+			this->Time->Text = L"01.00 A.M.";
+			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date
 			// 
-			resources->ApplyResources(this->Date, L"Date");
+			this->Date->AutoSize = true;
+			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Date->ForeColor = System::Drawing::Color::White;
+			this->Date->Location = System::Drawing::Point(188, 362);
 			this->Date->Name = L"Date";
+			this->Date->Size = System::Drawing::Size(100, 19);
+			this->Date->TabIndex = 0;
+			this->Date->Text = L"22 Feb 2024";
+			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->Date->Click += gcnew System::EventHandler(this, &MPBar::Date_Click);
 			// 
 			// panel2
 			// 
-			resources->ApplyResources(this->panel2, L"panel2");
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->panel2->Controls->Add(this->Table);
 			this->panel2->Controls->Add(this->BarName);
+			this->panel2->Location = System::Drawing::Point(110, 109);
 			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1032, 488);
+			this->panel2->TabIndex = 10;
 			// 
 			// Table
 			// 
-			resources->ApplyResources(this->Table, L"Table");
+			this->Table->AutoSize = true;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(187, 162);
 			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(91, 19);
+			this->Table->TabIndex = 3;
+			this->Table->Text = L"A1Table2P";
+			this->Table->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// BarName
 			// 
-			resources->ApplyResources(this->BarName, L"BarName");
+			this->BarName->AutoSize = true;
+			this->BarName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F));
 			this->BarName->ForeColor = System::Drawing::Color::White;
+			this->BarName->Location = System::Drawing::Point(139, 64);
 			this->BarName->Name = L"BarName";
+			this->BarName->Size = System::Drawing::Size(127, 30);
+			this->BarName->TabIndex = 2;
+			this->BarName->Text = L"OverTime";
+			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MPBar
 			// 
-			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBar::MPBar_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
@@ -175,7 +253,21 @@ namespace Pakreserve1 {
 			this->ResumeLayout(false);
 
 		}
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 #pragma endregion
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -192,12 +284,8 @@ namespace Pakreserve1 {
 	}
 private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-	public: String^ date = DateTime::Now.ToString("dd MMM yyyy");
+	//public: String^ date = DateTime::Now.ToString("dd MMM yyyy");
 private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
-	
-	this->Date->Text = date;
-	this->Time->Text = DateTime::Now.ToString("hh:mm tt");
-	//this->Name->Text = name;
 	this->panel1->Location = System::Drawing::Point(110, 109);
 	this->panel2->Location = System::Drawing::Point(110, 109);
 }
@@ -217,6 +305,8 @@ private: System::Void panel1_MouseLeave(System::Object^ sender, System::EventArg
 	panel1->Show();
 	//BarName->Hide();
 	//Table->Hide();
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
