@@ -1653,14 +1653,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	string path;
 	vector<string> lines;
 
-	MarshalString(temp,path);
+	MarshalString(temp, path);
 	ifstream fileIn(path);
 
 	if (fileIn.is_open()) {
 		label3->Text = "file Opened";
 	}
 
-
+}
 
 public: bool switchToProfile = false;
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
