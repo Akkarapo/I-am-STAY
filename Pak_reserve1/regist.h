@@ -490,14 +490,21 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	}
 
 	String^ tempPath = Application::StartupPath + "\\Data\\" + "\\UserData\\" + username + ".txt";
-	string path,username2,password3,email2;
+	String^ tempPath2 = Application::StartupPath + "\\Data\\" + "\\UserData\\" + "AllData" + ".txt";
+	string path,username2,password3,email2,path2;
 	MarshalString(tempPath,path);
 	MarshalString(username, username2);
 	MarshalString(password,password3);
 	MarshalString(email,email2);
+	MarshalString(tempPath2, path2);
 	ofstream fileOut(path);
+	ofstream AllFile(path2,ios::app);
 	fileOut << username2 << " " << password3 << " " << email2;
-	MessageBox::Show("Successfully Create User","Welcome",MessageBoxButtons::OK);
+	AllFile << username2 << " " << password3 << " " << email2 << endl;
+	switchToLogin = true;
+	this->Close();
+	//MessageBox::Show("Successfully Create User","Welcome",MessageBoxButtons::OK);
+
 	/*try {
 		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
