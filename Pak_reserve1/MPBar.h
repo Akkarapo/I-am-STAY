@@ -3,7 +3,9 @@
 #include "Login.h"
 #include "MPBar.h"
 #include "Profile.h"
+#include "User.h"
 #include <ctime>
+#include <fstream>
 
 namespace Pakreserve1 {
 
@@ -14,19 +16,45 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Timers;
+	using namespace System::Globalization;
 	
 	/// <summary>
 	/// Summary for MPBar
 	/// </summary>
 	public ref class MPBar : public System::Windows::Forms::Form
 	{
+	public: String^ temp = "";
 	public:
-		MPBar(void)
+		
+		MPBar(User ^user)
 		{
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			//Name->Text = user->username;
+			
+			temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
+			CultureInfo^ culture = gcnew CultureInfo("en-US");
+			String^ time = DateTime::Now.ToString("hh:mm tt");
+			String^ date = DateTime::Now.ToString("dd MMMM yyyy",culture);
+			Time->Text = time;
+			Date->Text = date;
+			using namespace std;
+			string path, line , datec , timec;
+			MarshalString(temp, path);
+			MarshalString(time, timec);
+			MarshalString(date, datec);
+			ifstream fileIn(path);
+			vector<string> lines;
+			while (getline(fileIn, line)) {
+				lines.push_back(line);
+			}
+			fileIn.close();
+			ofstream fileOut(path,ios::app);
+			fileOut << datec << " " << timec << endl;
+			fileOut.close();
 		}
 
 	protected:
@@ -55,6 +83,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ Table;
 	private: System::Windows::Forms::Label^ BarName;
 	private: System::Windows::Forms::Label^ BarNameFront;
+
 
 	private:
 
@@ -93,7 +122,7 @@ namespace Pakreserve1 {
 			this->pictureBox2->BackColor = System::Drawing::Color::Black;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(1200, 6);
+			this->pictureBox2->Location = System::Drawing::Point(1216, 6);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(45, 45);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -110,7 +139,7 @@ namespace Pakreserve1 {
 			this->panel1->Controls->Add(this->Name);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(86, 633);
+			this->panel1->Location = System::Drawing::Point(76, 615);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
@@ -120,8 +149,7 @@ namespace Pakreserve1 {
 			// BarNameFront
 			// 
 			this->BarNameFront->AutoSize = true;
-			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F));
 			this->BarNameFront->ForeColor = System::Drawing::Color::White;
 			this->BarNameFront->Location = System::Drawing::Point(389, 275);
 			this->BarNameFront->Name = L"BarNameFront";
@@ -133,8 +161,7 @@ namespace Pakreserve1 {
 			// Name
 			// 
 			this->Name->AutoSize = true;
-			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Name->ForeColor = System::Drawing::Color::White;
 			this->Name->Location = System::Drawing::Point(627, 362);
 			this->Name->Name = L"Name";
@@ -146,8 +173,7 @@ namespace Pakreserve1 {
 			// Time
 			// 
 			this->Time->AutoSize = true;
-			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Time->ForeColor = System::Drawing::Color::White;
 			this->Time->Location = System::Drawing::Point(409, 362);
 			this->Time->Name = L"Time";
@@ -159,8 +185,7 @@ namespace Pakreserve1 {
 			// Date
 			// 
 			this->Date->AutoSize = true;
-			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Date->ForeColor = System::Drawing::Color::White;
 			this->Date->Location = System::Drawing::Point(188, 362);
 			this->Date->Name = L"Date";
@@ -185,8 +210,7 @@ namespace Pakreserve1 {
 			// Table
 			// 
 			this->Table->AutoSize = true;
-			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Table->ForeColor = System::Drawing::Color::White;
 			this->Table->Location = System::Drawing::Point(187, 162);
 			this->Table->Name = L"Table";
@@ -198,8 +222,7 @@ namespace Pakreserve1 {
 			// BarName
 			// 
 			this->BarName->AutoSize = true;
-			this->BarName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->BarName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F));
 			this->BarName->ForeColor = System::Drawing::Color::White;
 			this->BarName->Location = System::Drawing::Point(139, 64);
 			this->BarName->Name = L"BarName";
@@ -214,7 +237,7 @@ namespace Pakreserve1 {
 			this->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
@@ -230,7 +253,21 @@ namespace Pakreserve1 {
 			this->ResumeLayout(false);
 
 		}
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 #pragma endregion
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -247,11 +284,8 @@ namespace Pakreserve1 {
 	}
 private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-	   //public: String name;
+	//public: String^ date = DateTime::Now.ToString("dd MMM yyyy");
 private: System::Void MPBar_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->Date->Text = DateTime::Now.ToString("dd MMM yyyy");
-	this->Time->Text = DateTime::Now.ToString("hh:mm tt");
-	//this->Name->Text = name;
 	this->panel1->Location = System::Drawing::Point(110, 109);
 	this->panel2->Location = System::Drawing::Point(110, 109);
 }
@@ -271,6 +305,8 @@ private: System::Void panel1_MouseLeave(System::Object^ sender, System::EventArg
 	panel1->Show();
 	//BarName->Hide();
 	//Table->Hide();
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -245,6 +245,7 @@ private: System::Windows::Forms::PictureBox^ F3Table4PRed;
 
 
 
+private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 
 
@@ -1268,6 +1269,18 @@ private: System::Windows::Forms::PictureBox^ F3Table4PRed;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &PakForm::button1_Click);
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Black;
+			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(1216, 6);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(45, 45);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 63;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &PakForm::pictureBox2_Click);
 			// 
 			// A1Table2PRed
 			// 
@@ -1653,6 +1666,7 @@ private: System::Windows::Forms::PictureBox^ F3Table4PRed;
 			this->Controls->Add(this->A1Table2PRed);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button1);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
@@ -1847,7 +1861,7 @@ public:
 		}
 		/*for (int i = 0; i < line.size(); i++) {
 			if (line[i] == '1') {
-				//ãËéâµêÐÁÕÊÕá´§æ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á´§ï¿½
 			}
 
 		}*/
@@ -2217,7 +2231,9 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	using namespace std;
 	
 	System::String^ a ="";
+
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	
 	string path,line;
 	MarshalString(temp, path);
 
@@ -2247,6 +2263,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	if (fileOut.is_open()) {
 		label3->Text = "Successfully ReadFile";
 	}
+
 	for (const auto& modifiedLine : lines) {
 		fileOut << modifiedLine << endl;
 	}
@@ -2254,7 +2271,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 	fileOut.close();
 
-	//this->Close();
+	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -2267,15 +2284,19 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	string path;
 	vector<string> lines;
 
-	MarshalString(temp,path);
+	MarshalString(temp, path);
 	ifstream fileIn(path);
 
 	if (fileIn.is_open()) {
 		label3->Text = "file Opened";
 	}
 
+}
 
-
+public: bool switchToProfile = false;
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToProfile = true;
+	this->Close();
 }
 };
 }
