@@ -126,6 +126,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -188,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MoveToMp.resx">
       <DependentUpon>MoveToMp.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPBar.en.resx">
+      <DependentUpon>MPBar.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MPBar.resx">
       <DependentUpon>MPBar.h</DependentUpon>
