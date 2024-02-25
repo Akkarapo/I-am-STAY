@@ -156,6 +156,7 @@ private: System::Windows::Forms::Button^ button1;
 
 
 
+private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 
 
@@ -258,6 +259,7 @@ private: System::Windows::Forms::Button^ button1;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -317,6 +319,7 @@ private: System::Windows::Forms::Button^ button1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -1121,6 +1124,18 @@ private: System::Windows::Forms::Button^ button1;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &PakForm::button1_Click);
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Black;
+			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(1216, 6);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(45, 45);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 63;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &PakForm::pictureBox2_Click);
 			// 
 			// PakForm
 			// 
@@ -1129,6 +1144,7 @@ private: System::Windows::Forms::Button^ button1;
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button1);
+			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
@@ -1255,6 +1271,7 @@ private: System::Windows::Forms::Button^ button1;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H6Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->H7Table1P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1645,6 +1662,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
+public: bool switchToProfile = false;
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToProfile = true;
+	this->Close();
 }
 };
 }
