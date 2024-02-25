@@ -170,7 +170,6 @@
     <ClInclude Include="PakForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Barreg.h">
     <ClInclude Include="partnerRegist.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,6 +183,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="User.h" />
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
