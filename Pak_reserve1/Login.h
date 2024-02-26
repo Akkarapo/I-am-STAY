@@ -415,7 +415,7 @@ private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventA
 	using namespace std;
 	String^ temp1 = textBox2->Text;
 	String^ temp2 = textBox1->Text;
-	String^ tempPath = "D:\\gitgitgit\\I-am-STAY\\x64\\" + temp1 + ".txt";
+	String^ tempPath = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + temp1 + ".txt";
 	string path;
 	string username;
 	string password;

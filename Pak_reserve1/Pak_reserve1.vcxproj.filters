@@ -13,6 +13,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="MPBarnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -30,12 +31,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h" />
-    <ClInclude Include="MPBar.h" />
     <ClInclude Include="MyForm.h" />
     <ClInclude Include="MyUserControl.h" />
     <ClInclude Include="Profile.h" />
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="ToeyMenu.h" />
+    <ClInclude Include="MPBarnd.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -134,6 +134,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBar.cpp" />
+    <ClCompile Include="MPBarnd.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
@@ -151,7 +152,7 @@
     <ClInclude Include="MoveToMp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MPBar.h">
+    <ClInclude Include="MPBarnd.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -190,11 +191,8 @@
     <EmbeddedResource Include="MoveToMp.resx">
       <DependentUpon>MoveToMp.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MPBar.en.resx">
-      <DependentUpon>MPBar.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MPBar.resx">
-      <DependentUpon>MPBar.h</DependentUpon>
+    <EmbeddedResource Include="MPBarnd.resx">
+      <DependentUpon>MPBarnd.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

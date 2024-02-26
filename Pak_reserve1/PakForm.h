@@ -1850,7 +1850,7 @@ public:
 	Void UpdateTable() {
 		using namespace std;
 		int BarNo = 1;
-		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -2234,7 +2234,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	
 	System::String^ a ="";
 
-	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
 	
 	string path,line;
 	MarshalString(temp, path);
@@ -2254,7 +2254,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	label1->Text = a;
 	string newData;
 	MarshalString(a,newData);
-	//switchToMP = true;
+	switchToMP = true;
 	int targetline = 1 ;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData; 
@@ -2282,7 +2282,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	using namespace std;
 
 	String^ c = gcnew String("abcd");
-	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
 	string path;
 	vector<string> lines;
 
