@@ -489,8 +489,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		return;
 	}
 
-	String^ tempPath = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + username + ".txt";
-	String^ tempPath2 = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "AllData" + ".txt";
+	String^ tempPath = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + username + ".txt";
+	String^ tempPath2 = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "AllData" + ".txt";
 	string path,username2,password3,email2,path2;
 	MarshalString(tempPath,path);
 	MarshalString(username, username2);
@@ -499,7 +499,7 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	MarshalString(tempPath2, path2);
 	ofstream fileOut(path);
 	ofstream AllFile(path2,ios::app);
-	fileOut << username2 << " " << password3 << " " << email2;
+	fileOut << username2 << " " << password3 << " " << email2 << endl;
 	AllFile << username2 << " " << password3 << " " << email2 << endl;
 	switchToLogin = true;
 	this->Close();

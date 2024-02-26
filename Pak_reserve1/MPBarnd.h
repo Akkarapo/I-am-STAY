@@ -33,12 +33,23 @@ namespace Pakreserve1 {
 			//
 			//TODO: Add the constructor code here
 			//
-			//Name->Text = user->username;
+			String^ temp = nullptr;
+			if (user->username!=nullptr)
+			{
+				Name->Text = user->username;
+				temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
+			}
+				
+			else
+			{
+				Name->Text = "Noone";
+				temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "NOONE" + ".txt";
+			}
+				
 
-			String^ temp = "D:\\gitgitgit\\I-am-STAY\\x64\\" + user->username + ".txt";
 			CultureInfo^ culture = gcnew CultureInfo("en-US");
 			String^ time = DateTime::Now.ToString("hh:mm tt");
-			String^ date = DateTime::Now.ToString(" dd MMMM yyyy", culture);
+			String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
 			Time->Text = time;
 			Date->Text = date;
 			using namespace std;
@@ -83,6 +94,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ Table;
 	private: System::Windows::Forms::Label^ BarName;
 	private: System::Windows::Forms::Label^ BarNameFront;
+	private: System::Windows::Forms::Label^ Name;
 
 
 	private:
@@ -105,6 +117,7 @@ namespace Pakreserve1 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MPBarnd::typeid));
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Name = (gcnew System::Windows::Forms::Label());
 			this->BarNameFront = (gcnew System::Windows::Forms::Label());
 			this->Time = (gcnew System::Windows::Forms::Label());
 			this->Date = (gcnew System::Windows::Forms::Label());
@@ -134,15 +147,31 @@ namespace Pakreserve1 {
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->panel1->Controls->Add(this->Name);
 			this->panel1->Controls->Add(this->BarNameFront);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(127, 635);
+			this->panel1->Location = System::Drawing::Point(12, 100);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
 			this->panel1->MouseLeave += gcnew System::EventHandler(this, &MPBarnd::panel1_MouseLeave);
 			this->panel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MPBarnd::panel1_MouseMove);
+			// 
+			// Name
+			// 
+			this->Name->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->Name->AutoSize = true;
+			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
+			this->Name->ForeColor = System::Drawing::Color::White;
+			this->Name->Location = System::Drawing::Point(646, 362);
+			this->Name->Name = L"Name";
+			this->Name->Size = System::Drawing::Size(74, 19);
+			this->Name->TabIndex = 4;
+			this->Name->Text = L"AAAAA";
+			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// BarNameFront
 			// 
@@ -158,14 +187,17 @@ namespace Pakreserve1 {
 			// 
 			// Time
 			// 
+			this->Time->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->Time->AutoSize = true;
 			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Time->ForeColor = System::Drawing::Color::White;
-			this->Time->Location = System::Drawing::Point(409, 362);
+			this->Time->Location = System::Drawing::Point(424, 362);
 			this->Time->Name = L"Time";
-			this->Time->Size = System::Drawing::Size(94, 19);
+			this->Time->Size = System::Drawing::Size(92, 19);
 			this->Time->TabIndex = 1;
-			this->Time->Text = L"01.00 A.M.";
+			this->Time->Text = L"AAAA AA";
 			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date
@@ -173,11 +205,12 @@ namespace Pakreserve1 {
 			this->Date->AutoSize = true;
 			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Date->ForeColor = System::Drawing::Color::White;
-			this->Date->Location = System::Drawing::Point(188, 362);
+			this->Date->Location = System::Drawing::Point(174, 362);
 			this->Date->Name = L"Date";
-			this->Date->Size = System::Drawing::Size(100, 19);
+			this->Date->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->Date->Size = System::Drawing::Size(175, 19);
 			this->Date->TabIndex = 0;
-			this->Date->Text = L"22 Feb 2024";
+			this->Date->Text = L"AA AAAAAAAA AA";
 			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->Date->Click += gcnew System::EventHandler(this, &MPBarnd::Date_Click);
 			// 
@@ -188,7 +221,7 @@ namespace Pakreserve1 {
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->panel2->Controls->Add(this->Table);
 			this->panel2->Controls->Add(this->BarName);
-			this->panel2->Location = System::Drawing::Point(110, 109);
+			this->panel2->Location = System::Drawing::Point(929, 97);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1032, 488);
 			this->panel2->TabIndex = 10;
@@ -229,7 +262,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MPBarnd";
+			//this->Name = L"MPBarnd";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBarnd::MPBarnd_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
