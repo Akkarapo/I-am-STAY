@@ -2,8 +2,6 @@
 #include "User.h"
 #include "regist.h"
 #include "PakForm.h"
-#include "MPBar.h"
-
 namespace Pakreserve1 {
 
 	using namespace System;

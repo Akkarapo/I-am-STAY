@@ -133,7 +133,6 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
-    <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
@@ -222,9 +221,6 @@
     <EmbeddedResource Include="ToeyMenu.resx">
       <DependentUpon>ToeyMenu.h</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\..\Downloads\Libre_Barcode_128\LibreBarcode128-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

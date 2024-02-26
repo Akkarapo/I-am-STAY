@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="NepjuneCalender1.cpp" />
     <ClCompile Include="PakForm.cpp" />
     <ClCompile Include="regist.cpp" />
@@ -41,7 +40,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <ClInclude Include="Login.h" />
-    <ClInclude Include="MPBar.h" />
     <ClInclude Include="NepjuneCalender1.h" />
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="regist.h" />
@@ -50,8 +48,5 @@
     <ClInclude Include="sendMail.h" />
     <ClInclude Include="MoveToMp.h" />
     <ClInclude Include="partnerRegist.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\..\Downloads\Libre_Barcode_128\LibreBarcode128-Regular.ttf" />
   </ItemGroup>
 </Project>
