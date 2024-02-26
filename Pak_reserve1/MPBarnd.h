@@ -23,31 +23,19 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class MPBarnd : public System::Windows::Forms::Form
 	{
-
 	public:
-
+		String^ temp = nullptr;
 		MPBarnd(User^ user)
 		{
-
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
-			String^ temp = nullptr;
-			if (user->username!=nullptr)
-			{
-				Name->Text = user->username;
-				temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
-			}
-				
-			else
-			{
-				Name->Text = "Noone";
-				temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "NOONE" + ".txt";
-			}
+			Name->Text = user->username;
+			temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
 				
 
-			CultureInfo^ culture = gcnew CultureInfo("en-US");
+			/*CultureInfo^ culture = gcnew CultureInfo("en-US");
 			String^ time = DateTime::Now.ToString("hh:mm tt");
 			String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
 			Time->Text = time;
@@ -65,7 +53,7 @@ namespace Pakreserve1 {
 			fileIn.close();
 			ofstream fileOut(path, ios::app);
 			fileOut << datec << " " << timec << endl;
-			fileOut.close();
+			fileOut.close();*/
 		}
 
 	protected:
@@ -308,6 +296,25 @@ namespace Pakreserve1 {
 	private: System::Void MPBarnd_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->panel1->Location = System::Drawing::Point(110, 109);
 		this->panel2->Location = System::Drawing::Point(110, 109);
+		CultureInfo^ culture = gcnew CultureInfo("en-US");
+		String^ time = DateTime::Now.ToString("hh:mm tt");
+		String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+		Time->Text = time;
+		Date->Text = date;
+		using namespace std;
+		string path, line, datec, timec;
+		MarshalString(temp, path);
+		MarshalString(time, timec);
+		MarshalString(date, datec);
+		ifstream fileIn(path);
+		vector<string> lines;
+		while (getline(fileIn, line)) {
+			lines.push_back(line);
+		}
+		fileIn.close();
+		ofstream fileOut(path, ios::app);
+		fileOut << "Date: " << datec << " Time: " << timec << " complete" << endl;
+		fileOut.close();
 	}
 	private: System::Void Date_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
