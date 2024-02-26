@@ -1,6 +1,5 @@
 #include "PakForm.h"
 #include "Login.h"
-#include "MPBar.h"
 #include "Profile.h"
 #include "MyUserControl.h"
 #include "../TicketControl/Ticket.h"
@@ -9,6 +8,7 @@
 #include "MoveToMp.h"
 #include "partnerRegist.h"
 #include "User.h"
+#include "MPBarnd.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,21 +17,19 @@ using namespace System::Windows::Forms;
 void main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
     Pakreserve1::sendMail mailForm;
     //Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
-    
 
     form2.ShowDialog();
     //User^ user = form2.user;
     User^ user = form2.user;
     //profileform.switchToBook = true;
 
-    Pakreserve1::MPBar mpform(user);
+    Pakreserve1::MPBarnd mpform(user);
     Pakreserve1::Profile profileform(user);
     //mpform.ShowDialog();
     while (true) {

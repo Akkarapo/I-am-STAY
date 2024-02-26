@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="MPBar.cpp" />
     <ClCompile Include="NepjuneCalender1.cpp" />
     <ClCompile Include="PakForm.cpp" />
     <ClCompile Include="regist.cpp" />
@@ -13,6 +12,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="MPBarnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -30,17 +30,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h" />
-    <ClInclude Include="MPBar.h" />
     <ClInclude Include="MyForm.h" />
     <ClInclude Include="MyUserControl.h" />
     <ClInclude Include="Profile.h" />
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="ToeyMenu.h" />
+    <ClInclude Include="MPBarnd.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <ClInclude Include="Login.h" />
-    <ClInclude Include="MPBar.h" />
     <ClInclude Include="NepjuneCalender1.h" />
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="regist.h" />
@@ -49,8 +48,5 @@
     <ClInclude Include="sendMail.h" />
     <ClInclude Include="MoveToMp.h" />
     <ClInclude Include="partnerRegist.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\..\Downloads\Libre_Barcode_128\LibreBarcode128-Regular.ttf" />
   </ItemGroup>
 </Project>
