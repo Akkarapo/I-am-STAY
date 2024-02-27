@@ -319,23 +319,27 @@ namespace Pakreserve1 {
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
-		//vector<string> lines;
+		vector<string> lines;
 		while (getline(fileIn, line)) {
-			//lines.push_back(line);
+			lines.push_back(line);
 		}
+		line = lines[lines.size() - 1];
 		fileIn.close();
-		char dayc[10], monthc[10], yearc[10], timec[10] , amc[5];
+		char dayc[100], monthc[100], yearc[100], timec[100] , amc[50];
 		char format[] = "Date: %s %s %s Time: %s %s complete";
 		sscanf(line.c_str(), format, dayc , monthc, yearc, timec, amc);
-		String^ day = gcnew String(dayc);
-		String^ time = gcnew String(timec);
-		String^ month = gcnew String(monthc);
-		String^ year = gcnew String(yearc);
-		String^ am = gcnew String(amc);
-		//MarshalString(date, datecp);
+		//String^ date = dayc + monthc + yearc;
+		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
+		String^ time = gcnew String(timec) + " " + gcnew String(amc);
+		//String^ time = gcnew String(timec);
+		//String^ month = gcnew String(monthc);
+		//String^ year = gcnew String(yearc);
+		//String^ am = gcnew String(amc);
+		//String^ date;
+		//MarshalString(date, datee);
 		//MarshalString(time, timecp);
-		Date->Text = "26 February 2024";
-		Time->Text = "11:16 PM";
+		Date->Text = date;
+		Time->Text = time;
 
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
