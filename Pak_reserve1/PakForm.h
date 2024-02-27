@@ -2009,7 +2009,7 @@ public:
 			H7Table1PRed->Show();
 			H7Table1P->Hide();
 		}
-		label1->Text = gcnew String(line.c_str());
+		//label1->Text = gcnew String(line.c_str());
 	}
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
