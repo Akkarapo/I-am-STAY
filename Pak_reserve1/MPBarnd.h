@@ -51,8 +51,8 @@ namespace Pakreserve1 {
 			fileIn.close();
 			ofstream fileOut(path, ios::app);
 			fileOut << datec << " " << timec << endl;
-			fileOut.close();*/
-		}
+			fileOut.close();
+		}	
 
 	protected:
 		/// <summary>
