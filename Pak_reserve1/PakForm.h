@@ -28,10 +28,11 @@ namespace Pakreserve1 {
 	public ref class PakForm : public System::Windows::Forms::Form
 	{
 	public:
+		array<bool>^ dataTable ;
 		PakForm(void)
 		{
 			InitializeComponent();
-			
+			//array<bool>^ dataTable;
 			/*label1->Hide();
 			label3->Hide();
 			button1->Hide();
@@ -1830,7 +1831,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 		}
 
 public:
-	array<bool>^ dataTable;
 
 	void MarshalString(String^ s, std::string& os) {
 		using namespace Runtime::InteropServices;
@@ -1850,7 +1850,7 @@ public:
 	Void UpdateTable() {
 		using namespace std;
 		int BarNo = 1;
-		String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -1858,7 +1858,7 @@ public:
 			MessageBox::Show("Can't open file Location","Error",MessageBoxButtons::OK);
 			return;
 		}
-		for (int i = 0; i < BarNo;i++) {
+		for (int i = 0; i < BarNo; i++) {
 			getline(fileIn,line);
 		}
 		/*for (int i = 0; i < line.size(); i++) {
@@ -1868,62 +1868,147 @@ public:
 
 		}*/
 		if (line[0] == '1') {
+			dataTable[0] = true;
 			A1Table2PRed->Show();
 			A1Table2P->Hide();
+		}
+		if (line[1] == '1') {
+			dataTable[1] = true;
 			A2Table2PRed->Show();
 			A2Table2P->Hide();
+		}
+		if (line[2] == '1') {
+			dataTable[2] = true;
 			A3Table2PRed->Show();
 			A3Table2P->Hide();
+		}
+		if (line[3] == '1') {
+			dataTable[3] = true;
 			B1Table2PRed->Show();
 			B1Table2P->Hide();
+		}
+		if (line[4] == '1') {
+			dataTable[4] = true;
 			B2Table4PRed->Show();
 			B2Table4P->Hide();
+		}
+		if (line[5] == '1') {
+			dataTable[5] = true;
 			B3Table4PRed->Show();
 			B3Table4P->Hide();
+		}
+		if (line[6] == '1') {
+			dataTable[6] = true;
 			B4Table4PRed->Show();
 			B4Table4P->Hide();
+		}
+		if (line[7] == '1') {
+			dataTable[7] = true;
 			C1Table2PRed->Show();
 			C1Table2P->Hide();
+		}
+		if (line[8] == '1') {
+			dataTable[8] = true;
 			C2Table2PRed->Show();
 			C2Table2P->Hide();
+		}
+		if (line[9] == '1') {
+			dataTable[9] = true;
 			C3Table2PRed->Show();
 			C3Table2P->Hide();
+		}
+		if (line[10] == '1') {
+			dataTable[10] = true;
 			D1Table4PRed->Show();
 			D1Table4P->Hide();
+		}
+		if (line[11] == '1') {
+			dataTable[11] = true;
 			D2Table4PRed->Show();
 			D2Table4P->Hide();
+		}
+		if (line[12] == '1') {
+			dataTable[12] = true;
 			D3Table4PRed->Show();
 			D3Table4P->Hide();
+		}
+		if (line[13] == '1') {
+			dataTable[13] = true;
 			E1Table2PRed->Show();
 			E1Table2P->Hide();
+		}
+		if (line[14] == '1') {
+			dataTable[14] = true;
 			E2Table2PRed->Show();
 			E2Table2P->Hide();
+		}
+		if (line[15] == '1') {
+			dataTable[15] = true;
 			E3Table2PRed->Show();
 			E3Table2P->Hide();
+		}
+		if (line[16] == '1') {
+			dataTable[16] = true;
 			F1Table4PRed->Show();
 			F1Table4P->Hide();
+		}
+		if (line[17] == '1') {
+			dataTable[17] = true;
 			F2Table4PRed->Show();
 			F2Table4P->Hide();
+		}
+		if (line[18] == '1') {
+			dataTable[18] = true;
 			F3Table4PRed->Show();
 			F3Table4P->Hide();
+		}
+		if (line[19] == '1') {
+			dataTable[19] = true;
 			G1Table2PRed->Show();
 			G1Table2P->Hide();
+		}
+		if (line[20] == '1') {
+			dataTable[20] = true;
 			G2Table2PRed->Show();
 			G2Table2P->Hide();
+		}
+		if (line[21] == '1') {
+			dataTable[21] = true;
 			G3Table2PRed->Show();
 			G3Table2P->Hide();
+		}
+		if (line[22] == '1') {
+			dataTable[22] = true;
 			H1Table1PRed->Show();
 			H1Table1P->Hide();
+		}
+		if (line[23] == '1') {
+			dataTable[23] = true;
 			H2Table1PRed->Show();
 			H2Table1P->Hide();
+		}
+		if (line[24] == '1') {
+			dataTable[24] = true;
 			H3Table1PRed->Show();
 			H3Table1P->Hide();
+		}
+		if (line[25] == '1') {
+			dataTable[25] = true;
 			H4Table1PRed->Show();
 			H4Table1P->Hide();
+		}
+		if (line[26] == '1') {
+			dataTable[26] = true;
 			H5Table1PRed->Show();
 			H5Table1P->Hide();
+		}
+		if (line[27] == '1') {
+			dataTable[27] = true;
 			H6Table1PRed->Show();
 			H6Table1P->Hide();
+		}
+		if (line[28] == '1') {
+			dataTable[28] = true;
 			H7Table1PRed->Show();
 			H7Table1P->Hide();
 		}
@@ -2234,7 +2319,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	
 	System::String^ a ="";
 
-	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 	
 	string path,line;
 	MarshalString(temp, path);
@@ -2254,7 +2339,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	label1->Text = a;
 	string newData;
 	MarshalString(a,newData);
-	switchToMP = true;
+	//switchToMP = true;
 	int targetline = 1 ;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData; 
@@ -2282,7 +2367,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	using namespace std;
 
 	String^ c = gcnew String("abcd");
-	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 	string path;
 	vector<string> lines;
 
