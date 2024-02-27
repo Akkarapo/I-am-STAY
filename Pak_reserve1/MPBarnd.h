@@ -32,8 +32,12 @@ namespace Pakreserve1 {
 			//TODO: Add the constructor code here
 			//
 			//Name->Text = user->username;
-			String^ temp = Application::StartupPath + user->username + ".txt";
+			temp = Application::StartupPath + user->username + ".txt";
 			CultureInfo^ culture = gcnew CultureInfo("en-US");
+			Name->Text = user->username;
+				
+
+			/*CultureInfo^ culture = gcnew CultureInfo("en-US");
 			String^ time = DateTime::Now.ToString("hh:mm tt");
 			String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
 			Time->Text = time;
