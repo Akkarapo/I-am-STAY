@@ -34,7 +34,7 @@ namespace Pakreserve1 {
 			//TODO: Add the constructor code here
 			//
 			//Name->Text = user->username;
-			String^ temp = "D:\\gitgitgit\\I-am-STAY\\x64\\" + user->username + ".txt";
+			String^ temp = Application::StartupPath + user->username + ".txt";
 			CultureInfo^ culture = gcnew CultureInfo("en-US");
 			String^ time = DateTime::Now.ToString("hh:mm tt");
 			String^ date = DateTime::Now.ToString(" dd MMMM yyyy", culture);
