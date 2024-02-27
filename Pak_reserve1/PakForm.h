@@ -1850,7 +1850,7 @@ public:
 	Void UpdateTable() {
 		using namespace std;
 		int BarNo = 1;
-		String^ temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+		String^ temp = Application::StartupPath +"//Data//" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -1870,10 +1870,15 @@ public:
 		if (line[0] == '1') {
 			A1Table2PRed->Show();
 			A1Table2P->Hide();
+		}
+		if (line[1] == '1') {
 			A2Table2PRed->Show();
 			A2Table2P->Hide();
+		}
+		if (line[2] == '1') {
 			A3Table2PRed->Show();
 			A3Table2P->Hide();
+		
 			B1Table2PRed->Show();
 			B1Table2P->Hide();
 			B2Table4PRed->Show();
