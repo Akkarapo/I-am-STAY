@@ -482,9 +482,9 @@ namespace Pakreserve1 {
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(14, 20);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(94, 39);
+			this->label1->Size = System::Drawing::Size(161, 39);
 			this->label1->TabIndex = 19;
-			this->label1->Text = L"Toey";
+			this->label1->Text = L"MaewNoi";
 			// 
 			// label2
 			// 
@@ -596,9 +596,9 @@ namespace Pakreserve1 {
 			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(14, 20);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(94, 39);
+			this->label6->Size = System::Drawing::Size(101, 39);
 			this->label6->TabIndex = 19;
-			this->label6->Text = L"Toey";
+			this->label6->Text = L"Gong";
 			// 
 			// panel3
 			// 
@@ -669,9 +669,9 @@ namespace Pakreserve1 {
 			this->label9->ForeColor = System::Drawing::Color::White;
 			this->label9->Location = System::Drawing::Point(14, 20);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(94, 39);
+			this->label9->Size = System::Drawing::Size(140, 39);
 			this->label9->TabIndex = 19;
-			this->label9->Text = L"Toey";
+			this->label9->Text = L"Mapraw";
 			// 
 			// panel4
 			// 
@@ -769,7 +769,6 @@ namespace Pakreserve1 {
 			this->pictureBox17->Size = System::Drawing::Size(32, 32);
 			this->pictureBox17->TabIndex = 17;
 			this->pictureBox17->TabStop = false;
-
 			// 
 			// label13
 			// 
@@ -813,9 +812,9 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label15->Location = System::Drawing::Point(14, 20);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(94, 39);
+			this->label15->Size = System::Drawing::Size(145, 39);
 			this->label15->TabIndex = 19;
-			this->label15->Text = L"Toey";
+			this->label15->Text = L"Nepjune";
 			// 
 			// panel6
 			// 
@@ -840,9 +839,9 @@ namespace Pakreserve1 {
 			this->label16->ForeColor = System::Drawing::Color::White;
 			this->label16->Location = System::Drawing::Point(14, 20);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(94, 39);
+			this->label16->Size = System::Drawing::Size(168, 39);
 			this->label16->TabIndex = 19;
-			this->label16->Text = L"Toey";
+			this->label16->Text = L"Oakkhara";
 			// 
 			// pictureBox5
 			// 
@@ -915,7 +914,7 @@ namespace Pakreserve1 {
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(94, 39);
 			this->label19->TabIndex = 19;
-			this->label19->Text = L"Toey";
+			this->label19->Text = L"Sajui";
 			// 
 			// pictureBox13
 			// 
@@ -986,9 +985,9 @@ namespace Pakreserve1 {
 			this->label22->ForeColor = System::Drawing::Color::White;
 			this->label22->Location = System::Drawing::Point(14, 20);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(94, 39);
+			this->label22->Size = System::Drawing::Size(184, 39);
 			this->label22->TabIndex = 19;
-			this->label22->Text = L"Toey";
+			this->label22->Text = L"Americano";
 			// 
 			// pictureBox19
 			// 
@@ -1059,9 +1058,9 @@ namespace Pakreserve1 {
 			this->label25->ForeColor = System::Drawing::Color::White;
 			this->label25->Location = System::Drawing::Point(14, 20);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(94, 39);
+			this->label25->Size = System::Drawing::Size(109, 39);
 			this->label25->TabIndex = 19;
-			this->label25->Text = L"Toey";
+			this->label25->Text = L"Saran";
 			// 
 			// pictureBox21
 			// 
@@ -1132,9 +1131,9 @@ namespace Pakreserve1 {
 			this->label28->ForeColor = System::Drawing::Color::White;
 			this->label28->Location = System::Drawing::Point(14, 20);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(94, 39);
+			this->label28->Size = System::Drawing::Size(134, 39);
 			this->label28->TabIndex = 19;
-			this->label28->Text = L"Toey";
+			this->label28->Text = L"Natwaa";
 			// 
 			// pictureBox23
 			// 
@@ -1205,9 +1204,9 @@ namespace Pakreserve1 {
 			this->label31->ForeColor = System::Drawing::Color::White;
 			this->label31->Location = System::Drawing::Point(14, 20);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(94, 39);
+			this->label31->Size = System::Drawing::Size(169, 39);
 			this->label31->TabIndex = 19;
-			this->label31->Text = L"Toey";
+			this->label31->Text = L"Garpanya";
 			// 
 			// pictureBox25
 			// 
@@ -1278,9 +1277,9 @@ namespace Pakreserve1 {
 			this->label34->ForeColor = System::Drawing::Color::White;
 			this->label34->Location = System::Drawing::Point(14, 20);
 			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(94, 39);
+			this->label34->Size = System::Drawing::Size(130, 39);
 			this->label34->TabIndex = 19;
-			this->label34->Text = L"Toey";
+			this->label34->Text = L"STEVE";
 			// 
 			// pictureBox27
 			// 
@@ -1351,9 +1350,9 @@ namespace Pakreserve1 {
 			this->label37->ForeColor = System::Drawing::Color::White;
 			this->label37->Location = System::Drawing::Point(14, 20);
 			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(94, 39);
+			this->label37->Size = System::Drawing::Size(117, 39);
 			this->label37->TabIndex = 19;
-			this->label37->Text = L"Toey";
+			this->label37->Text = L"Honey";
 			// 
 			// pictureBox29
 			// 
@@ -1424,9 +1423,9 @@ namespace Pakreserve1 {
 			this->label40->ForeColor = System::Drawing::Color::White;
 			this->label40->Location = System::Drawing::Point(14, 20);
 			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(94, 39);
+			this->label40->Size = System::Drawing::Size(122, 39);
 			this->label40->TabIndex = 19;
-			this->label40->Text = L"Toey";
+			this->label40->Text = L"SRTxz";
 			// 
 			// pictureBox31
 			// 
@@ -1497,9 +1496,9 @@ namespace Pakreserve1 {
 			this->label43->ForeColor = System::Drawing::Color::White;
 			this->label43->Location = System::Drawing::Point(14, 20);
 			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(94, 39);
+			this->label43->Size = System::Drawing::Size(74, 39);
 			this->label43->TabIndex = 19;
-			this->label43->Text = L"Toey";
+			this->label43->Text = L"422";
 			// 
 			// pictureBox33
 			// 
