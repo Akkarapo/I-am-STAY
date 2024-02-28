@@ -327,9 +327,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				String^ senderPassword = "lnsy ucdr uzza weyj";
 				String^ reciever = gcnew String(email);
 				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
-				String^ text = gcnew String(username) + " " + gcnew String(pwd);
+				String^ text = "Plase remember your username and Password\n" + "Username : " + gcnew String(username) + "\nPassword : " + gcnew String(pwd);
 				MailMessage^ mail = gcnew MailMessage(senderUsername,reciever);
-				mail->Subject = "Password Recovery";
+				mail->Subject = "I AM STAY - Password Recovery";
 				mail->Body = text;
 
 				SmtpClient^ Client = gcnew SmtpClient("smtp.gmail.com");
