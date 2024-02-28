@@ -1824,7 +1824,7 @@ public:
 		using namespace std;
 		int BarNo = 1;
 
-		String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+		String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -2316,7 +2316,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	using namespace std;
 	
 	System::String^ a ="";
-	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath +"\\Data\\" + "Table.txt";
 	
 	string path,line;
 	MarshalString(temp, path);
@@ -2360,7 +2360,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	using namespace std;
 
 	String^ c = gcnew String("abcd");
-	String^ temp = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
 	string path;
 	vector<string> lines;
 
