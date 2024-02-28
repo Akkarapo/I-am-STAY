@@ -28,10 +28,16 @@ namespace Pakreserve1 {
 	public ref class PakForm : public System::Windows::Forms::Form
 	{
 	public:
+		array<bool>^ dataTable;
 		PakForm(void)
 		{
-			InitializeComponent();
 			
+			InitializeComponent();
+
+			//array<bool>^ dataTable = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false };
+			//std::vector<int> reservedTable;
+			array<int>^ reservedTable = {};
+			//array<bool>^ dataTable;
 			/*label1->Hide();
 			label3->Hide();
 			button1->Hide();
@@ -183,9 +189,9 @@ private: System::Windows::Forms::PictureBox^ H6Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H6Table1P;
 private: System::Windows::Forms::PictureBox^ H7Table1PGreen;
 private: System::Windows::Forms::PictureBox^ H7Table1P;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::Button^ button1;
+
+
+
 private: System::Windows::Forms::PictureBox^ A1Table2PRed;
 private: System::Windows::Forms::PictureBox^ A2Table2PRed;
 private: System::Windows::Forms::PictureBox^ A3Table2PRed;
@@ -246,6 +252,7 @@ private: System::Windows::Forms::PictureBox^ F3Table4PRed;
 
 
 private: System::Windows::Forms::PictureBox^ pictureBox2;
+
 
 
 
@@ -345,9 +352,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->H6Table1P = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->H7Table1P = (gcnew System::Windows::Forms::PictureBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->A1Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A2Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A3Table2PRed = (gcnew System::Windows::Forms::PictureBox());
@@ -1244,34 +1248,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->H7Table1P->TabStop = false;
 			this->H7Table1P->Click += gcnew System::EventHandler(this, &PakForm::H7Table1P_Click);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(436, 117);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 62;
-			this->label1->Text = L"label1";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(996, 117);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(44, 16);
-			this->label3->TabIndex = 64;
-			this->label3->Text = L"label3";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(632, 60);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(298, 52);
-			this->button1->TabIndex = 63;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &PakForm::button1_Click);
-			// 
 			// A1Table2PRed
 			// 
 			this->A1Table2PRed->BackColor = System::Drawing::Color::Transparent;
@@ -1667,10 +1643,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->Controls->Add(this->A3Table2PRed);
 			this->Controls->Add(this->A2Table2PRed);
 			this->Controls->Add(this->A1Table2PRed);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->H7Table1PGreen);
 			this->Controls->Add(this->H7Table1P);
 			this->Controls->Add(this->H6Table1PGreen);
@@ -1832,7 +1805,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 		}
 
 public:
-	array<bool>^ dataTable;
 
 	void MarshalString(String^ s, std::string& os) {
 		using namespace Runtime::InteropServices;
@@ -1852,7 +1824,8 @@ public:
 	Void UpdateTable() {
 		using namespace std;
 		int BarNo = 1;
-		String^ temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+
+		String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -1860,76 +1833,184 @@ public:
 			MessageBox::Show("Can't open file Location","Error",MessageBoxButtons::OK);
 			return;
 		}
-		for (int i = 0; i < BarNo;i++) {
+		for (int i = 0; i < BarNo; i++) {
 			getline(fileIn,line);
 		}
-		/*for (int i = 0; i < line.size(); i++) {
-			if (line[i] == '1') {
-				//����������ᴧ�
-			}
-
-		}*/
 		if (line[0] == '1') {
+			//dataTable[0] = true;
+			//a[0] = 1; 
 			A1Table2PRed->Show();
 			A1Table2P->Hide();
+		}
+		if (line[1] == '1') {
+			//dataTable[1] = true;
+			//a.push_back(1);
 			A2Table2PRed->Show();
 			A2Table2P->Hide();
+		}
+		if (line[2] == '1') {
+			//a.push_back(2);
+			//dataTable[2] = true;
 			A3Table2PRed->Show();
 			A3Table2P->Hide();
+		}
+		if (line[3] == '1') {
+			//a.push_back(3);
+			//dataTable[3] = true;
 			B1Table2PRed->Show();
 			B1Table2P->Hide();
+		}
+		if (line[4] == '1') {
+			//a.push_back(4);
+			//dataTable[4] = true;
 			B2Table4PRed->Show();
 			B2Table4P->Hide();
+		}
+		if (line[5] == '1') {
+			//a.push_back(5);
+			//dataTable[5] = true;
 			B3Table4PRed->Show();
 			B3Table4P->Hide();
+		}
+		if (line[6] == '1') {
+			//a.push_back(6);
+			//dataTable[6] = true;
 			B4Table4PRed->Show();
 			B4Table4P->Hide();
+		}
+		if (line[7] == '1') {
+			//a.push_back(7);
+			//dataTable[7] = true;
 			C1Table2PRed->Show();
 			C1Table2P->Hide();
+		}
+		if (line[8] == '1') {
+			//a.push_back(8);
+			//dataTable[8] = true;
 			C2Table2PRed->Show();
 			C2Table2P->Hide();
+		}
+		if (line[9] == '1') {
+			//a.push_back(9);
+			//dataTable[9] = true;
 			C3Table2PRed->Show();
 			C3Table2P->Hide();
+		}
+		if (line[10] == '1') {
+			//a.push_back(10);
+			//dataTable[10] = true;
 			D1Table4PRed->Show();
 			D1Table4P->Hide();
+		}
+		if (line[11] == '1') {
+			//a.push_back(11);
+			//dataTable[11] = true;
 			D2Table4PRed->Show();
 			D2Table4P->Hide();
+		}
+		if (line[12] == '1') {
+			//a.push_back(12);
+			//dataTable[12] = true;
 			D3Table4PRed->Show();
 			D3Table4P->Hide();
+		}
+		if (line[13] == '1') {
+			//a.push_back(13);
+			//dataTable[13] = true;
 			E1Table2PRed->Show();
 			E1Table2P->Hide();
+		}
+		if (line[14] == '1') {
+			//a.push_back(14);
+			//dataTable[14] = true;
 			E2Table2PRed->Show();
 			E2Table2P->Hide();
+		}
+		if (line[15] == '1') {
+			//a.push_back(15);
+			//dataTable[15] = true;
 			E3Table2PRed->Show();
 			E3Table2P->Hide();
+		}
+		if (line[16] == '1') {
+			//a.push_back(16);
+			//dataTable[16] = true;
 			F1Table4PRed->Show();
 			F1Table4P->Hide();
+		}
+		if (line[17] == '1') {
+			//a.push_back(17);
+			//dataTable[17] = true;
 			F2Table4PRed->Show();
 			F2Table4P->Hide();
+		}
+		if (line[18] == '1') {
+			//a.push_back(18);
+			//dataTable[18] = true;
 			F3Table4PRed->Show();
 			F3Table4P->Hide();
+		}
+		if (line[19] == '1') {
+			//a.push_back(19);
+			//dataTable[19] = true;
 			G1Table2PRed->Show();
 			G1Table2P->Hide();
+		}
+		if (line[20] == '1') {
+			//a.push_back(20);
+			//dataTable[20] = true;
 			G2Table2PRed->Show();
 			G2Table2P->Hide();
+		}
+		if (line[21] == '1') {
+			//a.push_back(21);
+			//dataTable[21] = true;
 			G3Table2PRed->Show();
 			G3Table2P->Hide();
+		}
+		if (line[22] == '1') {
+			//a.push_back(22);
+			//dataTable[22] = true;
 			H1Table1PRed->Show();
 			H1Table1P->Hide();
+		}
+		if (line[23] == '1') {
+			//a.push_back(23);
+			//dataTable[23] = true;
 			H2Table1PRed->Show();
 			H2Table1P->Hide();
+		}
+		if (line[24] == '1') {
+			//a.push_back(24);
+			//dataTable[24] = true;
 			H3Table1PRed->Show();
 			H3Table1P->Hide();
+		}
+		if (line[25] == '1') {
+			//a.push_back(25);
+			//dataTable[25] = true;
 			H4Table1PRed->Show();
 			H4Table1P->Hide();
+		}
+		if (line[26] == '1') {
+			//a.push_back(26);
+			//dataTable[26] = true;
 			H5Table1PRed->Show();
 			H5Table1P->Hide();
+		}
+		if (line[27] == '1') {
+			//a.push_back(27);
+			//dataTable[27] = true;
 			H6Table1PRed->Show();
 			H6Table1P->Hide();
+		}
+		if (line[28] == '1') {
+			//a.push_back(28);
+			//dataTable[28] = true;
 			H7Table1PRed->Show();
 			H7Table1P->Hide();
 		}
-
+		//label1->Text = gcnew String(line.c_str());
 	}
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
@@ -2231,12 +2312,12 @@ public:
 }
 
 public: bool switchToMP = false;
+
 private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
 	
 	System::String^ a ="";
-
-	String^ temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath +"\\Data\\" + "Table.txt";
 	
 	string path,line;
 	MarshalString(temp, path);
@@ -2252,8 +2333,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	for (int i = 0; i < 29; i++) {
 		a += (dataTable[i] ? "1" : "0");
 	}
-
-	label1->Text = a;
+	
 	string newData;
 	MarshalString(a,newData);
 	switchToMP = true;
@@ -2264,9 +2344,6 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 	ofstream fileOut(path);
 	int i = 0;
-	if (fileOut.is_open()) {
-		label3->Text = "Successfully ReadFile";
-	}
 
 	for (const auto& modifiedLine : lines) {
 		fileOut << modifiedLine << endl;
@@ -2279,12 +2356,12 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-
+//array<bool>^ dataTable;
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
 
 	String^ c = gcnew String("abcd");
-	String^ temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
+	String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
 	string path;
 	vector<string> lines;
 
@@ -2292,9 +2369,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	ifstream fileIn(path);
 
 	if (fileIn.is_open()) {
-		label3->Text = "file Opened";
 	}
-
 }
 
 public: bool switchToProfile = false;

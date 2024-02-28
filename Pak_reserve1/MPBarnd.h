@@ -31,29 +31,10 @@ namespace Pakreserve1 {
 			//
 			//TODO: Add the constructor code here
 			//
+			//Name->Text = user->username;
+			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
 			Name->Text = user->username;
-			temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
-				
-
-			/*CultureInfo^ culture = gcnew CultureInfo("en-US");
-			String^ time = DateTime::Now.ToString("hh:mm tt");
-			String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
-			Time->Text = time;
-			Date->Text = date;
-			using namespace std;
-			string path, line, datec, timec;
-			MarshalString(temp, path);
-			MarshalString(time, timec);
-			MarshalString(date, datec);
-			ifstream fileIn(path);
-			vector<string> lines;
-			while (getline(fileIn, line)) {
-				lines.push_back(line);
-			}
-			fileIn.close();
-			ofstream fileOut(path, ios::app);
-			fileOut << datec << " " << timec << endl;
-			fileOut.close();*/
+			
 		}
 
 	protected:

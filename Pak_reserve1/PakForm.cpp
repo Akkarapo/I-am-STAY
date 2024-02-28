@@ -23,7 +23,6 @@ void main(array<String^>^ args) {
     //Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
-
     form2.ShowDialog();
     //User^ user = form2.user;
     //User^ user = form2.user;

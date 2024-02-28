@@ -64,8 +64,8 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ label6;
 
-	private: System::Windows::Forms::CheckBox^ checkBox2;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
+
+
 	private: System::Windows::Forms::Label^ label12;
 
 
@@ -106,8 +106,6 @@ namespace Pakreserve1 {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -191,7 +189,7 @@ namespace Pakreserve1 {
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
 			this->label7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label7->Location = System::Drawing::Point(735, 116);
+			this->label7->Location = System::Drawing::Point(735, 140);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(99, 28);
 			this->label7->TabIndex = 5;
@@ -203,7 +201,7 @@ namespace Pakreserve1 {
 			this->label8->BackColor = System::Drawing::Color::Transparent;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
 			this->label8->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label8->Location = System::Drawing::Point(735, 278);
+			this->label8->Location = System::Drawing::Point(735, 302);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(93, 28);
 			this->label8->TabIndex = 7;
@@ -213,7 +211,7 @@ namespace Pakreserve1 {
 			// 
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox1->Location = System::Drawing::Point(763, 156);
+			this->textBox1->Location = System::Drawing::Point(763, 180);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(430, 38);
 			this->textBox1->TabIndex = 8;
@@ -223,7 +221,7 @@ namespace Pakreserve1 {
 			// 
 			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox2->Location = System::Drawing::Point(763, 237);
+			this->textBox2->Location = System::Drawing::Point(763, 261);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(430, 38);
 			this->textBox2->TabIndex = 9;
@@ -233,7 +231,7 @@ namespace Pakreserve1 {
 			// 
 			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox3->Location = System::Drawing::Point(763, 318);
+			this->textBox3->Location = System::Drawing::Point(763, 342);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(430, 38);
 			this->textBox3->TabIndex = 10;
@@ -246,7 +244,7 @@ namespace Pakreserve1 {
 			this->label9->BackColor = System::Drawing::Color::Transparent;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
 			this->label9->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label9->Location = System::Drawing::Point(735, 197);
+			this->label9->Location = System::Drawing::Point(735, 221);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(59, 28);
 			this->label9->TabIndex = 11;
@@ -258,7 +256,7 @@ namespace Pakreserve1 {
 			this->label10->BackColor = System::Drawing::Color::Transparent;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
 			this->label10->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label10->Location = System::Drawing::Point(735, 363);
+			this->label10->Location = System::Drawing::Point(735, 387);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(170, 28);
 			this->label10->TabIndex = 12;
@@ -269,7 +267,7 @@ namespace Pakreserve1 {
 			// 
 			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox4->Location = System::Drawing::Point(763, 403);
+			this->textBox4->Location = System::Drawing::Point(763, 427);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(430, 38);
 			this->textBox4->TabIndex = 13;
@@ -326,36 +324,6 @@ namespace Pakreserve1 {
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"Sign UP";
 			// 
-			// checkBox1
-			// 
-			this->checkBox1->Appearance = System::Windows::Forms::Appearance::Button;
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Checked = true;
-			this->checkBox1->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->checkBox1->Location = System::Drawing::Point(763, 463);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(306, 48);
-			this->checkBox1->TabIndex = 26;
-			this->checkBox1->Text = L"          Customer          ";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &regist::checkBox1_CheckedChanged);
-			// 
-			// checkBox2
-			// 
-			this->checkBox2->Appearance = System::Windows::Forms::Appearance::Button;
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->checkBox2->Location = System::Drawing::Point(965, 462);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(300, 48);
-			this->checkBox2->TabIndex = 27;
-			this->checkBox2->Text = L"             Partner          ";
-			this->checkBox2->UseVisualStyleBackColor = true;
-			this->checkBox2->CheckedChanged += gcnew System::EventHandler(this, &regist::checkBox2_CheckedChanged);
-			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
@@ -374,8 +342,6 @@ namespace Pakreserve1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->label12);
-			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label11);
@@ -489,8 +455,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		return;
 	}
 
-	String^ tempPath = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + username + ".txt";
-	String^ tempPath2 = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "AllData" + ".txt";
+	String^ tempPath = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + username + ".txt";
+	String^ tempPath2 = "D:\\STAY\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + "AllData" + ".txt";
 	string path,username2,password3,email2,path2;
 	MarshalString(tempPath,path);
 	MarshalString(username, username2);
