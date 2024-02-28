@@ -328,16 +328,8 @@ namespace Pakreserve1 {
 		char dayc[100], monthc[100], yearc[100], timec[100] , amc[50];
 		char format[] = "Date: %s %s %s Time: %s %s complete";
 		sscanf(line.c_str(), format, dayc , monthc, yearc, timec, amc);
-		//String^ date = dayc + monthc + yearc;
 		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
 		String^ time = gcnew String(timec) + " " + gcnew String(amc);
-		//String^ time = gcnew String(timec);
-		//String^ month = gcnew String(monthc);
-		//String^ year = gcnew String(yearc);
-		//String^ am = gcnew String(amc);
-		//String^ date;
-		//MarshalString(date, datee);
-		//MarshalString(time, timecp);
 		Date->Text = date;
 		Time->Text = time;
 
