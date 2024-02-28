@@ -32,7 +32,7 @@ namespace Pakreserve1 {
 			//TODO: Add the constructor code here
 			//
 			//Name->Text = user->username;
-			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
+			temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
 			Name->Text = user->username;
 			
 		}

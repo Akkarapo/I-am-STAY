@@ -1825,7 +1825,7 @@ public:
 		using namespace std;
 		int BarNo = 1;
 
-		String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
+		String^ temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
