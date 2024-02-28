@@ -23,7 +23,7 @@ namespace Pakreserve1 {
 		Profile(User^ user)
 		{
 			InitializeComponent();
-			temp = "D:\\MPBranch\\I-am-STAY\\x64\\Debug\\User\\UserData\\" + user->username + ".txt";
+			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
 			CustomerName->Text = user->username;
 			CustomerMail->Text = user->email;
 			Name->Text = user->username;
