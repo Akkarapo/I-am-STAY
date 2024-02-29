@@ -15,6 +15,7 @@ namespace Pakreserve1 {
 	public ref class BarMapraw : public System::Windows::Forms::Form
 	{
 	public:
+		array<bool>^ dataTable;
 		BarMapraw(void)
 		{
 			InitializeComponent();
@@ -120,6 +121,7 @@ namespace Pakreserve1 {
 			this->A1Table2P->Size = System::Drawing::Size(33, 75);
 			this->A1Table2P->TabIndex = 0;
 			this->A1Table2P->TabStop = false;
+			this->A1Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::A1Table2P_Click);
 			// 
 			// A2Table2P
 			// 
@@ -130,6 +132,7 @@ namespace Pakreserve1 {
 			this->A2Table2P->Size = System::Drawing::Size(33, 75);
 			this->A2Table2P->TabIndex = 1;
 			this->A2Table2P->TabStop = false;
+			this->A2Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::A2Table2P_Click);
 			// 
 			// A3Table2P
 			// 
@@ -140,6 +143,7 @@ namespace Pakreserve1 {
 			this->A3Table2P->Size = System::Drawing::Size(33, 75);
 			this->A3Table2P->TabIndex = 2;
 			this->A3Table2P->TabStop = false;
+			this->A3Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::A3Table2P_Click);
 			// 
 			// A4Table2P
 			// 
@@ -150,6 +154,7 @@ namespace Pakreserve1 {
 			this->A4Table2P->Size = System::Drawing::Size(33, 75);
 			this->A4Table2P->TabIndex = 3;
 			this->A4Table2P->TabStop = false;
+			this->A4Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::A4Table2P_Click);
 			// 
 			// A5Table2P
 			// 
@@ -160,6 +165,7 @@ namespace Pakreserve1 {
 			this->A5Table2P->Size = System::Drawing::Size(33, 75);
 			this->A5Table2P->TabIndex = 4;
 			this->A5Table2P->TabStop = false;
+			this->A5Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::A5Table2P_Click);
 			// 
 			// B1Table4P
 			// 
@@ -171,6 +177,7 @@ namespace Pakreserve1 {
 			this->B1Table4P->Size = System::Drawing::Size(64, 64);
 			this->B1Table4P->TabIndex = 5;
 			this->B1Table4P->TabStop = false;
+			this->B1Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::B1Table4P_Click);
 			// 
 			// B2Table4P
 			// 
@@ -182,6 +189,7 @@ namespace Pakreserve1 {
 			this->B2Table4P->Size = System::Drawing::Size(64, 64);
 			this->B2Table4P->TabIndex = 6;
 			this->B2Table4P->TabStop = false;
+			this->B2Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::B2Table4P_Click);
 			// 
 			// B3Table4P
 			// 
@@ -193,6 +201,7 @@ namespace Pakreserve1 {
 			this->B3Table4P->Size = System::Drawing::Size(64, 64);
 			this->B3Table4P->TabIndex = 7;
 			this->B3Table4P->TabStop = false;
+			this->B3Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::B3Table4P_Click);
 			// 
 			// B4Table4P
 			// 
@@ -204,6 +213,7 @@ namespace Pakreserve1 {
 			this->B4Table4P->Size = System::Drawing::Size(64, 64);
 			this->B4Table4P->TabIndex = 8;
 			this->B4Table4P->TabStop = false;
+			this->B4Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::B4Table4P_Click);
 			// 
 			// C1Table4P
 			// 
@@ -215,6 +225,7 @@ namespace Pakreserve1 {
 			this->C1Table4P->Size = System::Drawing::Size(80, 67);
 			this->C1Table4P->TabIndex = 9;
 			this->C1Table4P->TabStop = false;
+			this->C1Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::C1Table4P_Click);
 			// 
 			// C2Table4P
 			// 
@@ -226,6 +237,7 @@ namespace Pakreserve1 {
 			this->C2Table4P->Size = System::Drawing::Size(80, 67);
 			this->C2Table4P->TabIndex = 10;
 			this->C2Table4P->TabStop = false;
+			this->C2Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::C2Table4P_Click);
 			// 
 			// C3Table4P
 			// 
@@ -237,6 +249,7 @@ namespace Pakreserve1 {
 			this->C3Table4P->Size = System::Drawing::Size(80, 67);
 			this->C3Table4P->TabIndex = 11;
 			this->C3Table4P->TabStop = false;
+			this->C3Table4P->Click += gcnew System::EventHandler(this, &BarMapraw::C3Table4P_Click);
 			// 
 			// D1Table2P
 			// 
@@ -247,6 +260,7 @@ namespace Pakreserve1 {
 			this->D1Table2P->Size = System::Drawing::Size(57, 57);
 			this->D1Table2P->TabIndex = 12;
 			this->D1Table2P->TabStop = false;
+			this->D1Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::D1Table2P_Click);
 			// 
 			// D2Table2P
 			// 
@@ -257,6 +271,7 @@ namespace Pakreserve1 {
 			this->D2Table2P->Size = System::Drawing::Size(57, 57);
 			this->D2Table2P->TabIndex = 13;
 			this->D2Table2P->TabStop = false;
+			this->D2Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::D2Table2P_Click);
 			// 
 			// D3Table2P
 			// 
@@ -267,6 +282,7 @@ namespace Pakreserve1 {
 			this->D3Table2P->Size = System::Drawing::Size(57, 57);
 			this->D3Table2P->TabIndex = 14;
 			this->D3Table2P->TabStop = false;
+			this->D3Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::D3Table2P_Click);
 			// 
 			// D4Table2P
 			// 
@@ -277,6 +293,7 @@ namespace Pakreserve1 {
 			this->D4Table2P->Size = System::Drawing::Size(57, 57);
 			this->D4Table2P->TabIndex = 15;
 			this->D4Table2P->TabStop = false;
+			this->D4Table2P->Click += gcnew System::EventHandler(this, &BarMapraw::D4Table2P_Click);
 			// 
 			// BarMapraw
 			// 
@@ -325,7 +342,73 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) { 
+		bool A1Table2PGreenCheck = true;
+	private: System::Void BarMapraw_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataTable = gcnew array<bool>(16);
 	}
+	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A1Table2P->Hide();
+		A1Table2PGreen->Show();
+}
+	private: System::Void A2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A2Table2P->Hide();
+		A2Table2PGreen->Show();
+}
+	private: System::Void A3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A3Table2P->Hide();
+		A3Table2PGreen->Show();
+}
+	private: System::Void A4Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A4Table2P->Hide();
+		A4Table2PGreen->Show();
+}
+	private: System::Void A5Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A5Table2P->Hide();
+		A5Table2PGreen->Show();
+}
+	private: System::Void B1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B1Table4P->Hide();
+		B1Table4PGreen->Show();
+}
+	private: System::Void B2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B2Table4P->Hide();
+		B2Table4PGreen->Show();
+}
+	private: System::Void B3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table4P->Hide();
+		B3Table4PGreen->Show();
+}
+	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4P->Hide();
+		B4Table4PGreen->Show();
+}
+	private: System::Void C1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C1Table4P->Hide();
+		C1Table4PGreen->Show();
+}
+	private: System::Void C2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C2Table4P->Hide();
+		C2Table4PGreen->Show();
+}
+	private: System::Void C3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C3Table4P->Hide();
+		C3Table4PGreen->Show();
+}
+	private: System::Void D1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D1Table2P->Hide();
+		D1Table2PGreen->Show();
+}
+	private: System::Void D2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D2Table2P->Hide();
+		D2Table2PGreen->Show();
+}
+	private: System::Void D3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D3Table2P->Hide();
+		D3Table2PGreen->Show();
+}
+	private: System::Void D4Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D4Table2P->Hide();
+		D4Table2PGreen->Show();
+}
 };
 }
