@@ -1,5 +1,11 @@
 #pragma once
 
+#using <mscorlib.dll>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <vector>
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -83,6 +89,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ D2Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ D3Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ D4Table2PGreen;
+	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
 
 
 
@@ -143,6 +150,7 @@ namespace Pakreserve1 {
 			this->D2Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->D3Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->D4Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
+			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -175,6 +183,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D2Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PGreen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table2P
@@ -386,6 +395,7 @@ namespace Pakreserve1 {
 			this->A1Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A1Table2PGreen->TabIndex = 16;
 			this->A1Table2PGreen->TabStop = false;
+			this->A1Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::A1Table2PGreen_Click);
 			// 
 			// A2Table2PGreen
 			// 
@@ -397,6 +407,7 @@ namespace Pakreserve1 {
 			this->A2Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A2Table2PGreen->TabIndex = 17;
 			this->A2Table2PGreen->TabStop = false;
+			this->A2Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::A2Table2PGreen_Click);
 			// 
 			// A3Table2PGreen
 			// 
@@ -408,6 +419,7 @@ namespace Pakreserve1 {
 			this->A3Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A3Table2PGreen->TabIndex = 18;
 			this->A3Table2PGreen->TabStop = false;
+			this->A3Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::A3Table2PGreen_Click);
 			// 
 			// A4Table2PGreen
 			// 
@@ -419,6 +431,7 @@ namespace Pakreserve1 {
 			this->A4Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A4Table2PGreen->TabIndex = 19;
 			this->A4Table2PGreen->TabStop = false;
+			this->A4Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::A4Table2PGreen_Click);
 			// 
 			// A5Table2PGreen
 			// 
@@ -430,6 +443,7 @@ namespace Pakreserve1 {
 			this->A5Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A5Table2PGreen->TabIndex = 20;
 			this->A5Table2PGreen->TabStop = false;
+			this->A5Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::A5Table2PGreen_Click);
 			// 
 			// B1Table4PGreen
 			// 
@@ -442,6 +456,7 @@ namespace Pakreserve1 {
 			this->B1Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B1Table4PGreen->TabIndex = 21;
 			this->B1Table4PGreen->TabStop = false;
+			this->B1Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::B1Table4PGreen_Click);
 			// 
 			// B2Table4PGreen
 			// 
@@ -454,6 +469,7 @@ namespace Pakreserve1 {
 			this->B2Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B2Table4PGreen->TabIndex = 22;
 			this->B2Table4PGreen->TabStop = false;
+			this->B2Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::B2Table4PGreen_Click);
 			// 
 			// B3Table4PGreen
 			// 
@@ -466,6 +482,7 @@ namespace Pakreserve1 {
 			this->B3Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B3Table4PGreen->TabIndex = 23;
 			this->B3Table4PGreen->TabStop = false;
+			this->B3Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::B3Table4PGreen_Click);
 			// 
 			// B4Table4PGreen
 			// 
@@ -478,6 +495,7 @@ namespace Pakreserve1 {
 			this->B4Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B4Table4PGreen->TabIndex = 24;
 			this->B4Table4PGreen->TabStop = false;
+			this->B4Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::B4Table4PGreen_Click);
 			// 
 			// C1Table4PGreen
 			// 
@@ -490,6 +508,7 @@ namespace Pakreserve1 {
 			this->C1Table4PGreen->Size = System::Drawing::Size(80, 67);
 			this->C1Table4PGreen->TabIndex = 25;
 			this->C1Table4PGreen->TabStop = false;
+			this->C1Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::C1Table4PGreen_Click);
 			// 
 			// C2Table4PGreen
 			// 
@@ -502,6 +521,7 @@ namespace Pakreserve1 {
 			this->C2Table4PGreen->Size = System::Drawing::Size(80, 67);
 			this->C2Table4PGreen->TabIndex = 26;
 			this->C2Table4PGreen->TabStop = false;
+			this->C2Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::C2Table4PGreen_Click);
 			// 
 			// C3Table4PGreen
 			// 
@@ -514,6 +534,7 @@ namespace Pakreserve1 {
 			this->C3Table4PGreen->Size = System::Drawing::Size(80, 67);
 			this->C3Table4PGreen->TabIndex = 27;
 			this->C3Table4PGreen->TabStop = false;
+			this->C3Table4PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::C3Table4PGreen_Click);
 			// 
 			// D1Table2PGreen
 			// 
@@ -525,6 +546,7 @@ namespace Pakreserve1 {
 			this->D1Table2PGreen->Size = System::Drawing::Size(57, 57);
 			this->D1Table2PGreen->TabIndex = 28;
 			this->D1Table2PGreen->TabStop = false;
+			this->D1Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::D1Table2PGreen_Click);
 			// 
 			// D2Table2PGreen
 			// 
@@ -536,6 +558,7 @@ namespace Pakreserve1 {
 			this->D2Table2PGreen->Size = System::Drawing::Size(57, 57);
 			this->D2Table2PGreen->TabIndex = 29;
 			this->D2Table2PGreen->TabStop = false;
+			this->D2Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::D2Table2PGreen_Click);
 			// 
 			// D3Table2PGreen
 			// 
@@ -547,6 +570,7 @@ namespace Pakreserve1 {
 			this->D3Table2PGreen->Size = System::Drawing::Size(57, 57);
 			this->D3Table2PGreen->TabIndex = 30;
 			this->D3Table2PGreen->TabStop = false;
+			this->D3Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::D3Table2PGreen_Click);
 			// 
 			// D4Table2PGreen
 			// 
@@ -558,6 +582,20 @@ namespace Pakreserve1 {
 			this->D4Table2PGreen->Size = System::Drawing::Size(57, 57);
 			this->D4Table2PGreen->TabIndex = 31;
 			this->D4Table2PGreen->TabStop = false;
+			this->D4Table2PGreen->Click += gcnew System::EventHandler(this, &BarMapraw::D4Table2PGreen_Click);
+			// 
+			// ConfirmTableBarMapraw
+			// 
+			this->ConfirmTableBarMapraw->BackColor = System::Drawing::Color::Transparent;
+			this->ConfirmTableBarMapraw->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmTableBarMapraw.BackgroundImage")));
+			this->ConfirmTableBarMapraw->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ConfirmTableBarMapraw->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ConfirmTableBarMapraw->Location = System::Drawing::Point(36, 594);
+			this->ConfirmTableBarMapraw->Name = L"ConfirmTableBarMapraw";
+			this->ConfirmTableBarMapraw->Size = System::Drawing::Size(267, 66);
+			this->ConfirmTableBarMapraw->TabIndex = 32;
+			this->ConfirmTableBarMapraw->TabStop = false;
+			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarMapraw::ConfirmTableBarMapraw_Click);
 			// 
 			// BarMapraw
 			// 
@@ -565,6 +603,7 @@ namespace Pakreserve1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->D4Table2PGreen);
 			this->Controls->Add(this->D3Table2PGreen);
 			this->Controls->Add(this->D2Table2PGreen);
@@ -634,10 +673,30 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D2Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PGreen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
 			this->ResumeLayout(false);
 
 		}
-		//for nepjune I This page sorts all white buttons first, then green buttons.
+public:
+
+	void MarshalString(String^ s, std::string& os) {
+		using namespace Runtime::InteropServices;
+		const char* chars =
+			(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
+
+	void MarshalString(String^ s, std::wstring& os) {
+		using namespace Runtime::InteropServices;
+		const wchar_t* chars =
+			(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+		os = chars;
+		Marshal::FreeHGlobal(IntPtr((void*)chars));
+	}
+
+
+//for nepjune I This page sorts all white buttons first, then green buttons.
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
 	private: System::Void BarMapraw_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -646,66 +705,234 @@ namespace Pakreserve1 {
 	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A1Table2P->Hide();
 		A1Table2PGreen->Show();
+		dataTable[0] = !dataTable[0];
 }
 	private: System::Void A2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A2Table2P->Hide();
 		A2Table2PGreen->Show();
+		dataTable[1] = !dataTable[1];
 }
 	private: System::Void A3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A3Table2P->Hide();
 		A3Table2PGreen->Show();
+		dataTable[2] = !dataTable[2];
 }
 	private: System::Void A4Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A4Table2P->Hide();
 		A4Table2PGreen->Show();
+		dataTable[3] = !dataTable[3];
 }
 	private: System::Void A5Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		A5Table2P->Hide();
 		A5Table2PGreen->Show();
+		dataTable[4] = !dataTable[4];
 }
 	private: System::Void B1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B1Table4P->Hide();
 		B1Table4PGreen->Show();
+		dataTable[5] = !dataTable[5];
 }
 	private: System::Void B2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B2Table4P->Hide();
 		B2Table4PGreen->Show();
+		dataTable[6] = !dataTable[6];
 }
 	private: System::Void B3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B3Table4P->Hide();
 		B3Table4PGreen->Show();
+		dataTable[7] = !dataTable[7];
 }
 	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		B4Table4P->Hide();
 		B4Table4PGreen->Show();
+		dataTable[8] = !dataTable[8];
 }
 	private: System::Void C1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C1Table4P->Hide();
 		C1Table4PGreen->Show();
+		dataTable[9] = !dataTable[9];
 }
 	private: System::Void C2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C2Table4P->Hide();
 		C2Table4PGreen->Show();
+		dataTable[10] = !dataTable[10];
 }
 	private: System::Void C3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
 		C3Table4P->Hide();
 		C3Table4PGreen->Show();
+		dataTable[11] = !dataTable[11];
 }
 	private: System::Void D1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D1Table2P->Hide();
 		D1Table2PGreen->Show();
+		dataTable[12] = !dataTable[12];
 }
 	private: System::Void D2Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D2Table2P->Hide();
 		D2Table2PGreen->Show();
+		dataTable[13] = !dataTable[13];
 }
 	private: System::Void D3Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D3Table2P->Hide();
 		D3Table2PGreen->Show();
+		dataTable[14] = !dataTable[14];
 }
 	private: System::Void D4Table2P_Click(System::Object^ sender, System::EventArgs^ e) {
 		D4Table2P->Hide();
 		D4Table2PGreen->Show();
+		dataTable[15] = !dataTable[15];
+}
+//
+//Green
+//
+	private: System::Void A1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A1Table2PGreen->Hide();
+		A1Table2P->Show();
+		dataTable[0] = !dataTable[0];
+}
+	private: System::Void A2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A2Table2PGreen->Hide();
+		A2Table2P->Show();
+		dataTable[1] = !dataTable[1];
+}
+	private: System::Void A3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A3Table2PGreen->Hide();
+		A3Table2P->Show();
+		dataTable[2] = !dataTable[2];
+}
+	private: System::Void A4Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A4Table2PGreen->Hide();
+		A4Table2P->Show();
+		dataTable[3] = !dataTable[3];
+}
+	private: System::Void A5Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A5Table2PGreen->Hide();
+		A5Table2P->Show();
+		dataTable[4] = !dataTable[4];
+}
+	private: System::Void B1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B1Table4PGreen->Hide();
+		B1Table4P->Show();
+		dataTable[5] = !dataTable[5];
+}
+	private: System::Void B2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B2Table4PGreen->Hide();
+		B2Table4P->Show();
+		dataTable[6] = !dataTable[6];
+}
+	private: System::Void B3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table4PGreen->Hide();
+		B3Table4P->Show();
+		dataTable[7] = !dataTable[7];
+}
+	private: System::Void B4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4PGreen->Hide();
+		B4Table4P->Show();
+		dataTable[8] = !dataTable[8];
+}
+	private: System::Void C1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C1Table4PGreen->Hide();
+		C1Table4P->Show();
+		dataTable[9] = !dataTable[9];
+}
+	private: System::Void C2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C2Table4PGreen->Hide();
+		C2Table4P->Show();
+		dataTable[10] = !dataTable[10];
+}
+	private: System::Void C3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C3Table4PGreen->Hide();
+		C3Table4P->Show();
+		dataTable[11] = !dataTable[11];
+}
+	private: System::Void D1Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D1Table2PGreen->Hide();
+		D1Table2P->Show();
+		dataTable[12] = !dataTable[12];
+}
+	private: System::Void D2Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D2Table2PGreen->Hide();
+		D2Table2P->Show();
+		dataTable[13] = !dataTable[13];
+}
+	private: System::Void D3Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D3Table2PGreen->Hide();
+		D3Table2P->Show();
+		dataTable[14] = !dataTable[14];
+}
+	private: System::Void D4Table2PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D4Table2PGreen->Hide();
+		D4Table2P->Show();
+		dataTable[15] = !dataTable[15];
+}
+
+public: bool switchToMP = false;
+
+private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	System::String^ a = "";
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 16; i++) {
+		a += (dataTable[i] ? "1" : "0");
+	}
+
+	string newData;
+	MarshalString(a, newData);
+	switchToMP = true;
+	int targetline = 2;
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
+
+	this->Close();
+}
+private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   //array<bool>^ dataTable;
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ c = gcnew String("abcd");
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path;
+	vector<string> lines;
+
+	MarshalString(temp, path);
+	ifstream fileIn(path);
+
+	if (fileIn.is_open()) {
+	}
+}
+
+public: bool switchToProfile = false;
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToProfile = true;
+	this->Close();
+}
+private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
