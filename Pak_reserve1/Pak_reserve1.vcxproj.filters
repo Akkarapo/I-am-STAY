@@ -13,6 +13,7 @@
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
+    <ClCompile Include="BarMapraw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -24,9 +25,6 @@
     <ClCompile Include="ToeyMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MPBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h" />
@@ -36,6 +34,7 @@
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="ToeyMenu.h" />
     <ClInclude Include="MPBarnd.h" />
+    <ClInclude Include="BarMapraw.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

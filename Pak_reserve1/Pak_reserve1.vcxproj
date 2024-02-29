@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BarMapraw.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
@@ -145,6 +146,9 @@
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarMapraw.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -184,6 +188,9 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BarMapraw.resx">
+      <DependentUpon>BarMapraw.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
