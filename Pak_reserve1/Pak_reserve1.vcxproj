@@ -122,15 +122,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
@@ -139,6 +130,7 @@
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="NepjuneCalender1.cpp" />
     <ClCompile Include="PakForm.cpp" />
+    <ClCompile Include="Barreg.cpp" />
     <ClCompile Include="partnerRegist.cpp" />
     <ClCompile Include="regist.cpp" />
     <ClCompile Include="sendMail.cpp" />
@@ -218,12 +210,25 @@
     <EmbeddedResource Include="sendMail.resx">
       <DependentUpon>sendMail.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Barreg.resx">
+      <DependentUpon>Barreg.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToeyMenu.resx">
       <DependentUpon>ToeyMenu.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -27,8 +27,26 @@
     <ClCompile Include="MPBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Barreg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PakForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ToeyMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MPBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Barreg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Login.h" />
     <ClInclude Include="MyForm.h" />
     <ClInclude Include="MyUserControl.h" />
