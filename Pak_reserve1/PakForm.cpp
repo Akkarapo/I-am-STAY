@@ -44,6 +44,9 @@ void main(array<String^>^ args) {
                 mailForm.ShowDialog();
                 form2.switchToForgetPwd = false;
             }
+            else {
+                return;
+            }
         }  
         User^ user = form2.user;
         Pakreserve1::MPBarnd mpform(user);

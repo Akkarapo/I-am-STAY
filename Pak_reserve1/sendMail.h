@@ -1,5 +1,6 @@
 #pragma once
 #include "User.h"
+#include <string>
 #include <fstream>
 
 namespace Pakreserve1 {
@@ -297,26 +298,59 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	String^ email = textBox1->Text;
 	if (email->Length == 0) {
 		MessageBox::Show("Plase Enter email", "email is empty", MessageBoxButtons::OK);
+		return;
 	}
-	try {
-		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
+		/*String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
 		String^ sqlQuery = "SELECT * FROM users WHERE email = @email;";
 		SqlCommand command(sqlQuery, % sqlConn);
 		command.Parameters->AddWithValue("@email", email);
 		SqlDataReader^ reader = command.ExecuteReader();
+		*/
+		using namespace std;
+		String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
+		string path,line,email3;
+		MarshalString(tempPath2,path);
+		MarshalString(email,email3);
+		ifstream fileIn(path);
+		if (!fileIn.is_open()) {
+			MessageBox::Show("Can't Open File","Error",MessageBoxButtons::OK);
+		}
+		char format[] = "%s %s %s";
+		char email2[50], pwd[50], username[50];
+		while(getline(fileIn,line)){
+			sscanf(line.c_str(),format,username,pwd,email2);
+			if (email3 == email2) {
+				MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				String^ senderUsername = "gong6321@gmail.com	";
+				String^ senderPassword = "lnsy ucdr uzza weyj";
+				String^ reciever = gcnew String(email);
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				String^ text = "Plase remember your username and Password\n" + "Username : " + gcnew String(username) + "\nPassword : " + gcnew String(pwd);
+				MailMessage^ mail = gcnew MailMessage(senderUsername,reciever);
+				mail->Subject = "I AM STAY - Password Recovery";
+				mail->Body = text;
 
-		if (reader->Read()) {
+				SmtpClient^ Client = gcnew SmtpClient("smtp.gmail.com");
+				Client->Port = 587;
+				Client->Credentials = gcnew System::Net::NetworkCredential(senderUsername, senderPassword);
+				Client->EnableSsl = true;
+
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+
+				Client->Send(mail);
+				MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				return;
+			}
+		}
+		MessageBox::Show("Please Provide Correct Email","Mail Not found",MessageBoxButtons::OK);
+		/*if () {
 			MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 			String^ senderUsername = "gong6321@gmail.com	";
 			String^ senderPassword = "lnsy ucdr uzza weyj";
-			user = gcnew User;
-			user->id = reader->GetInt32(0);
-			user->username = reader->GetString(1);
-			user->email = reader->GetString(2);
-			user->password = reader->GetString(3);
-			MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+
+			//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 			String^ text = user->username + " " + user->password;
 			MailMessage^ mail = gcnew MailMessage(senderUsername, user->email);
 			mail->Subject = "Password Recovery";
@@ -327,7 +361,7 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 			Client->Credentials = gcnew System::Net::NetworkCredential(senderUsername, senderPassword);
 			Client->EnableSsl = true;
 
-			MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+			//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 
 			Client->Send(mail);
 			MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
@@ -337,10 +371,7 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		else {
 			MessageBox::Show("Plese provide correct email", "no email found", MessageBoxButtons::OK);
 		}
-	}
-	catch (Exception^ e) {
-		MessageBox::Show("Can't send mail", "Error", MessageBoxButtons::OK);	
-	}
+		*/
 }
 private: System::Void sendMail_Load(System::Object^ sender, System::EventArgs^ e) {
 }
