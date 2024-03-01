@@ -2,8 +2,6 @@
 #include "User.h"
 #include "regist.h"
 #include "PakForm.h"
-#include "MPBar.h"
-
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -80,6 +78,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Panel^ panel1;
 
 
 
@@ -122,8 +121,10 @@ namespace Pakreserve1 {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -219,6 +220,7 @@ namespace Pakreserve1 {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			resources->ApplyResources(this->pictureBox2, L"pictureBox2");
+			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &Login::pictureBox2_Click_1);
@@ -281,24 +283,30 @@ namespace Pakreserve1 {
 			this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label11->Name = L"label11";
 			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->panel2);
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->pictureBox2);
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Controls->Add(this->textBox1);
+			this->panel1->Controls->Add(this->registLable);
+			this->panel1->Controls->Add(this->label3);
+			this->panel1->Controls->Add(this->label8);
+			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->textBox2);
+			this->panel1->Controls->Add(this->label1);
+			resources->ApplyResources(this->panel1, L"panel1");
+			this->panel1->Name = L"panel1";
+			// 
 			// Login
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			resources->ApplyResources(this, L"$this");
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->registLable);
 			this->Controls->Add(this->signUPtext);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Login";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
@@ -306,6 +314,8 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -415,7 +425,7 @@ private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventA
 	using namespace std;
 	String^ temp1 = textBox2->Text;
 	String^ temp2 = textBox1->Text;
-	String^ tempPath = "D:\\gitgitgit\\I-am-STAY\\x64\\" + temp1 + ".txt";
+	String^ tempPath =Application::StartupPath+ "\\Data\\"+"\\UserData\\" + temp1 + ".txt";
 	string path;
 	string username;
 	string password;
@@ -450,7 +460,7 @@ private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventA
 	else {
 		textBox1->ForeColor = Color::Red;
 		textBox2->ForeColor = Color::Red;
-		//MessageBox::Show("Can't open file","Error",MessageBoxButtons::OK);
+		MessageBox::Show("Can't open file","Error",MessageBoxButtons::OK);
 		return;
 	}
 			/*this->Close();

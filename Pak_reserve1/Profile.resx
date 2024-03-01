@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABapJREFUaEPtmWtPVFcUhkFbRa2CtmBUTK+xpZW2aWisgE1LrBZsNU00TaUotAVB
+        DAAACwwBP0AiyAAABapJREFUaEPtmWtPVFcUhkFbRa2CtmBUTK+xpZW2aWisgE1LrBZsNU00TaUotAVB
         tAIq4g3m9/An+MYnEgIh3O8EQkL4DfR5J2tO9uw5M8wMFz+UN1k5c/a67rXXvp3J2cMedgGRSGTf0tLS
         ofHx8aNTU1OFUPHc3FyB3nnm9fb27jfRNwsFurCwcJqgfpiZmWmG2mdnZ1/wjBh1Q11QB+1/T09PV6yu
         rhbRgQNmYvewsbGxb35+voQg/vWC3JSQfy09fpeq02Zy5yAnODyP4yY/mGzIOv0pSXjLXGwvRkZGDuCo
@@ -559,7 +559,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAY0AAADgCAYAAAD/ujrhAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAArIBJREFUeF7tvQecXkd5Ln5bGh0DxoBx7zbuvVdZ7lXulnvDxoAhwE1CMMkNkJAQ
+        DAAACwwBP0AiyAAArIBJREFUeF7tvQecXkd5Ln5bGh0DxoBx7zbuvVdZ7lXulnvDxoAhwE1CMMkNkJAQ
         Qm4ouRcMBDBRcFNftdX23nellVbVkmx12epl5f2/z7znOfOe+c75dld2uPmHmd/v2Zl5551yys7zvdPO
         f4EbGhr6r9a3LpRZ3XJpTpC4MG5duXLghkuHC/WToHNh/jA9zxWVkScv59MVyenKyW1aGM5DklzibBrD
         efrl0ujyyoLLy4uwjVtXJIfLKwvOxofTgR+mweXJ4Gw+J0icldu0orB1RXI6pod6Iy0P8TxdK8sLDycr
@@ -17169,7 +17169,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAYAAADPfd1WAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAA/7JJREFUeF7s/dvPPVte14sv941eeeMBI14Y0XhBTODGxBtjjIkE4zHxkJh46TnR
+        DAAACwwBP0AiyAAA/7JJREFUeF7s/dvPPVte14sv941eeeMBI14Y0XhBTODGxBtjjIkE4zHxkJh46TnR
         mHjvX7AV5CTQzUkaaLrBhgZFaA4NDa32amhY3Ws1bJoWwcYt7u1v/wP9+76e6s93jlnzU1WjalbNWaPq
         tZLX+j5PzTqO8Rmfw3uMms8br/77vIiIiIiIiIiIiByWdKOIiIiIiIiIiIgcg3SjiIiIiIiIiIiIHIN0
         o4iIiIiIiIiIiByDdKOIiIiIiIiIiIgcg3SjiIiIiIiIiIiIHIN0o4iIiIiIiIiIiByDdKOIiIiIiIiI

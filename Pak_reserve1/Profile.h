@@ -1,7 +1,6 @@
 #pragma once
 #include "PakForm.h"
 #include "Login.h"
-#include "MPBar.h"
 #include "Profile.h"
 
 namespace Pakreserve1 {
@@ -18,18 +17,19 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class Profile : public System::Windows::Forms::Form
 	{
+
 	public:
+		String^ temp = nullptr;
 		Profile(User^ user)
 		{
 			InitializeComponent();
+			temp = Application::StartupPath+"\\Data\\UserData\\" + user->username + ".txt";
+			CustomerName->Text = user->username;
+			CustomerMail->Text = user->email;
+			Name->Text = user->username;
 			//
 			//TODO: Add the constructor code here
 			//
-			//CustomerName->Text = user->username;
-			//CustomerMail->Text = user->email;
-			//Name->Text = user->username;
-			//Time->Text = user->time;
-			//Date->Text = user->date;
 		}
 
 	protected:
@@ -266,8 +266,9 @@ namespace Pakreserve1 {
 			this->Date->ForeColor = System::Drawing::Color::White;
 			this->Date->Location = System::Drawing::Point(128, 207);
 			this->Date->Name = L"Date";
-			this->Date->Size = System::Drawing::Size(0, 19);
+			this->Date->Size = System::Drawing::Size(43, 19);
 			this->Date->TabIndex = 0;
+			this->Date->Text = L"Date";
 			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Profile
@@ -283,6 +284,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			//this->Name = L"Profile";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -296,8 +298,49 @@ namespace Pakreserve1 {
 			this->ResumeLayout(false);
 
 		}
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
 #pragma endregion
 	private: System::Void Profile_Load(System::Object^ sender, System::EventArgs^ e) {
+		using namespace std;
+		string path, line;
+		MarshalString(temp, path);
+		ifstream fileIn(path);
+		vector<string> lines;
+		while (getline(fileIn, line)) {
+			lines.push_back(line);
+		}
+		line = lines[lines.size() - 1];
+		fileIn.close();
+		char dayc[100], monthc[100], yearc[100], timec[100] , amc[50];
+		char format[] = "Date: %s %s %s Time: %s %s complete";
+		sscanf(line.c_str(), format, dayc , monthc, yearc, timec, amc);
+		//String^ date = dayc + monthc + yearc;
+		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
+		String^ time = gcnew String(timec) + " " + gcnew String(amc);
+		//String^ time = gcnew String(timec);
+		//String^ month = gcnew String(monthc);
+		//String^ year = gcnew String(yearc);
+		//String^ am = gcnew String(amc);
+		//String^ date;
+		//MarshalString(date, datee);
+		//MarshalString(time, timecp);
+		Date->Text = date;
+		Time->Text = time;
+
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -308,10 +351,7 @@ namespace Pakreserve1 {
 	}
 private: System::Void Ticket1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
-private: System::Void userControl1_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void userControl1_Load_1(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
