@@ -418,7 +418,7 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 	textBox2->ForeColor = Color::Black;
 }
 
-public: bool switchToPakForm = false;
+public: bool switchToToey = false;
 public: User^ user = nullptr;
 
 private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventArgs^ e) {
@@ -449,7 +449,7 @@ private: System::Void pictureBox2_Click_1(System::Object^ sender, System::EventA
 			user->email = gcnew String(email);
 			user->password = gcnew String(password.c_str());
 			this->Close();
-			switchToPakForm = true;
+			switchToToey = true;
 		}
 		else{
 			textBox1->ForeColor = Color::Red;

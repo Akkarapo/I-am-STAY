@@ -29,8 +29,8 @@ using namespace System::Windows::Forms;
     Pakreserve1::regist registForm;
     Pakreserve1::ToeyMenu Toeyform;
 
-    Toeyform.ShowDialog();
-    //form2.ShowDialog();
+    //Toeyform.ShowDialog();
+    form2.ShowDialog();
     //User^ user = form2.user;
     //User^ user = form2.user;
     //profileform.switchToBook = true;
@@ -52,7 +52,7 @@ using namespace System::Windows::Forms;
                 form2.switchToForgetPwd = false;
             }
             else {
-                return;
+                //return;
             }
         }  
         User^ user = form2.user;
@@ -66,9 +66,9 @@ using namespace System::Windows::Forms;
             profileform.switchToProfile = false;
         }
 
-        else if (form2.switchToPakForm) {
-            form.ShowDialog();
-            form2.switchToPakForm = false;
+        else if (form2.switchToToey) {
+            Toeyform.ShowDialog();
+            form2.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
