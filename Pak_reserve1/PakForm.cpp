@@ -1,4 +1,6 @@
 #include "PakForm.h"
+#include "Barreg.h"
+#include "ToeyMenu.h"
 #include "Login.h"
 #include "Profile.h"
 #include "MyUserControl.h"
@@ -14,15 +16,20 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-void main(array<String^>^ args) {
+    int
+    main(array<String ^> ^ args)
+{
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
     Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
     Pakreserve1::sendMail mailForm;
-    //Pakreserve1::MoveToMp movetoMpForm;
+    // Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
+    Pakreserve1::ToeyMenu Toeyform;
+
+    //Toeyform.ShowDialog();
     form2.ShowDialog();
     //User^ user = form2.user;
     //User^ user = form2.user;
@@ -45,7 +52,7 @@ void main(array<String^>^ args) {
                 form2.switchToForgetPwd = false;
             }
             else {
-                return;
+                //return;
             }
         }  
         User^ user = form2.user;
@@ -59,23 +66,28 @@ void main(array<String^>^ args) {
             profileform.switchToProfile = false;
         }
 
-        else if (form2.switchToPakForm) {
-            form.ShowDialog();
-            form2.switchToPakForm = false;
+        else if (form2.switchToToey) {
+            Toeyform.ShowDialog();
+            form2.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
             registForm.switchToReg2 = false;
             regist2Form.ShowDialog();
         }
-        else if (form.switchToMP) {
+        else if (form.switchToMP)
+        {
             form.switchToMP = false;
             mpform.ShowDialog();
         }
-        else {
+        else if (Toeyform.switchToPakForm) 
+        {
+            Toeyform.switchToPakForm = false;
+            form.ShowDialog();
+        }
+        else
+        {
             break;
         }
-
     }
-
 }
