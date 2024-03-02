@@ -28,6 +28,14 @@ namespace Pakreserve1 {
 			//
 			//TODO: Add the constructor code here
 			//
+			A1Table4PGreen->Hide();
+			A2Table4PGreen->Hide();
+			A3Table4PGreen->Hide();
+			A4Table4PGreen->Hide();
+			A5Table4PGreen->Hide();
+			A6Table4PGreen->Hide();
+			A7Table4PGreen->Hide();
+			A8Table4PGreen->Hide();
 		}
 
 	protected:
@@ -226,6 +234,7 @@ namespace Pakreserve1 {
 			this->A1Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A1Table4PGreen->TabIndex = 22;
 			this->A1Table4PGreen->TabStop = false;
+			this->A1Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A1Table4PGreen_Click);
 			// 
 			// A2Table4PGreen
 			// 
@@ -238,6 +247,7 @@ namespace Pakreserve1 {
 			this->A2Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A2Table4PGreen->TabIndex = 23;
 			this->A2Table4PGreen->TabStop = false;
+			this->A2Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A2Table4PGreen_Click);
 			// 
 			// A3Table4PGreen
 			// 
@@ -250,6 +260,7 @@ namespace Pakreserve1 {
 			this->A3Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A3Table4PGreen->TabIndex = 24;
 			this->A3Table4PGreen->TabStop = false;
+			this->A3Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A3Table4PGreen_Click);
 			// 
 			// A4Table4PGreen
 			// 
@@ -262,6 +273,7 @@ namespace Pakreserve1 {
 			this->A4Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A4Table4PGreen->TabIndex = 25;
 			this->A4Table4PGreen->TabStop = false;
+			this->A4Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A4Table4PGreen_Click);
 			// 
 			// A5Table4PGreen
 			// 
@@ -274,6 +286,7 @@ namespace Pakreserve1 {
 			this->A5Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A5Table4PGreen->TabIndex = 26;
 			this->A5Table4PGreen->TabStop = false;
+			this->A5Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A5Table4PGreen_Click);
 			// 
 			// A6Table4PGreen
 			// 
@@ -286,6 +299,7 @@ namespace Pakreserve1 {
 			this->A6Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A6Table4PGreen->TabIndex = 27;
 			this->A6Table4PGreen->TabStop = false;
+			this->A6Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A6Table4PGreen_Click);
 			// 
 			// A7Table4PGreen
 			// 
@@ -298,6 +312,7 @@ namespace Pakreserve1 {
 			this->A7Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A7Table4PGreen->TabIndex = 28;
 			this->A7Table4PGreen->TabStop = false;
+			this->A7Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A7Table4PGreen_Click);
 			// 
 			// A8Table4PGreen
 			// 
@@ -310,6 +325,7 @@ namespace Pakreserve1 {
 			this->A8Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A8Table4PGreen->TabIndex = 29;
 			this->A8Table4PGreen->TabStop = false;
+			this->A8Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A8Table4PGreen_Click);
 			// 
 			// BarNepjune
 			// 
@@ -416,6 +432,50 @@ public:
 		A8Table4P->Hide();
 		A8Table4PGreen->Show();
 		dataTable[7] = !dataTable[7];
+}
+//
+//Green
+//
+	private: System::Void A1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A1Table4PGreen->Hide();
+		A1Table4P->Show();
+		dataTable[0] = !dataTable[0];
+}
+	private: System::Void A2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A2Table4PGreen->Hide();
+		A2Table4P->Show();
+		dataTable[1] = !dataTable[1];
+}
+	private: System::Void A3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A3Table4PGreen->Hide();
+		A3Table4P->Show();
+		dataTable[2] = !dataTable[2];
+}
+	private: System::Void A4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A4Table4PGreen->Hide();
+		A4Table4P->Show();
+		dataTable[3] = !dataTable[3];
+}
+	private: System::Void A5Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A5Table4PGreen->Hide();
+		A5Table4P->Show();
+		dataTable[4] = !dataTable[4];
+}
+	private: System::Void A6Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A6Table4PGreen->Hide();
+		A6Table4P->Show();
+		dataTable[5] = !dataTable[5];
+}
+	private: System::Void A7Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A7Table4PGreen->Hide();
+		A7Table4P->Show();
+		dataTable[6] = !dataTable[6];
+}
+	private: System::Void A8Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A8Table4PGreen->Hide();
+		A8Table4P->Show();
+		dataTable[7] = !dataTable[7];
+
 }
 public: bool switchToMP = false;
 
