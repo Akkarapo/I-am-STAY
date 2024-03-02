@@ -15,6 +15,8 @@
     <ClCompile Include="MPBarnd.cpp" />
     <ClCompile Include="BarMapraw.cpp" />
     <ClCompile Include="BarGong.cpp" />
+    <ClCompile Include="Barreg.cpp" />
+    <ClCompile Include="BarToey.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -26,29 +28,8 @@
     <ClCompile Include="ToeyMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MPBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Barreg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PakForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Login.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ToeyMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MPBar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Barreg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Login.h" />
     <ClInclude Include="MyForm.h" />
     <ClInclude Include="MyUserControl.h" />
@@ -58,6 +39,10 @@
     <ClInclude Include="MPBarnd.h" />
     <ClInclude Include="BarMapraw.h" />
     <ClInclude Include="BarGong.h" />
+    <ClInclude Include="Login.h" />
+    <ClInclude Include="PakForm.h" />
+    <ClInclude Include="ToeyMenu.h" />
+    <ClInclude Include="BarToey.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
