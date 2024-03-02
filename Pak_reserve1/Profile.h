@@ -305,7 +305,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"Profile";
+			//this->Name = L"Profile";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
 			this->MouseLeave += gcnew System::EventHandler(this, &Profile::TicketF1_MouseLeave);
