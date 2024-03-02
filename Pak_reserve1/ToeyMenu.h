@@ -482,7 +482,7 @@ namespace Pakreserve1 {
 			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(14, 20);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(161, 39);
+			this->label1->Size = System::Drawing::Size(205, 52);
 			this->label1->TabIndex = 19;
 			this->label1->Text = L"MaewNoi";
 			// 
@@ -495,7 +495,7 @@ namespace Pakreserve1 {
 			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(56, 81);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(66, 25);
+			this->label2->Size = System::Drawing::Size(82, 31);
 			this->label2->TabIndex = 20;
 			this->label2->Text = L"45/70";
 			// 
@@ -508,7 +508,7 @@ namespace Pakreserve1 {
 			this->label3->ForeColor = System::Drawing::Color::White;
 			this->label3->Location = System::Drawing::Point(56, 131);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(152, 48);
+			this->label3->Size = System::Drawing::Size(193, 58);
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -526,6 +526,7 @@ namespace Pakreserve1 {
 			this->panel1->Size = System::Drawing::Size(230, 343);
 			this->panel1->TabIndex = 23;
 			this->panel1->Click += gcnew System::EventHandler(this, &ToeyMenu::panel1_Click);
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ToeyMenu::panel1_Paint);
 			// 
 			// panel2
 			// 
@@ -560,7 +561,7 @@ namespace Pakreserve1 {
 			this->label4->ForeColor = System::Drawing::Color::White;
 			this->label4->Location = System::Drawing::Point(56, 131);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(152, 48);
+			this->label4->Size = System::Drawing::Size(193, 58);
 			this->label4->TabIndex = 21;
 			this->label4->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -583,7 +584,7 @@ namespace Pakreserve1 {
 			this->label5->ForeColor = System::Drawing::Color::White;
 			this->label5->Location = System::Drawing::Point(56, 81);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(66, 25);
+			this->label5->Size = System::Drawing::Size(82, 31);
 			this->label5->TabIndex = 20;
 			this->label5->Text = L"45/70";
 			// 
@@ -596,7 +597,7 @@ namespace Pakreserve1 {
 			this->label6->ForeColor = System::Drawing::Color::White;
 			this->label6->Location = System::Drawing::Point(14, 20);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(101, 39);
+			this->label6->Size = System::Drawing::Size(128, 52);
 			this->label6->TabIndex = 19;
 			this->label6->Text = L"Gong";
 			// 
@@ -633,7 +634,7 @@ namespace Pakreserve1 {
 			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(56, 131);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(152, 48);
+			this->label7->Size = System::Drawing::Size(193, 58);
 			this->label7->TabIndex = 21;
 			this->label7->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -656,7 +657,7 @@ namespace Pakreserve1 {
 			this->label8->ForeColor = System::Drawing::Color::White;
 			this->label8->Location = System::Drawing::Point(56, 81);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(66, 25);
+			this->label8->Size = System::Drawing::Size(82, 31);
 			this->label8->TabIndex = 20;
 			this->label8->Text = L"45/70";
 			// 
@@ -669,7 +670,7 @@ namespace Pakreserve1 {
 			this->label9->ForeColor = System::Drawing::Color::White;
 			this->label9->Location = System::Drawing::Point(14, 20);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(140, 39);
+			this->label9->Size = System::Drawing::Size(178, 52);
 			this->label9->TabIndex = 19;
 			this->label9->Text = L"Mapraw";
 			// 
@@ -706,7 +707,7 @@ namespace Pakreserve1 {
 			this->label10->ForeColor = System::Drawing::Color::White;
 			this->label10->Location = System::Drawing::Point(56, 131);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(152, 48);
+			this->label10->Size = System::Drawing::Size(193, 58);
 			this->label10->TabIndex = 21;
 			this->label10->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -729,7 +730,7 @@ namespace Pakreserve1 {
 			this->label11->ForeColor = System::Drawing::Color::White;
 			this->label11->Location = System::Drawing::Point(56, 81);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(66, 25);
+			this->label11->Size = System::Drawing::Size(82, 31);
 			this->label11->TabIndex = 20;
 			this->label11->Text = L"45/70";
 			// 
@@ -742,7 +743,7 @@ namespace Pakreserve1 {
 			this->label12->ForeColor = System::Drawing::Color::White;
 			this->label12->Location = System::Drawing::Point(14, 20);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(94, 39);
+			this->label12->Size = System::Drawing::Size(119, 52);
 			this->label12->TabIndex = 19;
 			this->label12->Text = L"Toey";
 			// 
@@ -778,7 +779,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label13->Location = System::Drawing::Point(56, 131);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(152, 48);
+			this->label13->Size = System::Drawing::Size(193, 58);
 			this->label13->TabIndex = 21;
 			this->label13->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -800,7 +801,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label14->Location = System::Drawing::Point(56, 81);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(66, 25);
+			this->label14->Size = System::Drawing::Size(82, 31);
 			this->label14->TabIndex = 20;
 			this->label14->Text = L"45/70";
 			// 
@@ -812,7 +813,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->label15->Location = System::Drawing::Point(14, 20);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(145, 39);
+			this->label15->Size = System::Drawing::Size(184, 52);
 			this->label15->TabIndex = 19;
 			this->label15->Text = L"Nepjune";
 			// 
@@ -839,7 +840,7 @@ namespace Pakreserve1 {
 			this->label16->ForeColor = System::Drawing::Color::White;
 			this->label16->Location = System::Drawing::Point(14, 20);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(168, 39);
+			this->label16->Size = System::Drawing::Size(211, 52);
 			this->label16->TabIndex = 19;
 			this->label16->Text = L"Oakkhara";
 			// 
@@ -862,7 +863,7 @@ namespace Pakreserve1 {
 			this->label17->ForeColor = System::Drawing::Color::White;
 			this->label17->Location = System::Drawing::Point(56, 131);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(152, 48);
+			this->label17->Size = System::Drawing::Size(193, 58);
 			this->label17->TabIndex = 21;
 			this->label17->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -885,7 +886,7 @@ namespace Pakreserve1 {
 			this->label18->ForeColor = System::Drawing::Color::White;
 			this->label18->Location = System::Drawing::Point(56, 81);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(66, 25);
+			this->label18->Size = System::Drawing::Size(82, 31);
 			this->label18->TabIndex = 20;
 			this->label18->Text = L"45/70";
 			// 
@@ -912,7 +913,7 @@ namespace Pakreserve1 {
 			this->label19->ForeColor = System::Drawing::Color::White;
 			this->label19->Location = System::Drawing::Point(14, 20);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(94, 39);
+			this->label19->Size = System::Drawing::Size(119, 52);
 			this->label19->TabIndex = 19;
 			this->label19->Text = L"Sajui";
 			// 
@@ -935,7 +936,7 @@ namespace Pakreserve1 {
 			this->label20->ForeColor = System::Drawing::Color::White;
 			this->label20->Location = System::Drawing::Point(56, 131);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(152, 48);
+			this->label20->Size = System::Drawing::Size(193, 58);
 			this->label20->TabIndex = 21;
 			this->label20->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -958,7 +959,7 @@ namespace Pakreserve1 {
 			this->label21->ForeColor = System::Drawing::Color::White;
 			this->label21->Location = System::Drawing::Point(56, 81);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(66, 25);
+			this->label21->Size = System::Drawing::Size(82, 31);
 			this->label21->TabIndex = 20;
 			this->label21->Text = L"45/70";
 			// 
@@ -983,9 +984,9 @@ namespace Pakreserve1 {
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label22->ForeColor = System::Drawing::Color::White;
-			this->label22->Location = System::Drawing::Point(14, 20);
+			this->label22->Location = System::Drawing::Point(5, 20);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(184, 39);
+			this->label22->Size = System::Drawing::Size(231, 52);
 			this->label22->TabIndex = 19;
 			this->label22->Text = L"Americano";
 			// 
@@ -1008,7 +1009,7 @@ namespace Pakreserve1 {
 			this->label23->ForeColor = System::Drawing::Color::White;
 			this->label23->Location = System::Drawing::Point(56, 131);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(152, 48);
+			this->label23->Size = System::Drawing::Size(193, 58);
 			this->label23->TabIndex = 21;
 			this->label23->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1031,7 +1032,7 @@ namespace Pakreserve1 {
 			this->label24->ForeColor = System::Drawing::Color::White;
 			this->label24->Location = System::Drawing::Point(56, 81);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(66, 25);
+			this->label24->Size = System::Drawing::Size(82, 31);
 			this->label24->TabIndex = 20;
 			this->label24->Text = L"45/70";
 			// 
@@ -1058,7 +1059,7 @@ namespace Pakreserve1 {
 			this->label25->ForeColor = System::Drawing::Color::White;
 			this->label25->Location = System::Drawing::Point(14, 20);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(109, 39);
+			this->label25->Size = System::Drawing::Size(138, 52);
 			this->label25->TabIndex = 19;
 			this->label25->Text = L"Saran";
 			// 
@@ -1081,7 +1082,7 @@ namespace Pakreserve1 {
 			this->label26->ForeColor = System::Drawing::Color::White;
 			this->label26->Location = System::Drawing::Point(56, 131);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(152, 48);
+			this->label26->Size = System::Drawing::Size(193, 58);
 			this->label26->TabIndex = 21;
 			this->label26->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1104,7 +1105,7 @@ namespace Pakreserve1 {
 			this->label27->ForeColor = System::Drawing::Color::White;
 			this->label27->Location = System::Drawing::Point(56, 81);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(66, 25);
+			this->label27->Size = System::Drawing::Size(82, 31);
 			this->label27->TabIndex = 20;
 			this->label27->Text = L"45/70";
 			// 
@@ -1131,7 +1132,7 @@ namespace Pakreserve1 {
 			this->label28->ForeColor = System::Drawing::Color::White;
 			this->label28->Location = System::Drawing::Point(14, 20);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(134, 39);
+			this->label28->Size = System::Drawing::Size(170, 52);
 			this->label28->TabIndex = 19;
 			this->label28->Text = L"Natwaa";
 			// 
@@ -1154,7 +1155,7 @@ namespace Pakreserve1 {
 			this->label29->ForeColor = System::Drawing::Color::White;
 			this->label29->Location = System::Drawing::Point(56, 131);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(152, 48);
+			this->label29->Size = System::Drawing::Size(193, 58);
 			this->label29->TabIndex = 21;
 			this->label29->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1177,7 +1178,7 @@ namespace Pakreserve1 {
 			this->label30->ForeColor = System::Drawing::Color::White;
 			this->label30->Location = System::Drawing::Point(56, 81);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(66, 25);
+			this->label30->Size = System::Drawing::Size(82, 31);
 			this->label30->TabIndex = 20;
 			this->label30->Text = L"45/70";
 			// 
@@ -1204,7 +1205,7 @@ namespace Pakreserve1 {
 			this->label31->ForeColor = System::Drawing::Color::White;
 			this->label31->Location = System::Drawing::Point(14, 20);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(169, 39);
+			this->label31->Size = System::Drawing::Size(213, 52);
 			this->label31->TabIndex = 19;
 			this->label31->Text = L"Garpanya";
 			// 
@@ -1227,7 +1228,7 @@ namespace Pakreserve1 {
 			this->label32->ForeColor = System::Drawing::Color::White;
 			this->label32->Location = System::Drawing::Point(56, 131);
 			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(152, 48);
+			this->label32->Size = System::Drawing::Size(193, 58);
 			this->label32->TabIndex = 21;
 			this->label32->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1250,7 +1251,7 @@ namespace Pakreserve1 {
 			this->label33->ForeColor = System::Drawing::Color::White;
 			this->label33->Location = System::Drawing::Point(56, 81);
 			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(66, 25);
+			this->label33->Size = System::Drawing::Size(82, 31);
 			this->label33->TabIndex = 20;
 			this->label33->Text = L"45/70";
 			// 
@@ -1277,7 +1278,7 @@ namespace Pakreserve1 {
 			this->label34->ForeColor = System::Drawing::Color::White;
 			this->label34->Location = System::Drawing::Point(14, 20);
 			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(130, 39);
+			this->label34->Size = System::Drawing::Size(165, 52);
 			this->label34->TabIndex = 19;
 			this->label34->Text = L"STEVE";
 			// 
@@ -1300,7 +1301,7 @@ namespace Pakreserve1 {
 			this->label35->ForeColor = System::Drawing::Color::White;
 			this->label35->Location = System::Drawing::Point(56, 131);
 			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(152, 48);
+			this->label35->Size = System::Drawing::Size(193, 58);
 			this->label35->TabIndex = 21;
 			this->label35->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1323,7 +1324,7 @@ namespace Pakreserve1 {
 			this->label36->ForeColor = System::Drawing::Color::White;
 			this->label36->Location = System::Drawing::Point(56, 81);
 			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(66, 25);
+			this->label36->Size = System::Drawing::Size(82, 31);
 			this->label36->TabIndex = 20;
 			this->label36->Text = L"45/70";
 			// 
@@ -1350,7 +1351,7 @@ namespace Pakreserve1 {
 			this->label37->ForeColor = System::Drawing::Color::White;
 			this->label37->Location = System::Drawing::Point(14, 20);
 			this->label37->Name = L"label37";
-			this->label37->Size = System::Drawing::Size(117, 39);
+			this->label37->Size = System::Drawing::Size(148, 52);
 			this->label37->TabIndex = 19;
 			this->label37->Text = L"Honey";
 			// 
@@ -1373,7 +1374,7 @@ namespace Pakreserve1 {
 			this->label38->ForeColor = System::Drawing::Color::White;
 			this->label38->Location = System::Drawing::Point(56, 131);
 			this->label38->Name = L"label38";
-			this->label38->Size = System::Drawing::Size(152, 48);
+			this->label38->Size = System::Drawing::Size(193, 58);
 			this->label38->TabIndex = 21;
 			this->label38->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1396,7 +1397,7 @@ namespace Pakreserve1 {
 			this->label39->ForeColor = System::Drawing::Color::White;
 			this->label39->Location = System::Drawing::Point(56, 81);
 			this->label39->Name = L"label39";
-			this->label39->Size = System::Drawing::Size(66, 25);
+			this->label39->Size = System::Drawing::Size(82, 31);
 			this->label39->TabIndex = 20;
 			this->label39->Text = L"45/70";
 			// 
@@ -1423,7 +1424,7 @@ namespace Pakreserve1 {
 			this->label40->ForeColor = System::Drawing::Color::White;
 			this->label40->Location = System::Drawing::Point(14, 20);
 			this->label40->Name = L"label40";
-			this->label40->Size = System::Drawing::Size(122, 39);
+			this->label40->Size = System::Drawing::Size(154, 52);
 			this->label40->TabIndex = 19;
 			this->label40->Text = L"SRTxz";
 			// 
@@ -1446,7 +1447,7 @@ namespace Pakreserve1 {
 			this->label41->ForeColor = System::Drawing::Color::White;
 			this->label41->Location = System::Drawing::Point(56, 131);
 			this->label41->Name = L"label41";
-			this->label41->Size = System::Drawing::Size(152, 48);
+			this->label41->Size = System::Drawing::Size(193, 58);
 			this->label41->TabIndex = 21;
 			this->label41->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1469,7 +1470,7 @@ namespace Pakreserve1 {
 			this->label42->ForeColor = System::Drawing::Color::White;
 			this->label42->Location = System::Drawing::Point(56, 81);
 			this->label42->Name = L"label42";
-			this->label42->Size = System::Drawing::Size(66, 25);
+			this->label42->Size = System::Drawing::Size(82, 31);
 			this->label42->TabIndex = 20;
 			this->label42->Text = L"45/70";
 			// 
@@ -1496,7 +1497,7 @@ namespace Pakreserve1 {
 			this->label43->ForeColor = System::Drawing::Color::White;
 			this->label43->Location = System::Drawing::Point(14, 20);
 			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(74, 39);
+			this->label43->Size = System::Drawing::Size(94, 52);
 			this->label43->TabIndex = 19;
 			this->label43->Text = L"422";
 			// 
@@ -1519,7 +1520,7 @@ namespace Pakreserve1 {
 			this->label44->ForeColor = System::Drawing::Color::White;
 			this->label44->Location = System::Drawing::Point(56, 131);
 			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(152, 48);
+			this->label44->Size = System::Drawing::Size(193, 58);
 			this->label44->TabIndex = 21;
 			this->label44->Text = L"Open 06.00 P.M.\nClose 03.00 A.M.";
 			// 
@@ -1542,7 +1543,7 @@ namespace Pakreserve1 {
 			this->label45->ForeColor = System::Drawing::Color::White;
 			this->label45->Location = System::Drawing::Point(56, 81);
 			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(66, 25);
+			this->label45->Size = System::Drawing::Size(82, 31);
 			this->label45->TabIndex = 20;
 			this->label45->Text = L"45/70";
 			// 
@@ -1573,6 +1574,8 @@ namespace Pakreserve1 {
 			this->ForeColor = System::Drawing::Color::White;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ToeyMenu";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1645,6 +1648,10 @@ public: bool switchToPakForm = false;
 private: System::Void panel1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToPakForm = true;
 	this->Close();
+}
+private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }
