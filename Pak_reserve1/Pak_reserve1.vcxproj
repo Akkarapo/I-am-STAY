@@ -136,7 +136,6 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
-    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="NepjuneCalender1.cpp" />
@@ -167,9 +166,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MPBarnd.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyUserControl.h">
@@ -219,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MPBarnd.resx">
       <DependentUpon>MPBarnd.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl.resx">
       <DependentUpon>MyUserControl.h</DependentUpon>
