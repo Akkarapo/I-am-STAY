@@ -13,6 +13,8 @@
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="MPBarnd.cpp" />
+    <ClCompile Include="BarMapraw.cpp" />
+    <ClCompile Include="BarGong.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -54,6 +56,8 @@
     <ClInclude Include="PakForm.h" />
     <ClInclude Include="ToeyMenu.h" />
     <ClInclude Include="MPBarnd.h" />
+    <ClInclude Include="BarMapraw.h" />
+    <ClInclude Include="BarGong.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
