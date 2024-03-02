@@ -528,6 +528,7 @@ namespace Pakreserve1 {
 			this->panel1->Size = System::Drawing::Size(230, 343);
 			this->panel1->TabIndex = 23;
 			this->panel1->Click += gcnew System::EventHandler(this, &ToeyMenu::panel1_Click);
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ToeyMenu::panel1_Paint);
 			// 
 			// panel2
 			// 
@@ -985,7 +986,7 @@ namespace Pakreserve1 {
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label22->ForeColor = System::Drawing::Color::White;
-			this->label22->Location = System::Drawing::Point(14, 20);
+			this->label22->Location = System::Drawing::Point(5, 20);
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(231, 52);
 			this->label22->TabIndex = 19;
@@ -1576,6 +1577,7 @@ namespace Pakreserve1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ToeyMenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1655,6 +1657,9 @@ private: System::Void panel1_Click(System::Object^ sender, System::EventArgs^ e)
 	this->switchToPakForm = true;
 	this->Close();
 }
-
+private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }
