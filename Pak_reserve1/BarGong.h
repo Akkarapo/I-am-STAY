@@ -219,9 +219,9 @@ namespace Pakreserve1 {
 		dataTable = gcnew array<bool>(20);
 	}
 	private: System::Void A1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
-		A1Table1P->Hide();
+		/*A1Table1P->Hide();
 		A1Table1PGreen->Show();
-		dataTable[0] = !dataTable[0];
+		dataTable[0] = !dataTable[0];*/
 	}
 	};
 }
