@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
     <ClCompile Include="BarGong.cpp" />
     <ClCompile Include="BarMapraw.cpp" />
+    <ClCompile Include="BarNepjune.cpp" />
     <ClCompile Include="BarToey.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
@@ -151,6 +152,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarMapraw.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BarNepjune.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarToey.h">
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarMapraw.resx">
       <DependentUpon>BarMapraw.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarNepjune.resx">
+      <DependentUpon>BarNepjune.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarToey.resx">
       <DependentUpon>BarToey.h</DependentUpon>
