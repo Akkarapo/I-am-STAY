@@ -168,8 +168,7 @@ namespace Pakreserve1 {
 			// 
 			resources->ApplyResources(this->label3, L"label3");
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->label3->ForeColor = System::Drawing::Color::Gray;
 			this->label3->Name = L"label3";
 			// 
 			// signUPtext
