@@ -118,6 +118,7 @@ namespace Pakreserve1 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(445, 41);
 			this->textBox1->TabIndex = 1;
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &sendMail::textBox1_KeyDown);
 			// 
 			// label1
 			// 
@@ -376,6 +377,60 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 private: System::Void sendMail_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)(Keys::Enter)) {
+		String^ email = textBox1->Text;
+		if (email->Length == 0) {
+			MessageBox::Show("Plase Enter email", "email is empty", MessageBoxButtons::OK);
+			return;
+		}
+		/*String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
+		SqlConnection sqlConn(connString);
+		sqlConn.Open();
+		String^ sqlQuery = "SELECT * FROM users WHERE email = @email;";
+		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@email", email);
+		SqlDataReader^ reader = command.ExecuteReader();
+		*/
+		using namespace std;
+		String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
+		string path, line, email3;
+		MarshalString(tempPath2, path);
+		MarshalString(email, email3);
+		ifstream fileIn(path);
+		if (!fileIn.is_open()) {
+			MessageBox::Show("Can't Open File", "Error", MessageBoxButtons::OK);
+		}
+		char format[] = "%s %s %s";
+		char email2[50], pwd[50], username[50];
+		while (getline(fileIn, line)) {
+			sscanf(line.c_str(), format, username, pwd, email2);
+			if (email3 == email2) {
+				MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				String^ senderUsername = "gong6321@gmail.com	";
+				String^ senderPassword = "lnsy ucdr uzza weyj";
+				String^ reciever = gcnew String(email);
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				String^ text = "Plase remember your username and Password\n" + "Username : " + gcnew String(username) + "\nPassword : " + gcnew String(pwd);
+				MailMessage^ mail = gcnew MailMessage(senderUsername, reciever);
+				mail->Subject = "I AM STAY - Password Recovery";
+				mail->Body = text;
+
+				SmtpClient^ Client = gcnew SmtpClient("smtp.gmail.com");
+				Client->Port = 587;
+				Client->Credentials = gcnew System::Net::NetworkCredential(senderUsername, senderPassword);
+				Client->EnableSsl = true;
+
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+
+				Client->Send(mail);
+				MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				return;
+			}
+		}
+		MessageBox::Show("Please Provide Correct Email", "Mail Not found", MessageBoxButtons::OK);
+	}
 }
 };
 }
