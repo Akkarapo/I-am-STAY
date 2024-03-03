@@ -34,7 +34,9 @@ namespace Pakreserve1 {
 
 	public:
 		   int tableSelect = 0;
-		   int targetline = 2;
+	private: System::Windows::Forms::PictureBox^ HomeBTN;
+	public:
+		int targetline = 2;
 		BarGong(User^ user)
 		{
 			InitializeComponent();
@@ -234,6 +236,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
+			this->HomeBTN = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -298,6 +301,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1188,12 +1192,26 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->ConfirmTableBarMapraw->TabStop = false;
 			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarGong::ConfirmTableBarMapraw_Click_1);
 			// 
+			// HomeBTN
+			// 
+			this->HomeBTN->BackColor = System::Drawing::Color::Black;
+			this->HomeBTN->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"HomeBTN.BackgroundImage")));
+			this->HomeBTN->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->HomeBTN->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->HomeBTN->Location = System::Drawing::Point(12, 12);
+			this->HomeBTN->Name = L"HomeBTN";
+			this->HomeBTN->Size = System::Drawing::Size(70, 31);
+			this->HomeBTN->TabIndex = 142;
+			this->HomeBTN->TabStop = false;
+			this->HomeBTN->Click += gcnew System::EventHandler(this, &BarGong::HomeBTN_Click);
+			// 
 			// BarGong
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->HomeBTN);
 			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->B6Table6PRed);
@@ -1327,6 +1345,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2076,10 +2095,16 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 
 
 	fileOut.close();
+	UpdateTable();
+	switchToMP = true;
 	this->Close();
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
+}
+private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	switchToToey = true;
+	this->Close();
 }
 };
 }

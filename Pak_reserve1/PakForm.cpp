@@ -61,20 +61,24 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarNepjune bar5(user);
         
         while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
             profileform.switchToProfile = false;
             Toeyform.switchToProfile = false;
+            bar2.switchToMP = false;
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||profileform.switchToToey||mpform.switchToToey){
+        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||profileform.switchToToey||mpform.switchToToey
+            ||form.switchToToey||bar2.switchToToey){
             Toeyform.ShowDialog();
             form2.switchToToey = false;
             bar2.switchToToey = false;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
+            form.switchToToey = false;
+            bar2.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
