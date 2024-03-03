@@ -18,6 +18,8 @@
     <ClCompile Include="Barreg.cpp" />
     <ClCompile Include="BarToey.cpp" />
     <ClCompile Include="BarNepjune.cpp" />
+    <ClCompile Include="BarOakkhara.cpp" />
+    <ClCompile Include="BarGarpanya.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -45,6 +47,8 @@
     <ClInclude Include="ToeyMenu.h" />
     <ClInclude Include="BarToey.h" />
     <ClInclude Include="BarNepjune.h" />
+    <ClInclude Include="BarOakkhara.h" />
+    <ClInclude Include="BarGarpanya.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
