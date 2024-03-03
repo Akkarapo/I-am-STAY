@@ -40,7 +40,7 @@ namespace Pakreserve1 {
 
 
 	public:
-		String^ username = nullptr;
+	String^ username = nullptr;
 	private: System::Windows::Forms::Panel^ panel2;
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
