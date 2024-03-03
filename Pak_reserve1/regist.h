@@ -314,7 +314,6 @@ namespace Pakreserve1 {
 			// panel3
 			// 
 			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->Controls->Add(this->label13);
 			this->panel3->Controls->Add(this->label5);
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Controls->Add(this->label4);
