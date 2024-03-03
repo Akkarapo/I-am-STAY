@@ -437,17 +437,19 @@ namespace Pakreserve1 {
 			// 
 			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
+			this->pictureBox3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(1228, 6);
+			this->pictureBox3->Location = System::Drawing::Point(1216, 6);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(45, 45);
 			this->pictureBox3->TabIndex = 3;
 			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &ToeyMenu::pictureBox3_Click);
 			// 
 			// pictureBox4
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(846, 10);
+			this->pictureBox4->Location = System::Drawing::Point(809, 12);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(376, 37);
 			this->pictureBox4->TabIndex = 15;
@@ -1644,6 +1646,12 @@ namespace Pakreserve1 {
 
 		}
 #pragma endregion
+public: bool switchToProfile = false;
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToProfile = true;
+	this->Close();
+}
+
 public: bool switchToPakForm = false;
 private: System::Void panel1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToPakForm = true;

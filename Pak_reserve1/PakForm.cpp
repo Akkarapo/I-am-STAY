@@ -59,11 +59,12 @@ using namespace System::Windows::Forms;
         Pakreserve1::MPBarnd mpform(user);
         Pakreserve1::Profile profileform(user);
         while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
             profileform.switchToProfile = false;
+            Toeyform.switchToProfile = false;
         }
 
         else if (form2.switchToToey) {

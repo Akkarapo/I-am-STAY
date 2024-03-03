@@ -52,14 +52,32 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
 	private: System::Windows::Forms::Label^ CustomerMail;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ TicketB1;
+
 	private: System::Windows::Forms::Label^ Table;
 	private: System::Windows::Forms::Label^ BarName;
-	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Panel^ TicketF1;
+
 	private: System::Windows::Forms::Label^ BarNameFront;
 	private: System::Windows::Forms::Label^ Name;
 	private: System::Windows::Forms::Label^ Time;
 	private: System::Windows::Forms::Label^ Date;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,10 +107,10 @@ namespace Pakreserve1 {
 			this->CustomerPhoto = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerMail = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->TicketB1 = (gcnew System::Windows::Forms::Panel());
 			this->Table = (gcnew System::Windows::Forms::Label());
 			this->BarName = (gcnew System::Windows::Forms::Label());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->TicketF1 = (gcnew System::Windows::Forms::Panel());
 			this->BarNameFront = (gcnew System::Windows::Forms::Label());
 			this->Name = (gcnew System::Windows::Forms::Label());
 			this->Time = (gcnew System::Windows::Forms::Label());
@@ -100,8 +118,8 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
 			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			this->panel3->SuspendLayout();
+			this->TicketB1->SuspendLayout();
+			this->TicketF1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox2
@@ -162,22 +180,23 @@ namespace Pakreserve1 {
 			this->panel1->Controls->Add(this->CustomerMail);
 			this->panel1->Controls->Add(this->CustomerPhoto);
 			this->panel1->Controls->Add(this->CustomerName);
-			this->panel1->Location = System::Drawing::Point(39, 70);
+			this->panel1->Location = System::Drawing::Point(54, 78);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(375, 218);
 			this->panel1->TabIndex = 18;
 			// 
-			// panel2
+			// TicketB1
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->panel2->Controls->Add(this->Table);
-			this->panel2->Controls->Add(this->BarName);
-			this->panel2->Location = System::Drawing::Point(494, 373);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(692, 279);
-			this->panel2->TabIndex = 19;
+			this->TicketB1->AutoScroll = true;
+			this->TicketB1->BackColor = System::Drawing::Color::Transparent;
+			this->TicketB1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketB1.BackgroundImage")));
+			this->TicketB1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketB1->Controls->Add(this->Table);
+			this->TicketB1->Controls->Add(this->BarName);
+			this->TicketB1->Location = System::Drawing::Point(1100, 78);
+			this->TicketB1->Name = L"TicketB1";
+			this->TicketB1->Size = System::Drawing::Size(692, 279);
+			this->TicketB1->TabIndex = 19;
 			// 
 			// Table
 			// 
@@ -205,19 +224,21 @@ namespace Pakreserve1 {
 			this->BarName->Text = L"OverTime";
 			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// panel3
+			// TicketF1
 			// 
-			this->panel3->BackColor = System::Drawing::Color::Transparent;
-			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->panel3->Controls->Add(this->BarNameFront);
-			this->panel3->Controls->Add(this->Name);
-			this->panel3->Controls->Add(this->Time);
-			this->panel3->Controls->Add(this->Date);
-			this->panel3->Location = System::Drawing::Point(494, 70);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(692, 279);
-			this->panel3->TabIndex = 10;
+			this->TicketF1->BackColor = System::Drawing::Color::Transparent;
+			this->TicketF1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF1.BackgroundImage")));
+			this->TicketF1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF1->Controls->Add(this->BarNameFront);
+			this->TicketF1->Controls->Add(this->Name);
+			this->TicketF1->Controls->Add(this->Time);
+			this->TicketF1->Controls->Add(this->Date);
+			this->TicketF1->Location = System::Drawing::Point(518, 78);
+			this->TicketF1->Name = L"TicketF1";
+			this->TicketF1->Size = System::Drawing::Size(692, 279);
+			this->TicketF1->TabIndex = 10;
+			this->TicketF1->MouseLeave += gcnew System::EventHandler(this, &Profile::TicketF1_MouseLeave);
+			this->TicketF1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Profile::TicketF1_MouseMove);
 			// 
 			// BarNameFront
 			// 
@@ -278,8 +299,8 @@ namespace Pakreserve1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
-			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->TicketF1);
+			this->Controls->Add(this->TicketB1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
@@ -287,14 +308,16 @@ namespace Pakreserve1 {
 			//this->Name = L"Profile";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
+			this->MouseLeave += gcnew System::EventHandler(this, &Profile::TicketF1_MouseLeave);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Profile::TicketF1_MouseMove);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			this->panel3->ResumeLayout(false);
-			this->panel3->PerformLayout();
+			this->TicketB1->ResumeLayout(false);
+			this->TicketB1->PerformLayout();
+			this->TicketF1->ResumeLayout(false);
+			this->TicketF1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -315,6 +338,8 @@ namespace Pakreserve1 {
 		}
 #pragma endregion
 	private: System::Void Profile_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->TicketB1->Location = System::Drawing::Point(494, 70);
+		this->TicketF1->Location = System::Drawing::Point(494, 70);
 		using namespace std;
 		string path, line;
 		MarshalString(temp, path);
@@ -346,5 +371,15 @@ private: System::Void Ticket1_Paint(System::Object^ sender, System::Windows::For
 
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+private: System::Void TicketF1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	TicketB1->Hide();
+	TicketF1->Show();
+}
+private: System::Void TicketF1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	TicketF1->Hide();
+	TicketB1->Show();
+}
+
 };
 }
