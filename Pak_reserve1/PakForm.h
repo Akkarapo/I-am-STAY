@@ -483,7 +483,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
 			// 
 			// ConfirmTableNo1
@@ -1264,6 +1264,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->A1Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A1Table2PRed->TabIndex = 65;
 			this->A1Table2PRed->TabStop = false;
+			this->A1Table2PRed->Click += gcnew System::EventHandler(this, &PakForm::A1Table2PRed_Click);
 			// 
 			// A2Table2PRed
 			// 
@@ -2342,6 +2343,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	this->Close();
 }
 private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
