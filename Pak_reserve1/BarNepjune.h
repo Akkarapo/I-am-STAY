@@ -21,6 +21,7 @@ namespace Pakreserve1 {
 	public ref class BarNepjune : public System::Windows::Forms::Form
 	{
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		array<bool>^ dataTable;
 		BarNepjune(User^ user)
@@ -125,6 +126,7 @@ namespace Pakreserve1 {
 			this->A4Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->BeginInit();
@@ -149,6 +151,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A4Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table4P
@@ -157,10 +160,10 @@ namespace Pakreserve1 {
 			this->A1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table4P.BackgroundImage")));
 			this->A1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A1Table4P->Location = System::Drawing::Point(515, 353);
-			this->A1Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A1Table4P->Location = System::Drawing::Point(386, 287);
+			this->A1Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A1Table4P->Name = L"A1Table4P";
-			this->A1Table4P->Size = System::Drawing::Size(64, 64);
+			this->A1Table4P->Size = System::Drawing::Size(48, 52);
 			this->A1Table4P->TabIndex = 6;
 			this->A1Table4P->TabStop = false;
 			this->A1Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A1Table4P_Click);
@@ -171,10 +174,10 @@ namespace Pakreserve1 {
 			this->A2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table4P.BackgroundImage")));
 			this->A2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A2Table4P->Location = System::Drawing::Point(515, 466);
-			this->A2Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A2Table4P->Location = System::Drawing::Point(386, 379);
+			this->A2Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A2Table4P->Name = L"A2Table4P";
-			this->A2Table4P->Size = System::Drawing::Size(64, 64);
+			this->A2Table4P->Size = System::Drawing::Size(48, 52);
 			this->A2Table4P->TabIndex = 7;
 			this->A2Table4P->TabStop = false;
 			this->A2Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A2Table4P_Click);
@@ -185,10 +188,10 @@ namespace Pakreserve1 {
 			this->A3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table4P.BackgroundImage")));
 			this->A3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A3Table4P->Location = System::Drawing::Point(515, 580);
-			this->A3Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A3Table4P->Location = System::Drawing::Point(386, 471);
+			this->A3Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A3Table4P->Name = L"A3Table4P";
-			this->A3Table4P->Size = System::Drawing::Size(64, 64);
+			this->A3Table4P->Size = System::Drawing::Size(48, 52);
 			this->A3Table4P->TabIndex = 8;
 			this->A3Table4P->TabStop = false;
 			this->A3Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A3Table4P_Click);
@@ -199,10 +202,10 @@ namespace Pakreserve1 {
 			this->A4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table4P.BackgroundImage")));
 			this->A4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A4Table4P->Location = System::Drawing::Point(628, 580);
-			this->A4Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A4Table4P->Location = System::Drawing::Point(471, 471);
+			this->A4Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A4Table4P->Name = L"A4Table4P";
-			this->A4Table4P->Size = System::Drawing::Size(64, 64);
+			this->A4Table4P->Size = System::Drawing::Size(48, 52);
 			this->A4Table4P->TabIndex = 9;
 			this->A4Table4P->TabStop = false;
 			this->A4Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A4Table4P_Click);
@@ -213,10 +216,10 @@ namespace Pakreserve1 {
 			this->A5Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table4P.BackgroundImage")));
 			this->A5Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A5Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A5Table4P->Location = System::Drawing::Point(741, 580);
-			this->A5Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A5Table4P->Location = System::Drawing::Point(556, 471);
+			this->A5Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A5Table4P->Name = L"A5Table4P";
-			this->A5Table4P->Size = System::Drawing::Size(64, 64);
+			this->A5Table4P->Size = System::Drawing::Size(48, 52);
 			this->A5Table4P->TabIndex = 10;
 			this->A5Table4P->TabStop = false;
 			this->A5Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A5Table4P_Click);
@@ -227,10 +230,10 @@ namespace Pakreserve1 {
 			this->A6Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table4P.BackgroundImage")));
 			this->A6Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A6Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A6Table4P->Location = System::Drawing::Point(853, 580);
-			this->A6Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A6Table4P->Location = System::Drawing::Point(640, 471);
+			this->A6Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A6Table4P->Name = L"A6Table4P";
-			this->A6Table4P->Size = System::Drawing::Size(64, 64);
+			this->A6Table4P->Size = System::Drawing::Size(48, 52);
 			this->A6Table4P->TabIndex = 11;
 			this->A6Table4P->TabStop = false;
 			this->A6Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A6Table4P_Click);
@@ -241,10 +244,10 @@ namespace Pakreserve1 {
 			this->A7Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table4P.BackgroundImage")));
 			this->A7Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A7Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A7Table4P->Location = System::Drawing::Point(1017, 466);
-			this->A7Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A7Table4P->Location = System::Drawing::Point(763, 379);
+			this->A7Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A7Table4P->Name = L"A7Table4P";
-			this->A7Table4P->Size = System::Drawing::Size(64, 64);
+			this->A7Table4P->Size = System::Drawing::Size(48, 52);
 			this->A7Table4P->TabIndex = 13;
 			this->A7Table4P->TabStop = false;
 			this->A7Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A7Table4P_Click);
@@ -255,10 +258,10 @@ namespace Pakreserve1 {
 			this->A8Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table4P.BackgroundImage")));
 			this->A8Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A8Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A8Table4P->Location = System::Drawing::Point(1017, 353);
-			this->A8Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A8Table4P->Location = System::Drawing::Point(763, 287);
+			this->A8Table4P->Margin = System::Windows::Forms::Padding(2);
 			this->A8Table4P->Name = L"A8Table4P";
-			this->A8Table4P->Size = System::Drawing::Size(64, 64);
+			this->A8Table4P->Size = System::Drawing::Size(48, 52);
 			this->A8Table4P->TabIndex = 12;
 			this->A8Table4P->TabStop = false;
 			this->A8Table4P->Click += gcnew System::EventHandler(this, &BarNepjune::A8Table4P_Click);
@@ -269,10 +272,10 @@ namespace Pakreserve1 {
 			this->A1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table4PGreen.BackgroundImage")));
 			this->A1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A1Table4PGreen->Location = System::Drawing::Point(515, 353);
-			this->A1Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A1Table4PGreen->Location = System::Drawing::Point(386, 287);
+			this->A1Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A1Table4PGreen->Name = L"A1Table4PGreen";
-			this->A1Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A1Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A1Table4PGreen->TabIndex = 22;
 			this->A1Table4PGreen->TabStop = false;
 			this->A1Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A1Table4PGreen_Click);
@@ -283,10 +286,10 @@ namespace Pakreserve1 {
 			this->A2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table4PGreen.BackgroundImage")));
 			this->A2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A2Table4PGreen->Location = System::Drawing::Point(515, 466);
-			this->A2Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A2Table4PGreen->Location = System::Drawing::Point(386, 379);
+			this->A2Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A2Table4PGreen->Name = L"A2Table4PGreen";
-			this->A2Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A2Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A2Table4PGreen->TabIndex = 23;
 			this->A2Table4PGreen->TabStop = false;
 			this->A2Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A2Table4PGreen_Click);
@@ -297,10 +300,10 @@ namespace Pakreserve1 {
 			this->A3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table4PGreen.BackgroundImage")));
 			this->A3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A3Table4PGreen->Location = System::Drawing::Point(515, 580);
-			this->A3Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A3Table4PGreen->Location = System::Drawing::Point(386, 471);
+			this->A3Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A3Table4PGreen->Name = L"A3Table4PGreen";
-			this->A3Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A3Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A3Table4PGreen->TabIndex = 24;
 			this->A3Table4PGreen->TabStop = false;
 			this->A3Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A3Table4PGreen_Click);
@@ -311,10 +314,10 @@ namespace Pakreserve1 {
 			this->A4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table4PGreen.BackgroundImage")));
 			this->A4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A4Table4PGreen->Location = System::Drawing::Point(628, 580);
-			this->A4Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A4Table4PGreen->Location = System::Drawing::Point(471, 471);
+			this->A4Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A4Table4PGreen->Name = L"A4Table4PGreen";
-			this->A4Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A4Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A4Table4PGreen->TabIndex = 25;
 			this->A4Table4PGreen->TabStop = false;
 			this->A4Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A4Table4PGreen_Click);
@@ -325,10 +328,10 @@ namespace Pakreserve1 {
 			this->A5Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table4PGreen.BackgroundImage")));
 			this->A5Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A5Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A5Table4PGreen->Location = System::Drawing::Point(741, 580);
-			this->A5Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A5Table4PGreen->Location = System::Drawing::Point(556, 471);
+			this->A5Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A5Table4PGreen->Name = L"A5Table4PGreen";
-			this->A5Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A5Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A5Table4PGreen->TabIndex = 26;
 			this->A5Table4PGreen->TabStop = false;
 			this->A5Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A5Table4PGreen_Click);
@@ -339,10 +342,10 @@ namespace Pakreserve1 {
 			this->A6Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table4PGreen.BackgroundImage")));
 			this->A6Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A6Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A6Table4PGreen->Location = System::Drawing::Point(853, 580);
-			this->A6Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A6Table4PGreen->Location = System::Drawing::Point(640, 471);
+			this->A6Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A6Table4PGreen->Name = L"A6Table4PGreen";
-			this->A6Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A6Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A6Table4PGreen->TabIndex = 27;
 			this->A6Table4PGreen->TabStop = false;
 			this->A6Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A6Table4PGreen_Click);
@@ -353,10 +356,10 @@ namespace Pakreserve1 {
 			this->A7Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table4PGreen.BackgroundImage")));
 			this->A7Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A7Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A7Table4PGreen->Location = System::Drawing::Point(1017, 466);
-			this->A7Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A7Table4PGreen->Location = System::Drawing::Point(763, 379);
+			this->A7Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A7Table4PGreen->Name = L"A7Table4PGreen";
-			this->A7Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A7Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A7Table4PGreen->TabIndex = 28;
 			this->A7Table4PGreen->TabStop = false;
 			this->A7Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A7Table4PGreen_Click);
@@ -367,10 +370,10 @@ namespace Pakreserve1 {
 			this->A8Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table4PGreen.BackgroundImage")));
 			this->A8Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A8Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A8Table4PGreen->Location = System::Drawing::Point(1017, 353);
-			this->A8Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A8Table4PGreen->Location = System::Drawing::Point(763, 287);
+			this->A8Table4PGreen->Margin = System::Windows::Forms::Padding(2);
 			this->A8Table4PGreen->Name = L"A8Table4PGreen";
-			this->A8Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A8Table4PGreen->Size = System::Drawing::Size(48, 52);
 			this->A8Table4PGreen->TabIndex = 29;
 			this->A8Table4PGreen->TabStop = false;
 			this->A8Table4PGreen->Click += gcnew System::EventHandler(this, &BarNepjune::A8Table4PGreen_Click);
@@ -381,10 +384,9 @@ namespace Pakreserve1 {
 			this->A1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table4PRed.Image")));
-			this->A1Table4PRed->Location = System::Drawing::Point(515, 353);
-			this->A1Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A1Table4PRed->Location = System::Drawing::Point(386, 287);
 			this->A1Table4PRed->Name = L"A1Table4PRed";
-			this->A1Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A1Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A1Table4PRed->TabIndex = 30;
 			this->A1Table4PRed->TabStop = false;
 			this->A1Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A1Table4PRed_Click);
@@ -395,10 +397,9 @@ namespace Pakreserve1 {
 			this->A8Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A8Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A8Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table4PRed.Image")));
-			this->A8Table4PRed->Location = System::Drawing::Point(1017, 353);
-			this->A8Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A8Table4PRed->Location = System::Drawing::Point(763, 287);
 			this->A8Table4PRed->Name = L"A8Table4PRed";
-			this->A8Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A8Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A8Table4PRed->TabIndex = 31;
 			this->A8Table4PRed->TabStop = false;
 			this->A8Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A8Table4PRed_Click);
@@ -409,10 +410,9 @@ namespace Pakreserve1 {
 			this->A7Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A7Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A7Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table4PRed.Image")));
-			this->A7Table4PRed->Location = System::Drawing::Point(1017, 466);
-			this->A7Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A7Table4PRed->Location = System::Drawing::Point(763, 379);
 			this->A7Table4PRed->Name = L"A7Table4PRed";
-			this->A7Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A7Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A7Table4PRed->TabIndex = 32;
 			this->A7Table4PRed->TabStop = false;
 			this->A7Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A7Table4PRed_Click);
@@ -423,10 +423,9 @@ namespace Pakreserve1 {
 			this->A6Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A6Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A6Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table4PRed.Image")));
-			this->A6Table4PRed->Location = System::Drawing::Point(853, 580);
-			this->A6Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A6Table4PRed->Location = System::Drawing::Point(640, 471);
 			this->A6Table4PRed->Name = L"A6Table4PRed";
-			this->A6Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A6Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A6Table4PRed->TabIndex = 33;
 			this->A6Table4PRed->TabStop = false;
 			this->A6Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A6Table4PRed_Click);
@@ -437,10 +436,9 @@ namespace Pakreserve1 {
 			this->A5Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A5Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A5Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table4PRed.Image")));
-			this->A5Table4PRed->Location = System::Drawing::Point(741, 580);
-			this->A5Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A5Table4PRed->Location = System::Drawing::Point(556, 471);
 			this->A5Table4PRed->Name = L"A5Table4PRed";
-			this->A5Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A5Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A5Table4PRed->TabIndex = 34;
 			this->A5Table4PRed->TabStop = false;
 			this->A5Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A5Table4PRed_Click);
@@ -451,10 +449,9 @@ namespace Pakreserve1 {
 			this->A4Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A4Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table4PRed.Image")));
-			this->A4Table4PRed->Location = System::Drawing::Point(628, 580);
-			this->A4Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A4Table4PRed->Location = System::Drawing::Point(471, 471);
 			this->A4Table4PRed->Name = L"A4Table4PRed";
-			this->A4Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A4Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A4Table4PRed->TabIndex = 35;
 			this->A4Table4PRed->TabStop = false;
 			this->A4Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A4Table4PRed_Click);
@@ -465,10 +462,9 @@ namespace Pakreserve1 {
 			this->A3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table4PRed.Image")));
-			this->A3Table4PRed->Location = System::Drawing::Point(515, 580);
-			this->A3Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A3Table4PRed->Location = System::Drawing::Point(386, 471);
 			this->A3Table4PRed->Name = L"A3Table4PRed";
-			this->A3Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A3Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A3Table4PRed->TabIndex = 36;
 			this->A3Table4PRed->TabStop = false;
 			this->A3Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A3Table4PRed_Click);
@@ -479,20 +475,32 @@ namespace Pakreserve1 {
 			this->A2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table4PRed.Image")));
-			this->A2Table4PRed->Location = System::Drawing::Point(515, 466);
-			this->A2Table4PRed->Margin = System::Windows::Forms::Padding(4);
+			this->A2Table4PRed->Location = System::Drawing::Point(386, 379);
 			this->A2Table4PRed->Name = L"A2Table4PRed";
-			this->A2Table4PRed->Size = System::Drawing::Size(64, 64);
+			this->A2Table4PRed->Size = System::Drawing::Size(48, 52);
 			this->A2Table4PRed->TabIndex = 37;
 			this->A2Table4PRed->TabStop = false;
 			this->A2Table4PRed->Click += gcnew System::EventHandler(this, &BarNepjune::A2Table4PRed_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Location = System::Drawing::Point(18, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
+			this->pictureBox1->TabIndex = 38;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarNepjune::pictureBox1_Click);
+			// 
 			// BarNepjune
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->ClientSize = System::Drawing::Size(960, 585);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->A2Table4PRed);
 			this->Controls->Add(this->A3Table4PRed);
 			this->Controls->Add(this->A4Table4PRed);
@@ -518,7 +526,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A2Table4P);
 			this->Controls->Add(this->A1Table4P);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"BarNepjune";
 			this->Text = L"BarNepjune";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->EndInit();
@@ -545,6 +553,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A4Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -713,6 +722,11 @@ private: System::Void A6Table4PRed_Click(System::Object^ sender, System::EventAr
 private: System::Void A7Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void A3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToToey = true;
+	this->Close();
 }
 };
 }

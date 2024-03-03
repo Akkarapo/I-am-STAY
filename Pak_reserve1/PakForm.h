@@ -2832,7 +2832,5 @@ private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel2->Hide();
 }
-private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
