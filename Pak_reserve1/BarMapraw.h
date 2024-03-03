@@ -24,12 +24,15 @@ namespace Pakreserve1 {
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
-		String^ username = nullptr;
+	String^ username = nullptr;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	
 	public:
+		int tableSelect = 0;
+		int targetline = 3;
 		   array<bool>^ dataTable;
+		   String^ tempUser = nullptr;
 		BarMapraw(User^ user)
 		{
 			InitializeComponent();
@@ -53,7 +56,7 @@ namespace Pakreserve1 {
 			D2Table2PGreen->Hide();
 			D3Table2PGreen->Hide();
 			D4Table2PGreen->Hide();
-
+			username = user->username;
 			panel1->Hide();
 			UpdateTable();
 		}
@@ -679,6 +682,7 @@ namespace Pakreserve1 {
 			this->B1Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B1Table4PRed->TabIndex = 33;
 			this->B1Table4PRed->TabStop = false;
+			this->B1Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::B1Table4PRed_Click);
 			// 
 			// B2Table4PRed
 			// 
@@ -691,6 +695,7 @@ namespace Pakreserve1 {
 			this->B2Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B2Table4PRed->TabIndex = 34;
 			this->B2Table4PRed->TabStop = false;
+			this->B2Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::B2Table4PRed_Click);
 			// 
 			// B4Table4PRed
 			// 
@@ -703,6 +708,7 @@ namespace Pakreserve1 {
 			this->B4Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B4Table4PRed->TabIndex = 35;
 			this->B4Table4PRed->TabStop = false;
+			this->B4Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::B4Table4PRed_Click);
 			// 
 			// B3Table4PRed
 			// 
@@ -715,6 +721,7 @@ namespace Pakreserve1 {
 			this->B3Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B3Table4PRed->TabIndex = 36;
 			this->B3Table4PRed->TabStop = false;
+			this->B3Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::B3Table4PRed_Click);
 			// 
 			// A1Table2PRed
 			// 
@@ -727,6 +734,7 @@ namespace Pakreserve1 {
 			this->A1Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A1Table2PRed->TabIndex = 37;
 			this->A1Table2PRed->TabStop = false;
+			this->A1Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::A1Table2PRed_Click);
 			// 
 			// A2Table2PRed
 			// 
@@ -739,6 +747,7 @@ namespace Pakreserve1 {
 			this->A2Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A2Table2PRed->TabIndex = 38;
 			this->A2Table2PRed->TabStop = false;
+			this->A2Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::A2Table2PRed_Click);
 			// 
 			// A3Table2PRed
 			// 
@@ -751,6 +760,7 @@ namespace Pakreserve1 {
 			this->A3Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A3Table2PRed->TabIndex = 39;
 			this->A3Table2PRed->TabStop = false;
+			this->A3Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::A3Table2PRed_Click);
 			// 
 			// A4Table2PRed
 			// 
@@ -763,6 +773,7 @@ namespace Pakreserve1 {
 			this->A4Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A4Table2PRed->TabIndex = 40;
 			this->A4Table2PRed->TabStop = false;
+			this->A4Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::A4Table2PRed_Click);
 			// 
 			// A5Table2PRed
 			// 
@@ -775,6 +786,7 @@ namespace Pakreserve1 {
 			this->A5Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A5Table2PRed->TabIndex = 41;
 			this->A5Table2PRed->TabStop = false;
+			this->A5Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::A5Table2PRed_Click);
 			// 
 			// C3Table4PRed
 			// 
@@ -787,6 +799,7 @@ namespace Pakreserve1 {
 			this->C3Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C3Table4PRed->TabIndex = 42;
 			this->C3Table4PRed->TabStop = false;
+			this->C3Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::C3Table4PRed_Click);
 			// 
 			// C2Table4PRed
 			// 
@@ -799,6 +812,7 @@ namespace Pakreserve1 {
 			this->C2Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C2Table4PRed->TabIndex = 43;
 			this->C2Table4PRed->TabStop = false;
+			this->C2Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::C2Table4PRed_Click);
 			// 
 			// C1Table4PRed
 			// 
@@ -811,6 +825,7 @@ namespace Pakreserve1 {
 			this->C1Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C1Table4PRed->TabIndex = 44;
 			this->C1Table4PRed->TabStop = false;
+			this->C1Table4PRed->Click += gcnew System::EventHandler(this, &BarMapraw::C1Table4PRed_Click);
 			// 
 			// D1Table2PRed
 			// 
@@ -821,6 +836,7 @@ namespace Pakreserve1 {
 			this->D1Table2PRed->Size = System::Drawing::Size(57, 57);
 			this->D1Table2PRed->TabIndex = 45;
 			this->D1Table2PRed->TabStop = false;
+			this->D1Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::D1Table2PRed_Click);
 			// 
 			// D4Table2PRed
 			// 
@@ -831,6 +847,7 @@ namespace Pakreserve1 {
 			this->D4Table2PRed->Size = System::Drawing::Size(57, 57);
 			this->D4Table2PRed->TabIndex = 46;
 			this->D4Table2PRed->TabStop = false;
+			this->D4Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::D4Table2PRed_Click);
 			// 
 			// D3Table2PRed
 			// 
@@ -841,6 +858,7 @@ namespace Pakreserve1 {
 			this->D3Table2PRed->Size = System::Drawing::Size(57, 57);
 			this->D3Table2PRed->TabIndex = 47;
 			this->D3Table2PRed->TabStop = false;
+			this->D3Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::D3Table2PRed_Click);
 			// 
 			// D2Table2PRed
 			// 
@@ -851,6 +869,7 @@ namespace Pakreserve1 {
 			this->D2Table2PRed->Size = System::Drawing::Size(57, 57);
 			this->D2Table2PRed->TabIndex = 48;
 			this->D2Table2PRed->TabStop = false;
+			this->D2Table2PRed->Click += gcnew System::EventHandler(this, &BarMapraw::D2Table2PRed_Click);
 			// 
 			// panel1
 			// 
@@ -882,6 +901,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->Size = System::Drawing::Size(133, 56);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarMapraw::pictureBox1_Click_1);
 			// 
 			// BarMapraw
 			// 
@@ -1383,7 +1403,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 29; i++) {
+	for (int i = 0; i < 16; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}
@@ -1481,6 +1501,143 @@ public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToToey = true;
 	this->Close();
+}
+private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 0;
+	}
+}
+private: System::Void A2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
+}
+private: System::Void A3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 2;
+	}
+}
+private: System::Void A4Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 3;
+	}
+}
+private: System::Void A5Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 4;
+	}
+}
+private: System::Void B1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 5;
+	}
+}
+private: System::Void B2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 6;
+	}
+}
+private: System::Void B3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 7;
+	}
+}
+private: System::Void B4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 8;
+	}
+}
+private: System::Void C1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 9;
+	}
+}
+private: System::Void C2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 10;
+	}
+}
+private: System::Void C3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 11;
+	}
+}
+private: System::Void D1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 12;
+	}
+}
+private: System::Void D2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 13;
+	}
+}
+private: System::Void D3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 14;
+	}
+}
+private: System::Void D4Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 15;
+	}
+}
+private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	a[tableSelect] = '0';
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+	fileOut.close();
+
+	UpdateTable();
+	panel1->Hide();
 }
 };
 }
