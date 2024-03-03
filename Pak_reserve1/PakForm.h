@@ -6,7 +6,6 @@
 #include <fstream>
 #include <vector>
 #include "User.h"
-
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -16,9 +15,9 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 
 	using namespace System::IO;
-
 
 
 
@@ -47,12 +46,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 	public:
+		String^ tempUser = nullptr;//==============mpzone==============
 		int tableSelect = 0;
 		PakForm(User^ user)
 		{
 			username = user->username;
 			InitializeComponent();
-			
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//array<bool>^ dataTable = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false };
 			//std::vector<int> reservedTable;
 			array<int>^ reservedTable = {};
@@ -2581,6 +2581,64 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 	fileOut.close();
 
+
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser); 
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "MaewNoi ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "B1Table2P" << " "; break;
+			case 4: fileOutUser << "B2Table4P" << " "; break;
+			case 5: fileOutUser << "B3Table4P" << " "; break;
+			case 6: fileOutUser << "B4Table4P" << " "; break;
+			case 7: fileOutUser << "C1Table2P" << " "; break;
+			case 8: fileOutUser << "C2Table2P" << " "; break;
+			case 9: fileOutUser << "C3Table2P" << " "; break;
+			case 10: fileOutUser << "D1Table4P" << " "; break;
+			case 11: fileOutUser << "D2Table4P" << " "; break;
+			case 12: fileOutUser << "D3Table4P" << " "; break;
+			case 13: fileOutUser << "E1Table2P" << " "; break;
+			case 14: fileOutUser << "E2Table2P" << " "; break;
+			case 15: fileOutUser << "E3Table2P" << " "; break;
+			case 16: fileOutUser << "F1Table4P" << " "; break;
+			case 17: fileOutUser << "F2Table4P" << " "; break;
+			case 18: fileOutUser << "F3Table4P" << " "; break;
+			case 19: fileOutUser << "G1Table2P" << " "; break;
+			case 20: fileOutUser << "G2Table2P" << " "; break;
+			case 21: fileOutUser << "G3Table2P" << " "; break;
+			case 22: fileOutUser << "H1Table1P" << " "; break;
+			case 23: fileOutUser << "H2Table1P" << " "; break;
+			case 24: fileOutUser << "H3Table1P" << " "; break;
+			case 25: fileOutUser << "H4Table1P" << " "; break;
+			case 26: fileOutUser << "H5Table1P" << " "; break;
+			case 27: fileOutUser << "H6Table1P" << " "; break;
+			case 28: fileOutUser << "H7Table1P" << " "; break;
+			default:
+				break;
+			}
+		} 
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
+
+	UpdateTable();
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2829,6 +2887,5 @@ private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel2->Hide();
 }
-
 };
 }

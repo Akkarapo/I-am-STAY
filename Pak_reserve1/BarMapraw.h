@@ -15,12 +15,14 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 	/// <summary>
 	/// Summary for BarMapraw
 	/// </summary>
 	public ref class BarMapraw : public System::Windows::Forms::Form
 	{
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		String^ username = nullptr;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -31,6 +33,7 @@ namespace Pakreserve1 {
 		BarMapraw(User^ user)
 		{
 			InitializeComponent();
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//
 			//TODO: Add the constructor code here
 			//
@@ -1404,6 +1407,48 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Mapraw ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table2P" << " "; break;
+			case 4: fileOutUser << "A5Table2P" << " "; break;
+			case 5: fileOutUser << "B1Table4P" << " "; break;
+			case 6: fileOutUser << "B2Table4P" << " "; break;
+			case 7: fileOutUser << "B3Table4P" << " "; break;
+			case 8: fileOutUser << "B4Table4P" << " "; break;
+			case 9: fileOutUser << "C1Table4P" << " "; break;
+			case 10: fileOutUser << "C2Table4P" << " "; break;
+			case 11: fileOutUser << "C3Table4P" << " "; break;
+			case 12: fileOutUser << "D1Table2P" << " "; break;
+			case 13: fileOutUser << "D2Table2P" << " "; break;
+			case 14: fileOutUser << "D3Table2P" << " "; break;
+			case 15: fileOutUser << "D4Table2P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1431,6 +1476,11 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void BarMapraw_Load_1(System::Object^ sender, System::EventArgs^ e) {
 	dataTable = gcnew array<bool>(29);
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToToey = true;
+	this->Close();
 }
 };
 }

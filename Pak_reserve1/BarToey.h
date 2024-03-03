@@ -15,17 +15,21 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 	/// <summary>
 	/// Summary for BarToey
 	/// </summary>
 	public ref class BarToey : public System::Windows::Forms::Form
 	{
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
+		String^ tempUser = nullptr;//==============mpzone==============
 		array<bool>^ dataTable;
 		BarToey(User^ user)
 		{
 			InitializeComponent();
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//
 			//TODO: Add the constructor code here
 			//
@@ -232,6 +236,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C5Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C4Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -298,6 +303,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C5Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1120,11 +1126,24 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C3Table4PRed->TabIndex = 174;
 			this->C3Table4PRed->TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Location = System::Drawing::Point(18, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
+			this->pictureBox1->TabIndex = 175;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarToey::pictureBox1_Click);
+			// 
 			// BarToey
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C4Table4PRed);
 			this->Controls->Add(this->C5Table4PRed);
@@ -1260,6 +1279,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C5Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1553,6 +1573,59 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Mapraw ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table2P" << " "; break;
+			case 4: fileOutUser << "A5Table2P" << " "; break;
+			case 5: fileOutUser << "A6Table1P" << " "; break;
+			case 6: fileOutUser << "A7Table1P" << " "; break;
+			case 7: fileOutUser << "A8Table1P" << " "; break;
+			case 8: fileOutUser << "B1Table4P" << " "; break;
+			case 9: fileOutUser << "B2Table4P" << " "; break;
+			case 10: fileOutUser << "B3Table4P" << " "; break;
+			case 11: fileOutUser << "B4Table4P" << " "; break;
+			case 12: fileOutUser << "B5Table4P" << " "; break;
+			case 13: fileOutUser << "B6Table4P" << " "; break;
+			case 14: fileOutUser << "B7Table4P" << " "; break;
+			case 15: fileOutUser << "C1Table4P" << " "; break;
+			case 16: fileOutUser << "C2Table4P" << " "; break;
+			case 17: fileOutUser << "C3Table4P" << " "; break;
+			case 18: fileOutUser << "C4Table4P" << " "; break;
+			case 19: fileOutUser << "C5Table4P" << " "; break;
+			case 20: fileOutUser << "C6Table4P" << " "; break;
+			case 21: fileOutUser << "C7Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
+	this->Close();
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToToey = true;
 	this->Close();
 }
 };
