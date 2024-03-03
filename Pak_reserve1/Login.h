@@ -233,6 +233,7 @@ namespace Pakreserve1 {
 			// 
 			resources->ApplyResources(this->label5, L"label5");
 			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label5->ForeColor = System::Drawing::SystemColors::AppWorkspace;
 			this->label5->Name = L"label5";
 			this->label5->Click += gcnew System::EventHandler(this, &Login::label5_Click);
