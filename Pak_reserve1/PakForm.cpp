@@ -11,6 +11,10 @@
 #include "partnerRegist.h"
 #include "User.h"
 #include "MPBarnd.h"
+#include "BarGong.h"
+#include "BarMapraw.h"
+#include "BarToey.h"
+#include "BarNepjune.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -28,7 +32,10 @@ using namespace System::Windows::Forms;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
     Pakreserve1::ToeyMenu Toeyform;
-
+    Pakreserve1::BarGong bargong;
+    Pakreserve1::BarMapraw barmp;
+    Pakreserve1::BarToey bartoey;
+    Pakreserve1::BarNepjune barnep;
     //Toeyform.ShowDialog();
     form2.ShowDialog();
     //User^ user = form2.user;
@@ -73,18 +80,39 @@ using namespace System::Windows::Forms;
         }
         
         else if (registForm.switchToReg2) {
-            registForm.switchToReg2 = false;
             regist2Form.ShowDialog();
+            registForm.switchToReg2 = false;
+            
         }
         else if (form.switchToMP)
         {
-            form.switchToMP = false;
             mpform.ShowDialog();
+            form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 
         {
-            Toeyform.switchToPakForm = false;
             form.ShowDialog();
+            Toeyform.switchToPakForm = false;
+        }
+        else if (Toeyform.switchToBarGong) 
+        {
+            bargong.ShowDialog();
+            Toeyform.switchToBarGong = false;
+        }
+        else if (Toeyform.switchToBarMP) 
+        {
+            barmp.ShowDialog();
+            Toeyform.switchToBarMP = false;
+        }
+        else if (Toeyform.switchToBarToey)
+        {
+            bartoey.ShowDialog(); 
+            Toeyform.switchToBarToey = false;
+        }
+        else if (Toeyform.switchToBarNepjune)
+        {
+            barnep.ShowDialog();
+            Toeyform.switchToBarNepjune = false;
         }
         else
         {

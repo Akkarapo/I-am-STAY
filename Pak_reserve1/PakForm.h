@@ -30,7 +30,8 @@ namespace Pakreserve1 {
 
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	array<bool>^ dataTable;
-	int targetline = 1;
+	private: System::Windows::Forms::Button^ button1;
+		   int targetline = 1;
 
 	public:
 		
@@ -387,6 +388,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->F2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -1615,11 +1617,22 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &PakForm::pictureBox2_Click);
 			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->Location = System::Drawing::Point(97, 28);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 94;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->F3Table4PRed);
 			this->Controls->Add(this->F2Table4PRed);
 			this->Controls->Add(this->F1Table4PRed);
