@@ -1631,6 +1631,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->pictureBox1);
@@ -1761,7 +1762,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"PakForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"PakForm";
+			this->Text = L"¨Ù";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
