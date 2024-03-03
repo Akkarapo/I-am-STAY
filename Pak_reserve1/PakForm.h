@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "User.h"
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -30,11 +32,12 @@ namespace Pakreserve1 {
 
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	array<bool>^ dataTable;
-	int targetline = 1;
+
+		   int targetline = 1;
 
 	public:
 		
-		PakForm(void)
+		PakForm(User^ user)
 		{
 			
 			InitializeComponent();
@@ -483,7 +486,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
 			// 
 			// ConfirmTableNo1
@@ -2343,5 +2346,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
