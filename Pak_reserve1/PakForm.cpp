@@ -68,9 +68,11 @@ using namespace System::Windows::Forms;
             Toeyform.switchToProfile = false;
         }
 
-        else if (form2.switchToToey) {
+        else if (form2.switchToToey||profileform.switchToToey||mpform.switchToToey) {
             Toeyform.ShowDialog();
             form2.switchToToey = false;
+            profileform.switchToToey = false;
+            mpform.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
