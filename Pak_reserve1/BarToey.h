@@ -24,9 +24,10 @@ namespace Pakreserve1 {
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
-		String^ username = nullptr;
 		String^ tempUser = nullptr;//==============mpzone==============
 		array<bool>^ dataTable;
+	
+
 		BarToey(User^ user)
 		{
 			InitializeComponent();
@@ -56,6 +57,8 @@ namespace Pakreserve1 {
 			C5Table4PGreen->Hide();
 			C6Table4PGreen->Hide();
 			C7Table4PGreen->Hide();
+			
+			
 		}
 
 	protected:
@@ -1302,6 +1305,237 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
 			os = chars;
 			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+		void UpdateTable() {
+
+			A1Table1PRed->Hide();
+			A2Table1PRed->Hide();
+			A3Table1PRed->Hide();
+			A4Table1PRed->Hide();
+			A5Table1PRed->Hide();
+			A6Table1PRed->Hide();
+			A7Table1PRed->Hide();
+			A8Table1PRed->Hide();
+			B1Table4PRed->Hide();
+			B2Table4PRed->Hide();
+			B3Table4PRed->Hide();
+			B4Table4PRed->Hide();
+			B5Table4PRed->Hide();
+			B6Table4PRed->Hide();
+			B7Table4PRed->Hide();
+			C1Table4PRed->Hide();
+			C2Table4PRed->Hide();
+			C3Table4PRed->Hide();
+			C4Table4PRed->Hide();
+			C5Table4PRed->Hide();
+			C6Table4PRed->Hide();
+			C7Table4PRed->Hide();
+			
+
+			using namespace std;
+			int BarNo = 2;
+
+			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+			string path, line;
+			MarshalString(temp, path);
+			ifstream fileIn(path);
+			if (!fileIn.is_open()) {
+				MessageBox::Show("Can't open file Location", "Error", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < BarNo; i++) {
+				getline(fileIn, line);
+			}
+
+			if (line[0] == '1') {
+				a[0] = '1';
+				A1Table1PRed->Show();
+				A1Table1P->Hide();
+			}
+			else {
+				A1Table1P->Show();
+			}
+
+			if (line[1] == '1') {
+				a[1] = '1';
+				A2Table1PRed->Show();
+				A2Table1P->Hide();
+			}
+			else {
+				A2Table1P->Show();
+			}
+
+			if (line[2] == '1') {
+				a[2] = '1';
+				A3Table1PRed->Show();
+				A3Table1P->Hide();
+			}
+			else {
+				A3Table1P->Show();
+			}
+
+			if (line[3] == '1') {
+				a[3] = '1';
+				A4Table1PRed->Show();
+				A4Table1P->Hide();
+			}
+			else {
+				A4Table1P->Show();
+			}
+
+			if (line[4] == '1') {
+				a[4] = '1';
+				A5Table1PRed->Show();
+				A5Table1P->Hide();
+			}
+			else {
+				A5Table1P->Show();
+			}
+
+			if (line[5] == '1') {
+				a[5] = '1';
+				A6Table1PRed->Show();
+				A6Table1P->Hide();
+			}
+			else {
+				A6Table1P->Show();
+			}
+
+			if (line[6] == '1') {
+				a[6] = '1';
+				A7Table1PRed->Show();
+				A7Table1P->Hide();
+			}
+			else {
+				A7Table1P->Show();
+			}
+
+			if (line[7] == '1') {
+				a[7] = '1';
+				B1Table4PRed->Show();
+				B1Table4P->Hide();
+			}
+			else {
+				B1Table4P->Show();
+			}
+
+			if (line[8] == '1') {
+				a[8] = '1';
+				B2Table4PRed->Show();
+				B2Table4P->Hide();
+			}
+			else {
+				B2Table4P->Show();
+			}
+
+			if (line[9] == '1') {
+				a[9] = '1';
+				B3Table4PRed->Show();
+				B3Table4P->Hide();
+			}
+			else {
+				B3Table4P->Show();
+			}
+
+			if (line[10] == '1') {
+				a[10] = '1';
+				B4Table4PRed->Show();
+				B4Table4P->Hide();
+			}
+			else {
+				B4Table4P->Show();
+			}
+
+			if (line[11] == '1') {
+				a[11] = '1';
+				B5Table4PRed->Show();
+				B5Table4P->Hide();
+			}
+			else {
+				B5Table4P->Show();
+			}
+
+			if (line[12] == '1') {
+				a[12] = '1';
+				B6Table4PRed->Show();
+				B6Table4P->Hide();
+			}
+			else {
+				B6Table4P->Show();
+			}
+
+			if (line[13] == '1') {
+				a[13] = '1';
+				B7Table4PRed->Show();
+				B7Table4P->Hide();
+			}
+			else {
+				B7Table4P->Show();
+			}
+
+			if (line[14] == '1') {
+				a[14] = '1';
+				C1Table4PRed->Show();
+				C1Table4P->Hide();
+			}
+			else {
+				C1Table4P->Show();
+			}
+
+			if (line[15] == '1') {
+				a[15] = '1';
+				C2Table4PRed->Show();
+				C2Table4P->Hide();
+			}
+			else {
+				C2Table4P->Show();
+			}
+
+			if (line[16] == '1') {
+				a[16] = '1';
+				C3Table4PRed->Show();
+				C3Table4P->Hide();
+			}
+			else {
+				C3Table4P->Show();
+			}
+
+			if (line[17] == '1') {
+				a[17] = '1';
+				C4Table4PRed->Show();
+				C4Table4P->Hide();
+			}
+			else {
+				C4Table4P->Show();
+			}
+
+			if (line[18] == '1') {
+				a[18] = '1';
+				C5Table4PRed->Show();
+				C5Table4P->Hide();
+			}
+			else {
+				C5Table4P->Show();
+			}
+
+			if (line[19] == '1') {
+				a[19] = '1';
+				C6Table4PRed->Show();
+				C6Table4P->Hide();
+			}
+			else {
+				C6Table4P->Show();
+			}
+			
+			if (line[20] == '1') {
+				a[20] = '1';
+				C7Table4PRed->Show();
+				C7Table4P->Hide();
+			}
+			else {
+				C7Table4P->Show();
+			}
+			//label1->Text = gcnew String(line.c_str());
 		}
 
 #pragma endregion
