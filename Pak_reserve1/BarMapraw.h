@@ -887,6 +887,7 @@ namespace Pakreserve1 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 95;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &BarMapraw::panel1_Paint);
 			// 
 			// pictureBox3
 			// 
@@ -1668,6 +1669,8 @@ private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArg
 private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToToey = true;
 	this->Close();
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

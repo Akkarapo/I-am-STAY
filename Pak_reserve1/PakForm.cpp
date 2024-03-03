@@ -65,16 +65,13 @@ using namespace System::Windows::Forms;
 
         
         while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP||bar3.switchToMP||bar4.switchToMP||bar5.switchToMP) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
             profileform.switchToProfile = false;
             Toeyform.switchToProfile = false;
-            bar2.switchToMP = false;
-            bar3.switchToMP = false;
-            bar4.switchToMP = false;
-            bar5.switchToMP = false;
+
         }
 
         else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){
@@ -99,9 +96,13 @@ using namespace System::Windows::Forms;
             registForm.switchToReg2 = false;
             
         }
-        else if (form.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP)
         {
             mpform.ShowDialog();
+            bar2.switchToMP = false;
+            bar3.switchToMP = false;
+            bar4.switchToMP = false;
+            bar5.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 

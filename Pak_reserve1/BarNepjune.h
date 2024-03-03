@@ -590,14 +590,8 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A7Table4PRed);
 			this->Controls->Add(this->A8Table4PRed);
 			this->Controls->Add(this->A1Table4PRed);
-			this->Controls->Add(this->A8Table4PGreen);
 			this->Controls->Add(this->A7Table4PGreen);
-			this->Controls->Add(this->A6Table4PGreen);
-			this->Controls->Add(this->A5Table4PGreen);
-			this->Controls->Add(this->A4Table4PGreen);
-			this->Controls->Add(this->A3Table4PGreen);
 			this->Controls->Add(this->A2Table4PGreen);
-			this->Controls->Add(this->A1Table4PGreen);
 			this->Controls->Add(this->A7Table4P);
 			this->Controls->Add(this->A8Table4P);
 			this->Controls->Add(this->A6Table4P);
@@ -606,6 +600,12 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A3Table4P);
 			this->Controls->Add(this->A2Table4P);
 			this->Controls->Add(this->A1Table4P);
+			this->Controls->Add(this->A1Table4PGreen);
+			this->Controls->Add(this->A8Table4PGreen);
+			this->Controls->Add(this->A6Table4PGreen);
+			this->Controls->Add(this->A5Table4PGreen);
+			this->Controls->Add(this->A4Table4PGreen);
+			this->Controls->Add(this->A3Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNepjune";
@@ -1008,7 +1008,7 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	string newData;
 	MarshalString(a2, newData);
 	switchToMP = true;
-	int targetline = 3;
+	int targetline = 5;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData;
 	}
