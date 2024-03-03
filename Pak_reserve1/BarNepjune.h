@@ -15,6 +15,7 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 	/// <summary>
 	/// Summary for BarNepjune
 	/// </summary>
@@ -23,10 +24,12 @@ namespace Pakreserve1 {
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
+		String^ tempUser = nullptr;//==============mpzone==============
 		array<bool>^ dataTable;
 		BarNepjune(User^ user)
 		{
 			InitializeComponent();
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//
 			//TODO: Add the constructor code here
 			//
@@ -705,6 +708,40 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "MaewNoi ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table4P" << " "; break;
+			case 4: fileOutUser << "A5Table4P" << " "; break;
+			case 5: fileOutUser << "A6Table4P" << " "; break;
+			case 6: fileOutUser << "A7Table4P" << " "; break;
+			case 7: fileOutUser << "A8Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
 private: System::Void A1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
