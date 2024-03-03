@@ -121,6 +121,8 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ C1Table4PRed;
 private: System::Windows::Forms::PictureBox^ C2Table4PRed;
 private: System::Windows::Forms::PictureBox^ C3Table4PRed;
+private: System::Windows::Forms::PictureBox^ B3Table6PRed;
+private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 
 
 
@@ -208,6 +210,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C1Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->B3Table6PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->B6Table6PRed = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -266,6 +270,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C1Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C2Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -990,7 +996,6 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C2Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->C2Table4PRed->TabIndex = 136;
 			this->C2Table4PRed->TabStop = false;
-			this->C2Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::pictureBox2_Click);
 			// 
 			// C3Table4PRed
 			// 
@@ -1004,6 +1009,30 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C3Table4PRed->TabIndex = 137;
 			this->C3Table4PRed->TabStop = false;
 			// 
+			// B3Table6PRed
+			// 
+			this->B3Table6PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table6PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B3Table6PRed->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->B3Table6PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table6PRed.Image")));
+			this->B3Table6PRed->Location = System::Drawing::Point(687, 436);
+			this->B3Table6PRed->Name = L"B3Table6PRed";
+			this->B3Table6PRed->Size = System::Drawing::Size(91, 92);
+			this->B3Table6PRed->TabIndex = 138;
+			this->B3Table6PRed->TabStop = false;
+			// 
+			// B6Table6PRed
+			// 
+			this->B6Table6PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B6Table6PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B6Table6PRed->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->B6Table6PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table6PRed.Image")));
+			this->B6Table6PRed->Location = System::Drawing::Point(887, 436);
+			this->B6Table6PRed->Name = L"B6Table6PRed";
+			this->B6Table6PRed->Size = System::Drawing::Size(91, 92);
+			this->B6Table6PRed->TabIndex = 139;
+			this->B6Table6PRed->TabStop = false;
+			// 
 			// BarGong
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1011,6 +1040,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->B6Table6PRed);
+			this->Controls->Add(this->B3Table6PRed);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
 			this->Controls->Add(this->C1Table4PRed);
@@ -1132,6 +1163,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C1Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C2Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1405,8 +1438,6 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileOut.close();
 
 	this->Close();
-}
-private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
