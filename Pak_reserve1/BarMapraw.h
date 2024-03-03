@@ -891,6 +891,7 @@ namespace Pakreserve1 {
 			this->pictureBox3->Size = System::Drawing::Size(133, 56);
 			this->pictureBox3->TabIndex = 1;
 			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &BarMapraw::pictureBox3_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1471,8 +1472,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	//==============mpzone==============
 	this->Close();
 }
-private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 	   //array<bool>^ dataTable;
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
@@ -1637,6 +1637,9 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 	fileOut.close();
 
 	UpdateTable();
+	panel1->Hide();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
 }
 };

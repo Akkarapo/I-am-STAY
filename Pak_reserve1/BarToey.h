@@ -24,6 +24,7 @@ namespace Pakreserve1 {
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
+		String^ username = nullptr;
 		String^ tempUser = nullptr;//==============mpzone==============
 		array<bool>^ dataTable;
 		BarToey(User^ user)
@@ -1213,6 +1214,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"BarToey";
 			this->Text = L"BarToey";
+			this->Load += gcnew System::EventHandler(this, &BarToey::BarToey_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->EndInit();
@@ -1627,6 +1629,9 @@ public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToToey = true;
 	this->Close();
+}
+private: System::Void BarToey_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
 }
 };
 }
