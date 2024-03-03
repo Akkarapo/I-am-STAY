@@ -16,8 +16,8 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-    int
-    main(array<String ^> ^ args)
+   
+   void main(array<String ^> ^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
@@ -51,7 +51,7 @@ using namespace System::Windows::Forms;
                 form2.switchToForgetPwd = false;
             }
             else {
-                //return;
+                return;
             }
         }  
         User^ user = form2.user;

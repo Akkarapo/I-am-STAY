@@ -79,6 +79,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label12;
 
 
 
@@ -116,6 +117,7 @@ namespace Pakreserve1 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -166,6 +168,8 @@ namespace Pakreserve1 {
 			// 
 			resources->ApplyResources(this->label3, L"label3");
 			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->label3->Name = L"label3";
 			// 
 			// signUPtext
@@ -180,8 +184,8 @@ namespace Pakreserve1 {
 			resources->ApplyResources(this->registLable, L"registLable");
 			this->registLable->BackColor = System::Drawing::Color::Transparent;
 			this->registLable->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->registLable->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->registLable->Name = L"registLable";
 			this->registLable->Click += gcnew System::EventHandler(this, &Login::registLable_Click);
 			// 
@@ -211,8 +215,8 @@ namespace Pakreserve1 {
 			resources->ApplyResources(this->label4, L"label4");
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->label4->Name = L"label4";
 			this->label4->Click += gcnew System::EventHandler(this, &Login::label4_Click_1);
 			// 
@@ -229,6 +233,7 @@ namespace Pakreserve1 {
 			// 
 			resources->ApplyResources(this->label5, L"label5");
 			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->ForeColor = System::Drawing::SystemColors::AppWorkspace;
 			this->label5->Name = L"label5";
 			this->label5->Click += gcnew System::EventHandler(this, &Login::label5_Click);
 			// 
@@ -241,12 +246,20 @@ namespace Pakreserve1 {
 			// panel3
 			// 
 			resources->ApplyResources(this->panel3, L"panel3");
+			this->panel3->Controls->Add(this->label12);
 			this->panel3->Controls->Add(this->label6);
 			this->panel3->Controls->Add(this->label7);
 			this->panel3->Controls->Add(this->label9);
 			this->panel3->Controls->Add(this->label10);
 			this->panel3->Controls->Add(this->label11);
 			this->panel3->Name = L"panel3";
+			// 
+			// label12
+			// 
+			resources->ApplyResources(this->label12, L"label12");
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label12->Name = L"label12";
 			// 
 			// label6
 			// 
@@ -521,7 +534,49 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 	Application::Exit();
 }
 private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	
+	if (e->KeyValue == (int)Keys::Enter) {
+		using namespace std;
+		String^ temp1 = textBox2->Text;
+		String^ temp2 = textBox1->Text;
+		String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + temp1 + ".txt";
+		string path;
+		string username;
+		string password;
+		string line;
+		if (temp1->Length == 0 || temp2->Length == 0) {
+			MessageBox::Show("Plase Enter both username and password", "username or password is empty", MessageBoxButtons::OK);
+			return;
+		}
+		MarshalString(tempPath, path);
+		MarshalString(temp1, username);
+		MarshalString(temp2, password);
+		ifstream source(path);
+		if (source.is_open()) {
+			getline(source, line);
+			char userInput[100], pwd[100], email[100];
+			char format[] = "%s %s %s";
+			sscanf(line.c_str(), format, userInput, pwd, email);
+			if (username == userInput && password == pwd) {
+				user = gcnew User;
+				user->username = gcnew String(username.c_str());
+				user->email = gcnew String(email);
+				user->password = gcnew String(password.c_str());
+				this->Close();
+				switchToToey = true;
+			}
+			else {
+				textBox1->ForeColor = Color::Red;
+				textBox2->ForeColor = Color::Red;
+				return;
+			}
+		}
+		else {
+			textBox1->ForeColor = Color::Red;
+			textBox2->ForeColor = Color::Red;
+			MessageBox::Show("Can't open file", "Error", MessageBoxButtons::OK);
+			return;
+		}
+	}
 }
 
 };
