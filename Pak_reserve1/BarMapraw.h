@@ -32,6 +32,8 @@ namespace Pakreserve1 {
 		int tableSelect = 0;
 		int targetline = 3;
 		   array<bool>^ dataTable;
+	private: System::Windows::Forms::PictureBox^ HomeBTN;
+	public:
 
 	public:
 		String^ tempUser = nullptr;
@@ -208,6 +210,7 @@ namespace Pakreserve1 {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->HomeBTN = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -260,6 +263,7 @@ namespace Pakreserve1 {
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table2P
@@ -905,12 +909,26 @@ namespace Pakreserve1 {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarMapraw::pictureBox1_Click_1);
 			// 
+			// HomeBTN
+			// 
+			this->HomeBTN->BackColor = System::Drawing::Color::Black;
+			this->HomeBTN->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"HomeBTN.BackgroundImage")));
+			this->HomeBTN->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->HomeBTN->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->HomeBTN->Location = System::Drawing::Point(12, 12);
+			this->HomeBTN->Name = L"HomeBTN";
+			this->HomeBTN->Size = System::Drawing::Size(70, 31);
+			this->HomeBTN->TabIndex = 143;
+			this->HomeBTN->TabStop = false;
+			this->HomeBTN->Click += gcnew System::EventHandler(this, &BarMapraw::HomeBTN_Click);
+			// 
 			// BarMapraw
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->HomeBTN);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->D2Table2PRed);
 			this->Controls->Add(this->D3Table2PRed);
@@ -1019,6 +1037,7 @@ namespace Pakreserve1 {
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1472,6 +1491,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileOutUser.close();
 	//==============mpzone==============
 	UpdateTable();
+	switchToMP = true;
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1641,6 +1661,10 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 
 	UpdateTable();
 	panel1->Hide();
+}
+private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	switchToToey = true;
+	this->Close();
 }
 };
 }
