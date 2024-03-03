@@ -6,7 +6,6 @@
 #include <fstream>
 #include <vector>
 #include "User.h"
-
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -16,9 +15,9 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 
 	using namespace System::IO;
-
 
 
 
@@ -47,12 +46,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 	public:
+		String^ tempUser = nullptr;//==============mpzone==============
 		int tableSelect = 0;
 		PakForm(User^ user)
 		{
 			username = user->username;
 			InitializeComponent();
-			
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//array<bool>^ dataTable = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false };
 			//std::vector<int> reservedTable;
 			array<int>^ reservedTable = {};
@@ -376,11 +376,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -471,11 +471,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -1655,28 +1655,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 94;
 			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(242, 172);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(133, 56);
-			this->pictureBox3->TabIndex = 1;
-			this->pictureBox3->TabStop = false;
-			this->pictureBox3->Click += gcnew System::EventHandler(this, &PakForm::pictureBox3_Click);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(32, 173);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(133, 56);
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &PakForm::pictureBox1_Click_1);
-			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
@@ -1709,9 +1687,28 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Click += gcnew System::EventHandler(this, &PakForm::pictureBox5_Click);
-			// button1
 			// 
-
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(242, 172);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(133, 56);
+			this->pictureBox3->TabIndex = 1;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &PakForm::pictureBox3_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(32, 173);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(133, 56);
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &PakForm::pictureBox1_Click_1);
 			// 
 			// PakForm
 			// 
@@ -1906,11 +1903,11 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -2584,6 +2581,64 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 	fileOut.close();
 
+
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser); 
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "MaewNoi ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "B1Table2P" << " "; break;
+			case 4: fileOutUser << "B2Table4P" << " "; break;
+			case 5: fileOutUser << "B3Table4P" << " "; break;
+			case 6: fileOutUser << "B4Table4P" << " "; break;
+			case 7: fileOutUser << "C1Table2P" << " "; break;
+			case 8: fileOutUser << "C2Table2P" << " "; break;
+			case 9: fileOutUser << "C3Table2P" << " "; break;
+			case 10: fileOutUser << "D1Table4P" << " "; break;
+			case 11: fileOutUser << "D2Table4P" << " "; break;
+			case 12: fileOutUser << "D3Table4P" << " "; break;
+			case 13: fileOutUser << "E1Table2P" << " "; break;
+			case 14: fileOutUser << "E2Table2P" << " "; break;
+			case 15: fileOutUser << "E3Table2P" << " "; break;
+			case 16: fileOutUser << "F1Table4P" << " "; break;
+			case 17: fileOutUser << "F2Table4P" << " "; break;
+			case 18: fileOutUser << "F3Table4P" << " "; break;
+			case 19: fileOutUser << "G1Table2P" << " "; break;
+			case 20: fileOutUser << "G2Table2P" << " "; break;
+			case 21: fileOutUser << "G3Table2P" << " "; break;
+			case 22: fileOutUser << "H1Table1P" << " "; break;
+			case 23: fileOutUser << "H2Table1P" << " "; break;
+			case 24: fileOutUser << "H3Table1P" << " "; break;
+			case 25: fileOutUser << "H4Table1P" << " "; break;
+			case 26: fileOutUser << "H5Table1P" << " "; break;
+			case 27: fileOutUser << "H6Table1P" << " "; break;
+			case 28: fileOutUser << "H7Table1P" << " "; break;
+			default:
+				break;
+			}
+		} 
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
+
+	UpdateTable();
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2832,5 +2887,6 @@ private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel2->Hide();
 }
+
 };
 }

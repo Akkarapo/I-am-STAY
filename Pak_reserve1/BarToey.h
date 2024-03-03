@@ -15,6 +15,7 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 	/// <summary>
 	/// Summary for BarToey
 	/// </summary>
@@ -23,10 +24,12 @@ namespace Pakreserve1 {
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
+		String^ tempUser = nullptr;//==============mpzone==============
 		array<bool>^ dataTable;
 		BarToey(User^ user)
 		{
 			InitializeComponent();
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//
 			//TODO: Add the constructor code here
 			//
@@ -1570,6 +1573,54 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Mapraw ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table2P" << " "; break;
+			case 4: fileOutUser << "A5Table2P" << " "; break;
+			case 5: fileOutUser << "A6Table1P" << " "; break;
+			case 6: fileOutUser << "A7Table1P" << " "; break;
+			case 7: fileOutUser << "A8Table1P" << " "; break;
+			case 8: fileOutUser << "B1Table4P" << " "; break;
+			case 9: fileOutUser << "B2Table4P" << " "; break;
+			case 10: fileOutUser << "B3Table4P" << " "; break;
+			case 11: fileOutUser << "B4Table4P" << " "; break;
+			case 12: fileOutUser << "B5Table4P" << " "; break;
+			case 13: fileOutUser << "B6Table4P" << " "; break;
+			case 14: fileOutUser << "B7Table4P" << " "; break;
+			case 15: fileOutUser << "C1Table4P" << " "; break;
+			case 16: fileOutUser << "C2Table4P" << " "; break;
+			case 17: fileOutUser << "C3Table4P" << " "; break;
+			case 18: fileOutUser << "C4Table4P" << " "; break;
+			case 19: fileOutUser << "C5Table4P" << " "; break;
+			case 20: fileOutUser << "C6Table4P" << " "; break;
+			case 21: fileOutUser << "C7Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
 public: bool switchToToey = false;

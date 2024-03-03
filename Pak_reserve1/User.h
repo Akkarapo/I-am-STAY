@@ -10,4 +10,5 @@ public:
 	String^ password = "AAAA";
 	String^ date = DateTime::Now.ToString("dd MMMM yyyy");
 	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ BarName = "AA";
 };
