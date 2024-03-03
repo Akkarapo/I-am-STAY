@@ -1709,6 +1709,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Click += gcnew System::EventHandler(this, &PakForm::pictureBox5_Click);
+			// button1
+			// 
+
 			// 
 			// PakForm
 			// 

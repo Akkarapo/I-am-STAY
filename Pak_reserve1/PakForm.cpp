@@ -29,7 +29,6 @@ using namespace System::Windows::Forms;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
     Pakreserve1::ToeyMenu Toeyform;
-
     form2.ShowDialog();
 
 
@@ -58,8 +57,8 @@ using namespace System::Windows::Forms;
         Pakreserve1::Profile profileform(user);
         Pakreserve1::BarGong bar2(user);
         Pakreserve1::BarMapraw bar3(user);
-        Pakreserve1::BarToey bar4;
-        Pakreserve1::BarNepjune bar5;
+        Pakreserve1::BarToey bar4(user);
+        Pakreserve1::BarNepjune bar5(user);
         
         while (true) {
         if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
@@ -76,18 +75,39 @@ using namespace System::Windows::Forms;
         }
         
         else if (registForm.switchToReg2) {
-            registForm.switchToReg2 = false;
             regist2Form.ShowDialog();
+            registForm.switchToReg2 = false;
+            
         }
         else if (form.switchToMP)
         {
-            form.switchToMP = false;
             mpform.ShowDialog();
+            form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 
         {
-            Toeyform.switchToPakForm = false;
             form.ShowDialog();
+            Toeyform.switchToPakForm = false;
+        }
+        else if (Toeyform.switchToBarGong) 
+        {
+            bar2.ShowDialog();
+            Toeyform.switchToBarGong = false;
+        }
+        else if (Toeyform.switchToBarMP) 
+        {
+            bar3.ShowDialog();
+            Toeyform.switchToBarMP = false;
+        }
+        else if (Toeyform.switchToBarToey)
+        {
+            bar4.ShowDialog(); 
+            Toeyform.switchToBarToey = false;
+        }
+        else if (Toeyform.switchToBarNepjune)
+        {
+            bar5.ShowDialog();
+            Toeyform.switchToBarNepjune = false;
         }
         else
         {
