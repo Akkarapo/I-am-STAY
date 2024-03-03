@@ -21,8 +21,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-    void
-    main(array<String ^> ^ args)
+    void main(array<String ^> ^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
@@ -77,7 +76,7 @@ using namespace System::Windows::Forms;
         }
 
         else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){
-        {
+        
             Toeyform.ShowDialog();
             form2.switchToToey = false;
             bar2.switchToToey = false;
