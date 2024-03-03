@@ -22,7 +22,12 @@ namespace Pakreserve1 {
 	{
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	public:
-		array<bool>^ dataTable;
+		String^ username = nullptr;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	public:
+		   array<bool>^ dataTable;
 		BarMapraw(User^ user)
 		{
 			InitializeComponent();
@@ -45,6 +50,9 @@ namespace Pakreserve1 {
 			D2Table2PGreen->Hide();
 			D3Table2PGreen->Hide();
 			D4Table2PGreen->Hide();
+
+			panel1->Hide();
+			UpdateTable();
 		}
 
 	protected:
@@ -100,7 +108,8 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ A3Table2PRed;
 	private: System::Windows::Forms::PictureBox^ A4Table2PRed;
 	private: System::Windows::Forms::PictureBox^ A5Table2PRed;
-	private: System::Windows::Forms::PictureBox^ C3Table4PGRed;
+	private: System::Windows::Forms::PictureBox^ C3Table4PRed;
+
 	private: System::Windows::Forms::PictureBox^ C2Table4PRed;
 	private: System::Windows::Forms::PictureBox^ C1Table4PRed;
 	private: System::Windows::Forms::PictureBox^ D1Table2PRed;
@@ -181,13 +190,16 @@ namespace Pakreserve1 {
 			this->A3Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A4Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A5Table2PRed = (gcnew System::Windows::Forms::PictureBox());
-			this->C3Table4PGRed = (gcnew System::Windows::Forms::PictureBox());
+			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C1Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->D1Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->D4Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->D3Table2PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->D2Table2PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -230,13 +242,16 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A4Table2PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A5Table2PRed))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PGRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C2Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C1Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D1Table2PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D2Table2PRed))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table2P
@@ -758,17 +773,17 @@ namespace Pakreserve1 {
 			this->A5Table2PRed->TabIndex = 41;
 			this->A5Table2PRed->TabStop = false;
 			// 
-			// C3Table4PGRed
+			// C3Table4PRed
 			// 
-			this->C3Table4PGRed->BackColor = System::Drawing::Color::Transparent;
-			this->C3Table4PGRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->C3Table4PGRed->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C3Table4PGRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PGRed.Image")));
-			this->C3Table4PGRed->Location = System::Drawing::Point(702, 599);
-			this->C3Table4PGRed->Name = L"C3Table4PGRed";
-			this->C3Table4PGRed->Size = System::Drawing::Size(80, 67);
-			this->C3Table4PGRed->TabIndex = 42;
-			this->C3Table4PGRed->TabStop = false;
+			this->C3Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->C3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->C3Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PRed.Image")));
+			this->C3Table4PRed->Location = System::Drawing::Point(702, 599);
+			this->C3Table4PRed->Name = L"C3Table4PRed";
+			this->C3Table4PRed->Size = System::Drawing::Size(80, 67);
+			this->C3Table4PRed->TabIndex = 42;
+			this->C3Table4PRed->TabStop = false;
 			// 
 			// C2Table4PRed
 			// 
@@ -834,19 +849,51 @@ namespace Pakreserve1 {
 			this->D2Table2PRed->TabIndex = 48;
 			this->D2Table2PRed->TabStop = false;
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->pictureBox1);
+			this->panel1->Location = System::Drawing::Point(437, 237);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(407, 247);
+			this->panel1->TabIndex = 95;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(242, 172);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(133, 56);
+			this->pictureBox3->TabIndex = 1;
+			this->pictureBox3->TabStop = false;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(32, 173);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(133, 56);
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			// 
 			// BarMapraw
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->D2Table2PRed);
 			this->Controls->Add(this->D3Table2PRed);
 			this->Controls->Add(this->D4Table2PRed);
 			this->Controls->Add(this->D1Table2PRed);
 			this->Controls->Add(this->C1Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
-			this->Controls->Add(this->C3Table4PGRed);
+			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->A5Table2PRed);
 			this->Controls->Add(this->A4Table2PRed);
 			this->Controls->Add(this->A3Table2PRed);
@@ -894,6 +941,7 @@ namespace Pakreserve1 {
 			this->Name = L"BarMapraw";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarMapraw";
+			this->Load += gcnew System::EventHandler(this, &BarMapraw::BarMapraw_Load_1);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->EndInit();
@@ -936,13 +984,16 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A4Table2PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A5Table2PRed))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PGRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C2Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C1Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D1Table2PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D2Table2PRed))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -963,9 +1014,186 @@ public:
 		os = chars;
 		Marshal::FreeHGlobal(IntPtr((void*)chars));
 	}
+	void UpdateTable() {
+
+		A1Table2PRed->Hide();
+		A2Table2PRed->Hide();
+		A3Table2PRed->Hide();
+		A4Table2PRed->Hide();
+		A5Table2PRed->Hide();
+		B1Table4PRed->Hide();
+		B2Table4PRed->Hide();
+		B3Table4PRed->Hide();
+		B4Table4PRed->Hide();
+		C1Table4PRed->Hide();
+		C2Table4PRed->Hide();
+		C3Table4PRed->Hide();
+		D1Table2PRed->Hide();
+		D2Table2PRed->Hide();
+		D3Table2PRed->Hide();
+		D4Table2PRed->Hide();
+
+		using namespace std;
+		int BarNo = 3;
+
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		string path, line;
+		MarshalString(temp, path);
+		ifstream fileIn(path);
+		if (!fileIn.is_open()) {
+			MessageBox::Show("Can't open file Location", "Error", MessageBoxButtons::OK);
+			return;
+		}
+		for (int i = 0; i < BarNo; i++) {
+			getline(fileIn, line);
+		}
+		if (line[0] == '1') {
+			a[0] = '1';
+			A1Table2PRed->Show();
+			A1Table2P->Hide();
+		}
+		else {
+			A1Table2P->Show();
+		}
+
+		if (line[1] == '1') {
+			a[1] = '1';
+			A2Table2PRed->Show();
+			A2Table2P->Hide();
+		}
+		else {
+			A2Table2P->Show();
+		}
+
+		if (line[2] == '1') {
+			a[2] = '1';
+			A3Table2PRed->Show();
+			A3Table2P->Hide();
+		}
+		else {
+			A3Table2P->Show();
+		}
+
+		if (line[3] == '1') {
+			a[3] = '1';
+			A4Table2PRed->Show();
+			A4Table2P->Hide();
+		}
+		else {
+			A4Table2P->Show();
+		}
+
+		if (line[4] == '1') {
+			a[4] = '1';
+			A5Table2PRed->Show();
+			A5Table2P->Hide();
+		}
+		else {
+			A5Table2P->Show();
+		}
+
+		if (line[5] == '1') {
+			a[5] = '1';
+			B1Table4PRed->Show();
+			B1Table4P->Hide();
+		}
+		else {
+			B1Table4P->Show();
+		}
+
+		if (line[6] == '1') {
+			a[6] = '1';
+			B2Table4PRed->Show();
+			B2Table4P->Hide();
+		}
+		else {
+			B2Table4P->Show();
+		}
+
+		if (line[7] == '1') {
+			a[7] = '1';
+			B3Table4PRed->Show();
+			B3Table4P->Hide();
+		}
+		else {
+			B3Table4P->Show();
+		}
+
+		if (line[8] == '1') {
+			a[8] = '1';
+			B4Table4PRed->Show();
+			B4Table4P->Hide();
+		}
+		else {
+			B4Table4P->Show();
+		}
+
+		if (line[9] == '1') {
+			a[9] = '1';
+			C1Table4PRed->Show();
+			C1Table4P->Hide();
+		}
+		else {
+			C1Table4P->Show();
+		}
+
+		if (line[10] == '1') {
+			a[10] = '1';
+			C2Table4PRed->Show();
+			C2Table4P->Hide();
+		}
+		else {
+			C2Table4P->Show();
+		}
+
+		if (line[11] == '1') {
+			a[11] = '1';
+			C3Table4PRed->Show();
+			C3Table4P->Hide();
+		}
+		else {
+			C3Table4P->Show();
+		}
+
+		if (line[12] == '1') {
+			a[12] = '1';
+			D1Table2PRed->Show();
+			D1Table2P->Hide();
+		}
+		else {
+			D1Table2P->Show();
+		}
+
+		if (line[13] == '1') {
+			a[13] = '1';
+			D2Table2PRed->Show();
+			D2Table2P->Hide();
+		}
+		else {
+			D2Table2P->Show();
+		}
+
+		if (line[14] == '1') {
+			a[14] = '1';
+			D3Table2PRed->Show();
+			D3Table2P->Hide();
+		}
+		else {
+			D3Table2P->Show();
+		}
+
+		if (line[15] == '1') {
+			a[15] = '1';
+			D4Table2PRed->Show();
+			D4Table2P->Hide();
+		}
+		else {
+			D4Table2P->Show();
+		}
+		//label1->Text = gcnew String(line.c_str());
+	}
 
 
-//for nepjune I This page sorts all white buttons first, then green buttons.
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
 	private: System::Void BarMapraw_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1136,7 +1364,6 @@ public:
 }
 
 public: bool switchToMP = false;
-
 private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
 
@@ -1202,7 +1429,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	this->switchToProfile = true;
 	this->Close();
 }
-private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void BarMapraw_Load_1(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
 }
 };
 }
