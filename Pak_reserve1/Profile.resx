@@ -1298,7 +1298,7 @@
         D/XKudHoDu/+y3/5/wAJHudFajkthwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TicketB1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDAAAAHoCAYAAAC/wR/zAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAA/7JJREFUeF7s/WuwplmW34XlqOvSXV01PX3vnu6uruqqzsrKyzknzzl5q6qe6dbM
@@ -6616,7 +6616,7 @@
         /bN/9s/+OePz2GP/P39Yp5DuoHjeAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="panel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TicketF1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDAAAAHoCAYAAAC/wR/zAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAA/7JJREFUeF7s/VmQZUl634kVwe7qbnShu6sL1ZmVsdy4+77vN7Ybe0buWVlVvQHE

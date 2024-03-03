@@ -483,7 +483,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 16);
+			this->label2->Size = System::Drawing::Size(0, 13);
 			this->label2->TabIndex = 1;
 			// 
 			// ConfirmTableNo1
@@ -1324,6 +1324,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->C3Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->C3Table2PRed->TabIndex = 70;
 			this->C3Table2PRed->TabStop = false;
+			this->C3Table2PRed->Click += gcnew System::EventHandler(this, &PakForm::C3Table2PRed_Click);
 			// 
 			// E1Table2PRed
 			// 
@@ -1605,6 +1606,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Black;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(1216, 6);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(45, 45);
@@ -1829,7 +1831,7 @@ public:
 		using namespace std;
 		int BarNo = 1;
 
-		String^ temp = Application::StartupPath+"\\Data\\" + "Table.txt";
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 		string path, line;
 		MarshalString(temp, path);
 		ifstream fileIn(path);
@@ -2338,6 +2340,8 @@ public: bool switchToProfile = false;
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToProfile = true;
 	this->Close();
+}
+private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
