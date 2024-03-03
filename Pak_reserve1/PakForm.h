@@ -1263,6 +1263,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->A2Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A2Table2PRed->TabIndex = 66;
 			this->A2Table2PRed->TabStop = false;
+			this->A2Table2PRed->Click += gcnew System::EventHandler(this, &PakForm::A2Table2PRed_Click);
 			// 
 			// A3Table2PRed
 			// 
@@ -2407,12 +2408,12 @@ private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventAr
 	if (username == "admin") {
 		panel1->Show();
 		tableSelect = 0;
-
 	}
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
-}
+} // No-ButtonCode
+
 private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	a[tableSelect] = '0';
 	using namespace std;
@@ -2449,12 +2450,16 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 	for (const auto& modifiedLine : lines) {
 		fileOut << modifiedLine << endl;
 	}
-
-
 	fileOut.close();
 
 	UpdateTable();
 	panel1->Hide();
+} //YesButtonCode
+private: System::Void A2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
 }
 };
 }
