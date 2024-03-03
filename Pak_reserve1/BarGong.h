@@ -13,15 +13,20 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Text;
 
 	/// <summary>
 	/// Summary for BarGong
 	/// </summary>
 	public ref class BarGong : public System::Windows::Forms::Form
 	{
+		StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	
+	
 	public:
+		String^ username = nullptr;
 		array<bool>^ dataTable;
-		BarGong(void)
+		BarGong(User^ user)
 		{
 			InitializeComponent();
 			//
@@ -1105,6 +1110,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->Name = L"BarGong";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarGong";
+			this->Load += gcnew System::EventHandler(this, &BarGong::BarGong_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->EndInit();
@@ -1416,11 +1422,14 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileIn.close();
 
 	for (int i = 0; i < 20; i++) {
-		a += (dataTable[i] ? "1" : "0");
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
 	}
-
+	
+	String^ a2 = a->ToString();
 	string newData;
-	MarshalString(a, newData);
+	MarshalString(a2, newData);
 	switchToMP = true;
 	int targetline = 2;
 	if (lines.size() >= targetline) {
@@ -1438,6 +1447,8 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileOut.close();
 
 	this->Close();
+}
+private: System::Void BarGong_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

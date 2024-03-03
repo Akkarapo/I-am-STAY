@@ -11,7 +11,7 @@
 #include "partnerRegist.h"
 #include "User.h"
 #include "MPBarnd.h"
-
+#include "BarGong.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
