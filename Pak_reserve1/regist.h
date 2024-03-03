@@ -124,11 +124,11 @@ namespace Pakreserve1 {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
+			this->label5->Font = (gcnew System::Drawing::Font(L"ABeeZee", 9.749999F));
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label5->Location = System::Drawing::Point(23, 624);
+			this->label5->Location = System::Drawing::Point(24, 670);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(416, 23);
+			this->label5->Size = System::Drawing::Size(339, 15);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
 			// 
@@ -136,11 +136,11 @@ namespace Pakreserve1 {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label4->Location = System::Drawing::Point(18, 570);
+			this->label4->Location = System::Drawing::Point(18, 603);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(213, 54);
+			this->label4->Size = System::Drawing::Size(239, 54);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Experience";
 			this->label4->Click += gcnew System::EventHandler(this, &regist::label4_Click);
@@ -149,11 +149,11 @@ namespace Pakreserve1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label3->Location = System::Drawing::Point(18, 516);
+			this->label3->Location = System::Drawing::Point(18, 543);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(317, 54);
+			this->label3->Size = System::Drawing::Size(357, 54);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Your Reservation";
 			// 
@@ -161,11 +161,11 @@ namespace Pakreserve1 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label2->Location = System::Drawing::Point(18, 462);
+			this->label2->Location = System::Drawing::Point(18, 483);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(164, 54);
+			this->label2->Size = System::Drawing::Size(180, 54);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Simplify";
 			this->label2->Click += gcnew System::EventHandler(this, &regist::label2_Click);
@@ -174,20 +174,20 @@ namespace Pakreserve1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label1->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11.25F));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label1->Location = System::Drawing::Point(22, 19);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(135, 28);
+			this->label1->Size = System::Drawing::Size(121, 18);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"I stay you stay";
+			this->label1->Text = L"I STAY you STAY";
 			this->label1->Click += gcnew System::EventHandler(this, &regist::label1_Click);
 			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Location = System::Drawing::Point(974, 31);
+			this->panel2->Location = System::Drawing::Point(946, 31);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(41, 25);
 			this->panel2->TabIndex = 6;
@@ -196,11 +196,11 @@ namespace Pakreserve1 {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label7->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11));
 			this->label7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label7->Location = System::Drawing::Point(735, 140);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(99, 28);
+			this->label7->Size = System::Drawing::Size(79, 18);
 			this->label7->TabIndex = 5;
 			this->label7->Text = L"Username";
 			// 
@@ -208,41 +208,42 @@ namespace Pakreserve1 {
 			// 
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label8->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11));
 			this->label8->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label8->Location = System::Drawing::Point(735, 302);
+			this->label8->Location = System::Drawing::Point(735, 320);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(93, 28);
+			this->label8->Size = System::Drawing::Size(76, 18);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"Password";
 			// 
 			// textBox1
 			// 
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox1->Location = System::Drawing::Point(763, 180);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"ABeeZee", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(754, 170);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 38);
+			this->textBox1->Size = System::Drawing::Size(430, 32);
 			this->textBox1->TabIndex = 8;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &regist::textBox1_TextChanged);
 			// 
 			// textBox2
 			// 
 			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox2->Location = System::Drawing::Point(763, 261);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"ABeeZee", 20.25F));
+			this->textBox2->Location = System::Drawing::Point(754, 260);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 38);
+			this->textBox2->Size = System::Drawing::Size(430, 32);
 			this->textBox2->TabIndex = 9;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &regist::textBox2_TextChanged);
 			// 
 			// textBox3
 			// 
 			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox3->Location = System::Drawing::Point(763, 342);
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"ABeeZee", 20.25F));
+			this->textBox3->Location = System::Drawing::Point(754, 350);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(430, 38);
+			this->textBox3->Size = System::Drawing::Size(430, 32);
 			this->textBox3->TabIndex = 10;
 			this->textBox3->UseSystemPasswordChar = true;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &regist::textBox3_TextChanged);
@@ -251,34 +252,34 @@ namespace Pakreserve1 {
 			// 
 			this->label9->AutoSize = true;
 			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label9->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11));
 			this->label9->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label9->Location = System::Drawing::Point(735, 221);
+			this->label9->Location = System::Drawing::Point(735, 230);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(59, 28);
+			this->label9->Size = System::Drawing::Size(48, 18);
 			this->label9->TabIndex = 11;
-			this->label9->Text = L"email";
+			this->label9->Text = L"Email";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
 			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->label10->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11));
 			this->label10->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label10->Location = System::Drawing::Point(735, 387);
+			this->label10->Location = System::Drawing::Point(735, 410);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(170, 28);
+			this->label10->Size = System::Drawing::Size(137, 18);
 			this->label10->TabIndex = 12;
-			this->label10->Text = L"Confirm password";
+			this->label10->Text = L"Confirm Password";
 			this->label10->Click += gcnew System::EventHandler(this, &regist::label10_Click);
 			// 
 			// textBox4
 			// 
 			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20));
-			this->textBox4->Location = System::Drawing::Point(763, 427);
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"ABeeZee", 20.25F));
+			this->textBox4->Location = System::Drawing::Point(754, 440);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(430, 38);
+			this->textBox4->Size = System::Drawing::Size(430, 32);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->UseSystemPasswordChar = true;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &regist::textBox4_TextChanged);
@@ -288,11 +289,12 @@ namespace Pakreserve1 {
 			// 
 			this->label11->AutoSize = true;
 			this->label11->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->label11->Location = System::Drawing::Point(1145, 618);
+			this->label11->Font = (gcnew System::Drawing::Font(L"ABeeZee", 10));
+			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->label11->Location = System::Drawing::Point(1093, 595);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(84, 17);
+			this->label11->Size = System::Drawing::Size(94, 17);
 			this->label11->TabIndex = 16;
 			this->label11->Text = L"back to login";
 			this->label11->Click += gcnew System::EventHandler(this, &regist::label11_Click);
@@ -301,9 +303,10 @@ namespace Pakreserve1 {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->Location = System::Drawing::Point(763, 540);
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox2->Location = System::Drawing::Point(754, 530);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(430, 48);
+			this->pictureBox2->Size = System::Drawing::Size(438, 55);
 			this->pictureBox2->TabIndex = 22;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &regist::pictureBox2_Click);
@@ -325,14 +328,14 @@ namespace Pakreserve1 {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 25.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->label6->Font = (gcnew System::Drawing::Font(L"Angsana New", 45, System::Drawing::FontStyle::Bold));
 			this->label6->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label6->Location = System::Drawing::Point(909, 59);
+			this->label6->Location = System::Drawing::Point(890, 51);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(173, 59);
+			this->label6->Size = System::Drawing::Size(171, 83);
 			this->label6->TabIndex = 5;
-			this->label6->Text = L"Sign UP";
+			this->label6->Text = L"Sign Up";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label12
 			// 
@@ -342,7 +345,7 @@ namespace Pakreserve1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->label12->Location = System::Drawing::Point(659, 652);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(20, 17);
+			this->label12->Size = System::Drawing::Size(19, 13);
 			this->label12->TabIndex = 28;
 			this->label12->Text = L"....";
 			this->label12->Click += gcnew System::EventHandler(this, &regist::label12_Click);
@@ -400,6 +403,7 @@ namespace Pakreserve1 {
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"regist";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
