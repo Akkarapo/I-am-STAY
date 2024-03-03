@@ -21,6 +21,7 @@ namespace Pakreserve1 {
 	public ref class BarToey : public System::Windows::Forms::Form
 	{
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		array<bool>^ dataTable;
 		BarToey(User^ user)
@@ -232,6 +233,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C5Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C4Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -298,6 +300,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C5Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1120,11 +1123,24 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C3Table4PRed->TabIndex = 174;
 			this->C3Table4PRed->TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Location = System::Drawing::Point(18, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
+			this->pictureBox1->TabIndex = 175;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarToey::pictureBox1_Click);
+			// 
 			// BarToey
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C4Table4PRed);
 			this->Controls->Add(this->C5Table4PRed);
@@ -1260,6 +1276,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C5Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1553,6 +1570,11 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	this->Close();
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToToey = true;
 	this->Close();
 }
 };
