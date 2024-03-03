@@ -65,7 +65,7 @@ using namespace System::Windows::Forms;
 
         
         while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP||bar3.switchToMP) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP||bar3.switchToMP||bar4.switchToMP||bar5.switchToMP) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
@@ -73,6 +73,8 @@ using namespace System::Windows::Forms;
             Toeyform.switchToProfile = false;
             bar2.switchToMP = false;
             bar3.switchToMP = false;
+            bar4.switchToMP = false;
+            bar5.switchToMP = false;
         }
 
         else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){

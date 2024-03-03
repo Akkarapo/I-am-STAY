@@ -1664,6 +1664,7 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
+}
 private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToToey = true;
 	this->Close();

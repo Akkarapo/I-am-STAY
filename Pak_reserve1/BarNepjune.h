@@ -1023,6 +1023,7 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	
 	fileOut.close();
 	UpdateTable();
+	switchToMP = true;
 	this->Close();
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
