@@ -381,6 +381,36 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox3->Size = System::Drawing::Size(45, 45);
 			this->pictureBox3->TabIndex = 3;
 			this->pictureBox3->TabStop = false;
+			
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(809, 12);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(376, 37);
+			this->pictureBox4->TabIndex = 15;
+			this->pictureBox4->TabStop = false;
+			// 
+			// pictureBox6
+			// 
+			this->pictureBox6->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
+			this->pictureBox6->Location = System::Drawing::Point(14, 76);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(32, 32);
+			this->pictureBox6->TabIndex = 17;
+			this->pictureBox6->TabStop = false;
+			// 
+			// pictureBox7
+			// 
+			this->pictureBox7->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
+			this->pictureBox7->Location = System::Drawing::Point(14, 138);
+			this->pictureBox7->Name = L"pictureBox7";
+			this->pictureBox7->Size = System::Drawing::Size(32, 32);
+			this->pictureBox7->TabIndex = 18;
+			this->pictureBox7->TabStop = false;
 			// 
 			// panel1
 			// 
@@ -403,6 +433,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel2->Size = System::Drawing::Size(230, 343);
 			this->panel2->TabIndex = 24;
 			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
+			this->pictureBox8->Location = System::Drawing::Point(14, 76);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(32, 32);
+			this->pictureBox8->TabIndex = 17;
+			this->pictureBox8->TabStop = false;
+			// 
+			// pictureBox9
+			// 
+			this->pictureBox9->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
+			this->pictureBox9->Location = System::Drawing::Point(14, 138);
+			this->pictureBox9->Name = L"pictureBox9";
+			this->pictureBox9->Size = System::Drawing::Size(32, 32);
+			this->pictureBox9->TabIndex = 18;
+			this->pictureBox9->TabStop = false;
+			// 
 			// panel3
 			// 
 			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
@@ -412,6 +462,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(230, 343);
 			this->panel3->TabIndex = 25;
+			// 
+			// pictureBox11
+			// 
+			this->pictureBox11->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox11.Image")));
+			this->pictureBox11->Location = System::Drawing::Point(14, 76);
+			this->pictureBox11->Name = L"pictureBox11";
+			this->pictureBox11->Size = System::Drawing::Size(32, 32);
+			this->pictureBox11->TabIndex = 17;
+			this->pictureBox11->TabStop = false;
+			// 
+			// pictureBox12
+			// 
+			this->pictureBox12->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox12.Image")));
+			this->pictureBox12->Location = System::Drawing::Point(14, 138);
+			this->pictureBox12->Name = L"pictureBox12";
+			this->pictureBox12->Size = System::Drawing::Size(32, 32);
+			this->pictureBox12->TabIndex = 18;
+			this->pictureBox12->TabStop = false;
 			// 
 			// panel4
 			// 
@@ -423,6 +493,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel4->Size = System::Drawing::Size(230, 343);
 			this->panel4->TabIndex = 26;
 			// 
+			// pictureBox14
+			// 
+			this->pictureBox14->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox14.Image")));
+			this->pictureBox14->Location = System::Drawing::Point(14, 76);
+			this->pictureBox14->Name = L"pictureBox14";
+			this->pictureBox14->Size = System::Drawing::Size(32, 32);
+			this->pictureBox14->TabIndex = 17;
+			this->pictureBox14->TabStop = false;
+			// 
+			// pictureBox15
+			// 
+			this->pictureBox15->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox15.Image")));
+			this->pictureBox15->Location = System::Drawing::Point(14, 138);
+			this->pictureBox15->Name = L"pictureBox15";
+			this->pictureBox15->Size = System::Drawing::Size(32, 32);
+			this->pictureBox15->TabIndex = 18;
+			this->pictureBox15->TabStop = false;
+			// 
 			// panel5
 			// 
 			this->panel5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel5.BackgroundImage")));
@@ -432,6 +522,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(230, 343);
 			this->panel5->TabIndex = 25;
+			// 
+			// pictureBox17
+			// 
+			this->pictureBox17->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox17.Image")));
+			this->pictureBox17->Location = System::Drawing::Point(14, 76);
+			this->pictureBox17->Name = L"pictureBox17";
+			this->pictureBox17->Size = System::Drawing::Size(32, 32);
+			this->pictureBox17->TabIndex = 17;
+			this->pictureBox17->TabStop = false;
+			// 
+			// pictureBox18
+			// 
+			this->pictureBox18->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox18.Image")));
+			this->pictureBox18->Location = System::Drawing::Point(14, 138);
+			this->pictureBox18->Name = L"pictureBox18";
+			this->pictureBox18->Size = System::Drawing::Size(32, 32);
+			this->pictureBox18->TabIndex = 18;
+			this->pictureBox18->TabStop = false;
 			// 
 			// panel6
 			// 
@@ -443,6 +553,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel6->Size = System::Drawing::Size(230, 343);
 			this->panel6->TabIndex = 24;
 			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(14, 76);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(32, 32);
+			this->pictureBox5->TabIndex = 17;
+			this->pictureBox5->TabStop = false;
+			// 
+			// pictureBox10
+			// 
+			this->pictureBox10->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.Image")));
+			this->pictureBox10->Location = System::Drawing::Point(14, 138);
+			this->pictureBox10->Name = L"pictureBox10";
+			this->pictureBox10->Size = System::Drawing::Size(32, 32);
+			this->pictureBox10->TabIndex = 18;
+			this->pictureBox10->TabStop = false;
+			// 
 			// panel7
 			// 
 			this->panel7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel7.BackgroundImage")));
@@ -452,6 +582,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(230, 343);
 			this->panel7->TabIndex = 25;
+			// 
+			// pictureBox13
+			// 
+			this->pictureBox13->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox13.Image")));
+			this->pictureBox13->Location = System::Drawing::Point(14, 76);
+			this->pictureBox13->Name = L"pictureBox13";
+			this->pictureBox13->Size = System::Drawing::Size(32, 32);
+			this->pictureBox13->TabIndex = 17;
+			this->pictureBox13->TabStop = false;
+			// 
+			// pictureBox16
+			// 
+			this->pictureBox16->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox16.Image")));
+			this->pictureBox16->Location = System::Drawing::Point(14, 138);
+			this->pictureBox16->Name = L"pictureBox16";
+			this->pictureBox16->Size = System::Drawing::Size(32, 32);
+			this->pictureBox16->TabIndex = 18;
+			this->pictureBox16->TabStop = false;
 			// 
 			// panel8
 			// 
@@ -513,16 +663,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel13->Size = System::Drawing::Size(230, 343);
 			this->panel13->TabIndex = 30;
 			// 
-			// panel14
-			// 
-			this->panel14->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel14.BackgroundImage")));
-			this->panel14->Controls->Add(this->pictureBox17);
-			this->panel14->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->panel14->Location = System::Drawing::Point(770, 810);
-			this->panel14->Name = L"panel14";
-			this->panel14->Size = System::Drawing::Size(230, 343);
-			this->panel14->TabIndex = 30;
-			// 
 			// panel15
 			// 
 			this->panel15->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel15.BackgroundImage")));
@@ -532,16 +672,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel15->Name = L"panel15";
 			this->panel15->Size = System::Drawing::Size(230, 343);
 			this->panel15->TabIndex = 30;
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->Location = System::Drawing::Point(10, 20);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(209, 141);
-			this->pictureBox4->TabIndex = 0;
-			this->pictureBox4->TabStop = false;
 			// 
 			// pictureBox6
 			// 
@@ -553,16 +683,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox6->TabIndex = 1;
 			this->pictureBox6->TabStop = false;
 			// 
-			// pictureBox7
-			// 
-			this->pictureBox7->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.BackgroundImage")));
-			this->pictureBox7->Location = System::Drawing::Point(10, 20);
-			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(209, 141);
-			this->pictureBox7->TabIndex = 1;
-			this->pictureBox7->TabStop = false;
-			// 
 			// pictureBox8
 			// 
 			this->pictureBox8->BackColor = System::Drawing::Color::Transparent;
@@ -572,16 +692,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox8->Size = System::Drawing::Size(209, 141);
 			this->pictureBox8->TabIndex = 1;
 			this->pictureBox8->TabStop = false;
-			// 
-			// pictureBox9
-			// 
-			this->pictureBox9->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.BackgroundImage")));
-			this->pictureBox9->Location = System::Drawing::Point(10, 20);
-			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(209, 141);
-			this->pictureBox9->TabIndex = 1;
-			this->pictureBox9->TabStop = false;
 			// 
 			// pictureBox5
 			// 
@@ -593,16 +703,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox5->TabIndex = 1;
 			this->pictureBox5->TabStop = false;
 			// 
-			// pictureBox10
-			// 
-			this->pictureBox10->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox10->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.BackgroundImage")));
-			this->pictureBox10->Location = System::Drawing::Point(10, 20);
-			this->pictureBox10->Name = L"pictureBox10";
-			this->pictureBox10->Size = System::Drawing::Size(209, 141);
-			this->pictureBox10->TabIndex = 1;
-			this->pictureBox10->TabStop = false;
-			// 
 			// pictureBox11
 			// 
 			this->pictureBox11->BackColor = System::Drawing::Color::Transparent;
@@ -612,16 +712,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox11->Size = System::Drawing::Size(209, 141);
 			this->pictureBox11->TabIndex = 1;
 			this->pictureBox11->TabStop = false;
-			// 
-			// pictureBox12
-			// 
-			this->pictureBox12->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox12->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox12.BackgroundImage")));
-			this->pictureBox12->Location = System::Drawing::Point(10, 20);
-			this->pictureBox12->Name = L"pictureBox12";
-			this->pictureBox12->Size = System::Drawing::Size(209, 141);
-			this->pictureBox12->TabIndex = 1;
-			this->pictureBox12->TabStop = false;
 			// 
 			// pictureBox13
 			// 
@@ -633,16 +723,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox13->TabIndex = 2;
 			this->pictureBox13->TabStop = false;
 			// 
-			// pictureBox14
-			// 
-			this->pictureBox14->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox14->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox14.BackgroundImage")));
-			this->pictureBox14->Location = System::Drawing::Point(10, 20);
-			this->pictureBox14->Name = L"pictureBox14";
-			this->pictureBox14->Size = System::Drawing::Size(209, 141);
-			this->pictureBox14->TabIndex = 2;
-			this->pictureBox14->TabStop = false;
-			// 
 			// pictureBox15
 			// 
 			this->pictureBox15->BackColor = System::Drawing::Color::Transparent;
@@ -653,16 +733,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox15->TabIndex = 2;
 			this->pictureBox15->TabStop = false;
 			// 
-			// pictureBox16
-			// 
-			this->pictureBox16->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox16->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox16.BackgroundImage")));
-			this->pictureBox16->Location = System::Drawing::Point(10, 20);
-			this->pictureBox16->Name = L"pictureBox16";
-			this->pictureBox16->Size = System::Drawing::Size(209, 141);
-			this->pictureBox16->TabIndex = 2;
-			this->pictureBox16->TabStop = false;
-			// 
 			// pictureBox17
 			// 
 			this->pictureBox17->BackColor = System::Drawing::Color::Transparent;
@@ -672,16 +742,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox17->Size = System::Drawing::Size(209, 141);
 			this->pictureBox17->TabIndex = 3;
 			this->pictureBox17->TabStop = false;
-			// 
-			// pictureBox18
-			// 
-			this->pictureBox18->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox18->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox18.BackgroundImage")));
-			this->pictureBox18->Location = System::Drawing::Point(10, 20);
-			this->pictureBox18->Name = L"pictureBox18";
-			this->pictureBox18->Size = System::Drawing::Size(209, 141);
-			this->pictureBox18->TabIndex = 3;
-			this->pictureBox18->TabStop = false;
 			// 
 			// ToeyMenu
 			// 
@@ -709,6 +769,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->ForeColor = System::Drawing::Color::White;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"ToeyMenu";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
