@@ -201,15 +201,13 @@ namespace Pakreserve1 {
 			// 
 			// Table
 			// 
-			this->Table->AutoSize = true;
 			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Table->ForeColor = System::Drawing::Color::White;
 			this->Table->Location = System::Drawing::Point(187, 162);
 			this->Table->Name = L"Table";
-			this->Table->Size = System::Drawing::Size(91, 19);
+			this->Table->Size = System::Drawing::Size(204, 263);
 			this->Table->TabIndex = 3;
-			this->Table->Text = L"A1Table2P";
-			this->Table->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Table->Text = L"A1Table2P A1Table2P A1Table2P A1Table2P";
 			// 
 			// BarName
 			// 
@@ -327,8 +325,8 @@ namespace Pakreserve1 {
 		}
 		line = lines[lines.size() - 1];
 		fileIn.close();
-		char barc[100], tablec[100],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
-		char format[] = "BarName: %s %s Date: %s %s %s Time: %s %s complete";
+		char barc[100], tablec[1000],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+		char format[] = "BarName: %s %[^/] /Date: %s %s %s Time: %s %s complete";
 		sscanf(line.c_str(), format, barc, tablec,dayc, monthc, yearc, timec, amc);
 		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
 		String^ time = gcnew String(timec) + " " + gcnew String(amc);

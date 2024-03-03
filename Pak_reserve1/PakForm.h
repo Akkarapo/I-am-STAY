@@ -2634,7 +2634,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 		} 
 
 	}
-	fileOutUser << "Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
 	fileOutUser.close();
 	//==============mpzone==============
 

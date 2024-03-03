@@ -23,10 +23,23 @@ namespace Pakreserve1 {
 		String^ time = nullptr;
 		String^ bar = nullptr;
 		String^ table = nullptr;
+
+	private: System::Windows::Forms::Label^ Table2;
+	private: System::Windows::Forms::Label^ Table3;
+
+
+	private: System::Windows::Forms::Label^ Table4;
+
+	private: System::Windows::Forms::Label^ Table5;
+	private: System::Windows::Forms::Label^ Table1;
+
+	public:
 		String^ temp = nullptr;
+		String^ username = nullptr;
 		Profile(User^ user)
 		{
 			InitializeComponent();
+			username = user->username;
 			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
 			CustomerName->Text = user->username;
 			CustomerMail->Text = user->email;
@@ -56,11 +69,11 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
 	private: System::Windows::Forms::Label^ CustomerMail;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Panel^ TicketB1;
-	private: System::Windows::Forms::Label^ Table1;
 
 
-	private: System::Windows::Forms::Label^ BarName1;
+
+
+
 
 
 
@@ -174,9 +187,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->CustomerPhoto = (gcnew System::Windows::Forms::PictureBox());
 			this->CustomerMail = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->TicketB1 = (gcnew System::Windows::Forms::Panel());
-			this->Table1 = (gcnew System::Windows::Forms::Label());
-			this->BarName1 = (gcnew System::Windows::Forms::Label());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->TicketF1 = (gcnew System::Windows::Forms::Panel());
 			this->BarNameF1 = (gcnew System::Windows::Forms::Label());
@@ -204,10 +214,14 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Time5 = (gcnew System::Windows::Forms::Label());
 			this->Date5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Table2 = (gcnew System::Windows::Forms::Label());
+			this->Table3 = (gcnew System::Windows::Forms::Label());
+			this->Table4 = (gcnew System::Windows::Forms::Label());
+			this->Table5 = (gcnew System::Windows::Forms::Label());
+			this->Table1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
 			this->panel1->SuspendLayout();
-			this->TicketB1->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->TicketF1->SuspendLayout();
 			this->TicketF2->SuspendLayout();
@@ -280,45 +294,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->panel1->Size = System::Drawing::Size(375, 218);
 			this->panel1->TabIndex = 18;
 			// 
-			// TicketB1
-			// 
-			this->TicketB1->AutoScroll = true;
-			this->TicketB1->BackColor = System::Drawing::Color::Transparent;
-			this->TicketB1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketB1.BackgroundImage")));
-			this->TicketB1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->TicketB1->Controls->Add(this->Table1);
-			this->TicketB1->Controls->Add(this->BarName1);
-			this->TicketB1->Location = System::Drawing::Point(1225, 78);
-			this->TicketB1->Name = L"TicketB1";
-			this->TicketB1->Size = System::Drawing::Size(692, 279);
-			this->TicketB1->TabIndex = 19;
-			// 
-			// Table1
-			// 
-			this->Table1->AutoSize = true;
-			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table1->ForeColor = System::Drawing::Color::White;
-			this->Table1->Location = System::Drawing::Point(128, 92);
-			this->Table1->Name = L"Table1";
-			this->Table1->Size = System::Drawing::Size(91, 19);
-			this->Table1->TabIndex = 3;
-			this->Table1->Text = L"A1Table2P";
-			this->Table1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// BarName1
-			// 
-			this->BarName1->AutoSize = true;
-			this->BarName1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->BarName1->ForeColor = System::Drawing::Color::White;
-			this->BarName1->Location = System::Drawing::Point(127, 30);
-			this->BarName1->Name = L"BarName1";
-			this->BarName1->Size = System::Drawing::Size(127, 30);
-			this->BarName1->TabIndex = 2;
-			this->BarName1->Text = L"OverTime";
-			this->BarName1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// flowLayoutPanel1
 			// 
 			this->flowLayoutPanel1->AutoScroll = true;
@@ -339,6 +314,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF1->BackColor = System::Drawing::Color::Transparent;
 			this->TicketF1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF1.BackgroundImage")));
 			this->TicketF1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF1->Controls->Add(this->Table1);
 			this->TicketF1->Controls->Add(this->BarNameF1);
 			this->TicketF1->Controls->Add(this->Name1);
 			this->TicketF1->Controls->Add(this->Time1);
@@ -405,6 +381,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF2->BackColor = System::Drawing::Color::Transparent;
 			this->TicketF2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF2.BackgroundImage")));
 			this->TicketF2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF2->Controls->Add(this->Table2);
 			this->TicketF2->Controls->Add(this->BarNameF2);
 			this->TicketF2->Controls->Add(this->Name2);
 			this->TicketF2->Controls->Add(this->Time2);
@@ -471,6 +448,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF3->BackColor = System::Drawing::Color::Transparent;
 			this->TicketF3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF3.BackgroundImage")));
 			this->TicketF3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF3->Controls->Add(this->Table3);
 			this->TicketF3->Controls->Add(this->BarNameF3);
 			this->TicketF3->Controls->Add(this->Name3);
 			this->TicketF3->Controls->Add(this->Time3);
@@ -537,6 +515,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF4->BackColor = System::Drawing::Color::Transparent;
 			this->TicketF4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF4.BackgroundImage")));
 			this->TicketF4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF4->Controls->Add(this->Table4);
 			this->TicketF4->Controls->Add(this->BarNameF4);
 			this->TicketF4->Controls->Add(this->Name4);
 			this->TicketF4->Controls->Add(this->Time4);
@@ -603,6 +582,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF5->BackColor = System::Drawing::Color::Transparent;
 			this->TicketF5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TicketF5.BackgroundImage")));
 			this->TicketF5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->TicketF5->Controls->Add(this->Table5);
 			this->TicketF5->Controls->Add(this->BarNameF5);
 			this->TicketF5->Controls->Add(this->Name5);
 			this->TicketF5->Controls->Add(this->Time5);
@@ -678,6 +658,69 @@ private: System::Windows::Forms::Label^ Date5;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &Profile::pictureBox1_Click);
 			// 
+			// Table2
+			// 
+			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table2->ForeColor = System::Drawing::Color::DimGray;
+			this->Table2->Location = System::Drawing::Point(118, 28);
+			this->Table2->Name = L"Table2";
+			this->Table2->Size = System::Drawing::Size(422, 56);
+			this->Table2->TabIndex = 5;
+			this->Table2->Text = L"B1Table2P";
+			this->Table2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// Table3
+			// 
+			this->Table3->AutoSize = true;
+			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table3->ForeColor = System::Drawing::Color::DimGray;
+			this->Table3->Location = System::Drawing::Point(118, 29);
+			this->Table3->Name = L"Table3";
+			this->Table3->Size = System::Drawing::Size(43, 14);
+			this->Table3->TabIndex = 6;
+			this->Table3->Text = L"AAAA";
+			this->Table3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Table4
+			// 
+			this->Table4->AutoSize = true;
+			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table4->ForeColor = System::Drawing::Color::DimGray;
+			this->Table4->Location = System::Drawing::Point(118, 30);
+			this->Table4->Name = L"Table4";
+			this->Table4->Size = System::Drawing::Size(43, 14);
+			this->Table4->TabIndex = 7;
+			this->Table4->Text = L"AAAA";
+			this->Table4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Table5
+			// 
+			this->Table5->AutoSize = true;
+			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table5->ForeColor = System::Drawing::Color::DimGray;
+			this->Table5->Location = System::Drawing::Point(118, 31);
+			this->Table5->Name = L"Table5";
+			this->Table5->Size = System::Drawing::Size(43, 14);
+			this->Table5->TabIndex = 8;
+			this->Table5->Text = L"AAAA";
+			this->Table5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Table1
+			// 
+			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table1->ForeColor = System::Drawing::Color::DimGray;
+			this->Table1->Location = System::Drawing::Point(118, 29);
+			this->Table1->Name = L"Table1";
+			this->Table1->Size = System::Drawing::Size(397, 36);
+			this->Table1->TabIndex = 4;
+			this->Table1->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
+			// 
 			// Profile
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -687,7 +730,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->flowLayoutPanel1);
-			this->Controls->Add(this->TicketB1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
@@ -699,8 +741,6 @@ private: System::Windows::Forms::Label^ Date5;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			this->TicketB1->ResumeLayout(false);
-			this->TicketB1->PerformLayout();
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->TicketF1->ResumeLayout(false);
 			this->TicketF1->PerformLayout();
@@ -734,8 +774,8 @@ private: System::Windows::Forms::Label^ Date5;
 		void UpdateData(std::string line)
 		{
 			//line = lines[lines.size() - count-1];
-			char barc[100], tablec[100], dayc[100], monthc[100], yearc[100], timec[100], amc[50];
-			char format[] = "BarName: %s %s Date: %s %s %s Time: %s %s complete";
+			char barc[100], tablec[1000], dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+			char format[] = "BarName: %s %[^/] /Date: %s %s %s Time: %s %s complete";
 			sscanf(line.c_str(), format, barc, tablec, dayc, monthc, yearc, timec, amc);
 			date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
 			time = gcnew String(timec) + " " + gcnew String(amc);
@@ -750,9 +790,6 @@ private: System::Windows::Forms::Label^ Date5;
 		TicketF3->Hide();
 		TicketF4->Hide();
 		TicketF5->Hide();
-		TicketB1->Hide();
-		this->TicketB1->Location = System::Drawing::Point(494, 70);
-		//this->TicketF1->Location = System::Drawing::Point(494, 70);
 		using namespace std;
 		string path,line;
 		MarshalString(temp, path);
@@ -781,36 +818,40 @@ private: System::Windows::Forms::Label^ Date5;
 			Date5->Text = date;
 			Time5->Text = time;
 			BarNameF5->Text = bar;
-			//Table5->Text = table;
+			Table5->Text = table;
+			Name5->Text = username;
 		case 5: TicketF4->Show();
 			line = lines[lines.size() - 4];
 			UpdateData(line);
 			Date4->Text = date;
 			Time4->Text = time;
 			BarNameF4->Text = bar;
-			//Table4->Text = table;
+			Table4->Text = table;
+			Name4->Text = username;
 		case 4:	TicketF3->Show();
 			line = lines[lines.size() - 3];
 			UpdateData(line);
 			Date3->Text = date;
 			Time3->Text = time;
 			BarNameF3->Text = bar;
-			//Table3->Text = table;
+			Table3->Text = table;
+			Name3->Text = username;
 		case 3:	TicketF2->Show();
 			line = lines[lines.size() - 2];
 			UpdateData(line);
 			Date2->Text = date;
 			Time2->Text = time;
 			BarNameF2->Text = bar;
-			//Table2->Text = table;
+			Table2->Text = table;
+			Name2->Text = username;
 		case 2:	TicketF1->Show();
 			line = lines[lines.size() - 1];
 			UpdateData(line);
 			Date1->Text = date;
 			Time1->Text = time;
 			BarNameF1->Text = bar;
-			BarName1->Text = bar;
 			Table1->Text = table;
+			Name1->Text = username;
 		
 		case 1:	
 		
@@ -833,12 +874,10 @@ private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArg
 }
 
 private: System::Void TicketF1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	TicketB1->Hide();
 	TicketF1->Show();
 }
 private: System::Void TicketF1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	TicketF1->Hide();
-	TicketB1->Show();
 }
 public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -846,6 +885,8 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 	this->Close();
 }
 private: System::Void label18_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
