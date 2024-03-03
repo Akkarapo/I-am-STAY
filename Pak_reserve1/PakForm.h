@@ -41,6 +41,8 @@ namespace Pakreserve1 {
 
 	public:
 		String^ username = nullptr;
+
+	public:
 		int tableSelect = 0;
 		PakForm(User^ user)
 		{
@@ -1762,7 +1764,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"PakForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"¨Ù";
+			this->Text = L"ï¿½ï¿½";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
@@ -2543,10 +2545,10 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
-
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
-}
+} // No-ButtonCode
+
 private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	a[tableSelect] = '0';
 	using namespace std;
@@ -2583,12 +2585,16 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 	for (const auto& modifiedLine : lines) {
 		fileOut << modifiedLine << endl;
 	}
-
-
 	fileOut.close();
 
 	UpdateTable();
 	panel1->Hide();
+} //YesButtonCode
+private: System::Void A2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
 }
 private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (username == "admin") {
@@ -2597,12 +2603,6 @@ private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventAr
 	}
 }
 
-private: System::Void A2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (username == "admin") {
-		panel1->Show();
-		tableSelect = 1;
-	}
-}
 private: System::Void A3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (username == "admin") {
 		panel1->Show();

@@ -273,6 +273,7 @@ namespace Pakreserve1 {
 			this->textBox4->TabIndex = 13;
 			this->textBox4->UseSystemPasswordChar = true;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &regist::textBox4_TextChanged);
+			this->textBox4->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &regist::textBox4_KeyDown);
 			// 
 			// label11
 			// 
@@ -526,6 +527,61 @@ private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 
+}
+private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)(Keys::Enter)) {
+		using namespace std;
+		String^ username = textBox1->Text;
+		String^ email = textBox2->Text;
+		String^ password = textBox3->Text;
+		String^ password2 = textBox4->Text;
+
+		if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
+			if (username->Length == 0) {
+				textBox1->BackColor = Color::Red;
+			}
+			if (email->Length == 0) {
+				textBox2->BackColor = Color::Red;
+			}
+			if (password->Length == 0) {
+				textBox3->BackColor = Color::Red;
+			}
+			if (password2->Length == 0) {
+				textBox4->BackColor = Color::Red;
+			}
+			return;
+		}
+		else if (email->IndexOf("@gmail") == -1) {
+			textBox2->ForeColor = Color::Red;
+			return;
+		}
+		else if (password != password2) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			return;
+		}
+		else if (password->Length < 7) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+			return;
+		}
+
+		String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + username + ".txt";
+		String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
+		string path, username2, password3, email2, path2;
+		MarshalString(tempPath, path);
+		MarshalString(username, username2);
+		MarshalString(password, password3);
+		MarshalString(email, email2);
+		MarshalString(tempPath2, path2);
+		ofstream fileOut(path);
+		ofstream AllFile(path2, ios::app);
+		fileOut << username2 << " " << password3 << " " << email2 << endl;
+		AllFile << username2 << " " << password3 << " " << email2 << endl;
+		switchToLogin = true;
+		this->Close();
+	}
 }
 };
 }
