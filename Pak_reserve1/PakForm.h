@@ -39,7 +39,7 @@ namespace Pakreserve1 {
 
 
 	public:
-		String^ username = nullptr;
+	String^ username = nullptr;
 	private: System::Windows::Forms::Panel^ panel2;
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
@@ -1709,6 +1709,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Click += gcnew System::EventHandler(this, &PakForm::pictureBox5_Click);
+			// button1
+			// 
+
 			// 
 			// PakForm
 			// 

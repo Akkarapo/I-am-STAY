@@ -129,9 +129,11 @@
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <ClCompile Include="BarGarpanya.cpp" />
     <ClCompile Include="BarGong.cpp" />
     <ClCompile Include="BarMapraw.cpp" />
     <ClCompile Include="BarNepjune.cpp" />
+    <ClCompile Include="BarOakkhara.cpp" />
     <ClCompile Include="BarToey.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
@@ -147,6 +149,9 @@
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarGarpanya.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="BarGong.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -154,6 +159,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarNepjune.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BarOakkhara.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarToey.h">
@@ -195,14 +203,21 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BarGarpanya.resx">
+      <DependentUpon>BarGarpanya.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarGong.resx">
       <DependentUpon>BarGong.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarMapraw.resx">
       <DependentUpon>BarMapraw.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BarNepjune.resx">
       <DependentUpon>BarNepjune.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarOakkhara.resx">
+      <DependentUpon>BarOakkhara.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarToey.resx">
       <DependentUpon>BarToey.h</DependentUpon>
