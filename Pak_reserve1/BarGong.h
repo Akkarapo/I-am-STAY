@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-
+#include "User.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -1407,7 +1407,6 @@ public: bool switchToMP = false;
 private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
 
-	System::String^ a = "";
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 
 	string path, line;
@@ -1421,7 +1420,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 29; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}
@@ -1445,7 +1444,6 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
-
 	this->Close();
 }
 private: System::Void BarGong_Load(System::Object^ sender, System::EventArgs^ e) {

@@ -12,6 +12,9 @@
 #include "User.h"
 #include "MPBarnd.h"
 #include "BarGong.h"
+#include "BarMapraw.h"
+#include "BarToey.h"
+#include "BarNepjune.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -23,19 +26,14 @@ using namespace System::Windows::Forms;
     Application::SetCompatibleTextRenderingDefault(false);
     Pakreserve1::Login form2;
     Pakreserve1::sendMail mailForm;
-    // Pakreserve1::MoveToMp movetoMpForm;
     Pakreserve1::partnerRegist regist2Form;
     Pakreserve1::regist registForm;
     Pakreserve1::ToeyMenu Toeyform;
 
-    //Toeyform.ShowDialog();
     form2.ShowDialog();
-    //User^ user = form2.user;
-    //User^ user = form2.user;
-    //profileform.switchToBook = true;
+
 
    
-    //mpform.ShowDialog();
         while (form2.user == nullptr) {
             if (form2.switchToRegister) {
                 registForm.ShowDialog();
@@ -58,6 +56,11 @@ using namespace System::Windows::Forms;
         Pakreserve1::PakForm form(user);
         Pakreserve1::MPBarnd mpform(user);
         Pakreserve1::Profile profileform(user);
+        Pakreserve1::BarGong bar2(user);
+        Pakreserve1::BarMapraw bar3(user);
+        Pakreserve1::BarToey bar4;
+        Pakreserve1::BarNepjune bar5;
+        
         while (true) {
         if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
             profileform.ShowDialog();

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-
+#include "User.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -14,12 +14,13 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Text;
 	/// <summary>
 	/// Summary for BarToey
 	/// </summary>
 	public ref class BarToey : public System::Windows::Forms::Form
 	{
+	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	public:
 		array<bool>^ dataTable;
 		BarToey(void)
@@ -1515,7 +1516,6 @@ public: bool switchToMP = false;
 private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
 
-	System::String^ a = "";
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 
 	string path, line;
@@ -1529,14 +1529,17 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 22; i++) {
-		a += (dataTable[i] ? "1" : "0");
+	for (int i = 0; i < 20; i++) {
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
 	}
 
+	String^ a2 = a->ToString();
 	string newData;
-	MarshalString(a, newData);
+	MarshalString(a2, newData);
 	switchToMP = true;
-	int targetline = 4;
+	int targetline = 2;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData;
 	}
@@ -1550,7 +1553,6 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
-
 	this->Close();
 }
 };
