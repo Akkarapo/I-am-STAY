@@ -35,6 +35,7 @@ namespace Pakreserve1 {
 			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
 			Name->Text = user->username;
 			
+			
 		}
 
 	protected:
@@ -64,6 +65,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ BarName;
 	private: System::Windows::Forms::Label^ BarNameFront;
 	private: System::Windows::Forms::Label^ Name;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
 	private:
@@ -93,9 +95,11 @@ namespace Pakreserve1 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->Table = (gcnew System::Windows::Forms::Label());
 			this->BarName = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox2
@@ -120,7 +124,7 @@ namespace Pakreserve1 {
 			this->panel1->Controls->Add(this->BarNameFront);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(12, 100);
+			this->panel1->Location = System::Drawing::Point(124, 160);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
@@ -197,15 +201,13 @@ namespace Pakreserve1 {
 			// 
 			// Table
 			// 
-			this->Table->AutoSize = true;
 			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
-			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->ForeColor = System::Drawing::Color::Gray;
 			this->Table->Location = System::Drawing::Point(187, 162);
 			this->Table->Name = L"Table";
-			this->Table->Size = System::Drawing::Size(91, 19);
+			this->Table->Size = System::Drawing::Size(204, 263);
 			this->Table->TabIndex = 3;
-			this->Table->Text = L"A1Table2P";
-			this->Table->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Table->Text = L"A1Table2P A1Table2P A1Table2P A1Table2P";
 			// 
 			// BarName
 			// 
@@ -219,6 +221,19 @@ namespace Pakreserve1 {
 			this->BarName->Text = L"OverTime";
 			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Black;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Location = System::Drawing::Point(12, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(70, 31);
+			this->pictureBox1->TabIndex = 22;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &MPBarnd::pictureBox1_Click);
+			// 
 			// MPBarnd
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -226,6 +241,7 @@ namespace Pakreserve1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->panel2);
@@ -239,6 +255,7 @@ namespace Pakreserve1 {
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -273,8 +290,8 @@ namespace Pakreserve1 {
 	}
 	private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-		   //public: String^ date = DateTime::Now.ToString("dd MMM yyyy");
 	private: System::Void MPBarnd_Load(System::Object^ sender, System::EventArgs^ e) {
+		/*
 		this->panel1->Location = System::Drawing::Point(110, 109);
 		this->panel2->Location = System::Drawing::Point(110, 109);
 		CultureInfo^ culture = gcnew CultureInfo("en-US");
@@ -295,7 +312,29 @@ namespace Pakreserve1 {
 		fileIn.close();
 		ofstream fileOut(path, ios::app);
 		fileOut << "Date: " << datec << " Time: " << timec << " complete" << endl;
-		fileOut.close();
+		fileOut.close();*/
+		this->panel1->Location = System::Drawing::Point(124, 160);
+		this->panel2->Location = System::Drawing::Point(124, 160);
+		using namespace std;
+		string path, line;
+		MarshalString(temp, path);
+		ifstream fileIn(path);
+		vector<string> lines;
+		while (getline(fileIn, line)) {
+			lines.push_back(line);
+		}
+		line = lines[lines.size() - 1];
+		fileIn.close();
+		char barc[100], tablec[1000],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+		char format[] = "BarName: %s %[^/] /Date: %s %s %s Time: %s %s complete";
+		sscanf(line.c_str(), format, barc, tablec,dayc, monthc, yearc, timec, amc);
+		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
+		String^ time = gcnew String(timec) + " " + gcnew String(amc);
+		Date->Text = date;
+		Time->Text = time;
+		BarName->Text = gcnew String(barc);
+		BarNameFront->Text = gcnew String(barc);
+		Table->Text = gcnew String(tablec);
 	}
 	private: System::Void Date_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -316,5 +355,11 @@ namespace Pakreserve1 {
 	}
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+
+	public: bool switchToToey = false;
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->switchToToey = true;
+		this->Close();
+	}
+};
 }

@@ -14,26 +14,34 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 
 	/// <summary>
 	/// Summary for BarGong
 	/// </summary>
 	public ref class BarGong : public System::Windows::Forms::Form
 	{
-		StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
-	
-	
+	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	array<bool>^ dataTable;
 	public:
-		String^ username = nullptr;
+	String^ username = nullptr;
+	String^ tempUser = nullptr;
+	private: System::Windows::Forms::Panel^ panel1;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
+
 	public:
-		array<bool>^ dataTable;
+		   int tableSelect = 0;
+		   int targetline = 2;
 		BarGong(User^ user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			panel1->Hide();
 		A1Table1PGreen->Hide();
 		A2Table1PGreen->Hide();
 		A3Table1PGreen->Hide();
@@ -54,6 +62,9 @@ namespace Pakreserve1 {
 		E2Table4PGreen->Hide();
 		E3Table4PGreen->Hide();
 		E4Table4PGreen->Hide();
+
+		UpdateTable();
+		username = user->username;
 		}
 
 	protected:
@@ -219,7 +230,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->B3Table6PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->B6Table6PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -280,7 +294,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -289,10 +306,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A1Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1P.BackgroundImage")));
 			this->A1Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A1Table1P->Location = System::Drawing::Point(781, 114);
-			this->A1Table1P->Margin = System::Windows::Forms::Padding(2);
+			this->A1Table1P->Location = System::Drawing::Point(1041, 140);
+			this->A1Table1P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A1Table1P->Name = L"A1Table1P";
-			this->A1Table1P->Size = System::Drawing::Size(20, 24);
+			this->A1Table1P->Size = System::Drawing::Size(27, 30);
 			this->A1Table1P->TabIndex = 79;
 			this->A1Table1P->TabStop = false;
 			this->A1Table1P->Click += gcnew System::EventHandler(this, &BarGong::A1Table1P_Click);
@@ -303,10 +320,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A2Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1P.BackgroundImage")));
 			this->A2Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A2Table1P->Location = System::Drawing::Point(781, 138);
-			this->A2Table1P->Margin = System::Windows::Forms::Padding(2);
+			this->A2Table1P->Location = System::Drawing::Point(1041, 170);
+			this->A2Table1P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A2Table1P->Name = L"A2Table1P";
-			this->A2Table1P->Size = System::Drawing::Size(20, 24);
+			this->A2Table1P->Size = System::Drawing::Size(27, 30);
 			this->A2Table1P->TabIndex = 80;
 			this->A2Table1P->TabStop = false;
 			this->A2Table1P->Click += gcnew System::EventHandler(this, &BarGong::A2Table1P_Click);
@@ -317,10 +334,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A3Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1P.BackgroundImage")));
 			this->A3Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A3Table1P->Location = System::Drawing::Point(781, 162);
-			this->A3Table1P->Margin = System::Windows::Forms::Padding(2);
+			this->A3Table1P->Location = System::Drawing::Point(1041, 199);
+			this->A3Table1P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A3Table1P->Name = L"A3Table1P";
-			this->A3Table1P->Size = System::Drawing::Size(20, 24);
+			this->A3Table1P->Size = System::Drawing::Size(27, 30);
 			this->A3Table1P->TabIndex = 81;
 			this->A3Table1P->TabStop = false;
 			this->A3Table1P->Click += gcnew System::EventHandler(this, &BarGong::A3Table1P_Click);
@@ -331,10 +348,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4P.BackgroundImage")));
 			this->B1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B1Table4P->Location = System::Drawing::Point(451, 332);
-			this->B1Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->B1Table4P->Location = System::Drawing::Point(601, 409);
+			this->B1Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B1Table4P->Name = L"B1Table4P";
-			this->B1Table4P->Size = System::Drawing::Size(48, 52);
+			this->B1Table4P->Size = System::Drawing::Size(64, 64);
 			this->B1Table4P->TabIndex = 83;
 			this->B1Table4P->TabStop = false;
 			this->B1Table4P->Click += gcnew System::EventHandler(this, &BarGong::B1Table4P_Click);
@@ -345,10 +362,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4P.BackgroundImage")));
 			this->B2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B2Table4P->Location = System::Drawing::Point(451, 401);
-			this->B2Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->B2Table4P->Location = System::Drawing::Point(601, 494);
+			this->B2Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B2Table4P->Name = L"B2Table4P";
-			this->B2Table4P->Size = System::Drawing::Size(48, 52);
+			this->B2Table4P->Size = System::Drawing::Size(64, 64);
 			this->B2Table4P->TabIndex = 84;
 			this->B2Table4P->TabStop = false;
 			this->B2Table4P->Click += gcnew System::EventHandler(this, &BarGong::B2Table4P_Click);
@@ -359,10 +376,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B3Table6P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table6P.BackgroundImage")));
 			this->B3Table6P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table6P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B3Table6P->Location = System::Drawing::Point(515, 354);
-			this->B3Table6P->Margin = System::Windows::Forms::Padding(2);
+			this->B3Table6P->Location = System::Drawing::Point(687, 436);
+			this->B3Table6P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B3Table6P->Name = L"B3Table6P";
-			this->B3Table6P->Size = System::Drawing::Size(68, 75);
+			this->B3Table6P->Size = System::Drawing::Size(91, 92);
 			this->B3Table6P->TabIndex = 85;
 			this->B3Table6P->TabStop = false;
 			this->B3Table6P->Click += gcnew System::EventHandler(this, &BarGong::B3Table6P_Click);
@@ -373,10 +390,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4P.BackgroundImage")));
 			this->B4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B4Table4P->Location = System::Drawing::Point(599, 332);
-			this->B4Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->B4Table4P->Location = System::Drawing::Point(799, 409);
+			this->B4Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B4Table4P->Name = L"B4Table4P";
-			this->B4Table4P->Size = System::Drawing::Size(48, 52);
+			this->B4Table4P->Size = System::Drawing::Size(64, 64);
 			this->B4Table4P->TabIndex = 86;
 			this->B4Table4P->TabStop = false;
 			this->B4Table4P->Click += gcnew System::EventHandler(this, &BarGong::B4Table4P_Click);
@@ -387,10 +404,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B5Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4P.BackgroundImage")));
 			this->B5Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B5Table4P->Location = System::Drawing::Point(599, 401);
-			this->B5Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->B5Table4P->Location = System::Drawing::Point(799, 494);
+			this->B5Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B5Table4P->Name = L"B5Table4P";
-			this->B5Table4P->Size = System::Drawing::Size(48, 52);
+			this->B5Table4P->Size = System::Drawing::Size(64, 64);
 			this->B5Table4P->TabIndex = 87;
 			this->B5Table4P->TabStop = false;
 			this->B5Table4P->Click += gcnew System::EventHandler(this, &BarGong::B5Table4P_Click);
@@ -401,12 +418,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B6Table6P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table6P.BackgroundImage")));
 			this->B6Table6P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table6P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B6Table6P->Location = System::Drawing::Point(665, 354);
-			this->B6Table6P->Margin = System::Windows::Forms::Padding(2);
+			this->B6Table6P->Location = System::Drawing::Point(887, 436);
+			this->B6Table6P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B6Table6P->Name = L"B6Table6P";
-			this->B6Table6P->Size = System::Drawing::Size(68, 75);
+			this->B6Table6P->Size = System::Drawing::Size(91, 92);
 			this->B6Table6P->TabIndex = 88;
 			this->B6Table6P->TabStop = false;
+			this->B6Table6P->Click += gcnew System::EventHandler(this, &BarGong::B6Table6P_Click_1);
 			// 
 			// C1Table4P
 			// 
@@ -414,10 +432,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4P.BackgroundImage")));
 			this->C1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C1Table4P->Location = System::Drawing::Point(766, 262);
-			this->C1Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->C1Table4P->Location = System::Drawing::Point(1021, 322);
+			this->C1Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C1Table4P->Name = L"C1Table4P";
-			this->C1Table4P->Size = System::Drawing::Size(48, 52);
+			this->C1Table4P->Size = System::Drawing::Size(64, 64);
 			this->C1Table4P->TabIndex = 89;
 			this->C1Table4P->TabStop = false;
 			this->C1Table4P->Click += gcnew System::EventHandler(this, &BarGong::C1Table4P_Click);
@@ -428,10 +446,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4P.BackgroundImage")));
 			this->C2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C2Table4P->Location = System::Drawing::Point(766, 332);
-			this->C2Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->C2Table4P->Location = System::Drawing::Point(1021, 409);
+			this->C2Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C2Table4P->Name = L"C2Table4P";
-			this->C2Table4P->Size = System::Drawing::Size(48, 52);
+			this->C2Table4P->Size = System::Drawing::Size(64, 64);
 			this->C2Table4P->TabIndex = 90;
 			this->C2Table4P->TabStop = false;
 			this->C2Table4P->Click += gcnew System::EventHandler(this, &BarGong::C2Table4P_Click);
@@ -442,10 +460,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4P.BackgroundImage")));
 			this->C3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C3Table4P->Location = System::Drawing::Point(766, 401);
-			this->C3Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->C3Table4P->Location = System::Drawing::Point(1021, 494);
+			this->C3Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C3Table4P->Name = L"C3Table4P";
-			this->C3Table4P->Size = System::Drawing::Size(48, 52);
+			this->C3Table4P->Size = System::Drawing::Size(64, 64);
 			this->C3Table4P->TabIndex = 91;
 			this->C3Table4P->TabStop = false;
 			this->C3Table4P->Click += gcnew System::EventHandler(this, &BarGong::C3Table4P_Click);
@@ -456,10 +474,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D1Table4P.BackgroundImage")));
 			this->D1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D1Table4P->Location = System::Drawing::Point(872, 201);
-			this->D1Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->D1Table4P->Location = System::Drawing::Point(1163, 247);
+			this->D1Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D1Table4P->Name = L"D1Table4P";
-			this->D1Table4P->Size = System::Drawing::Size(50, 66);
+			this->D1Table4P->Size = System::Drawing::Size(67, 81);
 			this->D1Table4P->TabIndex = 92;
 			this->D1Table4P->TabStop = false;
 			this->D1Table4P->Click += gcnew System::EventHandler(this, &BarGong::D1Table4P_Click);
@@ -470,10 +488,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D2Table4P.BackgroundImage")));
 			this->D2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D2Table4P->Location = System::Drawing::Point(872, 284);
-			this->D2Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->D2Table4P->Location = System::Drawing::Point(1163, 350);
+			this->D2Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D2Table4P->Name = L"D2Table4P";
-			this->D2Table4P->Size = System::Drawing::Size(50, 66);
+			this->D2Table4P->Size = System::Drawing::Size(67, 81);
 			this->D2Table4P->TabIndex = 93;
 			this->D2Table4P->TabStop = false;
 			this->D2Table4P->Click += gcnew System::EventHandler(this, &BarGong::D2Table4P_Click);
@@ -484,10 +502,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D3Table4P.BackgroundImage")));
 			this->D3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D3Table4P->Location = System::Drawing::Point(872, 366);
-			this->D3Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->D3Table4P->Location = System::Drawing::Point(1163, 450);
+			this->D3Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D3Table4P->Name = L"D3Table4P";
-			this->D3Table4P->Size = System::Drawing::Size(50, 66);
+			this->D3Table4P->Size = System::Drawing::Size(67, 81);
 			this->D3Table4P->TabIndex = 94;
 			this->D3Table4P->TabStop = false;
 			this->D3Table4P->Click += gcnew System::EventHandler(this, &BarGong::D3Table4P_Click);
@@ -498,10 +516,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E1Table4P.BackgroundImage")));
 			this->E1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E1Table4P->Location = System::Drawing::Point(482, 489);
-			this->E1Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->E1Table4P->Location = System::Drawing::Point(643, 602);
+			this->E1Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E1Table4P->Name = L"E1Table4P";
-			this->E1Table4P->Size = System::Drawing::Size(60, 54);
+			this->E1Table4P->Size = System::Drawing::Size(80, 66);
 			this->E1Table4P->TabIndex = 95;
 			this->E1Table4P->TabStop = false;
 			this->E1Table4P->Click += gcnew System::EventHandler(this, &BarGong::E1Table4P_Click);
@@ -512,10 +530,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E2Table4P.BackgroundImage")));
 			this->E2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E2Table4P->Location = System::Drawing::Point(574, 489);
-			this->E2Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->E2Table4P->Location = System::Drawing::Point(765, 602);
+			this->E2Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E2Table4P->Name = L"E2Table4P";
-			this->E2Table4P->Size = System::Drawing::Size(60, 54);
+			this->E2Table4P->Size = System::Drawing::Size(80, 66);
 			this->E2Table4P->TabIndex = 96;
 			this->E2Table4P->TabStop = false;
 			this->E2Table4P->Click += gcnew System::EventHandler(this, &BarGong::E2Table4P_Click);
@@ -526,10 +544,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E3Table4P.BackgroundImage")));
 			this->E3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E3Table4P->Location = System::Drawing::Point(668, 489);
-			this->E3Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->E3Table4P->Location = System::Drawing::Point(891, 602);
+			this->E3Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E3Table4P->Name = L"E3Table4P";
-			this->E3Table4P->Size = System::Drawing::Size(60, 54);
+			this->E3Table4P->Size = System::Drawing::Size(80, 66);
 			this->E3Table4P->TabIndex = 97;
 			this->E3Table4P->TabStop = false;
 			this->E3Table4P->Click += gcnew System::EventHandler(this, &BarGong::E3Table4P_Click);
@@ -540,10 +558,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E4Table4P.BackgroundImage")));
 			this->E4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E4Table4P->Location = System::Drawing::Point(760, 489);
-			this->E4Table4P->Margin = System::Windows::Forms::Padding(2);
+			this->E4Table4P->Location = System::Drawing::Point(1013, 602);
+			this->E4Table4P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E4Table4P->Name = L"E4Table4P";
-			this->E4Table4P->Size = System::Drawing::Size(60, 54);
+			this->E4Table4P->Size = System::Drawing::Size(80, 66);
 			this->E4Table4P->TabIndex = 98;
 			this->E4Table4P->TabStop = false;
 			this->E4Table4P->Click += gcnew System::EventHandler(this, &BarGong::E4Table4P_Click);
@@ -554,10 +572,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A4Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1P.BackgroundImage")));
 			this->A4Table1P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A4Table1P->Location = System::Drawing::Point(781, 187);
-			this->A4Table1P->Margin = System::Windows::Forms::Padding(2);
+			this->A4Table1P->Location = System::Drawing::Point(1041, 230);
+			this->A4Table1P->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A4Table1P->Name = L"A4Table1P";
-			this->A4Table1P->Size = System::Drawing::Size(20, 24);
+			this->A4Table1P->Size = System::Drawing::Size(27, 30);
 			this->A4Table1P->TabIndex = 99;
 			this->A4Table1P->TabStop = false;
 			this->A4Table1P->Click += gcnew System::EventHandler(this, &BarGong::A4Table1P_Click);
@@ -568,10 +586,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A1Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1PGreen.BackgroundImage")));
 			this->A1Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A1Table1PGreen->Location = System::Drawing::Point(781, 114);
-			this->A1Table1PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->A1Table1PGreen->Location = System::Drawing::Point(1041, 140);
+			this->A1Table1PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A1Table1PGreen->Name = L"A1Table1PGreen";
-			this->A1Table1PGreen->Size = System::Drawing::Size(20, 24);
+			this->A1Table1PGreen->Size = System::Drawing::Size(27, 30);
 			this->A1Table1PGreen->TabIndex = 100;
 			this->A1Table1PGreen->TabStop = false;
 			this->A1Table1PGreen->Click += gcnew System::EventHandler(this, &BarGong::A1Table1PGreen_Click);
@@ -582,10 +600,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A2Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1PGreen.BackgroundImage")));
 			this->A2Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A2Table1PGreen->Location = System::Drawing::Point(781, 138);
-			this->A2Table1PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->A2Table1PGreen->Location = System::Drawing::Point(1041, 170);
+			this->A2Table1PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A2Table1PGreen->Name = L"A2Table1PGreen";
-			this->A2Table1PGreen->Size = System::Drawing::Size(20, 24);
+			this->A2Table1PGreen->Size = System::Drawing::Size(27, 30);
 			this->A2Table1PGreen->TabIndex = 101;
 			this->A2Table1PGreen->TabStop = false;
 			this->A2Table1PGreen->Click += gcnew System::EventHandler(this, &BarGong::A2Table1PGreen_Click);
@@ -596,10 +614,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A3Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1PGreen.BackgroundImage")));
 			this->A3Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A3Table1PGreen->Location = System::Drawing::Point(781, 162);
-			this->A3Table1PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->A3Table1PGreen->Location = System::Drawing::Point(1041, 199);
+			this->A3Table1PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A3Table1PGreen->Name = L"A3Table1PGreen";
-			this->A3Table1PGreen->Size = System::Drawing::Size(20, 24);
+			this->A3Table1PGreen->Size = System::Drawing::Size(27, 30);
 			this->A3Table1PGreen->TabIndex = 102;
 			this->A3Table1PGreen->TabStop = false;
 			this->A3Table1PGreen->Click += gcnew System::EventHandler(this, &BarGong::A3Table1PGreen_Click);
@@ -610,10 +628,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A4Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1PGreen.BackgroundImage")));
 			this->A4Table1PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A4Table1PGreen->Location = System::Drawing::Point(781, 187);
-			this->A4Table1PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->A4Table1PGreen->Location = System::Drawing::Point(1041, 230);
+			this->A4Table1PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->A4Table1PGreen->Name = L"A4Table1PGreen";
-			this->A4Table1PGreen->Size = System::Drawing::Size(20, 24);
+			this->A4Table1PGreen->Size = System::Drawing::Size(27, 30);
 			this->A4Table1PGreen->TabIndex = 103;
 			this->A4Table1PGreen->TabStop = false;
 			this->A4Table1PGreen->Click += gcnew System::EventHandler(this, &BarGong::A4Table1PGreen_Click);
@@ -624,10 +642,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4PGreen.BackgroundImage")));
 			this->B1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B1Table4PGreen->Location = System::Drawing::Point(451, 332);
-			this->B1Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B1Table4PGreen->Location = System::Drawing::Point(601, 409);
+			this->B1Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B1Table4PGreen->Name = L"B1Table4PGreen";
-			this->B1Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->B1Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B1Table4PGreen->TabIndex = 104;
 			this->B1Table4PGreen->TabStop = false;
 			this->B1Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::B1Table4PGreen_Click);
@@ -638,10 +656,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4PGreen.BackgroundImage")));
 			this->B2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B2Table4PGreen->Location = System::Drawing::Point(451, 401);
-			this->B2Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B2Table4PGreen->Location = System::Drawing::Point(601, 494);
+			this->B2Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B2Table4PGreen->Name = L"B2Table4PGreen";
-			this->B2Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->B2Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B2Table4PGreen->TabIndex = 105;
 			this->B2Table4PGreen->TabStop = false;
 			this->B2Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::B2Table4PGreen_Click);
@@ -652,10 +670,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B3Table6PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table6PGreen.BackgroundImage")));
 			this->B3Table6PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table6PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B3Table6PGreen->Location = System::Drawing::Point(515, 354);
-			this->B3Table6PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B3Table6PGreen->Location = System::Drawing::Point(687, 436);
+			this->B3Table6PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B3Table6PGreen->Name = L"B3Table6PGreen";
-			this->B3Table6PGreen->Size = System::Drawing::Size(68, 75);
+			this->B3Table6PGreen->Size = System::Drawing::Size(91, 92);
 			this->B3Table6PGreen->TabIndex = 106;
 			this->B3Table6PGreen->TabStop = false;
 			this->B3Table6PGreen->Click += gcnew System::EventHandler(this, &BarGong::B3Table6PGreen_Click);
@@ -666,10 +684,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PGreen.BackgroundImage")));
 			this->B4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B4Table4PGreen->Location = System::Drawing::Point(599, 332);
-			this->B4Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B4Table4PGreen->Location = System::Drawing::Point(799, 409);
+			this->B4Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B4Table4PGreen->Name = L"B4Table4PGreen";
-			this->B4Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->B4Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B4Table4PGreen->TabIndex = 107;
 			this->B4Table4PGreen->TabStop = false;
 			this->B4Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::B4Table4PGreen_Click);
@@ -680,10 +698,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B5Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4PGreen.BackgroundImage")));
 			this->B5Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B5Table4PGreen->Location = System::Drawing::Point(599, 401);
-			this->B5Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B5Table4PGreen->Location = System::Drawing::Point(799, 494);
+			this->B5Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B5Table4PGreen->Name = L"B5Table4PGreen";
-			this->B5Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->B5Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->B5Table4PGreen->TabIndex = 108;
 			this->B5Table4PGreen->TabStop = false;
 			this->B5Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::B5Table4PGreen_Click);
@@ -694,10 +712,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B6Table6PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table6PGreen.BackgroundImage")));
 			this->B6Table6PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table6PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->B6Table6PGreen->Location = System::Drawing::Point(665, 354);
-			this->B6Table6PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->B6Table6PGreen->Location = System::Drawing::Point(887, 436);
+			this->B6Table6PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->B6Table6PGreen->Name = L"B6Table6PGreen";
-			this->B6Table6PGreen->Size = System::Drawing::Size(68, 75);
+			this->B6Table6PGreen->Size = System::Drawing::Size(91, 92);
 			this->B6Table6PGreen->TabIndex = 109;
 			this->B6Table6PGreen->TabStop = false;
 			this->B6Table6PGreen->Click += gcnew System::EventHandler(this, &BarGong::B6Table6PGreen_Click);
@@ -708,10 +726,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4PGreen.BackgroundImage")));
 			this->C1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C1Table4PGreen->Location = System::Drawing::Point(766, 262);
-			this->C1Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->C1Table4PGreen->Location = System::Drawing::Point(1021, 322);
+			this->C1Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C1Table4PGreen->Name = L"C1Table4PGreen";
-			this->C1Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->C1Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->C1Table4PGreen->TabIndex = 110;
 			this->C1Table4PGreen->TabStop = false;
 			this->C1Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::C1Table4PGreen_Click);
@@ -722,10 +740,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4PGreen.BackgroundImage")));
 			this->C2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C2Table4PGreen->Location = System::Drawing::Point(766, 332);
-			this->C2Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->C2Table4PGreen->Location = System::Drawing::Point(1021, 409);
+			this->C2Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C2Table4PGreen->Name = L"C2Table4PGreen";
-			this->C2Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->C2Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->C2Table4PGreen->TabIndex = 111;
 			this->C2Table4PGreen->TabStop = false;
 			this->C2Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::C2Table4PGreen_Click);
@@ -736,10 +754,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PGreen.BackgroundImage")));
 			this->C3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->C3Table4PGreen->Location = System::Drawing::Point(766, 401);
-			this->C3Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->C3Table4PGreen->Location = System::Drawing::Point(1021, 494);
+			this->C3Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->C3Table4PGreen->Name = L"C3Table4PGreen";
-			this->C3Table4PGreen->Size = System::Drawing::Size(48, 52);
+			this->C3Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->C3Table4PGreen->TabIndex = 112;
 			this->C3Table4PGreen->TabStop = false;
 			this->C3Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::C3Table4PGreen_Click);
@@ -750,10 +768,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D1Table4PGreen.BackgroundImage")));
 			this->D1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D1Table4PGreen->Location = System::Drawing::Point(872, 201);
-			this->D1Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->D1Table4PGreen->Location = System::Drawing::Point(1163, 247);
+			this->D1Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D1Table4PGreen->Name = L"D1Table4PGreen";
-			this->D1Table4PGreen->Size = System::Drawing::Size(50, 66);
+			this->D1Table4PGreen->Size = System::Drawing::Size(67, 81);
 			this->D1Table4PGreen->TabIndex = 113;
 			this->D1Table4PGreen->TabStop = false;
 			this->D1Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::D1Table4PGreen_Click);
@@ -764,10 +782,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D2Table4PGreen.BackgroundImage")));
 			this->D2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D2Table4PGreen->Location = System::Drawing::Point(872, 284);
-			this->D2Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->D2Table4PGreen->Location = System::Drawing::Point(1163, 350);
+			this->D2Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D2Table4PGreen->Name = L"D2Table4PGreen";
-			this->D2Table4PGreen->Size = System::Drawing::Size(50, 66);
+			this->D2Table4PGreen->Size = System::Drawing::Size(67, 81);
 			this->D2Table4PGreen->TabIndex = 114;
 			this->D2Table4PGreen->TabStop = false;
 			this->D2Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::D2Table4PGreen_Click);
@@ -778,10 +796,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D3Table4PGreen.BackgroundImage")));
 			this->D3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->D3Table4PGreen->Location = System::Drawing::Point(872, 366);
-			this->D3Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->D3Table4PGreen->Location = System::Drawing::Point(1163, 450);
+			this->D3Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->D3Table4PGreen->Name = L"D3Table4PGreen";
-			this->D3Table4PGreen->Size = System::Drawing::Size(50, 66);
+			this->D3Table4PGreen->Size = System::Drawing::Size(67, 81);
 			this->D3Table4PGreen->TabIndex = 115;
 			this->D3Table4PGreen->TabStop = false;
 			this->D3Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::D3Table4PGreen_Click);
@@ -792,10 +810,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E1Table4PGreen.BackgroundImage")));
 			this->E1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E1Table4PGreen->Location = System::Drawing::Point(482, 489);
-			this->E1Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->E1Table4PGreen->Location = System::Drawing::Point(643, 602);
+			this->E1Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E1Table4PGreen->Name = L"E1Table4PGreen";
-			this->E1Table4PGreen->Size = System::Drawing::Size(60, 54);
+			this->E1Table4PGreen->Size = System::Drawing::Size(80, 66);
 			this->E1Table4PGreen->TabIndex = 116;
 			this->E1Table4PGreen->TabStop = false;
 			this->E1Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::E1Table4PGreen_Click);
@@ -806,10 +824,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E2Table4PGreen.BackgroundImage")));
 			this->E2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E2Table4PGreen->Location = System::Drawing::Point(574, 489);
-			this->E2Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->E2Table4PGreen->Location = System::Drawing::Point(765, 602);
+			this->E2Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E2Table4PGreen->Name = L"E2Table4PGreen";
-			this->E2Table4PGreen->Size = System::Drawing::Size(60, 54);
+			this->E2Table4PGreen->Size = System::Drawing::Size(80, 66);
 			this->E2Table4PGreen->TabIndex = 117;
 			this->E2Table4PGreen->TabStop = false;
 			this->E2Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::E2Table4PGreen_Click);
@@ -820,10 +838,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E3Table4PGreen.BackgroundImage")));
 			this->E3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E3Table4PGreen->Location = System::Drawing::Point(668, 489);
-			this->E3Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->E3Table4PGreen->Location = System::Drawing::Point(891, 602);
+			this->E3Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E3Table4PGreen->Name = L"E3Table4PGreen";
-			this->E3Table4PGreen->Size = System::Drawing::Size(60, 54);
+			this->E3Table4PGreen->Size = System::Drawing::Size(80, 66);
 			this->E3Table4PGreen->TabIndex = 118;
 			this->E3Table4PGreen->TabStop = false;
 			this->E3Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::E3Table4PGreen_Click);
@@ -834,10 +852,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E4Table4PGreen.BackgroundImage")));
 			this->E4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->E4Table4PGreen->Location = System::Drawing::Point(760, 489);
-			this->E4Table4PGreen->Margin = System::Windows::Forms::Padding(2);
+			this->E4Table4PGreen->Location = System::Drawing::Point(1013, 602);
+			this->E4Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->E4Table4PGreen->Name = L"E4Table4PGreen";
-			this->E4Table4PGreen->Size = System::Drawing::Size(60, 54);
+			this->E4Table4PGreen->Size = System::Drawing::Size(80, 66);
 			this->E4Table4PGreen->TabIndex = 119;
 			this->E4Table4PGreen->TabStop = false;
 			this->E4Table4PGreen->Click += gcnew System::EventHandler(this, &BarGong::E4Table4PGreen_Click);
@@ -848,11 +866,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A1Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table1PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1PRed.Image")));
-			this->A1Table1PRed->Location = System::Drawing::Point(781, 114);
+			this->A1Table1PRed->Location = System::Drawing::Point(1041, 140);
+			this->A1Table1PRed->Margin = System::Windows::Forms::Padding(4);
 			this->A1Table1PRed->Name = L"A1Table1PRed";
-			this->A1Table1PRed->Size = System::Drawing::Size(20, 24);
+			this->A1Table1PRed->Size = System::Drawing::Size(27, 30);
 			this->A1Table1PRed->TabIndex = 120;
 			this->A1Table1PRed->TabStop = false;
+			this->A1Table1PRed->Click += gcnew System::EventHandler(this, &BarGong::A1Table1PRed_Click);
 			// 
 			// A2Table1PRed
 			// 
@@ -860,11 +880,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A2Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table1PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1PRed.Image")));
-			this->A2Table1PRed->Location = System::Drawing::Point(781, 138);
+			this->A2Table1PRed->Location = System::Drawing::Point(1041, 170);
+			this->A2Table1PRed->Margin = System::Windows::Forms::Padding(4);
 			this->A2Table1PRed->Name = L"A2Table1PRed";
-			this->A2Table1PRed->Size = System::Drawing::Size(20, 24);
+			this->A2Table1PRed->Size = System::Drawing::Size(27, 30);
 			this->A2Table1PRed->TabIndex = 121;
 			this->A2Table1PRed->TabStop = false;
+			this->A2Table1PRed->Click += gcnew System::EventHandler(this, &BarGong::A2Table1PRed_Click);
 			// 
 			// A4Table1PRed
 			// 
@@ -872,11 +894,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A4Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A4Table1PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1PRed.Image")));
-			this->A4Table1PRed->Location = System::Drawing::Point(781, 187);
+			this->A4Table1PRed->Location = System::Drawing::Point(1041, 230);
+			this->A4Table1PRed->Margin = System::Windows::Forms::Padding(4);
 			this->A4Table1PRed->Name = L"A4Table1PRed";
-			this->A4Table1PRed->Size = System::Drawing::Size(20, 24);
+			this->A4Table1PRed->Size = System::Drawing::Size(27, 30);
 			this->A4Table1PRed->TabIndex = 122;
 			this->A4Table1PRed->TabStop = false;
+			this->A4Table1PRed->Click += gcnew System::EventHandler(this, &BarGong::A4Table1PRed_Click);
 			// 
 			// A3Table1PRed
 			// 
@@ -884,11 +908,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->A3Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table1PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1PRed.Image")));
-			this->A3Table1PRed->Location = System::Drawing::Point(781, 162);
+			this->A3Table1PRed->Location = System::Drawing::Point(1041, 199);
+			this->A3Table1PRed->Margin = System::Windows::Forms::Padding(4);
 			this->A3Table1PRed->Name = L"A3Table1PRed";
-			this->A3Table1PRed->Size = System::Drawing::Size(20, 24);
+			this->A3Table1PRed->Size = System::Drawing::Size(27, 30);
 			this->A3Table1PRed->TabIndex = 123;
 			this->A3Table1PRed->TabStop = false;
+			this->A3Table1PRed->Click += gcnew System::EventHandler(this, &BarGong::A3Table1PRed_Click);
 			// 
 			// D1Table4PRed
 			// 
@@ -896,11 +922,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D1Table4PRed.Image")));
-			this->D1Table4PRed->Location = System::Drawing::Point(872, 201);
+			this->D1Table4PRed->Location = System::Drawing::Point(1163, 247);
+			this->D1Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->D1Table4PRed->Name = L"D1Table4PRed";
-			this->D1Table4PRed->Size = System::Drawing::Size(50, 66);
+			this->D1Table4PRed->Size = System::Drawing::Size(67, 81);
 			this->D1Table4PRed->TabIndex = 124;
 			this->D1Table4PRed->TabStop = false;
+			this->D1Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::D1Table4PRed_Click);
 			// 
 			// D3Table4PRed
 			// 
@@ -908,11 +936,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D3Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D3Table4PRed.Image")));
-			this->D3Table4PRed->Location = System::Drawing::Point(872, 366);
+			this->D3Table4PRed->Location = System::Drawing::Point(1163, 450);
+			this->D3Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->D3Table4PRed->Name = L"D3Table4PRed";
-			this->D3Table4PRed->Size = System::Drawing::Size(50, 66);
+			this->D3Table4PRed->Size = System::Drawing::Size(67, 81);
 			this->D3Table4PRed->TabIndex = 125;
 			this->D3Table4PRed->TabStop = false;
+			this->D3Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::D3Table4PRed_Click);
 			// 
 			// D2Table4PRed
 			// 
@@ -920,11 +950,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->D2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->D2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->D2Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"D2Table4PRed.Image")));
-			this->D2Table4PRed->Location = System::Drawing::Point(872, 284);
+			this->D2Table4PRed->Location = System::Drawing::Point(1163, 350);
+			this->D2Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->D2Table4PRed->Name = L"D2Table4PRed";
-			this->D2Table4PRed->Size = System::Drawing::Size(50, 66);
+			this->D2Table4PRed->Size = System::Drawing::Size(67, 81);
 			this->D2Table4PRed->TabIndex = 126;
 			this->D2Table4PRed->TabStop = false;
+			this->D2Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::D2Table4PRed_Click);
 			// 
 			// E4Table4PRed
 			// 
@@ -932,11 +964,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E4Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E4Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E4Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E4Table4PRed.Image")));
-			this->E4Table4PRed->Location = System::Drawing::Point(760, 489);
+			this->E4Table4PRed->Location = System::Drawing::Point(1013, 602);
+			this->E4Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->E4Table4PRed->Name = L"E4Table4PRed";
-			this->E4Table4PRed->Size = System::Drawing::Size(60, 54);
+			this->E4Table4PRed->Size = System::Drawing::Size(80, 66);
 			this->E4Table4PRed->TabIndex = 127;
 			this->E4Table4PRed->TabStop = false;
+			this->E4Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::E4Table4PRed_Click);
 			// 
 			// E3Table4PRed
 			// 
@@ -944,11 +978,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E3Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E3Table4PRed.Image")));
-			this->E3Table4PRed->Location = System::Drawing::Point(668, 489);
+			this->E3Table4PRed->Location = System::Drawing::Point(891, 602);
+			this->E3Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->E3Table4PRed->Name = L"E3Table4PRed";
-			this->E3Table4PRed->Size = System::Drawing::Size(60, 54);
+			this->E3Table4PRed->Size = System::Drawing::Size(80, 66);
 			this->E3Table4PRed->TabIndex = 128;
 			this->E3Table4PRed->TabStop = false;
+			this->E3Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::E3Table4PRed_Click);
 			// 
 			// E2Table4PRed
 			// 
@@ -956,11 +992,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E2Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E2Table4PRed.Image")));
-			this->E2Table4PRed->Location = System::Drawing::Point(574, 489);
+			this->E2Table4PRed->Location = System::Drawing::Point(765, 602);
+			this->E2Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->E2Table4PRed->Name = L"E2Table4PRed";
-			this->E2Table4PRed->Size = System::Drawing::Size(60, 54);
+			this->E2Table4PRed->Size = System::Drawing::Size(80, 66);
 			this->E2Table4PRed->TabIndex = 129;
 			this->E2Table4PRed->TabStop = false;
+			this->E2Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::E2Table4PRed_Click);
 			// 
 			// E1Table4PRed
 			// 
@@ -968,11 +1006,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->E1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->E1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->E1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"E1Table4PRed.Image")));
-			this->E1Table4PRed->Location = System::Drawing::Point(482, 489);
+			this->E1Table4PRed->Location = System::Drawing::Point(643, 602);
+			this->E1Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->E1Table4PRed->Name = L"E1Table4PRed";
-			this->E1Table4PRed->Size = System::Drawing::Size(60, 54);
+			this->E1Table4PRed->Size = System::Drawing::Size(80, 66);
 			this->E1Table4PRed->TabIndex = 130;
 			this->E1Table4PRed->TabStop = false;
+			this->E1Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::E1Table4PRed_Click);
 			// 
 			// B2Table4PRed
 			// 
@@ -980,11 +1020,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4PRed.Image")));
-			this->B2Table4PRed->Location = System::Drawing::Point(451, 401);
+			this->B2Table4PRed->Location = System::Drawing::Point(601, 494);
+			this->B2Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B2Table4PRed->Name = L"B2Table4PRed";
-			this->B2Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->B2Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B2Table4PRed->TabIndex = 131;
 			this->B2Table4PRed->TabStop = false;
+			this->B2Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::B2Table4PRed_Click);
 			// 
 			// B1Table4PRed
 			// 
@@ -992,11 +1034,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4PRed.Image")));
-			this->B1Table4PRed->Location = System::Drawing::Point(451, 332);
+			this->B1Table4PRed->Location = System::Drawing::Point(601, 409);
+			this->B1Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B1Table4PRed->Name = L"B1Table4PRed";
-			this->B1Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->B1Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B1Table4PRed->TabIndex = 132;
 			this->B1Table4PRed->TabStop = false;
+			this->B1Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::B1Table4PRed_Click);
 			// 
 			// B4Table4PRed
 			// 
@@ -1004,11 +1048,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B4Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PRed.Image")));
-			this->B4Table4PRed->Location = System::Drawing::Point(599, 332);
+			this->B4Table4PRed->Location = System::Drawing::Point(799, 409);
+			this->B4Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B4Table4PRed->Name = L"B4Table4PRed";
-			this->B4Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->B4Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B4Table4PRed->TabIndex = 133;
 			this->B4Table4PRed->TabStop = false;
+			this->B4Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::B4Table4PRed_Click);
 			// 
 			// B5Table4PRed
 			// 
@@ -1016,11 +1062,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B5Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B5Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4PRed.Image")));
-			this->B5Table4PRed->Location = System::Drawing::Point(599, 401);
+			this->B5Table4PRed->Location = System::Drawing::Point(799, 494);
+			this->B5Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B5Table4PRed->Name = L"B5Table4PRed";
-			this->B5Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->B5Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->B5Table4PRed->TabIndex = 134;
 			this->B5Table4PRed->TabStop = false;
+			this->B5Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::B5Table4PRed_Click);
 			// 
 			// C1Table4PRed
 			// 
@@ -1028,11 +1076,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4PRed.Image")));
-			this->C1Table4PRed->Location = System::Drawing::Point(766, 262);
+			this->C1Table4PRed->Location = System::Drawing::Point(1021, 322);
+			this->C1Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->C1Table4PRed->Name = L"C1Table4PRed";
-			this->C1Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->C1Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->C1Table4PRed->TabIndex = 135;
 			this->C1Table4PRed->TabStop = false;
+			this->C1Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::C1Table4PRed_Click);
 			// 
 			// C2Table4PRed
 			// 
@@ -1040,11 +1090,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4PRed.Image")));
-			this->C2Table4PRed->Location = System::Drawing::Point(766, 332);
+			this->C2Table4PRed->Location = System::Drawing::Point(1021, 409);
+			this->C2Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->C2Table4PRed->Name = L"C2Table4PRed";
-			this->C2Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->C2Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->C2Table4PRed->TabIndex = 136;
 			this->C2Table4PRed->TabStop = false;
+			this->C2Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::C2Table4PRed_Click);
 			// 
 			// C3Table4PRed
 			// 
@@ -1052,11 +1104,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PRed.Image")));
-			this->C3Table4PRed->Location = System::Drawing::Point(766, 401);
+			this->C3Table4PRed->Location = System::Drawing::Point(1021, 494);
+			this->C3Table4PRed->Margin = System::Windows::Forms::Padding(4);
 			this->C3Table4PRed->Name = L"C3Table4PRed";
-			this->C3Table4PRed->Size = System::Drawing::Size(48, 52);
+			this->C3Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->C3Table4PRed->TabIndex = 137;
 			this->C3Table4PRed->TabStop = false;
+			this->C3Table4PRed->Click += gcnew System::EventHandler(this, &BarGong::C3Table4PRed_Click);
 			// 
 			// B3Table6PRed
 			// 
@@ -1064,11 +1118,13 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B3Table6PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table6PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table6PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table6PRed.Image")));
-			this->B3Table6PRed->Location = System::Drawing::Point(515, 354);
+			this->B3Table6PRed->Location = System::Drawing::Point(687, 436);
+			this->B3Table6PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B3Table6PRed->Name = L"B3Table6PRed";
-			this->B3Table6PRed->Size = System::Drawing::Size(68, 75);
+			this->B3Table6PRed->Size = System::Drawing::Size(91, 92);
 			this->B3Table6PRed->TabIndex = 138;
 			this->B3Table6PRed->TabStop = false;
+			this->B3Table6PRed->Click += gcnew System::EventHandler(this, &BarGong::B3Table6PRed_Click);
 			// 
 			// B6Table6PRed
 			// 
@@ -1076,33 +1132,72 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B6Table6PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table6PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B6Table6PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table6PRed.Image")));
-			this->B6Table6PRed->Location = System::Drawing::Point(665, 354);
+			this->B6Table6PRed->Location = System::Drawing::Point(887, 436);
+			this->B6Table6PRed->Margin = System::Windows::Forms::Padding(4);
 			this->B6Table6PRed->Name = L"B6Table6PRed";
-			this->B6Table6PRed->Size = System::Drawing::Size(68, 75);
+			this->B6Table6PRed->Size = System::Drawing::Size(91, 92);
 			this->B6Table6PRed->TabIndex = 139;
 			this->B6Table6PRed->TabStop = false;
+			this->B6Table6PRed->Click += gcnew System::EventHandler(this, &BarGong::B6Table6PRed_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->pictureBox1);
+			this->panel1->Location = System::Drawing::Point(437, 237);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(407, 247);
+			this->panel1->TabIndex = 140;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(242, 172);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(133, 56);
+			this->pictureBox3->TabIndex = 1;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &BarGong::pictureBox3_Click);
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Location = System::Drawing::Point(18, 18);
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(36, 172);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(53, 21);
+			this->pictureBox1->Size = System::Drawing::Size(133, 56);
 			this->pictureBox1->TabIndex = 140;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarGong::pictureBox1_Click);
 			// 
+			// ConfirmTableBarMapraw
+			// 
+			this->ConfirmTableBarMapraw->BackColor = System::Drawing::Color::Transparent;
+			this->ConfirmTableBarMapraw->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmTableBarMapraw.BackgroundImage")));
+			this->ConfirmTableBarMapraw->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ConfirmTableBarMapraw->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ConfirmTableBarMapraw->Location = System::Drawing::Point(36, 606);
+			this->ConfirmTableBarMapraw->Name = L"ConfirmTableBarMapraw";
+			this->ConfirmTableBarMapraw->Size = System::Drawing::Size(267, 66);
+			this->ConfirmTableBarMapraw->TabIndex = 141;
+			this->ConfirmTableBarMapraw->TabStop = false;
+			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarGong::ConfirmTableBarMapraw_Click_1);
+			// 
 			// BarGong
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(960, 585);
-			this->Controls->Add(this->pictureBox1);
+			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->ConfirmTableBarMapraw);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->B6Table6PRed);
+			this->Controls->Add(this->B6Table6PGreen);
 			this->Controls->Add(this->B3Table6PRed);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
@@ -1132,7 +1227,6 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->Controls->Add(this->C3Table4PGreen);
 			this->Controls->Add(this->C2Table4PGreen);
 			this->Controls->Add(this->C1Table4PGreen);
-			this->Controls->Add(this->B6Table6PGreen);
 			this->Controls->Add(this->B5Table4PGreen);
 			this->Controls->Add(this->B4Table4PGreen);
 			this->Controls->Add(this->B3Table6PGreen);
@@ -1164,7 +1258,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->Controls->Add(this->A1Table1P);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarGong";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarGong";
@@ -1229,7 +1323,10 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1251,7 +1348,225 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			os = chars;
 			Marshal::FreeHGlobal(IntPtr((void*)chars));
 		}
+		void UpdateTable() {
 
+			A1Table1PRed->Hide();
+			A2Table1PRed->Hide();
+			A3Table1PRed->Hide();
+			A4Table1PRed->Hide();
+			B1Table4PRed->Hide();
+			B2Table4PRed->Hide();
+			B3Table6PRed->Hide();
+			B4Table4PRed->Hide();
+			B5Table4PRed->Hide();
+			B6Table6PRed->Hide();
+			C1Table4PRed->Hide();
+			C2Table4PRed->Hide();
+			C3Table4PRed->Hide();
+			D1Table4PRed->Hide();
+			D2Table4PRed->Hide();
+			D3Table4PRed->Hide();
+			E1Table4PRed->Hide();
+			E2Table4PRed->Hide();
+			E3Table4PRed->Hide();
+			E4Table4PRed->Hide();
+
+			using namespace std;
+			int BarNo = 2;
+
+			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+			string path, line;
+			MarshalString(temp, path);
+			ifstream fileIn(path);
+			if (!fileIn.is_open()) {
+				MessageBox::Show("Can't open file Location", "Error", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < BarNo; i++) {
+				getline(fileIn, line);
+			}
+
+			if (line[0] == '1') {
+				a[0] = '1';
+				A1Table1PRed->Show();
+				A1Table1P->Hide();
+			}
+			else {
+				A1Table1P->Show();
+			}
+
+			if (line[1] == '1') {
+				a[1] = '1';
+				A2Table1PRed->Show();
+				A2Table1P->Hide();
+			}
+			else {
+				A2Table1P->Show();
+			}
+
+			if (line[2] == '1') {
+				a[2] = '1';
+				A3Table1PRed->Show();
+				A3Table1P->Hide();
+			}
+			else {
+				A3Table1P->Show();
+			}
+
+			if (line[3] == '1') {
+				a[3] = '1';
+				A4Table1PRed->Show();
+				A4Table1P->Hide();
+			}
+			else {
+				A4Table1P->Show();
+			}
+
+			if (line[4] == '1') {
+				a[4] = '1';
+				B1Table4PRed->Show();
+				B1Table4P->Hide();
+			}
+			else {
+				B1Table4P->Show();
+			}
+
+			if (line[5] == '1') {
+				a[5] = '1';
+				B2Table4PRed->Show();
+				B2Table4P->Hide();
+			}
+			else {
+				B2Table4P->Show();
+			}
+
+			if (line[6] == '1') {
+				a[6] = '1';
+				B3Table6PRed->Show();
+				B3Table6P->Hide();
+			}
+			else {
+				B3Table6P->Show();
+			}
+
+			if (line[7] == '1') {
+				a[7] = '1';
+				B4Table4PRed->Show();
+				B4Table4P->Hide();
+			}
+			else {
+				B4Table4P->Show();
+			}
+
+			if (line[8] == '1') {
+				a[8] = '1';
+				B5Table4PRed->Show();
+				B5Table4P->Hide();
+			}
+			else {
+				B5Table4P->Show();
+			}
+
+			if (line[9] == '1') {
+				a[9] = '1';
+				B6Table6PRed->Show();
+				B6Table6P->Hide();
+			}
+			else {
+				B6Table6P->Show();
+			}
+
+			if (line[10] == '1') {
+				a[10] = '1';
+				C1Table4PRed->Show();
+				C1Table4P->Hide();
+			}
+			else {
+				C1Table4P->Show();
+			}
+
+			if (line[11] == '1') {
+				a[11] = '1';
+				C2Table4PRed->Show();
+				C2Table4P->Hide();
+			}
+			else {
+				C2Table4P->Show();
+			}
+
+			if (line[12] == '1') {
+				a[12] = '1';
+				C3Table4PRed->Show();
+				C3Table4P->Hide();
+			}
+			else {
+				C3Table4P->Show();
+			}
+
+			if (line[13] == '1') {
+				a[13] = '1';
+				D1Table4PRed->Show();
+				D1Table4P->Hide();
+			}
+			else {
+				D1Table4P->Show();
+			}
+
+			if (line[14] == '1') {
+				a[14] = '1';
+				D2Table4PRed->Show();
+				D2Table4P->Hide();
+			}
+			else {
+				D2Table4P->Show();
+			}
+
+			if (line[15] == '1') {
+				a[15] = '1';
+				D3Table4PRed->Show();
+				D3Table4P->Hide();
+			}
+			else {
+				D3Table4P->Show();
+			}
+
+			if (line[16] == '1') {
+				a[16] = '1';
+				E1Table4PRed->Show();
+				E1Table4P->Hide();
+			}
+			else {
+				E1Table4P->Show();
+			}
+
+			if (line[17] == '1') {
+				a[17] = '1';
+				E2Table4PRed->Show();
+				E2Table4P->Hide();
+			}
+			else {
+				E2Table4P->Show();
+			}
+
+			if (line[18] == '1') {
+				a[18] = '1';
+				E3Table4PRed->Show();
+				E3Table4P->Hide();
+			}
+			else {
+				E3Table4P->Show();
+			}
+
+			if (line[19] == '1') {
+				a[19] = '1';
+				E4Table4PRed->Show();
+				E4Table4P->Hide();
+			}
+			else {
+				E4Table4P->Show();
+			}
+			//label1->Text = gcnew String(line.c_str());
+		}
 #pragma endregion
 		bool A1Table2PGreenCheck = true;
 	private: System::Void BarMapraw_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1479,7 +1794,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 29; i++) {
+	for (int i = 0; i < 20; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}
@@ -1503,14 +1818,268 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Gong ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table1P" << " "; break;
+			case 4: fileOutUser << "B1Table4P" << " "; break;
+			case 5: fileOutUser << "B2Table4P" << " "; break;
+			case 6: fileOutUser << "B3Table6P" << " "; break;
+			case 7: fileOutUser << "B4Table4P" << " "; break;
+			case 8: fileOutUser << "B5Table4P" << " "; break;
+			case 9: fileOutUser << "B6Table6P" << " "; break;
+			case 10: fileOutUser << "C1Table4P" << " "; break;
+			case 11: fileOutUser << "C2Table4P" << " "; break;
+			case 12: fileOutUser << "C3Table4P" << " "; break;
+			case 13: fileOutUser << "D1Table4P" << " "; break;
+			case 14: fileOutUser << "D2Table4P" << " "; break;
+			case 15: fileOutUser << "D3Table4P" << " "; break;
+			case 16: fileOutUser << "E1Table4P" << " "; break;
+			case 17: fileOutUser << "E2Table4P" << " "; break;
+			case 18: fileOutUser << "E3Table4P" << " "; break;
+			case 19: fileOutUser << "E4Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
+private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 0;
+	}
+}
+private: System::Void A2Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
+}
+private: System::Void A3Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 2;
+	}
+}
+private: System::Void A4Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 3;
+	}
+}
+private: System::Void B1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 4;
+	}
+}
+private: System::Void B2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 5;
+	}
+}
+private: System::Void B3Table6PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 6;
+	}
+}
+private: System::Void B4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 7;
+	}
+}
+private: System::Void B5Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 8;
+	}
+}
+private: System::Void B6Table6PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 9;
+	}
+}
+private: System::Void C1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 10;
+	}
+}
+private: System::Void C2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 11;
+	}
+}
+private: System::Void C3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 12;
+	}
+}
+private: System::Void D1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 13;
+	}
+}
+private: System::Void D2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 14;
+	}
+}
+private: System::Void D3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 15;
+	}
+}
+private: System::Void E1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 16;
+	}
+}
+private: System::Void E2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 17;
+	}
+}
+private: System::Void E3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 18;
+	}
+}
+private: System::Void E4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 19;
+	}
+}
 private: System::Void BarGong_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
+}
+private: System::Void B6Table6P_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	B6Table6P->Hide();
+	B6Table6PGreen->Show();
+	dataTable[9] = !dataTable[9];
 }
 public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToToey = true;
+	a[tableSelect] = '0';
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+	fileOut.close();
+
+	UpdateTable();
+	panel1->Hide();
+}
+private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 16; i++) {
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	switchToMP = true;
+	
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
 	this->Close();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
 }
 };
 }
