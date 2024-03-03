@@ -90,6 +90,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ D3Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ D4Table2PGreen;
 	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
+	private: System::Windows::Forms::PictureBox^ B1Table4PRed;
 
 
 
@@ -151,6 +152,7 @@ namespace Pakreserve1 {
 			this->D3Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->D4Table2PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
+			this->B1Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -184,6 +186,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B1Table4PRed))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table2P
@@ -597,12 +600,25 @@ namespace Pakreserve1 {
 			this->ConfirmTableBarMapraw->TabStop = false;
 			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarMapraw::ConfirmTableBarMapraw_Click);
 			// 
+			// B1Table4PRed
+			// 
+			this->B1Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->B1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->B1Table4PRed->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4PRed.Image")));
+			this->B1Table4PRed->Location = System::Drawing::Point(810, 310);
+			this->B1Table4PRed->Name = L"B1Table4PRed";
+			this->B1Table4PRed->Size = System::Drawing::Size(100, 50);
+			this->B1Table4PRed->TabIndex = 33;
+			this->B1Table4PRed->TabStop = false;
+			// 
 			// BarMapraw
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->B1Table4PRed);
 			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->D4Table2PGreen);
 			this->Controls->Add(this->D3Table2PGreen);
@@ -674,6 +690,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D3Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->D4Table2PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B1Table4PRed))->EndInit();
 			this->ResumeLayout(false);
 
 		}
