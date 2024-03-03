@@ -124,7 +124,7 @@ namespace Pakreserve1 {
 			this->panel1->Controls->Add(this->BarNameFront);
 			this->panel1->Controls->Add(this->Time);
 			this->panel1->Controls->Add(this->Date);
-			this->panel1->Location = System::Drawing::Point(12, 100);
+			this->panel1->Location = System::Drawing::Point(124, 160);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1032, 488);
 			this->panel1->TabIndex = 9;
@@ -202,7 +202,7 @@ namespace Pakreserve1 {
 			// Table
 			// 
 			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
-			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->ForeColor = System::Drawing::Color::Gray;
 			this->Table->Location = System::Drawing::Point(187, 162);
 			this->Table->Name = L"Table";
 			this->Table->Size = System::Drawing::Size(204, 263);
@@ -313,8 +313,8 @@ namespace Pakreserve1 {
 		ofstream fileOut(path, ios::app);
 		fileOut << "Date: " << datec << " Time: " << timec << " complete" << endl;
 		fileOut.close();*/
-		this->panel1->Location = System::Drawing::Point(110, 109);
-		this->panel2->Location = System::Drawing::Point(110, 109);
+		this->panel1->Location = System::Drawing::Point(124, 160);
+		this->panel2->Location = System::Drawing::Point(124, 160);
 		using namespace std;
 		string path, line;
 		MarshalString(temp, path);
