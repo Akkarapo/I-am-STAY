@@ -35,19 +35,18 @@ namespace Pakreserve1 {
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-		   array<bool>^ dataTable;
 	int targetline = 1;
 	array<bool>^ dataTable;
 
-		   int targetline = 1;
 
 	public:
-		
+		String^ username = nullptr;
+		int tableSelect = 0;
 		PakForm(User^ user)
 		{
-			
+			username = user->username;
 			InitializeComponent();
-
+			
 			//array<bool>^ dataTable = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false };
 			//std::vector<int> reservedTable;
 			array<int>^ reservedTable = {};
@@ -56,35 +55,6 @@ namespace Pakreserve1 {
 			label3->Hide();
 			button1->Hide();
 			*/
-			A1Table2PRed->Hide();
-			A2Table2PRed->Hide();
-			A3Table2PRed->Hide();
-			B1Table2PRed->Hide();
-			B2Table4PRed->Hide();
-			B3Table4PRed->Hide();
-			B4Table4PRed->Hide();
-			C1Table2PRed->Hide();
-			C2Table2PRed->Hide();
-			C3Table2PRed->Hide();
-			D1Table4PRed->Hide();
-			D2Table4PRed->Hide();
-			D3Table4PRed->Hide();
-			E1Table2PRed->Hide();
-			E2Table2PRed->Hide();
-			E3Table2PRed->Hide();
-			F1Table4PRed->Hide();
-			F2Table4PRed->Hide();
-			F3Table4PRed->Hide();
-			G1Table2PRed->Hide();
-			G2Table2PRed->Hide();
-			G3Table2PRed->Hide();
-			H1Table1PRed->Hide();
-			H2Table1PRed->Hide();
-			H3Table1PRed->Hide();
-			H4Table1PRed->Hide();
-			H5Table1PRed->Hide();
-			H6Table1PRed->Hide();
-			H7Table1PRed->Hide();
 
 
 			A1Table2PGreen->Hide();
@@ -116,7 +86,8 @@ namespace Pakreserve1 {
 			H5Table1PGreen->Hide();
 			H6Table1PGreen->Hide();
 			H7Table1PGreen->Hide();
-
+			
+			panel1->Hide();
 			UpdateTable();
 			//
 			//TODO: Add the constructor code here
@@ -397,8 +368,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -489,8 +460,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -1279,6 +1250,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->A1Table2PRed->Size = System::Drawing::Size(33, 75);
 			this->A1Table2PRed->TabIndex = 65;
 			this->A1Table2PRed->TabStop = false;
+			this->A1Table2PRed->Click += gcnew System::EventHandler(this, &PakForm::A1Table2PRed_Click);
 			// 
 			// A2Table2PRed
 			// 
@@ -1640,15 +1612,6 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 94;
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(32, 173);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(133, 56);
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
-			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
@@ -1657,6 +1620,17 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox3->Size = System::Drawing::Size(133, 56);
 			this->pictureBox3->TabIndex = 1;
 			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &PakForm::pictureBox3_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(32, 173);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(133, 56);
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &PakForm::pictureBox1_Click_1);
 			// 
 			// PakForm
 			// 
@@ -1850,8 +1824,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1875,6 +1849,37 @@ public:
 		Marshal::FreeHGlobal(IntPtr((void*)chars));
 	}
 	void UpdateTable() {
+		
+		A1Table2PRed->Hide();
+		A2Table2PRed->Hide();
+		A3Table2PRed->Hide();
+		B1Table2PRed->Hide();
+		B2Table4PRed->Hide();
+		B3Table4PRed->Hide();
+		B4Table4PRed->Hide();
+		C1Table2PRed->Hide();
+		C2Table2PRed->Hide();
+		C3Table2PRed->Hide();
+		D1Table4PRed->Hide();
+		D2Table4PRed->Hide();
+		D3Table4PRed->Hide();
+		E1Table2PRed->Hide();
+		E2Table2PRed->Hide();
+		E3Table2PRed->Hide();
+		F1Table4PRed->Hide();
+		F2Table4PRed->Hide();
+		F3Table4PRed->Hide();
+		G1Table2PRed->Hide();
+		G2Table2PRed->Hide();
+		G3Table2PRed->Hide();
+		H1Table1PRed->Hide();
+		H2Table1PRed->Hide();
+		H3Table1PRed->Hide();
+		H4Table1PRed->Hide();
+		H5Table1PRed->Hide();
+		H6Table1PRed->Hide();
+		H7Table1PRed->Hide();
+
 		using namespace std;
 		int BarNo = 1;
 
@@ -1889,11 +1894,16 @@ public:
 		for (int i = 0; i < BarNo; i++) {
 			getline(fileIn,line);
 		}
+
 		if (line[0] == '1') {
 			a[0] = '1';
 			A1Table2PRed->Show();
 			A1Table2P->Hide();
 		}
+		else {
+			A1Table2P->Show();
+		}
+
 		if (line[1] == '1') {
 			a[1] = '1';
 			A2Table2PRed->Show();
@@ -2393,5 +2403,58 @@ private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventAr
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 0;
+
+	}
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
+}
+private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	a[tableSelect] = '0';
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
+
+	UpdateTable();
+	panel1->Hide();
+}
 };
 }
