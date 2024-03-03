@@ -41,6 +41,10 @@ namespace Pakreserve1 {
 
 	public:
 		String^ username = nullptr;
+	private: System::Windows::Forms::Panel^ panel2;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 	public:
 		int tableSelect = 0;
@@ -89,6 +93,8 @@ namespace Pakreserve1 {
 			H6Table1PGreen->Hide();
 			H7Table1PGreen->Hide();
 			
+			panel2->Hide();
+
 			panel1->Hide();
 			UpdateTable();
 			//
@@ -372,6 +378,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -464,6 +473,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -1635,6 +1647,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->panel2);
 			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Location = System::Drawing::Point(433, 237);
@@ -1663,6 +1676,39 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &PakForm::pictureBox1_Click_1);
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->Controls->Add(this->pictureBox4);
+			this->panel2->Controls->Add(this->pictureBox5);
+			this->panel2->Location = System::Drawing::Point(0, 0);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(407, 247);
+			this->panel2->TabIndex = 95;
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(242, 172);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(133, 56);
+			this->pictureBox4->TabIndex = 1;
+			this->pictureBox4->TabStop = false;
+			this->pictureBox4->Click += gcnew System::EventHandler(this, &PakForm::pictureBox4_Click);
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(32, 173);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(133, 56);
+			this->pictureBox5->TabIndex = 0;
+			this->pictureBox5->TabStop = false;
+			this->pictureBox5->Click += gcnew System::EventHandler(this, &PakForm::pictureBox5_Click);
 			// 
 			// PakForm
 			// 
@@ -1766,6 +1812,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"��";
 			this->Load += gcnew System::EventHandler(this, &PakForm::PakForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &PakForm::PakForm_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->EndInit();
@@ -1858,6 +1905,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -2764,6 +2814,20 @@ private: System::Void H7Table1PRed_Click(System::Object^ sender, System::EventAr
 		panel1->Show();
 		tableSelect = 28;
 	}
+}
+private: System::Void PakForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+
+		if (e->KeyCode == Keys::Escape)
+		{
+			panel2->Show();
+			//Application::Exit(); 
+		}
+}
+private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel2->Hide();
 }
 };
 }
