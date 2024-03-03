@@ -23,7 +23,7 @@ namespace Pakreserve1 {
 		regist(Void)
 		{
 			InitializeComponent();
-
+			panel1->Hide();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -67,7 +67,9 @@ namespace Pakreserve1 {
 
 
 	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 
 
@@ -108,9 +110,14 @@ namespace Pakreserve1 {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label5
@@ -344,23 +351,42 @@ namespace Pakreserve1 {
 			this->label12->Text = L"....";
 			this->label12->Click += gcnew System::EventHandler(this, &regist::label12_Click);
 			// 
-			// label13
+			// panel1
 			// 
-			this->label13->AutoSize = true;
-			this->label13->BackColor = System::Drawing::Color::Transparent;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
-			this->label13->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label13->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->label13->Location = System::Drawing::Point(154, 13);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(129, 19);
-			this->label13->TabIndex = 6;
-			this->label13->Text = L"____________________";
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox4);
+			this->panel1->Controls->Add(this->pictureBox5);
+			this->panel1->Location = System::Drawing::Point(437, 237);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(407, 247);
+			this->panel1->TabIndex = 96;
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(242, 172);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(133, 56);
+			this->pictureBox4->TabIndex = 1;
+			this->pictureBox4->TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(32, 173);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(133, 56);
+			this->pictureBox5->TabIndex = 0;
+			this->pictureBox5->TabStop = false;
 			// 
 			// regist
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->pictureBox2);
@@ -384,9 +410,13 @@ namespace Pakreserve1 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sign Up";
 			this->Load += gcnew System::EventHandler(this, &regist::regist_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &regist::regist_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -601,6 +631,13 @@ private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::
 		AllFile << username2 << " " << password3 << " " << email2 << endl;
 		switchToLogin = true;
 		this->Close();
+	}
+}
+private: System::Void regist_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Escape)
+	{
+		panel1->Show(); // Exit the application when Esc is pressed
+		Application::Exit();
 	}
 }
 };
