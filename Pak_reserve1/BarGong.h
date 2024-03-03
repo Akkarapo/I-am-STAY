@@ -1,10 +1,12 @@
 #pragma once
+
 #using <mscorlib.dll>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include "User.h"
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -1158,6 +1160,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			// pictureBox3
 			// 
 			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(242, 172);
 			this->pictureBox3->Name = L"pictureBox3";
@@ -1276,6 +1279,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->Controls->Add(this->A1Table1P);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarGong";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

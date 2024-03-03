@@ -20,6 +20,7 @@
     <ClCompile Include="BarNepjune.cpp" />
     <ClCompile Include="BarOakkhara.cpp" />
     <ClCompile Include="BarGarpanya.cpp" />
+    <ClCompile Include="BarSajui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -49,6 +50,7 @@
     <ClInclude Include="BarNepjune.h" />
     <ClInclude Include="BarOakkhara.h" />
     <ClInclude Include="BarGarpanya.h" />
+    <ClInclude Include="BarSajui.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
