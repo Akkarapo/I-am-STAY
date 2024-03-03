@@ -2342,11 +2342,16 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	MarshalString(time, timec);
 	MarshalString(date, datec);
 	ofstream fileOutUser(pathUser, ios::app);
-	fileOutUser << "BarName: " << "MaewNoi " << "Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser << "BarName: " << "MaewNoi ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) fileOutUser << to_string(i) << " ";
+	}
+	fileOutUser << "Date: " << datec << " Time: " << timec << " complete" << endl;
 	fileOutUser.close();
 	//==============mpzone==============
 
-
+	UpdateTable();
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -327,14 +327,16 @@ namespace Pakreserve1 {
 		}
 		line = lines[lines.size() - 1];
 		fileIn.close();
-		char barc[100],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
-		char format[] = "BarName: %s Date: %s %s %s Time: %s %s complete";
-		sscanf(line.c_str(), format, barc,dayc, monthc, yearc, timec, amc);
+		char barc[100], tablec[100],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+		char format[] = "BarName: %s %s Date: %s %s %s Time: %s %s complete";
+		sscanf(line.c_str(), format, barc, tablec,dayc, monthc, yearc, timec, amc);
 		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
 		String^ time = gcnew String(timec) + " " + gcnew String(amc);
 		Date->Text = date;
 		Time->Text = time;
 		BarName->Text = gcnew String(barc);
+		BarNameFront->Text = gcnew String(barc);
+		Table->Text = gcnew String(tablec);
 	}
 	private: System::Void Date_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
