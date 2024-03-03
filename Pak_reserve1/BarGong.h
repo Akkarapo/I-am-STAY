@@ -25,6 +25,8 @@ namespace Pakreserve1 {
 	
 	public:
 		String^ username = nullptr;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	public:
 		array<bool>^ dataTable;
 		BarGong(User^ user)
 		{
@@ -217,6 +219,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->B3Table6PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->B6Table6PRed = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -277,6 +280,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1038,6 +1042,18 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->B6Table6PRed->TabIndex = 139;
 			this->B6Table6PRed->TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(499, 230);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(64, 64);
+			this->pictureBox1->TabIndex = 140;
+			this->pictureBox1->TabStop = false;
+			// 
 			// BarGong
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1045,6 +1061,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->B6Table6PRed);
 			this->Controls->Add(this->B3Table6PRed);
 			this->Controls->Add(this->C3Table4PRed);
@@ -1171,6 +1188,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B3Table6PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->B6Table6PRed))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
