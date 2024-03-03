@@ -1163,7 +1163,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	string newData;
 	MarshalString(a2, newData);
 	switchToMP = true;
-	int targetline = 2;
+	int targetline = 3;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData;
 	}
