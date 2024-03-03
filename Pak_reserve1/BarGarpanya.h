@@ -22,7 +22,9 @@ namespace Pakreserve1 {
 
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
 	array<bool>^ dataTable;
-	int targetline = 11;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+		   int targetline = 11;
 
 	public:
 		BarGarpanya(void)
@@ -301,6 +303,7 @@ namespace Pakreserve1 {
 			this->ConfirmTableNo1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->A2Table2P = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F2Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F1Table4PRed))->BeginInit();
@@ -389,6 +392,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// F3Table4PRed
@@ -1440,7 +1444,7 @@ namespace Pakreserve1 {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(147, 168);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 16);
+			this->label2->Size = System::Drawing::Size(0, 13);
 			this->label2->TabIndex = 94;
 			// 
 			// A2Table2P
@@ -1455,11 +1459,23 @@ namespace Pakreserve1 {
 			this->A2Table2P->TabIndex = 99;
 			this->A2Table2P->TabStop = false;
 			// 
-			// BarGarpanya1
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox1->Location = System::Drawing::Point(22, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
+			this->pictureBox1->TabIndex = 183;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarGarpanya::pictureBox1_Click);
+			// 
+			// BarGarpanya
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->F3Table4PRed);
 			this->Controls->Add(this->F2Table4PRed);
 			this->Controls->Add(this->F1Table4PRed);
@@ -1641,6 +1657,7 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -2179,6 +2196,11 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToToey = true;
+	this->Close();
 }
 };
 }

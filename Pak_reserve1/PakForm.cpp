@@ -15,12 +15,14 @@
 #include "BarMapraw.h"
 #include "BarToey.h"
 #include "BarNepjune.h"
+#include "BarOakkhara.h"
+#include "BarGarpanya.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-   
-   void main(array<String ^> ^ args)
+    void
+    main(array<String ^> ^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
@@ -59,6 +61,9 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarMapraw bar3(user);
         Pakreserve1::BarToey bar4(user);
         Pakreserve1::BarNepjune bar5(user);
+        Pakreserve1::BarOakkhara bar6;
+        Pakreserve1::BarGarpanya bar11;
+
         
         while (true) {
         if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP||bar3.switchToMP) {
@@ -71,11 +76,16 @@ using namespace System::Windows::Forms;
             bar3.switchToMP = false;
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||profileform.switchToToey||mpform.switchToToey
-            ||form.switchToToey||bar2.switchToToey){
+        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){
+        {
             Toeyform.ShowDialog();
             form2.switchToToey = false;
             bar2.switchToToey = false;
+            bar3.switchToToey = false;
+            bar4.switchToToey = false;
+            bar5.switchToToey = false;
+            bar6.switchToToey = false;
+            bar11.switchToToey = false;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
@@ -117,6 +127,16 @@ using namespace System::Windows::Forms;
         {
             bar5.ShowDialog();
             Toeyform.switchToBarNepjune = false;
+        }
+        else if (Toeyform.switchToBarOakkhara)
+        {
+            bar6.ShowDialog();
+            Toeyform.switchToBarOakkhara = false;
+        }
+        else if (Toeyform.switchToBarGarpanya)
+        {
+            bar11.ShowDialog();
+            Toeyform.switchToBarGarpanya = false;
         }
         else
         {

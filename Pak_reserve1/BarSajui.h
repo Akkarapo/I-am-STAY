@@ -1,5 +1,12 @@
 #pragma once
 
+#using <mscorlib.dll>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "User.h"
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -8,19 +15,60 @@ namespace Pakreserve1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Text;
+	using namespace System::Globalization;
 
 	/// <summary>
 	/// Summary for BarSajui
 	/// </summary>
 	public ref class BarSajui : public System::Windows::Forms::Form
 	{
+	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	array<bool>^ dataTable;
 	public:
-		BarSajui(void)
+	String^ username = nullptr;
+	String^ tempUser = nullptr;
+	private: System::Windows::Forms::Panel^ panel1;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
+
+	public:
+		int tableSelect = 0;
+	private: System::Windows::Forms::PictureBox^ HomeBTN;
+	public:
+		int targetline = 7;
+		BarSajui(User^ user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			panel1->Hide();
+			A1Table1PGreen->Hide();
+			A2Table1PGreen->Hide();
+			A3Table1PGreen->Hide();
+			A4Table1PGreen->Hide();
+			B1Table4PGreen->Hide();
+			B2Table4PGreen->Hide();
+			B3Table6PGreen->Hide();
+			B4Table4PGreen->Hide();
+			B5Table4PGreen->Hide();
+			B6Table6PGreen->Hide();
+			C1Table4PGreen->Hide();
+			C2Table4PGreen->Hide();
+			C3Table4PGreen->Hide();
+			D1Table4PGreen->Hide();
+			D2Table4PGreen->Hide();
+			D3Table4PGreen->Hide();
+			E1Table4PGreen->Hide();
+			E2Table4PGreen->Hide();
+			E3Table4PGreen->Hide();
+			E4Table4PGreen->Hide();
+
+			UpdateTable();
+			username = user->username;
 		}
 
 	protected:
@@ -34,11 +82,7 @@ namespace Pakreserve1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
 	protected:
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 	private: System::Windows::Forms::PictureBox^ B6Table6PGreen;
 	private: System::Windows::Forms::PictureBox^ B3Table6PRed;
@@ -1142,6 +1186,7 @@ namespace Pakreserve1 {
 			this->Name = L"BarSajui";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarSajui";
+			this->Load += gcnew System::EventHandler(this, &BarSajui::BarSajui_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1209,6 +1254,762 @@ namespace Pakreserve1 {
 			this->ResumeLayout(false);
 
 		}
+	public:
+
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+		void UpdateTable() {
+
+			A1Table1PRed->Hide();
+			A2Table1PRed->Hide();
+			A3Table1PRed->Hide();
+			A4Table1PRed->Hide();
+			B1Table4PRed->Hide();
+			B2Table4PRed->Hide();
+			B3Table6PRed->Hide();
+			B4Table4PRed->Hide();
+			B5Table4PRed->Hide();
+			B6Table6PRed->Hide();
+			C1Table4PRed->Hide();
+			C2Table4PRed->Hide();
+			C3Table4PRed->Hide();
+			D1Table4PRed->Hide();
+			D2Table4PRed->Hide();
+			D3Table4PRed->Hide();
+			E1Table4PRed->Hide();
+			E2Table4PRed->Hide();
+			E3Table4PRed->Hide();
+			E4Table4PRed->Hide();
+
+			using namespace std;
+			int BarNo = 7;
+
+			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+			string path, line;
+			MarshalString(temp, path);
+			ifstream fileIn(path);
+			if (!fileIn.is_open()) {
+				MessageBox::Show("Can't open file Location", "Error", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < BarNo; i++) {
+				getline(fileIn, line);
+			}
+
+			if (line[0] == '1') {
+				a[0] = '1';
+				A1Table1PRed->Show();
+				A1Table1P->Hide();
+			}
+			else {
+				A1Table1P->Show();
+			}
+
+			if (line[1] == '1') {
+				a[1] = '1';
+				A2Table1PRed->Show();
+				A2Table1P->Hide();
+			}
+			else {
+				A2Table1P->Show();
+			}
+
+			if (line[2] == '1') {
+				a[2] = '1';
+				A3Table1PRed->Show();
+				A3Table1P->Hide();
+			}
+			else {
+				A3Table1P->Show();
+			}
+
+			if (line[3] == '1') {
+				a[3] = '1';
+				A4Table1PRed->Show();
+				A4Table1P->Hide();
+			}
+			else {
+				A4Table1P->Show();
+			}
+
+			if (line[4] == '1') {
+				a[4] = '1';
+				B1Table4PRed->Show();
+				B1Table4P->Hide();
+			}
+			else {
+				B1Table4P->Show();
+			}
+
+			if (line[5] == '1') {
+				a[5] = '1';
+				B2Table4PRed->Show();
+				B2Table4P->Hide();
+			}
+			else {
+				B2Table4P->Show();
+			}
+
+			if (line[6] == '1') {
+				a[6] = '1';
+				B3Table6PRed->Show();
+				B3Table6P->Hide();
+			}
+			else {
+				B3Table6P->Show();
+			}
+
+			if (line[7] == '1') {
+				a[7] = '1';
+				B4Table4PRed->Show();
+				B4Table4P->Hide();
+			}
+			else {
+				B4Table4P->Show();
+			}
+
+			if (line[8] == '1') {
+				a[8] = '1';
+				B5Table4PRed->Show();
+				B5Table4P->Hide();
+			}
+			else {
+				B5Table4P->Show();
+			}
+
+			if (line[9] == '1') {
+				a[9] = '1';
+				B6Table6PRed->Show();
+				B6Table6P->Hide();
+			}
+			else {
+				B6Table6P->Show();
+			}
+
+			if (line[10] == '1') {
+				a[10] = '1';
+				C1Table4PRed->Show();
+				C1Table4P->Hide();
+			}
+			else {
+				C1Table4P->Show();
+			}
+
+			if (line[11] == '1') {
+				a[11] = '1';
+				C2Table4PRed->Show();
+				C2Table4P->Hide();
+			}
+			else {
+				C2Table4P->Show();
+			}
+
+			if (line[12] == '1') {
+				a[12] = '1';
+				C3Table4PRed->Show();
+				C3Table4P->Hide();
+			}
+			else {
+				C3Table4P->Show();
+			}
+
+			if (line[13] == '1') {
+				a[13] = '1';
+				D1Table4PRed->Show();
+				D1Table4P->Hide();
+			}
+			else {
+				D1Table4P->Show();
+			}
+
+			if (line[14] == '1') {
+				a[14] = '1';
+				D2Table4PRed->Show();
+				D2Table4P->Hide();
+			}
+			else {
+				D2Table4P->Show();
+			}
+
+			if (line[15] == '1') {
+				a[15] = '1';
+				D3Table4PRed->Show();
+				D3Table4P->Hide();
+			}
+			else {
+				D3Table4P->Show();
+			}
+
+			if (line[16] == '1') {
+				a[16] = '1';
+				E1Table4PRed->Show();
+				E1Table4P->Hide();
+			}
+			else {
+				E1Table4P->Show();
+			}
+
+			if (line[17] == '1') {
+				a[17] = '1';
+				E2Table4PRed->Show();
+				E2Table4P->Hide();
+			}
+			else {
+				E2Table4P->Show();
+			}
+
+			if (line[18] == '1') {
+				a[18] = '1';
+				E3Table4PRed->Show();
+				E3Table4P->Hide();
+			}
+			else {
+				E3Table4P->Show();
+			}
+
+			if (line[19] == '1') {
+				a[19] = '1';
+				E4Table4PRed->Show();
+				E4Table4P->Hide();
+			}
+			else {
+				E4Table4P->Show();
+			}
+			//label1->Text = gcnew String(line.c_str());
+		}
 #pragma endregion
-	};
+		bool A1Table2PGreenCheck = true;
+	private: System::Void BarSajui_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataTable = gcnew array<bool>(20);
+	}
+	private: System::Void A1Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A1Table1P->Hide();
+		A1Table1PGreen->Show();
+		dataTable[0] = !dataTable[0];
+	}
+	private: System::Void A2Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A2Table1P->Hide();
+		A2Table1PGreen->Show();
+		dataTable[1] = !dataTable[1];
+	}
+	private: System::Void A3Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A3Table1P->Hide();
+		A3Table1PGreen->Show();
+		dataTable[2] = !dataTable[2];
+	}
+	private: System::Void A4Table1P_Click(System::Object^ sender, System::EventArgs^ e) {
+		A4Table1P->Hide();
+		A4Table1PGreen->Show();
+		dataTable[3] = !dataTable[3];
+	}
+	private: System::Void B1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B1Table4P->Hide();
+		B1Table4PGreen->Show();
+		dataTable[4] = !dataTable[4];
+	}
+	private: System::Void B2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B2Table4P->Hide();
+		B2Table4PGreen->Show();
+		dataTable[5] = !dataTable[5];
+	}
+	private: System::Void B3Table6P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table6P->Hide();
+		B3Table6PGreen->Show();
+		dataTable[6] = !dataTable[6];
+	}
+	private: System::Void B4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4P->Hide();
+		B4Table4PGreen->Show();
+		dataTable[7] = !dataTable[7];
+	}
+	private: System::Void B5Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B5Table4P->Hide();
+		B5Table4PGreen->Show();
+		dataTable[8] = !dataTable[8];
+	}
+	private: System::Void B6Table6P_Click(System::Object^ sender, System::EventArgs^ e) {
+		B6Table6P->Hide();
+		B6Table6PGreen->Show();
+		dataTable[9] = !dataTable[9];
+	}
+	private: System::Void C1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C1Table4P->Hide();
+		C1Table4PGreen->Show();
+		dataTable[10] = !dataTable[10];
+	}
+	private: System::Void C2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C2Table4P->Hide();
+		C2Table4PGreen->Show();
+		dataTable[11] = !dataTable[11];
+	}
+	private: System::Void C3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		C3Table4P->Hide();
+		C3Table4PGreen->Show();
+		dataTable[12] = !dataTable[12];
+	}
+	private: System::Void D1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D1Table4P->Hide();
+		D1Table4PGreen->Show();
+		dataTable[13] = !dataTable[13];
+	}
+	private: System::Void D2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D2Table4P->Hide();
+		D2Table4PGreen->Show();
+		dataTable[14] = !dataTable[14];
+	}
+	private: System::Void D3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		D3Table4P->Hide();
+		D3Table4PGreen->Show();
+		dataTable[15] = !dataTable[15];
+	}
+	private: System::Void E1Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		E1Table4P->Hide();
+		E1Table4PGreen->Show();
+		dataTable[16] = !dataTable[16];
+	}
+	private: System::Void E2Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		E2Table4P->Hide();
+		E2Table4PGreen->Show();
+		dataTable[17] = !dataTable[17];
+	}
+	private: System::Void E3Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		E3Table4P->Hide();
+		E3Table4PGreen->Show();
+		dataTable[18] = !dataTable[18];
+	}
+	private: System::Void E4Table4P_Click(System::Object^ sender, System::EventArgs^ e) {
+		E4Table4P->Hide();
+		E4Table4PGreen->Show();
+		dataTable[19] = !dataTable[19];
+	}
+		   //
+		   //Green
+		   //
+	private: System::Void A1Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A1Table1PGreen->Hide();
+		A1Table1P->Show();
+		dataTable[0] = !dataTable[0];
+	}
+	private: System::Void A2Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		\
+			A2Table1PGreen->Hide();
+		A2Table1P->Show();
+		dataTable[1] = !dataTable[1];
+	}
+	private: System::Void A3Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A3Table1PGreen->Hide();
+		A3Table1P->Show();
+		dataTable[2] = !dataTable[2];
+	}
+	private: System::Void A4Table1PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		A4Table1PGreen->Hide();
+		A4Table1P->Show();
+		dataTable[3] = !dataTable[3];
+	}
+	private: System::Void B1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B1Table4PGreen->Hide();
+		B1Table4P->Show();
+		dataTable[4] = !dataTable[4];
+	}
+	private: System::Void B2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B2Table4PGreen->Hide();
+		B2Table4P->Show();
+		dataTable[5] = !dataTable[5];
+	}
+	private: System::Void B3Table6PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B3Table6PGreen->Hide();
+		B3Table6P->Show();
+		dataTable[6] = !dataTable[6];
+	}
+	private: System::Void B4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B4Table4PGreen->Hide();
+		B4Table4P->Show();
+		dataTable[7] = !dataTable[7];
+	}
+	private: System::Void B5Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B5Table4PGreen->Hide();
+		B5Table4P->Show();
+		dataTable[8] = !dataTable[8];
+	}
+	private: System::Void B6Table6PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		B6Table6PGreen->Hide();
+		B6Table6P->Show();
+		dataTable[9] = !dataTable[9];
+	}
+	private: System::Void C1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C1Table4PGreen->Hide();
+		C1Table4P->Show();
+		dataTable[10] = !dataTable[10];
+	}
+	private: System::Void C2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C2Table4PGreen->Hide();
+		C2Table4P->Show();
+		dataTable[11] = !dataTable[11];
+	}
+	private: System::Void C3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		C3Table4PGreen->Hide();
+		C3Table4P->Show();
+		dataTable[12] = !dataTable[12];
+	}
+	private: System::Void D1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D1Table4PGreen->Hide();
+		D1Table4P->Show();
+		dataTable[13] = !dataTable[13];
+	}
+	private: System::Void D2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D2Table4PGreen->Hide();
+		D2Table4P->Show();
+		dataTable[14] = !dataTable[14];
+	}
+	private: System::Void D3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		D3Table4PGreen->Hide();
+		D3Table4P->Show();
+		dataTable[15] = !dataTable[15];
+	}
+	private: System::Void E1Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		E1Table4PGreen->Hide();
+		E1Table4P->Show();
+		dataTable[16] = !dataTable[16];
+	}
+	private: System::Void E2Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		E2Table4PGreen->Hide();
+		E2Table4P->Show();
+		dataTable[17] = !dataTable[17];
+	}
+	private: System::Void E3Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		E3Table4PGreen->Hide();
+		E3Table4P->Show();
+		dataTable[18] = !dataTable[18];
+	}
+	private: System::Void E4Table4PGreen_Click(System::Object^ sender, System::EventArgs^ e) {
+		E4Table4PGreen->Hide();
+		E4Table4P->Show();
+		dataTable[19] = !dataTable[19];
+	}
+
+public: bool switchToMP = false;
+
+private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 20; i++) {
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	switchToMP = true;
+	int targetline = 7;
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Sajui ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table1P" << " "; break;
+			case 4: fileOutUser << "B1Table4P" << " "; break;
+			case 5: fileOutUser << "B2Table4P" << " "; break;
+			case 6: fileOutUser << "B3Table6P" << " "; break;
+			case 7: fileOutUser << "B4Table4P" << " "; break;
+			case 8: fileOutUser << "B5Table4P" << " "; break;
+			case 9: fileOutUser << "B6Table6P" << " "; break;
+			case 10: fileOutUser << "C1Table4P" << " "; break;
+			case 11: fileOutUser << "C2Table4P" << " "; break;
+			case 12: fileOutUser << "C3Table4P" << " "; break;
+			case 13: fileOutUser << "D1Table4P" << " "; break;
+			case 14: fileOutUser << "D2Table4P" << " "; break;
+			case 15: fileOutUser << "D3Table4P" << " "; break;
+			case 16: fileOutUser << "E1Table4P" << " "; break;
+			case 17: fileOutUser << "E2Table4P" << " "; break;
+			case 18: fileOutUser << "E3Table4P" << " "; break;
+			case 19: fileOutUser << "E4Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
+	this->Close();
+}
+private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 0;
+	}
+}
+private: System::Void A2Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
+}
+private: System::Void A3Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 2;
+	}
+}
+private: System::Void A4Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 3;
+	}
+}
+private: System::Void B1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 4;
+	}
+}
+private: System::Void B2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 5;
+	}
+}
+private: System::Void B3Table6PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 6;
+	}
+}
+private: System::Void B4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 7;
+	}
+}
+private: System::Void B5Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 8;
+	}
+}
+private: System::Void B6Table6PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 9;
+	}
+}
+private: System::Void C1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 10;
+	}
+}
+private: System::Void C2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 11;
+	}
+}
+private: System::Void C3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 12;
+	}
+}
+private: System::Void D1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 13;
+	}
+}
+private: System::Void D2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 14;
+	}
+}
+private: System::Void D3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 15;
+	}
+}
+private: System::Void E1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 16;
+	}
+}
+private: System::Void E2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 17;
+	}
+}
+private: System::Void E3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 18;
+	}
+}
+private: System::Void E4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 19;
+	}
+}
+private: System::Void BarGong_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
+}
+private: System::Void B6Table6P_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	B6Table6P->Hide();
+	B6Table6PGreen->Show();
+	dataTable[9] = !dataTable[9];
+}
+public: bool switchToToey = false;
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	a[tableSelect] = '0';
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+	fileOut.close();
+
+	UpdateTable();
+	panel1->Hide();
+}
+private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 16; i++) {
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	switchToMP = true;
+
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
+	UpdateTable();
+	switchToMP = true;
+	this->Close();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
+}
+private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	switchToToey = true;
+	this->Close();
+}
+};
 }

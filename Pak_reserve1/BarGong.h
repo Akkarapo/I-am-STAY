@@ -45,7 +45,7 @@ namespace Pakreserve1 {
 			//
 			//TODO: Add the constructor code here
 			//
-			panel1->Hide();
+		panel1->Hide();
 		A1Table1PGreen->Hide();
 		A2Table1PGreen->Hide();
 		A3Table1PGreen->Hide();
