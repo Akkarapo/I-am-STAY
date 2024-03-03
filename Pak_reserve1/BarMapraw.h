@@ -32,7 +32,9 @@ namespace Pakreserve1 {
 		int tableSelect = 0;
 		int targetline = 3;
 		   array<bool>^ dataTable;
-		   String^ tempUser = nullptr;
+
+	public:
+		String^ tempUser = nullptr;
 		BarMapraw(User^ user)
 		{
 			InitializeComponent();
@@ -1469,6 +1471,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
 	fileOutUser.close();
 	//==============mpzone==============
+	UpdateTable();
 	this->Close();
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
