@@ -41,6 +41,8 @@ namespace Pakreserve1 {
 
 	public:
 		String^ username = nullptr;
+
+	public:
 		int tableSelect = 0;
 		PakForm(User^ user)
 		{
@@ -2601,12 +2603,6 @@ private: System::Void A1Table2PRed_Click(System::Object^ sender, System::EventAr
 	}
 }
 
-private: System::Void A2Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (username == "admin") {
-		panel1->Show();
-		tableSelect = 1;
-	}
-}
 private: System::Void A3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (username == "admin") {
 		panel1->Show();

@@ -521,7 +521,49 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 	Application::Exit();
 }
 private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	
+	if (e->KeyValue == (int)Keys::Enter) {
+		using namespace std;
+		String^ temp1 = textBox2->Text;
+		String^ temp2 = textBox1->Text;
+		String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + temp1 + ".txt";
+		string path;
+		string username;
+		string password;
+		string line;
+		if (temp1->Length == 0 || temp2->Length == 0) {
+			MessageBox::Show("Plase Enter both username and password", "username or password is empty", MessageBoxButtons::OK);
+			return;
+		}
+		MarshalString(tempPath, path);
+		MarshalString(temp1, username);
+		MarshalString(temp2, password);
+		ifstream source(path);
+		if (source.is_open()) {
+			getline(source, line);
+			char userInput[100], pwd[100], email[100];
+			char format[] = "%s %s %s";
+			sscanf(line.c_str(), format, userInput, pwd, email);
+			if (username == userInput && password == pwd) {
+				user = gcnew User;
+				user->username = gcnew String(username.c_str());
+				user->email = gcnew String(email);
+				user->password = gcnew String(password.c_str());
+				this->Close();
+				switchToToey = true;
+			}
+			else {
+				textBox1->ForeColor = Color::Red;
+				textBox2->ForeColor = Color::Red;
+				return;
+			}
+		}
+		else {
+			textBox1->ForeColor = Color::Red;
+			textBox2->ForeColor = Color::Red;
+			MessageBox::Show("Can't open file", "Error", MessageBoxButtons::OK);
+			return;
+		}
+	}
 }
 
 };
