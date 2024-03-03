@@ -16,12 +16,11 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-    int
-    main(array<String ^> ^ args)
+   
+   void main(array<String ^> ^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    Pakreserve1::PakForm form;
     Pakreserve1::Login form2;
     Pakreserve1::sendMail mailForm;
     // Pakreserve1::MoveToMp movetoMpForm;
@@ -52,10 +51,11 @@ using namespace System::Windows::Forms;
                 form2.switchToForgetPwd = false;
             }
             else {
-                //return;
+                return;
             }
         }  
         User^ user = form2.user;
+        Pakreserve1::PakForm form(user);
         Pakreserve1::MPBarnd mpform(user);
         Pakreserve1::Profile profileform(user);
         while (true) {

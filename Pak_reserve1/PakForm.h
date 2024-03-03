@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "User.h"
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -35,10 +37,13 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 		   array<bool>^ dataTable;
 	int targetline = 1;
+	array<bool>^ dataTable;
+
+		   int targetline = 1;
 
 	public:
 		
-		PakForm(void)
+		PakForm(User^ user)
 		{
 			
 			InitializeComponent();
@@ -2385,5 +2390,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void C3Table2PRed_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
