@@ -35,6 +35,7 @@ namespace Pakreserve1 {
 			temp = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";
 			Name->Text = user->username;
 			
+			
 		}
 
 	protected:
@@ -273,8 +274,8 @@ namespace Pakreserve1 {
 	}
 	private: System::Void TicketCustomerTable_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-		   //public: String^ date = DateTime::Now.ToString("dd MMM yyyy");
 	private: System::Void MPBarnd_Load(System::Object^ sender, System::EventArgs^ e) {
+		/*
 		this->panel1->Location = System::Drawing::Point(110, 109);
 		this->panel2->Location = System::Drawing::Point(110, 109);
 		CultureInfo^ culture = gcnew CultureInfo("en-US");
@@ -295,7 +296,27 @@ namespace Pakreserve1 {
 		fileIn.close();
 		ofstream fileOut(path, ios::app);
 		fileOut << "Date: " << datec << " Time: " << timec << " complete" << endl;
-		fileOut.close();
+		fileOut.close();*/
+		this->panel1->Location = System::Drawing::Point(110, 109);
+		this->panel2->Location = System::Drawing::Point(110, 109);
+		using namespace std;
+		string path, line;
+		MarshalString(temp, path);
+		ifstream fileIn(path);
+		vector<string> lines;
+		while (getline(fileIn, line)) {
+			lines.push_back(line);
+		}
+		line = lines[lines.size() - 1];
+		fileIn.close();
+		char barc[100],dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+		char format[] = "BarName: %s Date: %s %s %s Time: %s %s complete";
+		sscanf(line.c_str(), format, barc,dayc, monthc, yearc, timec, amc);
+		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
+		String^ time = gcnew String(timec) + " " + gcnew String(amc);
+		Date->Text = date;
+		Time->Text = time;
+		BarName->Text = gcnew String(barc);
 	}
 	private: System::Void Date_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

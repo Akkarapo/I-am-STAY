@@ -265,7 +265,7 @@ namespace Pakreserve1 {
 			this->TicketB1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->TicketB1->Controls->Add(this->Table1);
 			this->TicketB1->Controls->Add(this->BarName1);
-			this->TicketB1->Location = System::Drawing::Point(1230, 78);
+			this->TicketB1->Location = System::Drawing::Point(1225, 78);
 			this->TicketB1->Name = L"TicketB1";
 			this->TicketB1->Size = System::Drawing::Size(692, 279);
 			this->TicketB1->TabIndex = 19;
@@ -706,13 +706,15 @@ namespace Pakreserve1 {
 		}
 		line = lines[lines.size() - 1];
 		fileIn.close();
-		char dayc[100], monthc[100], yearc[100], timec[100] , amc[50];
-		char format[] = "Date: %s %s %s Time: %s %s complete";
-		sscanf(line.c_str(), format, dayc , monthc, yearc, timec, amc);
+		char barc[100], dayc[100], monthc[100], yearc[100], timec[100], amc[50];
+		char format[] = "BarName: %s Date: %s %s %s Time: %s %s complete";
+		sscanf(line.c_str(), format, barc, dayc, monthc, yearc, timec, amc);
 		String^ date = gcnew String(dayc) + " " + gcnew String(monthc) + " " + gcnew String(yearc);
 		String^ time = gcnew String(timec) + " " + gcnew String(amc);
 		Date1->Text = date;
 		Time1->Text = time;
+		BarNameF1->Text = gcnew String(barc);
+		BarName1->Text = gcnew String(barc);
 
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

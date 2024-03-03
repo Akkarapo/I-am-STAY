@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "User.h"
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -14,9 +15,9 @@ namespace Pakreserve1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Globalization;
 
 	using namespace System::IO;
-
 
 
 
@@ -34,11 +35,11 @@ namespace Pakreserve1 {
 
 	public:
 		
-		PakForm(void)
+		String^ tempUser = nullptr;//==============mpzone==============
+		PakForm(User^ user)
 		{
-			
 			InitializeComponent();
-
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			//array<bool>^ dataTable = { false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false };
 			//std::vector<int> reservedTable;
 			array<int>^ reservedTable = {};
@@ -2329,6 +2330,22 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	
 
 	fileOut.close();
+
+
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser); 
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "MaewNoi " << "Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
+
 
 	this->Close();
 }
