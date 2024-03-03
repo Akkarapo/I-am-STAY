@@ -29,7 +29,11 @@ namespace Pakreserve1 {
 	{
 
 	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
-	array<bool>^ dataTable;
+	private: System::Windows::Forms::Panel^ panel1;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+		   array<bool>^ dataTable;
 	int targetline = 1;
 
 	public:
@@ -387,6 +391,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->F2Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableNo1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2PGreen))->BeginInit();
@@ -476,6 +483,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F2Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -483,7 +493,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
 			// 
 			// ConfirmTableNo1
@@ -1615,11 +1625,40 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &PakForm::pictureBox2_Click);
 			// 
+			// panel1
+			// 
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->pictureBox1);
+			this->panel1->Location = System::Drawing::Point(505, 292);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(407, 247);
+			this->panel1->TabIndex = 94;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(32, 173);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(133, 56);
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(242, 172);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(133, 56);
+			this->pictureBox3->TabIndex = 1;
+			this->pictureBox3->TabStop = false;
+			// 
 			// PakForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->F3Table4PRed);
 			this->Controls->Add(this->F2Table4PRed);
 			this->Controls->Add(this->F1Table4PRed);
@@ -1805,6 +1844,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F2Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
