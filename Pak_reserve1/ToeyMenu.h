@@ -506,6 +506,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(230, 343);
 			this->panel6->TabIndex = 24;
+			this->panel6->Click += gcnew System::EventHandler(this, &ToeyMenu::panel6_Click);
 			// 
 			// pictureBox5
 			// 
@@ -611,6 +612,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel11->Name = L"panel11";
 			this->panel11->Size = System::Drawing::Size(230, 343);
 			this->panel11->TabIndex = 29;
+			this->panel11->Click += gcnew System::EventHandler(this, &ToeyMenu::panel11_Click);
 			// 
 			// pictureBox14
 			// 
@@ -803,6 +805,16 @@ private: System::Void panel5_Click(System::Object^ sender, System::EventArgs^ e)
 	this->switchToBarNepjune = true;
 	this->Close();
 }
+public: bool switchToBarOakkhara = false;
+private: System::Void panel6_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarOakkhara = true;
+	this->Close();
+}
+public: bool switchToBarGarpanya = false;
+private: System::Void panel11_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarGarpanya = true;
+	this->Close();
+}
 public: bool switchToToey = false;
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -813,5 +825,6 @@ private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+
 };
 }

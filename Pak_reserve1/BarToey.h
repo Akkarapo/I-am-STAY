@@ -1135,7 +1135,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Location = System::Drawing::Point(18, 18);
+			this->pictureBox1->Location = System::Drawing::Point(22, 18);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(53, 21);
 			this->pictureBox1->TabIndex = 175;
