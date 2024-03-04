@@ -2031,7 +2031,7 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 29; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}

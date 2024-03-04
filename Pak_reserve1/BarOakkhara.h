@@ -1240,6 +1240,7 @@ namespace Pakreserve1 {
 			this->C2Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->C2Table2PGreen->TabIndex = 113;
 			this->C2Table2PGreen->TabStop = false;
+			this->C2Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::C2Table2P_Click);
 			// 
 			// C2Table2P
 			// 
@@ -1252,6 +1253,7 @@ namespace Pakreserve1 {
 			this->C2Table2P->Size = System::Drawing::Size(33, 75);
 			this->C2Table2P->TabIndex = 112;
 			this->C2Table2P->TabStop = false;
+			this->C2Table2P->Click += gcnew System::EventHandler(this, &BarOakkhara::C2Table2P_Click);
 			// 
 			// C1Table2PGreen
 			// 
@@ -1264,6 +1266,7 @@ namespace Pakreserve1 {
 			this->C1Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->C1Table2PGreen->TabIndex = 111;
 			this->C1Table2PGreen->TabStop = false;
+			this->C1Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::C1Table2PGreen_Click);
 			// 
 			// C1Table2P
 			// 
@@ -1276,6 +1279,7 @@ namespace Pakreserve1 {
 			this->C1Table2P->Size = System::Drawing::Size(33, 75);
 			this->C1Table2P->TabIndex = 110;
 			this->C1Table2P->TabStop = false;
+			this->C1Table2P->Click += gcnew System::EventHandler(this, &BarOakkhara::C1Table2P_Click);
 			// 
 			// B4Table4PGreen
 			// 
@@ -1288,6 +1292,7 @@ namespace Pakreserve1 {
 			this->B4Table4PGreen->Size = System::Drawing::Size(75, 75);
 			this->B4Table4PGreen->TabIndex = 109;
 			this->B4Table4PGreen->TabStop = false;
+			this->B4Table4PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::B4Table4PGreen_Click);
 			// 
 			// B4Table4P
 			// 
@@ -1300,6 +1305,7 @@ namespace Pakreserve1 {
 			this->B4Table4P->Size = System::Drawing::Size(75, 75);
 			this->B4Table4P->TabIndex = 108;
 			this->B4Table4P->TabStop = false;
+			this->B4Table4P->Click += gcnew System::EventHandler(this, &BarOakkhara::B4Table4P_Click);
 			// 
 			// B3Table4PGreen
 			// 
@@ -1312,6 +1318,7 @@ namespace Pakreserve1 {
 			this->B3Table4PGreen->Size = System::Drawing::Size(75, 75);
 			this->B3Table4PGreen->TabIndex = 107;
 			this->B3Table4PGreen->TabStop = false;
+			this->B3Table4PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::B3Table4PGreen_Click);
 			// 
 			// B3Table4P
 			// 
@@ -1324,6 +1331,7 @@ namespace Pakreserve1 {
 			this->B3Table4P->Size = System::Drawing::Size(75, 75);
 			this->B3Table4P->TabIndex = 106;
 			this->B3Table4P->TabStop = false;
+			this->B3Table4P->Click += gcnew System::EventHandler(this, &BarOakkhara::B3Table4P_Click);
 			// 
 			// B2Table4PGreen
 			// 
@@ -1336,6 +1344,7 @@ namespace Pakreserve1 {
 			this->B2Table4PGreen->Size = System::Drawing::Size(75, 75);
 			this->B2Table4PGreen->TabIndex = 105;
 			this->B2Table4PGreen->TabStop = false;
+			this->B2Table4PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::B2Table4PGreen_Click);
 			// 
 			// B2Table4P
 			// 
@@ -1348,6 +1357,7 @@ namespace Pakreserve1 {
 			this->B2Table4P->Size = System::Drawing::Size(75, 75);
 			this->B2Table4P->TabIndex = 104;
 			this->B2Table4P->TabStop = false;
+			this->B2Table4P->Click += gcnew System::EventHandler(this, &BarOakkhara::B2Table4P_Click);
 			// 
 			// B1Table2PGreen
 			// 
@@ -1360,6 +1370,7 @@ namespace Pakreserve1 {
 			this->B1Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->B1Table2PGreen->TabIndex = 103;
 			this->B1Table2PGreen->TabStop = false;
+			this->B1Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::B1Table2PGreen_Click);
 			// 
 			// B1Table2P
 			// 
@@ -1372,6 +1383,7 @@ namespace Pakreserve1 {
 			this->B1Table2P->Size = System::Drawing::Size(33, 75);
 			this->B1Table2P->TabIndex = 102;
 			this->B1Table2P->TabStop = false;
+			this->B1Table2P->Click += gcnew System::EventHandler(this, &BarOakkhara::B1Table2P_Click);
 			// 
 			// A3Table2PGreen
 			// 
@@ -1384,6 +1396,7 @@ namespace Pakreserve1 {
 			this->A3Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A3Table2PGreen->TabIndex = 101;
 			this->A3Table2PGreen->TabStop = false;
+			this->A3Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::A3Table2PGreen_Click);
 			// 
 			// A3Table2P
 			// 
@@ -1396,6 +1409,7 @@ namespace Pakreserve1 {
 			this->A3Table2P->Size = System::Drawing::Size(33, 75);
 			this->A3Table2P->TabIndex = 100;
 			this->A3Table2P->TabStop = false;
+			this->A3Table2P->Click += gcnew System::EventHandler(this, &BarOakkhara::A3Table2P_Click);
 			// 
 			// A2Table2PGreen
 			// 
@@ -1408,6 +1422,8 @@ namespace Pakreserve1 {
 			this->A2Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A2Table2PGreen->TabIndex = 98;
 			this->A2Table2PGreen->TabStop = false;
+			this->A2Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::A2Table2PGreen_Click);
+			this->A2Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::A2Table2PGreen_Click);
 			// 
 			// A1Table2PGreen
 			// 
@@ -1420,6 +1436,7 @@ namespace Pakreserve1 {
 			this->A1Table2PGreen->Size = System::Drawing::Size(33, 75);
 			this->A1Table2PGreen->TabIndex = 97;
 			this->A1Table2PGreen->TabStop = false;
+			this->A1Table2PGreen->Click += gcnew System::EventHandler(this, &BarOakkhara::A1Table2PGreen_Click);
 			// 
 			// A1Table2P
 			// 
@@ -1466,6 +1483,7 @@ namespace Pakreserve1 {
 			this->A2Table2P->Size = System::Drawing::Size(33, 75);
 			this->A2Table2P->TabIndex = 99;
 			this->A2Table2P->TabStop = false;
+			this->A2Table2P->Click += gcnew System::EventHandler(this, &BarOakkhara::A2Table2P_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1577,6 +1595,7 @@ namespace Pakreserve1 {
 			this->Name = L"BarOakkhara";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarOakkhara";
+			this->Load += gcnew System::EventHandler(this, &BarOakkhara::BarOakkhara_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F2Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F1Table4PRed))->EndInit();
@@ -2189,8 +2208,8 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 
 
 	fileOut.close();
-
 	this->Close();
+	switchToMP = true;
 }
 private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -2211,6 +2230,44 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 	this->Close();
 }
 private: System::Void ConfirmTableNo1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	switchToMP = true;
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+
+
+	fileOut.close();
 	//==============mpzone==============
 	CultureInfo^ culture = gcnew CultureInfo("en-US");
 	String^ time = DateTime::Now.ToString("hh:mm tt");
@@ -2261,11 +2318,18 @@ private: System::Void ConfirmTableNo1_Click_1(System::Object^ sender, System::Ev
 				break;
 			}
 		}
+		UpdateTable();
+		this->Close();
 
 	}
 	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
 	fileOutUser.close();
 	//==============mpzone==============
 }
+private: System::Void BarOakkhara_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
+}
+
+
 };
 }

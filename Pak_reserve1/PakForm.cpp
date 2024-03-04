@@ -94,13 +94,14 @@ using namespace System::Windows::Forms;
             registForm.switchToReg2 = false;
             
         }
-        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP||bar6.switchToMP)
         {
             mpform.ShowDialog();
             bar2.switchToMP = false;
             bar3.switchToMP = false;
             bar4.switchToMP = false;
             bar5.switchToMP = false;
+            bar6.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 
