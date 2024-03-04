@@ -21,7 +21,7 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class BarNepjune : public System::Windows::Forms::Form
 	{
-	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	StringBuilder^ a = gcnew StringBuilder("00000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		String^ tempUser = nullptr;
@@ -655,7 +655,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A8Table4PRed);
 			this->Controls->Add(this->A1Table4PRed);
 			this->Controls->Add(this->A7Table4PGreen);
-			this->Controls->Add(this->A2Table4PGreen);
 			this->Controls->Add(this->A7Table4P);
 			this->Controls->Add(this->A8Table4P);
 			this->Controls->Add(this->A6Table4P);
@@ -670,6 +669,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A5Table4PGreen);
 			this->Controls->Add(this->A4Table4PGreen);
 			this->Controls->Add(this->A3Table4PGreen);
+			this->Controls->Add(this->A2Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);

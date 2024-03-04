@@ -22,7 +22,7 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class BarSaran : public System::Windows::Forms::Form
 	{
-		StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+		StringBuilder^ a = gcnew StringBuilder("0000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		String^ tempUser = nullptr;//==============mpzone==============
