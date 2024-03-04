@@ -1306,6 +1306,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->Controls->Add(this->A2Table1P);
 			this->Controls->Add(this->A1Table1P);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"BarToey";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarToey";
