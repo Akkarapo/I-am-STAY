@@ -30,7 +30,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
 	public:
 		int tableSelect = 0;
-		int targetline = 4;
+		int targetline = 9;
 	private: System::Windows::Forms::Panel^ panel1;
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -38,6 +38,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Panel^ exitpnl;
 	private: System::Windows::Forms::PictureBox^ noExit;
 	private: System::Windows::Forms::PictureBox^ yesExit;
+	private: System::Windows::Forms::Label^ Table;
 		   array<bool>^ dataTable;
 
 	public:
@@ -264,6 +265,7 @@ namespace Pakreserve1 {
 			this->exitpnl = (gcnew System::Windows::Forms::Panel());
 			this->noExit = (gcnew System::Windows::Forms::PictureBox());
 			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
+			this->Table = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -1274,11 +1276,24 @@ namespace Pakreserve1 {
 			this->yesExit->TabStop = false;
 			this->yesExit->Click += gcnew System::EventHandler(this, &BarSaran::yesExit_Click);
 			// 
+			// Table
+			// 
+			this->Table->BackColor = System::Drawing::Color::Transparent;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(85, 492);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(144, 40);
+			this->Table->TabIndex = 179;
+			this->Table->Text = L"XX/29";
+			// 
 			// BarSaran
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->Table);
 			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->A3Table1PRed);
@@ -1477,7 +1492,7 @@ namespace Pakreserve1 {
 
 
 			using namespace std;
-			int BarNo = 4;
+			int BarNo = 9;
 
 			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 			string path, line;
@@ -1948,7 +1963,7 @@ namespace Pakreserve1 {
 		string newData;
 		MarshalString(a2, newData);
 		switchToMP = true;
-		int targetline = 4;
+		int targetline = 9;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -1972,7 +1987,7 @@ namespace Pakreserve1 {
 		MarshalString(time, timec);
 		MarshalString(date, datec);
 		ofstream fileOutUser(pathUser, ios::app);
-		fileOutUser << "BarName: " << "Toey ";
+		fileOutUser << "BarName: " << "Saran ";
 		for (int i = 0; i < dataTable->Length; i++)
 		{
 			if (dataTable[i]) //fileOutUser << to_string(i) << " ";
@@ -2020,6 +2035,22 @@ namespace Pakreserve1 {
 	}
 	private: System::Void BarSaran_Load(System::Object^ sender, System::EventArgs^ e) {
 		dataTable = gcnew array<bool>(29);
+		using namespace std;
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		string path, line;
+		int count = 0;
+		MarshalString(temp, path);
+		std::ifstream fileIn(path);
+		for (int i = 0; i < targetline; i++)
+		{
+			getline(fileIn, line);
+		}
+		count = 0;
+		for (int i = 0; i < line.size(); i++)
+		{
+			if (line[i] == '1') count++;
+		}
+		Table->Text = count.ToString() + "/" + line.size();
 	}
 
 	private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2180,7 +2211,7 @@ namespace Pakreserve1 {
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
-		int targetline = 4;
+		int targetline = 9;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
