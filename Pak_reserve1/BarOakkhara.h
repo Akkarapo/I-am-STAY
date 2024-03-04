@@ -34,7 +34,7 @@ namespace Pakreserve1 {
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-		   int targetline = 1;
+		   int targetline = 6;
 		   array<bool>^ dataTable;
 
 
@@ -1983,7 +1983,7 @@ namespace Pakreserve1 {
 			H7Table1PRed->Hide();
 
 			using namespace std;
-			int BarNo = 1;
+			int BarNo = 6;
 
 			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 			string path, line;
