@@ -24,6 +24,7 @@
     <ClCompile Include="BarAmericano.cpp" />
     <ClCompile Include="BarHoney.cpp" />
     <ClCompile Include="BarSaran.cpp" />
+    <ClCompile Include="BarSRTxz.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PakForm.cpp">
@@ -57,6 +58,7 @@
     <ClInclude Include="BarAmericano.h" />
     <ClInclude Include="BarHoney.h" />
     <ClInclude Include="BarSaran.h" />
+    <ClInclude Include="BarSRTxz.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
