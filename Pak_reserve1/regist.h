@@ -370,6 +370,7 @@ namespace Pakreserve1 {
 			this->pictureBox4->Size = System::Drawing::Size(133, 56);
 			this->pictureBox4->TabIndex = 1;
 			this->pictureBox4->TabStop = false;
+			this->pictureBox4->Click += gcnew System::EventHandler(this, &regist::pictureBox4_Click);
 			// 
 			// pictureBox5
 			// 
@@ -380,6 +381,7 @@ namespace Pakreserve1 {
 			this->pictureBox5->Size = System::Drawing::Size(133, 56);
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
+			this->pictureBox5->Click += gcnew System::EventHandler(this, &regist::pictureBox5_Click);
 			// 
 			// regist
 			// 
@@ -635,9 +637,14 @@ private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::
 private: System::Void regist_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyCode == Keys::Escape)
 	{
-		panel1->Show(); // Exit the application when Esc is pressed
-		Application::Exit();
+		panel1->Show(); 
 	}
+}
+private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
 }
 };
 }

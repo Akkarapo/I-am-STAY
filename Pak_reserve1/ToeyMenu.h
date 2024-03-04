@@ -430,7 +430,6 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel1->Size = System::Drawing::Size(230, 343);
 			this->panel1->TabIndex = 23;
 			this->panel1->Click += gcnew System::EventHandler(this, &ToeyMenu::panel1_Click);
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ToeyMenu::panel1_Paint);
 			// 
 			// Table1
 			// 
@@ -812,6 +811,19 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel12->Name = L"panel12";
 			this->panel12->Size = System::Drawing::Size(230, 343);
 			this->panel12->TabIndex = 30;
+			this->panel12->Click += gcnew System::EventHandler(this, &ToeyMenu::panel12_Click);
+			// 
+			// Table12
+			// 
+			this->Table12->AutoSize = true;
+			this->Table12->BackColor = System::Drawing::Color::Transparent;
+			this->Table12->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table12->Location = System::Drawing::Point(50, 77);
+			this->Table12->Name = L"Table12";
+			this->Table12->Size = System::Drawing::Size(68, 24);
+			this->Table12->TabIndex = 12;
+			this->Table12->Text = L"XX/30";
 			// 
 			// Table12
 			// 
@@ -891,9 +903,6 @@ private: System::Windows::Forms::Label^ Table15;
 			this->Table14->Name = L"Table14";
 			this->Table14->Size = System::Drawing::Size(89, 30);
 			this->Table14->TabIndex = 14;
-			this->Table14->Text = L"XX/30";
-			// 
-			// pictureBox17
 			// 
 			this->pictureBox17->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox17->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox17.BackgroundImage")));
@@ -1069,9 +1078,19 @@ private: System::Void panel6_Click(System::Object^ sender, System::EventArgs^ e)
 	this->switchToBarOakkhara = true;
 	this->Close();
 }
+public: bool  switchToBarSajui = false;
+private: System::Void panel7_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarSajui = true;
+	this->Close();
+}
 public: bool switchToBarGarpanya = false;
 private: System::Void panel11_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarGarpanya = true;
+	this->Close();
+}
+public: bool switchToBarSTEVE = false;
+private: System::Void panel12_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarSTEVE = true;
 	this->Close();
 }
 public: bool switchToToey = false;
@@ -1111,8 +1130,7 @@ private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e
 		case 14: Table15->Text = count.ToString() + "/" + line.size(); break;
 		default:
 			break;
-		}
-			
+		}	
 	}
 }
 

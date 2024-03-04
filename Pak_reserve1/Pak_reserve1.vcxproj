@@ -129,12 +129,15 @@
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <ClCompile Include="BarAmericano.cpp" />
     <ClCompile Include="BarGarpanya.cpp" />
     <ClCompile Include="BarGong.cpp" />
+    <ClCompile Include="BarHoney.cpp" />
     <ClCompile Include="BarMapraw.cpp" />
     <ClCompile Include="BarNepjune.cpp" />
     <ClCompile Include="BarOakkhara.cpp" />
     <ClCompile Include="BarSajui.cpp" />
+    <ClCompile Include="BarSTEVE.cpp" />
     <ClCompile Include="BarToey.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MoveToMp.cpp" />
@@ -150,10 +153,16 @@
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarAmericano.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="BarGarpanya.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarGong.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BarHoney.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarMapraw.h">
@@ -166,6 +175,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarSajui.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BarSTEVE.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarToey.h">
@@ -207,12 +219,18 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BarAmericano.resx">
+      <DependentUpon>BarAmericano.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarGarpanya.resx">
       <DependentUpon>BarGarpanya.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarGong.resx">
       <DependentUpon>BarGong.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarHoney.resx">
+      <DependentUpon>BarHoney.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarMapraw.resx">
       <DependentUpon>BarMapraw.h</DependentUpon>
@@ -226,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarSajui.resx">
       <DependentUpon>BarSajui.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSTEVE.resx">
+      <DependentUpon>BarSTEVE.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarToey.resx">
       <DependentUpon>BarToey.h</DependentUpon>
