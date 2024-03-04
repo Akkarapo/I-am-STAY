@@ -30,7 +30,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
 	public:
 		int tableSelect = 0;
-		int targetline = 4;
+		int targetline = 14;
 	private: System::Windows::Forms::Panel^ panel1;
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -1491,7 +1491,7 @@ namespace Pakreserve1 {
 
 
 			using namespace std;
-			int BarNo = 4;
+			int BarNo = 14;
 
 			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 			string path, line;
@@ -1962,7 +1962,7 @@ namespace Pakreserve1 {
 		string newData;
 		MarshalString(a2, newData);
 		switchToMP = true;
-		int targetline = 4;
+		int targetline = 14;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -1986,7 +1986,7 @@ namespace Pakreserve1 {
 		MarshalString(time, timec);
 		MarshalString(date, datec);
 		ofstream fileOutUser(pathUser, ios::app);
-		fileOutUser << "BarName: " << "Toey ";
+		fileOutUser << "BarName: " << "SRTxz ";
 		for (int i = 0; i < dataTable->Length; i++)
 		{
 			if (dataTable[i]) //fileOutUser << to_string(i) << " ";
@@ -2210,7 +2210,7 @@ namespace Pakreserve1 {
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
-		int targetline = 4;
+		int targetline = 14;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}

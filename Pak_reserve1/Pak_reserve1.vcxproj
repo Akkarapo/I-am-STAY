@@ -129,6 +129,7 @@
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <ClCompile Include="Bar422.cpp" />
     <ClCompile Include="BarAmericano.cpp" />
     <ClCompile Include="BarGarpanya.cpp" />
     <ClCompile Include="BarGong.cpp" />
@@ -156,6 +157,9 @@
     <ClCompile Include="ToeyMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bar422.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="BarAmericano.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -231,6 +235,9 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bar422.resx">
+      <DependentUpon>Bar422.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarAmericano.resx">
       <DependentUpon>BarAmericano.h</DependentUpon>
     </EmbeddedResource>
