@@ -754,6 +754,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel10->Name = L"panel10";
 			this->panel10->Size = System::Drawing::Size(230, 343);
 			this->panel10->TabIndex = 25;
+			this->panel10->Click += gcnew System::EventHandler(this, &ToeyMenu::panel10_Click);
 			// 
 			// Table10
 			// 
@@ -1170,6 +1171,11 @@ private: System::Void panel12_Paint(System::Object^ sender, System::Windows::For
 }
 
 private: System::Void panel9_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+public: bool switchToBarNatwaa = false;
+private: System::Void panel10_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarNatwaa = true;
+	this->Close();
 }
 };
 }
