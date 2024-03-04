@@ -1,5 +1,8 @@
 #pragma once
-
+#using <mscorlib.dll>
+#include <string>
+#include <iostream>
+#include <fstream>
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -160,6 +163,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox15;
 private: System::Windows::Forms::PictureBox^ pictureBox16;
 private: System::Windows::Forms::PictureBox^ pictureBox17;
 private: System::Windows::Forms::PictureBox^ pictureBox18;
+private: System::Windows::Forms::Label^ Table1;
 
 
 
@@ -317,6 +321,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox17 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox18 = (gcnew System::Windows::Forms::PictureBox());
+			this->Table1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -389,6 +394,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel1
 			// 
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->Table1);
 			this->panel1->Controls->Add(this->pictureBox4);
 			this->panel1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel1->Location = System::Drawing::Point(20, 80);
@@ -709,6 +715,18 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox18->TabIndex = 1;
 			this->pictureBox18->TabStop = false;
 			// 
+			// Table1
+			// 
+			this->Table1->AutoSize = true;
+			this->Table1->BackColor = System::Drawing::Color::Transparent;
+			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table1->Location = System::Drawing::Point(54, 77);
+			this->Table1->Name = L"Table1";
+			this->Table1->Size = System::Drawing::Size(89, 30);
+			this->Table1->TabIndex = 1;
+			this->Table1->Text = L"XX/30";
+			// 
 			// ToeyMenu
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -741,6 +759,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
@@ -772,6 +791,21 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox18))->EndInit();
 			this->ResumeLayout(false);
 
+		}
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
 		}
 #pragma endregion
 public: bool switchToProfile = false;
@@ -820,6 +854,21 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 
 }
 private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path, line;
+	int count = 0;
+	MarshalString(temp, path);
+	ifstream fileIn(path);
+	for (int i = 0; i < 1; i++) {
+		getline(fileIn, line);
+		count = 0;
+		for (int i = 0; i < line.size(); i++)
+		{
+			if (line[i]=='1') count++;
+		}
+		Table1->Text = count.ToString() + "/" + line.size();
+	}
 }
 
 
