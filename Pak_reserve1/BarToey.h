@@ -1307,6 +1307,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->Controls->Add(this->A1Table1P);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"BarToey";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarToey";
 			this->Load += gcnew System::EventHandler(this, &BarToey::BarToey_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();

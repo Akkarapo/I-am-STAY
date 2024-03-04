@@ -1444,7 +1444,7 @@ namespace Pakreserve1 {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(147, 168);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 94;
 			// 
 			// A2Table2P
@@ -1567,6 +1567,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A2Table2P);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"BarGarpanya";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarGarpanya";
 			this->Load += gcnew System::EventHandler(this, &BarGarpanya::BarGarpanya_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
