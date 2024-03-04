@@ -41,6 +41,7 @@ namespace Pakreserve1 {
 		int targetline = 2;
 		BarGong(User^ user)
 		{
+			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -1841,52 +1842,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
-	//==============mpzone==============
-	CultureInfo^ culture = gcnew CultureInfo("en-US");
-	String^ time = DateTime::Now.ToString("hh:mm tt");
-	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
-	using namespace std;
-	string pathUser, datec, timec;
-	MarshalString(tempUser, pathUser);
-	MarshalString(time, timec);
-	MarshalString(date, datec);
-	ofstream fileOutUser(pathUser, ios::app);
-	fileOutUser << "BarName: " << "Gong ";
-	for (int i = 0; i < dataTable->Length; i++)
-	{
-		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
-		{
-			switch (i)
-			{
-			case 0: fileOutUser << "A1Table2P" << " "; break;
-			case 1: fileOutUser << "A2Table2P" << " "; break;
-			case 2: fileOutUser << "A3Table2P" << " "; break;
-			case 3: fileOutUser << "A4Table1P" << " "; break;
-			case 4: fileOutUser << "B1Table4P" << " "; break;
-			case 5: fileOutUser << "B2Table4P" << " "; break;
-			case 6: fileOutUser << "B3Table6P" << " "; break;
-			case 7: fileOutUser << "B4Table4P" << " "; break;
-			case 8: fileOutUser << "B5Table4P" << " "; break;
-			case 9: fileOutUser << "B6Table6P" << " "; break;
-			case 10: fileOutUser << "C1Table4P" << " "; break;
-			case 11: fileOutUser << "C2Table4P" << " "; break;
-			case 12: fileOutUser << "C3Table4P" << " "; break;
-			case 13: fileOutUser << "D1Table4P" << " "; break;
-			case 14: fileOutUser << "D2Table4P" << " "; break;
-			case 15: fileOutUser << "D3Table4P" << " "; break;
-			case 16: fileOutUser << "E1Table4P" << " "; break;
-			case 17: fileOutUser << "E2Table4P" << " "; break;
-			case 18: fileOutUser << "E3Table4P" << " "; break;
-			case 19: fileOutUser << "E4Table4P" << " "; break;
-			default:
-				break;
-			}
-		}
 
-	}
-	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
-	fileOutUser.close();
-	//==============mpzone==============
 	this->Close();
 }
 private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2101,6 +2057,52 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	fileOut.close();
 	UpdateTable();
 	switchToMP = true;
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Gong ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table1P" << " "; break;
+			case 4: fileOutUser << "B1Table4P" << " "; break;
+			case 5: fileOutUser << "B2Table4P" << " "; break;
+			case 6: fileOutUser << "B3Table6P" << " "; break;
+			case 7: fileOutUser << "B4Table4P" << " "; break;
+			case 8: fileOutUser << "B5Table4P" << " "; break;
+			case 9: fileOutUser << "B6Table6P" << " "; break;
+			case 10: fileOutUser << "C1Table4P" << " "; break;
+			case 11: fileOutUser << "C2Table4P" << " "; break;
+			case 12: fileOutUser << "C3Table4P" << " "; break;
+			case 13: fileOutUser << "D1Table4P" << " "; break;
+			case 14: fileOutUser << "D2Table4P" << " "; break;
+			case 15: fileOutUser << "D3Table4P" << " "; break;
+			case 16: fileOutUser << "E1Table4P" << " "; break;
+			case 17: fileOutUser << "E2Table4P" << " "; break;
+			case 18: fileOutUser << "E3Table4P" << " "; break;
+			case 19: fileOutUser << "E4Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
