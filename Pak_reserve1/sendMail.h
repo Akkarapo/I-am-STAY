@@ -25,7 +25,7 @@ namespace Pakreserve1 {
 		sendMail(void)
 		{
 			InitializeComponent();
-
+			notice->Text = "";
 			//
 			//TODO: Add the constructor code here
 			//
@@ -61,6 +61,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ notice;
 
 
 
@@ -108,12 +109,13 @@ namespace Pakreserve1 {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->notice = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->SuspendLayout();
@@ -121,11 +123,11 @@ namespace Pakreserve1 {
 			// textBox1
 			// 
 			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"ABeeZee", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(733, 216);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 29);
+			this->textBox1->Size = System::Drawing::Size(430, 34);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &sendMail::textBox1_KeyDown);
 			// 
@@ -135,7 +137,7 @@ namespace Pakreserve1 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Angsana New", 45, System::Drawing::FontStyle::Bold));
 			this->label1->Location = System::Drawing::Point(802, 63);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(321, 83);
+			this->label1->Size = System::Drawing::Size(400, 104);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Forget Password";
 			this->label1->Click += gcnew System::EventHandler(this, &sendMail::label1_Click);
@@ -143,21 +145,21 @@ namespace Pakreserve1 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11));
 			this->label3->Location = System::Drawing::Point(712, 176);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(48, 18);
+			this->label3->Size = System::Drawing::Size(57, 24);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Email";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"ABeeZee", 10));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->label4->ForeColor = System::Drawing::Color::Gray;
 			this->label4->Location = System::Drawing::Point(691, 134);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(519, 17);
+			this->label4->Size = System::Drawing::Size(570, 20);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Please enter the email you used to register to receive your password again.";
 			this->label4->Click += gcnew System::EventHandler(this, &sendMail::label4_Click);
@@ -166,12 +168,12 @@ namespace Pakreserve1 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label2->Font = (gcnew System::Drawing::Font(L"ABeeZee", 10));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
 				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->label2->Location = System::Drawing::Point(1064, 370);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(98, 17);
+			this->label2->Size = System::Drawing::Size(117, 20);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Back To Login";
 			this->label2->Click += gcnew System::EventHandler(this, &sendMail::label2_Click);
@@ -212,6 +214,18 @@ namespace Pakreserve1 {
 			this->panel3->TabIndex = 24;
 			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &sendMail::panel3_Paint);
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.749999F));
+			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->label5->Location = System::Drawing::Point(24, 670);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(421, 20);
+			this->label5->TabIndex = 12;
+			this->label5->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
+			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
@@ -221,7 +235,7 @@ namespace Pakreserve1 {
 			this->label12->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label12->Location = System::Drawing::Point(154, 13);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(129, 19);
+			this->label12->Size = System::Drawing::Size(150, 23);
 			this->label12->TabIndex = 11;
 			this->label12->Text = L"____________________";
 			// 
@@ -229,12 +243,12 @@ namespace Pakreserve1 {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11.25F));
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F));
 			this->label7->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label7->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label7->Location = System::Drawing::Point(22, 19);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(121, 18);
+			this->label7->Size = System::Drawing::Size(158, 24);
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"I STAY you STAY";
 			// 
@@ -242,12 +256,12 @@ namespace Pakreserve1 {
 			// 
 			this->label9->AutoSize = true;
 			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36));
 			this->label9->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label9->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label9->Location = System::Drawing::Point(18, 603);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(239, 54);
+			this->label9->Size = System::Drawing::Size(329, 69);
 			this->label9->TabIndex = 9;
 			this->label9->Text = L"Experience";
 			// 
@@ -255,12 +269,12 @@ namespace Pakreserve1 {
 			// 
 			this->label10->AutoSize = true;
 			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36));
 			this->label10->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label10->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label10->Location = System::Drawing::Point(18, 483);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(180, 54);
+			this->label10->Size = System::Drawing::Size(242, 69);
 			this->label10->TabIndex = 7;
 			this->label10->Text = L"Simplify";
 			// 
@@ -268,31 +282,32 @@ namespace Pakreserve1 {
 			// 
 			this->label11->AutoSize = true;
 			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Baskerville Old Face", 36));
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36));
 			this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label11->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->label11->Location = System::Drawing::Point(18, 543);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(357, 54);
+			this->label11->Size = System::Drawing::Size(491, 69);
 			this->label11->TabIndex = 8;
 			this->label11->Text = L"Your Reservation";
 			// 
-			// label5
+			// notice
 			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"ABeeZee", 9.749999F));
-			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label5->Location = System::Drawing::Point(24, 670);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(339, 15);
-			this->label5->TabIndex = 12;
-			this->label5->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
+			this->notice->AutoSize = true;
+			this->notice->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->notice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->notice->ForeColor = System::Drawing::Color::Black;
+			this->notice->Location = System::Drawing::Point(729, 253);
+			this->notice->Name = L"notice";
+			this->notice->Size = System::Drawing::Size(105, 20);
+			this->notice->TabIndex = 98;
+			this->notice->Text = L"xxxxxxxxxxxx";
 			// 
 			// sendMail
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->notice);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel2);
@@ -329,7 +344,9 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ email = textBox1->Text;
 	if (email->Length == 0) {
-		MessageBox::Show("Plase Enter email", "email is empty", MessageBoxButtons::OK);
+		//MessageBox::Show("Please Enter email", "email is empty", MessageBoxButtons::OK);
+		notice->ForeColor = Color::Red;
+		notice->Text = "Please enter email";
 		return;
 	}
 		/*String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
@@ -354,7 +371,9 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		while(getline(fileIn,line)){
 			sscanf(line.c_str(),format,username,pwd,email2);
 			if (email3 == email2) {
-				MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				notice->ForeColor = Color::Green;
+				notice->Text = "email found.sending info";
 				String^ senderUsername = "gong6321@gmail.com	";
 				String^ senderPassword = "lnsy ucdr uzza weyj";
 				String^ reciever = gcnew String(email);
@@ -372,11 +391,14 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 
 				Client->Send(mail);
-				MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				//MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				notice->Text = "Mail sent. Please chect your email";
 				return;
 			}
 		}
-		MessageBox::Show("Please Provide Correct Email","Mail Not found",MessageBoxButtons::OK);
+		//MessageBox::Show("Please Provide Correct Email","Mail Not found",MessageBoxButtons::OK);
+		notice->ForeColor = Color::Red;
+		notice->Text = "Mail not found";
 		/*if () {
 			MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 			String^ senderUsername = "gong6321@gmail.com	";
@@ -413,7 +435,9 @@ private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::
 	if (e->KeyValue == (int)(Keys::Enter)) {
 		String^ email = textBox1->Text;
 		if (email->Length == 0) {
-			MessageBox::Show("Plase Enter email", "email is empty", MessageBoxButtons::OK);
+			//MessageBox::Show("Please Enter email", "email is empty", MessageBoxButtons::OK);
+			notice->ForeColor = Color::Red;
+			notice->Text = "Please enter email";
 			return;
 		}
 		/*String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
@@ -438,7 +462,9 @@ private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::
 		while (getline(fileIn, line)) {
 			sscanf(line.c_str(), format, username, pwd, email2);
 			if (email3 == email2) {
-				MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
+				notice->ForeColor = Color::Green;
+				notice->Text = "email found.sending info";
 				String^ senderUsername = "gong6321@gmail.com	";
 				String^ senderPassword = "lnsy ucdr uzza weyj";
 				String^ reciever = gcnew String(email);
@@ -456,11 +482,14 @@ private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::
 				//MessageBox::Show("sending info", "email found", MessageBoxButtons::OK);
 
 				Client->Send(mail);
-				MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				//MessageBox::Show("Mail sent!", "email found", MessageBoxButtons::OK);
+				notice->Text = "Mail sent. Please chect your email";
 				return;
 			}
 		}
-		MessageBox::Show("Please Provide Correct Email", "Mail Not found", MessageBoxButtons::OK);
+		//MessageBox::Show("Please Provide Correct Email","Mail Not found",MessageBoxButtons::OK);
+		notice->ForeColor = Color::Red;
+		notice->Text = "Mail not found";
 	}
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {

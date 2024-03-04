@@ -30,7 +30,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
 	public:
 		int tableSelect = 0;
-		int targetline = 4;
+		int targetline = 9;
 	private: System::Windows::Forms::Panel^ panel1;
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -38,6 +38,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Panel^ exitpnl;
 	private: System::Windows::Forms::PictureBox^ noExit;
 	private: System::Windows::Forms::PictureBox^ yesExit;
+	private: System::Windows::Forms::Label^ Table;
 		   array<bool>^ dataTable;
 
 	public:
@@ -264,6 +265,7 @@ namespace Pakreserve1 {
 			this->exitpnl = (gcnew System::Windows::Forms::Panel());
 			this->noExit = (gcnew System::Windows::Forms::PictureBox());
 			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
+			this->Table = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -343,6 +345,7 @@ namespace Pakreserve1 {
 			// A1Table1P
 			// 
 			this->A1Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A1Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1P.BackgroundImage")));
 			this->A1Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table1P->Location = System::Drawing::Point(625, 413);
 			this->A1Table1P->Name = L"A1Table1P";
@@ -354,6 +357,7 @@ namespace Pakreserve1 {
 			// A2Table1P
 			// 
 			this->A2Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A2Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1P.BackgroundImage")));
 			this->A2Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table1P->Location = System::Drawing::Point(673, 413);
 			this->A2Table1P->Name = L"A2Table1P";
@@ -365,6 +369,7 @@ namespace Pakreserve1 {
 			// A3Table1P
 			// 
 			this->A3Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A3Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1P.BackgroundImage")));
 			this->A3Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table1P->Location = System::Drawing::Point(721, 413);
 			this->A3Table1P->Name = L"A3Table1P";
@@ -376,6 +381,7 @@ namespace Pakreserve1 {
 			// A4Table1P
 			// 
 			this->A4Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A4Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1P.BackgroundImage")));
 			this->A4Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A4Table1P->Location = System::Drawing::Point(769, 413);
 			this->A4Table1P->Name = L"A4Table1P";
@@ -387,6 +393,7 @@ namespace Pakreserve1 {
 			// A5Table1P
 			// 
 			this->A5Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A5Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table1P.BackgroundImage")));
 			this->A5Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A5Table1P->Location = System::Drawing::Point(817, 413);
 			this->A5Table1P->Name = L"A5Table1P";
@@ -398,6 +405,7 @@ namespace Pakreserve1 {
 			// A6Table1P
 			// 
 			this->A6Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A6Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table1P.BackgroundImage")));
 			this->A6Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A6Table1P->Location = System::Drawing::Point(865, 413);
 			this->A6Table1P->Name = L"A6Table1P";
@@ -409,6 +417,7 @@ namespace Pakreserve1 {
 			// A7Table1P
 			// 
 			this->A7Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A7Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table1P.BackgroundImage")));
 			this->A7Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A7Table1P->Location = System::Drawing::Point(913, 413);
 			this->A7Table1P->Name = L"A7Table1P";
@@ -420,6 +429,7 @@ namespace Pakreserve1 {
 			// A8Table1P
 			// 
 			this->A8Table1P->BackColor = System::Drawing::Color::Transparent;
+			this->A8Table1P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table1P.BackgroundImage")));
 			this->A8Table1P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A8Table1P->Location = System::Drawing::Point(961, 413);
 			this->A8Table1P->Name = L"A8Table1P";
@@ -431,6 +441,7 @@ namespace Pakreserve1 {
 			// B1Table4P
 			// 
 			this->B1Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4P.BackgroundImage")));
 			this->B1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table4P->Location = System::Drawing::Point(412, 492);
@@ -443,6 +454,7 @@ namespace Pakreserve1 {
 			// B2Table4P
 			// 
 			this->B2Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4P.BackgroundImage")));
 			this->B2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4P->Location = System::Drawing::Point(514, 492);
@@ -455,6 +467,7 @@ namespace Pakreserve1 {
 			// B3Table4P
 			// 
 			this->B3Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4P.BackgroundImage")));
 			this->B3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table4P->Location = System::Drawing::Point(616, 492);
@@ -467,6 +480,7 @@ namespace Pakreserve1 {
 			// B4Table4P
 			// 
 			this->B4Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4P.BackgroundImage")));
 			this->B4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4P->Location = System::Drawing::Point(718, 492);
@@ -479,6 +493,7 @@ namespace Pakreserve1 {
 			// B5Table4P
 			// 
 			this->B5Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B5Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4P.BackgroundImage")));
 			this->B5Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B5Table4P->Location = System::Drawing::Point(820, 492);
@@ -491,6 +506,7 @@ namespace Pakreserve1 {
 			// B6Table4P
 			// 
 			this->B6Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B6Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table4P.BackgroundImage")));
 			this->B6Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B6Table4P->Location = System::Drawing::Point(922, 492);
@@ -503,6 +519,7 @@ namespace Pakreserve1 {
 			// B7Table4P
 			// 
 			this->B7Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->B7Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B7Table4P.BackgroundImage")));
 			this->B7Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B7Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B7Table4P->Location = System::Drawing::Point(1024, 492);
@@ -515,6 +532,7 @@ namespace Pakreserve1 {
 			// C1Table4P
 			// 
 			this->C1Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C1Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4P.BackgroundImage")));
 			this->C1Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table4P->Location = System::Drawing::Point(412, 580);
@@ -527,6 +545,7 @@ namespace Pakreserve1 {
 			// C2Table4P
 			// 
 			this->C2Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C2Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4P.BackgroundImage")));
 			this->C2Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table4P->Location = System::Drawing::Point(514, 580);
@@ -539,6 +558,7 @@ namespace Pakreserve1 {
 			// C3Table4P
 			// 
 			this->C3Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C3Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4P.BackgroundImage")));
 			this->C3Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table4P->Location = System::Drawing::Point(616, 580);
@@ -551,6 +571,7 @@ namespace Pakreserve1 {
 			// C4Table4P
 			// 
 			this->C4Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C4Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C4Table4P.BackgroundImage")));
 			this->C4Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C4Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C4Table4P->Location = System::Drawing::Point(718, 580);
@@ -563,6 +584,7 @@ namespace Pakreserve1 {
 			// C5Table4P
 			// 
 			this->C5Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C5Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C5Table4P.BackgroundImage")));
 			this->C5Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C5Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C5Table4P->Location = System::Drawing::Point(820, 580);
@@ -575,6 +597,7 @@ namespace Pakreserve1 {
 			// C6Table4P
 			// 
 			this->C6Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C6Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C6Table4P.BackgroundImage")));
 			this->C6Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C6Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C6Table4P->Location = System::Drawing::Point(922, 580);
@@ -587,6 +610,7 @@ namespace Pakreserve1 {
 			// C7Table4P
 			// 
 			this->C7Table4P->BackColor = System::Drawing::Color::Transparent;
+			this->C7Table4P->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C7Table4P.BackgroundImage")));
 			this->C7Table4P->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C7Table4P->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C7Table4P->Location = System::Drawing::Point(1024, 580);
@@ -599,6 +623,7 @@ namespace Pakreserve1 {
 			// A1Table1PGreen
 			// 
 			this->A1Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A1Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1PGreen.BackgroundImage")));
 			this->A1Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A1Table1PGreen->Location = System::Drawing::Point(625, 413);
 			this->A1Table1PGreen->Name = L"A1Table1PGreen";
@@ -610,6 +635,7 @@ namespace Pakreserve1 {
 			// A2Table1PGreen
 			// 
 			this->A2Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A2Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1PGreen.BackgroundImage")));
 			this->A2Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table1PGreen->Location = System::Drawing::Point(673, 413);
 			this->A2Table1PGreen->Name = L"A2Table1PGreen";
@@ -621,6 +647,7 @@ namespace Pakreserve1 {
 			// A3Table1PGreen
 			// 
 			this->A3Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A3Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1PGreen.BackgroundImage")));
 			this->A3Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table1PGreen->Location = System::Drawing::Point(721, 413);
 			this->A3Table1PGreen->Name = L"A3Table1PGreen";
@@ -632,6 +659,7 @@ namespace Pakreserve1 {
 			// A4Table1PGreen
 			// 
 			this->A4Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A4Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1PGreen.BackgroundImage")));
 			this->A4Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A4Table1PGreen->Location = System::Drawing::Point(769, 413);
 			this->A4Table1PGreen->Name = L"A4Table1PGreen";
@@ -643,6 +671,7 @@ namespace Pakreserve1 {
 			// A5Table1PGreen
 			// 
 			this->A5Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A5Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table1PGreen.BackgroundImage")));
 			this->A5Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A5Table1PGreen->Location = System::Drawing::Point(817, 413);
 			this->A5Table1PGreen->Name = L"A5Table1PGreen";
@@ -654,6 +683,7 @@ namespace Pakreserve1 {
 			// A6Table1PGreen
 			// 
 			this->A6Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A6Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table1PGreen.BackgroundImage")));
 			this->A6Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A6Table1PGreen->Location = System::Drawing::Point(865, 413);
 			this->A6Table1PGreen->Name = L"A6Table1PGreen";
@@ -665,6 +695,7 @@ namespace Pakreserve1 {
 			// A7Table1PGreen
 			// 
 			this->A7Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A7Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table1PGreen.BackgroundImage")));
 			this->A7Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A7Table1PGreen->Location = System::Drawing::Point(913, 413);
 			this->A7Table1PGreen->Name = L"A7Table1PGreen";
@@ -676,6 +707,7 @@ namespace Pakreserve1 {
 			// A8Table1PGreen
 			// 
 			this->A8Table1PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A8Table1PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table1PGreen.BackgroundImage")));
 			this->A8Table1PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A8Table1PGreen->Location = System::Drawing::Point(961, 413);
 			this->A8Table1PGreen->Name = L"A8Table1PGreen";
@@ -687,6 +719,7 @@ namespace Pakreserve1 {
 			// B1Table4PGreen
 			// 
 			this->B1Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4PGreen.BackgroundImage")));
 			this->B1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table4PGreen->Location = System::Drawing::Point(412, 492);
@@ -699,6 +732,7 @@ namespace Pakreserve1 {
 			// B2Table4PGreen
 			// 
 			this->B2Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4PGreen.BackgroundImage")));
 			this->B2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4PGreen->Location = System::Drawing::Point(514, 492);
@@ -711,6 +745,7 @@ namespace Pakreserve1 {
 			// B3Table4PGreen
 			// 
 			this->B3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4PGreen.BackgroundImage")));
 			this->B3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table4PGreen->Location = System::Drawing::Point(616, 492);
@@ -723,6 +758,7 @@ namespace Pakreserve1 {
 			// B4Table4PGreen
 			// 
 			this->B4Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PGreen.BackgroundImage")));
 			this->B4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4PGreen->Location = System::Drawing::Point(718, 492);
@@ -735,6 +771,7 @@ namespace Pakreserve1 {
 			// B5Table4PGreen
 			// 
 			this->B5Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B5Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4PGreen.BackgroundImage")));
 			this->B5Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B5Table4PGreen->Location = System::Drawing::Point(820, 492);
@@ -747,6 +784,7 @@ namespace Pakreserve1 {
 			// B6Table4PGreen
 			// 
 			this->B6Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B6Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table4PGreen.BackgroundImage")));
 			this->B6Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B6Table4PGreen->Location = System::Drawing::Point(922, 492);
@@ -759,6 +797,7 @@ namespace Pakreserve1 {
 			// B7Table4PGreen
 			// 
 			this->B7Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->B7Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B7Table4PGreen.BackgroundImage")));
 			this->B7Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B7Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B7Table4PGreen->Location = System::Drawing::Point(1024, 492);
@@ -771,6 +810,7 @@ namespace Pakreserve1 {
 			// C1Table4PGreen
 			// 
 			this->C1Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C1Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4PGreen.BackgroundImage")));
 			this->C1Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table4PGreen->Location = System::Drawing::Point(412, 580);
@@ -783,6 +823,7 @@ namespace Pakreserve1 {
 			// C2Table4PGreen
 			// 
 			this->C2Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C2Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4PGreen.BackgroundImage")));
 			this->C2Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table4PGreen->Location = System::Drawing::Point(514, 580);
@@ -795,6 +836,7 @@ namespace Pakreserve1 {
 			// C3Table4PGreen
 			// 
 			this->C3Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C3Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PGreen.BackgroundImage")));
 			this->C3Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table4PGreen->Location = System::Drawing::Point(616, 580);
@@ -807,6 +849,7 @@ namespace Pakreserve1 {
 			// C4Table4PGreen
 			// 
 			this->C4Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C4Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C4Table4PGreen.BackgroundImage")));
 			this->C4Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C4Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C4Table4PGreen->Location = System::Drawing::Point(718, 580);
@@ -819,6 +862,7 @@ namespace Pakreserve1 {
 			// C5Table4PGreen
 			// 
 			this->C5Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C5Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C5Table4PGreen.BackgroundImage")));
 			this->C5Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C5Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C5Table4PGreen->Location = System::Drawing::Point(820, 580);
@@ -831,6 +875,7 @@ namespace Pakreserve1 {
 			// C6Table4PGreen
 			// 
 			this->C6Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C6Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C6Table4PGreen.BackgroundImage")));
 			this->C6Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C6Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C6Table4PGreen->Location = System::Drawing::Point(922, 580);
@@ -843,6 +888,7 @@ namespace Pakreserve1 {
 			// C7Table4PGreen
 			// 
 			this->C7Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->C7Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C7Table4PGreen.BackgroundImage")));
 			this->C7Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C7Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C7Table4PGreen->Location = System::Drawing::Point(1024, 580);
@@ -855,6 +901,7 @@ namespace Pakreserve1 {
 			// A8Table1PRed
 			// 
 			this->A8Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A8Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table1PRed.BackgroundImage")));
 			this->A8Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A8Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A8Table1PRed->Location = System::Drawing::Point(961, 413);
@@ -867,6 +914,7 @@ namespace Pakreserve1 {
 			// A7Table1PRed
 			// 
 			this->A7Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A7Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A7Table1PRed.BackgroundImage")));
 			this->A7Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A7Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A7Table1PRed->Location = System::Drawing::Point(913, 413);
@@ -879,6 +927,7 @@ namespace Pakreserve1 {
 			// A6Table1PRed
 			// 
 			this->A6Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A6Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A6Table1PRed.BackgroundImage")));
 			this->A6Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A6Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A6Table1PRed->Location = System::Drawing::Point(865, 413);
@@ -891,6 +940,7 @@ namespace Pakreserve1 {
 			// A5Table1PRed
 			// 
 			this->A5Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A5Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A5Table1PRed.BackgroundImage")));
 			this->A5Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A5Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A5Table1PRed->Location = System::Drawing::Point(817, 413);
@@ -903,6 +953,7 @@ namespace Pakreserve1 {
 			// A4Table1PRed
 			// 
 			this->A4Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A4Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A4Table1PRed.BackgroundImage")));
 			this->A4Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A4Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A4Table1PRed->Location = System::Drawing::Point(769, 413);
@@ -915,6 +966,7 @@ namespace Pakreserve1 {
 			// A3Table1PRed
 			// 
 			this->A3Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A3Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A3Table1PRed.BackgroundImage")));
 			this->A3Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A3Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A3Table1PRed->Location = System::Drawing::Point(721, 413);
@@ -927,6 +979,7 @@ namespace Pakreserve1 {
 			// A2Table1PRed
 			// 
 			this->A2Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A2Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A2Table1PRed.BackgroundImage")));
 			this->A2Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A2Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->A2Table1PRed->Location = System::Drawing::Point(673, 413);
@@ -939,9 +992,10 @@ namespace Pakreserve1 {
 			// A1Table1PRed
 			// 
 			this->A1Table1PRed->BackColor = System::Drawing::Color::Transparent;
+			this->A1Table1PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A1Table1PRed.BackgroundImage")));
 			this->A1Table1PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->A1Table1PRed->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A1Table1PRed->Location = System::Drawing::Point(626, 413);
+			this->A1Table1PRed->Location = System::Drawing::Point(625, 413);
 			this->A1Table1PRed->Name = L"A1Table1PRed";
 			this->A1Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A1Table1PRed->TabIndex = 160;
@@ -951,6 +1005,7 @@ namespace Pakreserve1 {
 			// B1Table4PRed
 			// 
 			this->B1Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B1Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B1Table4PRed.BackgroundImage")));
 			this->B1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B1Table4PRed->Location = System::Drawing::Point(412, 492);
@@ -963,6 +1018,7 @@ namespace Pakreserve1 {
 			// C2Table4PRed
 			// 
 			this->C2Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C2Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C2Table4PRed.BackgroundImage")));
 			this->C2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C2Table4PRed->Location = System::Drawing::Point(514, 580);
@@ -975,6 +1031,7 @@ namespace Pakreserve1 {
 			// C1Table4PRed
 			// 
 			this->C1Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C1Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C1Table4PRed.BackgroundImage")));
 			this->C1Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C1Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C1Table4PRed->Location = System::Drawing::Point(412, 580);
@@ -987,6 +1044,7 @@ namespace Pakreserve1 {
 			// B7Table4PRed
 			// 
 			this->B7Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B7Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B7Table4PRed.BackgroundImage")));
 			this->B7Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B7Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B7Table4PRed->Location = System::Drawing::Point(1024, 492);
@@ -999,6 +1057,7 @@ namespace Pakreserve1 {
 			// B6Table4PRed
 			// 
 			this->B6Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B6Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B6Table4PRed.BackgroundImage")));
 			this->B6Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B6Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B6Table4PRed->Location = System::Drawing::Point(922, 492);
@@ -1011,6 +1070,7 @@ namespace Pakreserve1 {
 			// B5Table4PRed
 			// 
 			this->B5Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B5Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B5Table4PRed.BackgroundImage")));
 			this->B5Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B5Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B5Table4PRed->Location = System::Drawing::Point(820, 492);
@@ -1023,6 +1083,7 @@ namespace Pakreserve1 {
 			// B4Table4PRed
 			// 
 			this->B4Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B4Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B4Table4PRed.BackgroundImage")));
 			this->B4Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B4Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B4Table4PRed->Location = System::Drawing::Point(718, 492);
@@ -1035,6 +1096,7 @@ namespace Pakreserve1 {
 			// B3Table4PRed
 			// 
 			this->B3Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B3Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B3Table4PRed.BackgroundImage")));
 			this->B3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B3Table4PRed->Location = System::Drawing::Point(616, 492);
@@ -1047,6 +1109,7 @@ namespace Pakreserve1 {
 			// B2Table4PRed
 			// 
 			this->B2Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->B2Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"B2Table4PRed.BackgroundImage")));
 			this->B2Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->B2Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->B2Table4PRed->Location = System::Drawing::Point(514, 492);
@@ -1059,6 +1122,7 @@ namespace Pakreserve1 {
 			// C7Table4PRed
 			// 
 			this->C7Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C7Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C7Table4PRed.BackgroundImage")));
 			this->C7Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C7Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C7Table4PRed->Location = System::Drawing::Point(1024, 580);
@@ -1071,6 +1135,7 @@ namespace Pakreserve1 {
 			// C6Table4PRed
 			// 
 			this->C6Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C6Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C6Table4PRed.BackgroundImage")));
 			this->C6Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C6Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C6Table4PRed->Location = System::Drawing::Point(922, 580);
@@ -1083,6 +1148,7 @@ namespace Pakreserve1 {
 			// C5Table4PRed
 			// 
 			this->C5Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C5Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C5Table4PRed.BackgroundImage")));
 			this->C5Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C5Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C5Table4PRed->Location = System::Drawing::Point(820, 580);
@@ -1095,6 +1161,7 @@ namespace Pakreserve1 {
 			// C4Table4PRed
 			// 
 			this->C4Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C4Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C4Table4PRed.BackgroundImage")));
 			this->C4Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C4Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C4Table4PRed->Location = System::Drawing::Point(717, 580);
@@ -1107,6 +1174,7 @@ namespace Pakreserve1 {
 			// C3Table4PRed
 			// 
 			this->C3Table4PRed->BackColor = System::Drawing::Color::Transparent;
+			this->C3Table4PRed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"C3Table4PRed.BackgroundImage")));
 			this->C3Table4PRed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->C3Table4PRed->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->C3Table4PRed->Location = System::Drawing::Point(616, 580);
@@ -1184,6 +1252,7 @@ namespace Pakreserve1 {
 			this->exitpnl->Name = L"exitpnl";
 			this->exitpnl->Size = System::Drawing::Size(407, 247);
 			this->exitpnl->TabIndex = 178;
+			this->exitpnl->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &BarSaran::exitpnl_Paint);
 			// 
 			// noExit
 			// 
@@ -1207,11 +1276,24 @@ namespace Pakreserve1 {
 			this->yesExit->TabStop = false;
 			this->yesExit->Click += gcnew System::EventHandler(this, &BarSaran::yesExit_Click);
 			// 
+			// Table
+			// 
+			this->Table->BackColor = System::Drawing::Color::Transparent;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(85, 492);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(144, 40);
+			this->Table->TabIndex = 179;
+			this->Table->Text = L"XX/29";
+			// 
 			// BarSaran
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->Table);
 			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->A3Table1PRed);
@@ -1410,7 +1492,7 @@ namespace Pakreserve1 {
 
 
 			using namespace std;
-			int BarNo = 4;
+			int BarNo = 9;
 
 			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 			string path, line;
@@ -1881,7 +1963,7 @@ namespace Pakreserve1 {
 		string newData;
 		MarshalString(a2, newData);
 		switchToMP = true;
-		int targetline = 4;
+		int targetline = 9;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -1905,7 +1987,7 @@ namespace Pakreserve1 {
 		MarshalString(time, timec);
 		MarshalString(date, datec);
 		ofstream fileOutUser(pathUser, ios::app);
-		fileOutUser << "BarName: " << "Toey ";
+		fileOutUser << "BarName: " << "Saran ";
 		for (int i = 0; i < dataTable->Length; i++)
 		{
 			if (dataTable[i]) //fileOutUser << to_string(i) << " ";
@@ -1953,6 +2035,22 @@ namespace Pakreserve1 {
 	}
 	private: System::Void BarSaran_Load(System::Object^ sender, System::EventArgs^ e) {
 		dataTable = gcnew array<bool>(29);
+		using namespace std;
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		string path, line;
+		int count = 0;
+		MarshalString(temp, path);
+		std::ifstream fileIn(path);
+		for (int i = 0; i < targetline; i++)
+		{
+			getline(fileIn, line);
+		}
+		count = 0;
+		for (int i = 0; i < line.size(); i++)
+		{
+			if (line[i] == '1') count++;
+		}
+		Table->Text = count.ToString() + "/" + line.size();
 	}
 
 	private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2113,7 +2211,7 @@ namespace Pakreserve1 {
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
-		int targetline = 4;
+		int targetline = 9;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -2143,5 +2241,7 @@ namespace Pakreserve1 {
 			exitpnl->Show();
 		}
 	}
-	};
+	private: System::Void exitpnl_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+};
 }
