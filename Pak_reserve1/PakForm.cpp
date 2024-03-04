@@ -60,22 +60,21 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarMapraw bar3(user);
         Pakreserve1::BarToey bar4(user);
         Pakreserve1::BarNepjune bar5(user);
-        Pakreserve1::BarOakkhara bar6;
-        Pakreserve1::BarGarpanya bar11;
+        Pakreserve1::BarOakkhara bar6(user);
+        Pakreserve1::BarGarpanya bar11(user);
 
         
         while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile||bar2.switchToMP||bar3.switchToMP) {
+        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
             profileform.switchToProfile = false;
             Toeyform.switchToProfile = false;
-            bar2.switchToMP = false;
-            bar3.switchToMP = false;
+
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){
+        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey||form.switchToToey){
         
             Toeyform.ShowDialog();
             form2.switchToToey = false;
@@ -88,8 +87,6 @@ using namespace System::Windows::Forms;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
-            bar2.switchToToey = false;
-            bar3.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
@@ -97,9 +94,13 @@ using namespace System::Windows::Forms;
             registForm.switchToReg2 = false;
             
         }
-        else if (form.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP)
         {
             mpform.ShowDialog();
+            bar2.switchToMP = false;
+            bar3.switchToMP = false;
+            bar4.switchToMP = false;
+            bar5.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 

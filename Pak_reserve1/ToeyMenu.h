@@ -1,5 +1,8 @@
 #pragma once
-
+#using <mscorlib.dll>
+#include <string>
+#include <iostream>
+#include <fstream>
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -160,6 +163,21 @@ private: System::Windows::Forms::PictureBox^ pictureBox15;
 private: System::Windows::Forms::PictureBox^ pictureBox16;
 private: System::Windows::Forms::PictureBox^ pictureBox17;
 private: System::Windows::Forms::PictureBox^ pictureBox18;
+private: System::Windows::Forms::Label^ Table1;
+private: System::Windows::Forms::Label^ Table2;
+private: System::Windows::Forms::Label^ Table3;
+private: System::Windows::Forms::Label^ Table4;
+private: System::Windows::Forms::Label^ Table5;
+private: System::Windows::Forms::Label^ Table6;
+private: System::Windows::Forms::Label^ Table7;
+private: System::Windows::Forms::Label^ Table8;
+private: System::Windows::Forms::Label^ Table9;
+private: System::Windows::Forms::Label^ Table10;
+private: System::Windows::Forms::Label^ Table11;
+private: System::Windows::Forms::Label^ Table12;
+private: System::Windows::Forms::Label^ Table13;
+private: System::Windows::Forms::Label^ Table14;
+private: System::Windows::Forms::Label^ Table15;
 
 
 
@@ -288,8 +306,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Table1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Table2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
@@ -317,6 +337,19 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox17 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox18 = (gcnew System::Windows::Forms::PictureBox());
+			this->Table3 = (gcnew System::Windows::Forms::Label());
+			this->Table4 = (gcnew System::Windows::Forms::Label());
+			this->Table5 = (gcnew System::Windows::Forms::Label());
+			this->Table6 = (gcnew System::Windows::Forms::Label());
+			this->Table7 = (gcnew System::Windows::Forms::Label());
+			this->Table8 = (gcnew System::Windows::Forms::Label());
+			this->Table9 = (gcnew System::Windows::Forms::Label());
+			this->Table10 = (gcnew System::Windows::Forms::Label());
+			this->Table11 = (gcnew System::Windows::Forms::Label());
+			this->Table12 = (gcnew System::Windows::Forms::Label());
+			this->Table13 = (gcnew System::Windows::Forms::Label());
+			this->Table14 = (gcnew System::Windows::Forms::Label());
+			this->Table15 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -389,6 +422,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel1
 			// 
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->Table1);
 			this->panel1->Controls->Add(this->pictureBox4);
 			this->panel1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel1->Location = System::Drawing::Point(20, 80);
@@ -397,6 +431,18 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel1->TabIndex = 23;
 			this->panel1->Click += gcnew System::EventHandler(this, &ToeyMenu::panel1_Click);
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ToeyMenu::panel1_Paint);
+			// 
+			// Table1
+			// 
+			this->Table1->AutoSize = true;
+			this->Table1->BackColor = System::Drawing::Color::Transparent;
+			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table1->Location = System::Drawing::Point(50, 77);
+			this->Table1->Name = L"Table1";
+			this->Table1->Size = System::Drawing::Size(68, 24);
+			this->Table1->TabIndex = 1;
+			this->Table1->Text = L"XX/30";
 			// 
 			// pictureBox4
 			// 
@@ -412,6 +458,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel2
 			// 
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->Controls->Add(this->Table2);
 			this->panel2->Controls->Add(this->pictureBox6);
 			this->panel2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel2->Location = System::Drawing::Point(270, 80);
@@ -419,6 +466,18 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->panel2->Size = System::Drawing::Size(230, 343);
 			this->panel2->TabIndex = 24;
 			this->panel2->Click += gcnew System::EventHandler(this, &ToeyMenu::panel2_Click);
+			// 
+			// Table2
+			// 
+			this->Table2->AutoSize = true;
+			this->Table2->BackColor = System::Drawing::Color::Transparent;
+			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table2->Location = System::Drawing::Point(50, 77);
+			this->Table2->Name = L"Table2";
+			this->Table2->Size = System::Drawing::Size(68, 24);
+			this->Table2->TabIndex = 2;
+			this->Table2->Text = L"XX/30";
 			// 
 			// pictureBox6
 			// 
@@ -434,6 +493,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel3
 			// 
 			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			this->panel3->Controls->Add(this->Table3);
 			this->panel3->Controls->Add(this->pictureBox7);
 			this->panel3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel3->Location = System::Drawing::Point(520, 80);
@@ -456,6 +516,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel4
 			// 
 			this->panel4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel4.BackgroundImage")));
+			this->panel4->Controls->Add(this->Table4);
 			this->panel4->Controls->Add(this->pictureBox8);
 			this->panel4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel4->Location = System::Drawing::Point(770, 80);
@@ -478,6 +539,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel5
 			// 
 			this->panel5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel5.BackgroundImage")));
+			this->panel5->Controls->Add(this->Table5);
 			this->panel5->Controls->Add(this->pictureBox9);
 			this->panel5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel5->Location = System::Drawing::Point(1020, 80);
@@ -500,6 +562,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel6
 			// 
 			this->panel6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel6.BackgroundImage")));
+			this->panel6->Controls->Add(this->Table6);
 			this->panel6->Controls->Add(this->pictureBox5);
 			this->panel6->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel6->Location = System::Drawing::Point(20, 445);
@@ -522,6 +585,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel7
 			// 
 			this->panel7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel7.BackgroundImage")));
+			this->panel7->Controls->Add(this->Table7);
 			this->panel7->Controls->Add(this->pictureBox10);
 			this->panel7->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel7->Location = System::Drawing::Point(270, 445);
@@ -543,6 +607,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel8
 			// 
 			this->panel8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel8.BackgroundImage")));
+			this->panel8->Controls->Add(this->Table8);
 			this->panel8->Controls->Add(this->pictureBox11);
 			this->panel8->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel8->Location = System::Drawing::Point(520, 445);
@@ -564,6 +629,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel9
 			// 
 			this->panel9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel9.BackgroundImage")));
+			this->panel9->Controls->Add(this->Table9);
 			this->panel9->Controls->Add(this->pictureBox12);
 			this->panel9->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel9->Location = System::Drawing::Point(770, 445);
@@ -585,6 +651,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel10
 			// 
 			this->panel10->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel10.BackgroundImage")));
+			this->panel10->Controls->Add(this->Table10);
 			this->panel10->Controls->Add(this->pictureBox13);
 			this->panel10->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel10->Location = System::Drawing::Point(1020, 445);
@@ -606,6 +673,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel11
 			// 
 			this->panel11->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel11.BackgroundImage")));
+			this->panel11->Controls->Add(this->Table11);
 			this->panel11->Controls->Add(this->pictureBox14);
 			this->panel11->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel11->Location = System::Drawing::Point(20, 810);
@@ -628,6 +696,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel12
 			// 
 			this->panel12->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel12.BackgroundImage")));
+			this->panel12->Controls->Add(this->Table12);
 			this->panel12->Controls->Add(this->pictureBox15);
 			this->panel12->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel12->Location = System::Drawing::Point(270, 810);
@@ -649,6 +718,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel13
 			// 
 			this->panel13->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel13.BackgroundImage")));
+			this->panel13->Controls->Add(this->Table13);
 			this->panel13->Controls->Add(this->pictureBox16);
 			this->panel13->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel13->Location = System::Drawing::Point(520, 810);
@@ -670,6 +740,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel14
 			// 
 			this->panel14->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel14.BackgroundImage")));
+			this->panel14->Controls->Add(this->Table14);
 			this->panel14->Controls->Add(this->pictureBox17);
 			this->panel14->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel14->Location = System::Drawing::Point(770, 810);
@@ -691,6 +762,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			// panel15
 			// 
 			this->panel15->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel15.BackgroundImage")));
+			this->panel15->Controls->Add(this->Table15);
 			this->panel15->Controls->Add(this->pictureBox18);
 			this->panel15->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->panel15->Location = System::Drawing::Point(1020, 810);
@@ -708,6 +780,162 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			this->pictureBox18->Size = System::Drawing::Size(209, 141);
 			this->pictureBox18->TabIndex = 1;
 			this->pictureBox18->TabStop = false;
+			// 
+			// Table3
+			// 
+			this->Table3->AutoSize = true;
+			this->Table3->BackColor = System::Drawing::Color::Transparent;
+			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table3->Location = System::Drawing::Point(50, 77);
+			this->Table3->Name = L"Table3";
+			this->Table3->Size = System::Drawing::Size(68, 24);
+			this->Table3->TabIndex = 3;
+			this->Table3->Text = L"XX/30";
+			// 
+			// Table4
+			// 
+			this->Table4->AutoSize = true;
+			this->Table4->BackColor = System::Drawing::Color::Transparent;
+			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table4->Location = System::Drawing::Point(50, 77);
+			this->Table4->Name = L"Table4";
+			this->Table4->Size = System::Drawing::Size(68, 24);
+			this->Table4->TabIndex = 4;
+			this->Table4->Text = L"XX/30";
+			// 
+			// Table5
+			// 
+			this->Table5->AutoSize = true;
+			this->Table5->BackColor = System::Drawing::Color::Transparent;
+			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table5->Location = System::Drawing::Point(50, 77);
+			this->Table5->Name = L"Table5";
+			this->Table5->Size = System::Drawing::Size(68, 24);
+			this->Table5->TabIndex = 5;
+			this->Table5->Text = L"XX/30";
+			// 
+			// Table6
+			// 
+			this->Table6->AutoSize = true;
+			this->Table6->BackColor = System::Drawing::Color::Transparent;
+			this->Table6->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table6->Location = System::Drawing::Point(50, 77);
+			this->Table6->Name = L"Table6";
+			this->Table6->Size = System::Drawing::Size(68, 24);
+			this->Table6->TabIndex = 6;
+			this->Table6->Text = L"XX/30";
+			// 
+			// Table7
+			// 
+			this->Table7->AutoSize = true;
+			this->Table7->BackColor = System::Drawing::Color::Transparent;
+			this->Table7->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table7->Location = System::Drawing::Point(50, 77);
+			this->Table7->Name = L"Table7";
+			this->Table7->Size = System::Drawing::Size(68, 24);
+			this->Table7->TabIndex = 7;
+			this->Table7->Text = L"XX/30";
+			// 
+			// Table8
+			// 
+			this->Table8->AutoSize = true;
+			this->Table8->BackColor = System::Drawing::Color::Transparent;
+			this->Table8->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table8->Location = System::Drawing::Point(50, 77);
+			this->Table8->Name = L"Table8";
+			this->Table8->Size = System::Drawing::Size(68, 24);
+			this->Table8->TabIndex = 8;
+			this->Table8->Text = L"XX/30";
+			// 
+			// Table9
+			// 
+			this->Table9->AutoSize = true;
+			this->Table9->BackColor = System::Drawing::Color::Transparent;
+			this->Table9->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table9->Location = System::Drawing::Point(50, 77);
+			this->Table9->Name = L"Table9";
+			this->Table9->Size = System::Drawing::Size(68, 24);
+			this->Table9->TabIndex = 9;
+			this->Table9->Text = L"XX/30";
+			// 
+			// Table10
+			// 
+			this->Table10->AutoSize = true;
+			this->Table10->BackColor = System::Drawing::Color::Transparent;
+			this->Table10->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table10->Location = System::Drawing::Point(50, 77);
+			this->Table10->Name = L"Table10";
+			this->Table10->Size = System::Drawing::Size(68, 24);
+			this->Table10->TabIndex = 10;
+			this->Table10->Text = L"XX/30";
+			// 
+			// Table11
+			// 
+			this->Table11->AutoSize = true;
+			this->Table11->BackColor = System::Drawing::Color::Transparent;
+			this->Table11->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table11->Location = System::Drawing::Point(50, 77);
+			this->Table11->Name = L"Table11";
+			this->Table11->Size = System::Drawing::Size(68, 24);
+			this->Table11->TabIndex = 11;
+			this->Table11->Text = L"XX/30";
+			// 
+			// Table12
+			// 
+			this->Table12->AutoSize = true;
+			this->Table12->BackColor = System::Drawing::Color::Transparent;
+			this->Table12->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table12->Location = System::Drawing::Point(50, 77);
+			this->Table12->Name = L"Table12";
+			this->Table12->Size = System::Drawing::Size(68, 24);
+			this->Table12->TabIndex = 12;
+			this->Table12->Text = L"XX/30";
+			// 
+			// Table13
+			// 
+			this->Table13->AutoSize = true;
+			this->Table13->BackColor = System::Drawing::Color::Transparent;
+			this->Table13->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table13->Location = System::Drawing::Point(50, 77);
+			this->Table13->Name = L"Table13";
+			this->Table13->Size = System::Drawing::Size(68, 24);
+			this->Table13->TabIndex = 13;
+			this->Table13->Text = L"XX/30";
+			// 
+			// Table14
+			// 
+			this->Table14->AutoSize = true;
+			this->Table14->BackColor = System::Drawing::Color::Transparent;
+			this->Table14->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table14->Location = System::Drawing::Point(50, 77);
+			this->Table14->Name = L"Table14";
+			this->Table14->Size = System::Drawing::Size(68, 24);
+			this->Table14->TabIndex = 14;
+			this->Table14->Text = L"XX/30";
+			// 
+			// Table15
+			// 
+			this->Table15->AutoSize = true;
+			this->Table15->BackColor = System::Drawing::Color::Transparent;
+			this->Table15->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table15->Location = System::Drawing::Point(50, 77);
+			this->Table15->Name = L"Table15";
+			this->Table15->Size = System::Drawing::Size(68, 24);
+			this->Table15->TabIndex = 15;
+			this->Table15->Text = L"XX/30";
 			// 
 			// ToeyMenu
 			// 
@@ -741,37 +969,67 @@ private: System::Windows::Forms::PictureBox^ pictureBox18;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			this->panel6->ResumeLayout(false);
+			this->panel6->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->panel7->ResumeLayout(false);
+			this->panel7->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->EndInit();
 			this->panel8->ResumeLayout(false);
+			this->panel8->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
 			this->panel9->ResumeLayout(false);
+			this->panel9->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox12))->EndInit();
 			this->panel10->ResumeLayout(false);
+			this->panel10->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox13))->EndInit();
 			this->panel11->ResumeLayout(false);
+			this->panel11->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox14))->EndInit();
 			this->panel12->ResumeLayout(false);
+			this->panel12->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox15))->EndInit();
 			this->panel13->ResumeLayout(false);
+			this->panel13->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox16))->EndInit();
 			this->panel14->ResumeLayout(false);
+			this->panel14->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->EndInit();
 			this->panel15->ResumeLayout(false);
+			this->panel15->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox18))->EndInit();
 			this->ResumeLayout(false);
 
+		}
+		void MarshalString(String^ s, std::string& os) {
+			using namespace Runtime::InteropServices;
+			const char* chars =
+				(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+
+		void MarshalString(String^ s, std::wstring& os) {
+			using namespace Runtime::InteropServices;
+			const wchar_t* chars =
+				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
+			os = chars;
+			Marshal::FreeHGlobal(IntPtr((void*)chars));
 		}
 #pragma endregion
 public: bool switchToProfile = false;
@@ -820,6 +1078,41 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 
 }
 private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e) {
+	using namespace std;
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path, line;
+	int count = 0;
+	MarshalString(temp, path);
+	ifstream fileIn(path);
+	for (int i = 0; i < 15; i++) {
+		getline(fileIn, line);
+		count = 0;
+		for (int i = 0; i < line.size(); i++)
+		{
+			if (line[i]=='1') count++;
+		}
+		switch (i)
+		{
+		case 0: Table1->Text = count.ToString() + "/" + line.size(); break;
+		case 1:	Table2->Text = count.ToString() + "/" + line.size(); break;
+		case 2:	Table3->Text = count.ToString() + "/" + line.size(); break;
+		case 3:	Table4->Text = count.ToString() + "/" + line.size(); break;
+		case 4:	Table5->Text = count.ToString() + "/" + line.size(); break;
+		case 5:	Table6->Text = count.ToString() + "/" + line.size(); break;
+		case 6:	Table7->Text = count.ToString() + "/" + line.size(); break;
+		case 7:	Table8->Text = count.ToString() + "/" + line.size(); break;
+		case 8:	Table9->Text = count.ToString() + "/" + line.size(); break;
+		case 9:	Table10->Text = count.ToString() + "/" + line.size(); break;
+		case 10: Table11->Text = count.ToString() + "/" + line.size(); break;
+		case 11: Table12->Text = count.ToString() + "/" + line.size(); break;
+		case 12: Table13->Text = count.ToString() + "/" + line.size(); break;
+		case 13: Table14->Text = count.ToString() + "/" + line.size(); break;
+		case 14: Table15->Text = count.ToString() + "/" + line.size(); break;
+		default:
+			break;
+		}
+			
+	}
 }
 
 

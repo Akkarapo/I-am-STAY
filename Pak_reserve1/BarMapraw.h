@@ -887,6 +887,7 @@ namespace Pakreserve1 {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 95;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &BarMapraw::panel1_Paint);
 			// 
 			// pictureBox3
 			// 
@@ -897,6 +898,7 @@ namespace Pakreserve1 {
 			this->pictureBox3->Size = System::Drawing::Size(133, 56);
 			this->pictureBox3->TabIndex = 1;
 			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &BarMapraw::pictureBox3_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1494,8 +1496,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	switchToMP = true;
 	this->Close();
 }
-private: System::Void A1Table2PFull_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 	   //array<bool>^ dataTable;
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace std;
@@ -1662,9 +1663,14 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 	UpdateTable();
 	panel1->Hide();
 }
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
+}
 private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToToey = true;
 	this->Close();
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

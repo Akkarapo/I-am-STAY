@@ -1,11 +1,12 @@
 #pragma once
 
-#using <mscorlib.dll>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include "User.h"
+#using <mscorlib.dll>
+
 namespace Pakreserve1 {
 
 	using namespace System;
@@ -25,7 +26,18 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		String^ tempUser = nullptr;//==============mpzone==============
-		array<bool>^ dataTable;
+		String^ username = nullptr;
+	private: System::Windows::Forms::PictureBox^ ConfirmTableBarMapraw;
+	public:
+		int tableSelect = 0;
+		int targetline = 4;
+	private: System::Windows::Forms::Panel^ panel1;
+	public:
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+		   array<bool>^ dataTable;
+	
+	public:
 		BarToey(User^ user)
 		{
 			InitializeComponent();
@@ -55,6 +67,11 @@ namespace Pakreserve1 {
 			C5Table4PGreen->Hide();
 			C6Table4PGreen->Hide();
 			C7Table4PGreen->Hide();
+			
+			username = user->username;
+			panel1->Hide();
+			UpdateTable();
+			
 		}
 
 	protected:
@@ -237,6 +254,10 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C4Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->C3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -304,6 +325,10 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -873,6 +898,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A8Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A8Table1PRed->TabIndex = 153;
 			this->A8Table1PRed->TabStop = false;
+			this->A8Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A8Table1PRed_Click);
 			// 
 			// A7Table1PRed
 			// 
@@ -885,6 +911,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A7Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A7Table1PRed->TabIndex = 154;
 			this->A7Table1PRed->TabStop = false;
+			this->A7Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A7Table1PRed_Click);
 			// 
 			// A6Table1PRed
 			// 
@@ -897,6 +924,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A6Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A6Table1PRed->TabIndex = 155;
 			this->A6Table1PRed->TabStop = false;
+			this->A6Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A6Table1PRed_Click);
 			// 
 			// A5Table1PRed
 			// 
@@ -909,6 +937,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A5Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A5Table1PRed->TabIndex = 156;
 			this->A5Table1PRed->TabStop = false;
+			this->A5Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A5Table1PRed_Click);
 			// 
 			// A4Table1PRed
 			// 
@@ -921,6 +950,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A4Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A4Table1PRed->TabIndex = 157;
 			this->A4Table1PRed->TabStop = false;
+			this->A4Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A4Table1PRed_Click);
 			// 
 			// A3Table1PRed
 			// 
@@ -933,6 +963,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A3Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A3Table1PRed->TabIndex = 158;
 			this->A3Table1PRed->TabStop = false;
+			this->A3Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A3Table1PRed_Click);
 			// 
 			// A2Table1PRed
 			// 
@@ -945,6 +976,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A2Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A2Table1PRed->TabIndex = 159;
 			this->A2Table1PRed->TabStop = false;
+			this->A2Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A2Table1PRed_Click);
 			// 
 			// A1Table1PRed
 			// 
@@ -957,6 +989,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->A1Table1PRed->Size = System::Drawing::Size(28, 20);
 			this->A1Table1PRed->TabIndex = 160;
 			this->A1Table1PRed->TabStop = false;
+			this->A1Table1PRed->Click += gcnew System::EventHandler(this, &BarToey::A1Table1PRed_Click);
 			// 
 			// B1Table4PRed
 			// 
@@ -969,6 +1002,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B1Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B1Table4PRed->TabIndex = 161;
 			this->B1Table4PRed->TabStop = false;
+			this->B1Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B1Table4PRed_Click);
 			// 
 			// C2Table4PRed
 			// 
@@ -981,6 +1015,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C2Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C2Table4PRed->TabIndex = 162;
 			this->C2Table4PRed->TabStop = false;
+			this->C2Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C2Table4PRed_Click);
 			// 
 			// C1Table4PRed
 			// 
@@ -993,6 +1028,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C1Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C1Table4PRed->TabIndex = 163;
 			this->C1Table4PRed->TabStop = false;
+			this->C1Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C1Table4PRed_Click);
 			// 
 			// B7Table4PRed
 			// 
@@ -1005,6 +1041,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B7Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B7Table4PRed->TabIndex = 164;
 			this->B7Table4PRed->TabStop = false;
+			this->B7Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B7Table4PRed_Click);
 			// 
 			// B6Table4PRed
 			// 
@@ -1017,6 +1054,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B6Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B6Table4PRed->TabIndex = 165;
 			this->B6Table4PRed->TabStop = false;
+			this->B6Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B6Table4PRed_Click);
 			// 
 			// B5Table4PRed
 			// 
@@ -1029,6 +1067,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B5Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B5Table4PRed->TabIndex = 166;
 			this->B5Table4PRed->TabStop = false;
+			this->B5Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B5Table4PRed_Click);
 			// 
 			// B4Table4PRed
 			// 
@@ -1041,6 +1080,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B4Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B4Table4PRed->TabIndex = 167;
 			this->B4Table4PRed->TabStop = false;
+			this->B4Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B4Table4PRed_Click);
 			// 
 			// B3Table4PRed
 			// 
@@ -1053,6 +1093,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B3Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B3Table4PRed->TabIndex = 168;
 			this->B3Table4PRed->TabStop = false;
+			this->B3Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B3Table4PRed_Click);
 			// 
 			// B2Table4PRed
 			// 
@@ -1065,6 +1106,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->B2Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->B2Table4PRed->TabIndex = 169;
 			this->B2Table4PRed->TabStop = false;
+			this->B2Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::B2Table4PRed_Click);
 			// 
 			// C7Table4PRed
 			// 
@@ -1077,6 +1119,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C7Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C7Table4PRed->TabIndex = 170;
 			this->C7Table4PRed->TabStop = false;
+			this->C7Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C7Table4PRed_Click);
 			// 
 			// C6Table4PRed
 			// 
@@ -1089,6 +1132,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C6Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C6Table4PRed->TabIndex = 171;
 			this->C6Table4PRed->TabStop = false;
+			this->C6Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C6Table4PRed_Click);
 			// 
 			// C5Table4PRed
 			// 
@@ -1101,6 +1145,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C5Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C5Table4PRed->TabIndex = 172;
 			this->C5Table4PRed->TabStop = false;
+			this->C5Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C5Table4PRed_Click);
 			// 
 			// C4Table4PRed
 			// 
@@ -1113,6 +1158,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C4Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C4Table4PRed->TabIndex = 173;
 			this->C4Table4PRed->TabStop = false;
+			this->C4Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C4Table4PRed_Click);
 			// 
 			// C3Table4PRed
 			// 
@@ -1125,6 +1171,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->C3Table4PRed->Size = System::Drawing::Size(80, 67);
 			this->C3Table4PRed->TabIndex = 174;
 			this->C3Table4PRed->TabStop = false;
+			this->C3Table4PRed->Click += gcnew System::EventHandler(this, &BarToey::C3Table4PRed_Click);
 			// 
 			// pictureBox1
 			// 
@@ -1138,11 +1185,69 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarToey::pictureBox1_Click);
 			// 
+			// ConfirmTableBarMapraw
+			// 
+			this->ConfirmTableBarMapraw->BackColor = System::Drawing::Color::Transparent;
+			this->ConfirmTableBarMapraw->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ConfirmTableBarMapraw.BackgroundImage")));
+			this->ConfirmTableBarMapraw->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ConfirmTableBarMapraw->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ConfirmTableBarMapraw->Location = System::Drawing::Point(36, 607);
+			this->ConfirmTableBarMapraw->Name = L"ConfirmTableBarMapraw";
+			this->ConfirmTableBarMapraw->Size = System::Drawing::Size(267, 66);
+			this->ConfirmTableBarMapraw->TabIndex = 176;
+			this->ConfirmTableBarMapraw->TabStop = false;
+			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarToey::ConfirmTableBarMapraw_Click);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->pictureBox2);
+			this->panel1->Location = System::Drawing::Point(437, 237);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(407, 247);
+			this->panel1->TabIndex = 177;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(242, 172);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(133, 56);
+			this->pictureBox3->TabIndex = 1;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &BarToey::pictureBox3_Click);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(32, 173);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(133, 56);
+			this->pictureBox2->TabIndex = 0;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &BarToey::pictureBox2_Click);
+			// 
 			// BarToey
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->A3Table1PRed);
+			this->Controls->Add(this->A4Table1PRed);
+			this->Controls->Add(this->A5Table1PRed);
+			this->Controls->Add(this->A6Table1PRed);
+			this->Controls->Add(this->A7Table1PRed);
+			this->Controls->Add(this->A8Table1PRed);
+			this->Controls->Add(this->A3Table1PGreen);
+			this->Controls->Add(this->A3Table1P);
+			this->Controls->Add(this->A2Table1PRed);
+			this->Controls->Add(this->A1Table1PRed);
+			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C4Table4PRed);
@@ -1158,14 +1263,6 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->Controls->Add(this->C1Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
 			this->Controls->Add(this->B1Table4PRed);
-			this->Controls->Add(this->A1Table1PRed);
-			this->Controls->Add(this->A2Table1PRed);
-			this->Controls->Add(this->A3Table1PRed);
-			this->Controls->Add(this->A4Table1PRed);
-			this->Controls->Add(this->A5Table1PRed);
-			this->Controls->Add(this->A6Table1PRed);
-			this->Controls->Add(this->A7Table1PRed);
-			this->Controls->Add(this->A8Table1PRed);
 			this->Controls->Add(this->C7Table4PGreen);
 			this->Controls->Add(this->C6Table4PGreen);
 			this->Controls->Add(this->C5Table4PGreen);
@@ -1185,7 +1282,6 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->Controls->Add(this->A6Table1PGreen);
 			this->Controls->Add(this->A5Table1PGreen);
 			this->Controls->Add(this->A4Table1PGreen);
-			this->Controls->Add(this->A3Table1PGreen);
 			this->Controls->Add(this->A2Table1PGreen);
 			this->Controls->Add(this->A1Table1PGreen);
 			this->Controls->Add(this->C7Table4P);
@@ -1207,12 +1303,13 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->Controls->Add(this->A6Table1P);
 			this->Controls->Add(this->A5Table1P);
 			this->Controls->Add(this->A4Table1P);
-			this->Controls->Add(this->A3Table1P);
 			this->Controls->Add(this->A2Table1P);
 			this->Controls->Add(this->A1Table1P);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"BarToey";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarToey";
+			this->Load += gcnew System::EventHandler(this, &BarToey::BarToey_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->EndInit();
@@ -1280,6 +1377,10 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C4Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->C3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1300,6 +1401,237 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				(const wchar_t*)(Marshal::StringToHGlobalUni(s)).ToPointer();
 			os = chars;
 			Marshal::FreeHGlobal(IntPtr((void*)chars));
+		}
+		void UpdateTable() {
+
+			A1Table1PRed->Hide();
+			A2Table1PRed->Hide();
+			A3Table1PRed->Hide();
+			A4Table1PRed->Hide();
+			A5Table1PRed->Hide();
+			A6Table1PRed->Hide();
+			A7Table1PRed->Hide();
+			A8Table1PRed->Hide();
+			B1Table4PRed->Hide();
+			B2Table4PRed->Hide();
+			B3Table4PRed->Hide();
+			B4Table4PRed->Hide();
+			B5Table4PRed->Hide();
+			B6Table4PRed->Hide();
+			B7Table4PRed->Hide();
+			C1Table4PRed->Hide();
+			C2Table4PRed->Hide();
+			C3Table4PRed->Hide();
+			C4Table4PRed->Hide();
+			C5Table4PRed->Hide();
+			C6Table4PRed->Hide();
+			C7Table4PRed->Hide();
+			
+
+			using namespace std;
+			int BarNo = 4;
+
+			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+			string path, line;
+			MarshalString(temp, path);
+			ifstream fileIn(path);
+			if (!fileIn.is_open()) {
+				MessageBox::Show("Can't open file Location", "Error", MessageBoxButtons::OK);
+				return;
+			}
+			for (int i = 0; i < BarNo; i++) {
+				getline(fileIn, line);
+			}
+
+			if (line[0] == '1') {
+				a[0] = '1';
+				A1Table1PRed->Show();
+				A1Table1P->Hide();
+			}
+			else {
+				A1Table1P->Show();
+			}
+
+			if (line[1] == '1') {
+				a[1] = '1';
+				A2Table1PRed->Show();
+				A2Table1P->Hide();
+			}
+			else {
+				A2Table1P->Show();
+			}
+
+			if (line[2] == '1') {
+				a[2] = '1';
+				A3Table1PRed->Show();
+				A3Table1P->Hide();
+			}
+			else {
+				A3Table1P->Show();
+			}
+
+			if (line[3] == '1') {
+				a[3] = '1';
+				A4Table1PRed->Show();
+				A4Table1P->Hide();
+			}
+			else {
+				A4Table1P->Show();
+			}
+
+			if (line[4] == '1') {
+				a[4] = '1';
+				A5Table1PRed->Show();
+				A5Table1P->Hide();
+			}
+			else {
+				A5Table1P->Show();
+			}
+
+			if (line[5] == '1') {
+				a[5] = '1';
+				A6Table1PRed->Show();
+				A6Table1P->Hide();
+			}
+			else {
+				A6Table1P->Show();
+			}
+
+			if (line[6] == '1') {
+				a[6] = '1';
+				A7Table1PRed->Show();
+				A7Table1P->Hide();
+			}
+			else {
+				A7Table1P->Show();
+			}
+
+			if (line[7] == '1') {
+				a[7] = '1';
+				B1Table4PRed->Show();
+				B1Table4P->Hide();
+			}
+			else {
+				B1Table4P->Show();
+			}
+
+			if (line[8] == '1') {
+				a[8] = '1';
+				B2Table4PRed->Show();
+				B2Table4P->Hide();
+			}
+			else {
+				B2Table4P->Show();
+			}
+
+			if (line[9] == '1') {
+				a[9] = '1';
+				B3Table4PRed->Show();
+				B3Table4P->Hide();
+			}
+			else {
+				B3Table4P->Show();
+			}
+
+			if (line[10] == '1') {
+				a[10] = '1';
+				B4Table4PRed->Show();
+				B4Table4P->Hide();
+			}
+			else {
+				B4Table4P->Show();
+			}
+
+			if (line[11] == '1') {
+				a[11] = '1';
+				B5Table4PRed->Show();
+				B5Table4P->Hide();
+			}
+			else {
+				B5Table4P->Show();
+			}
+
+			if (line[12] == '1') {
+				a[12] = '1';
+				B6Table4PRed->Show();
+				B6Table4P->Hide();
+			}
+			else {
+				B6Table4P->Show();
+			}
+
+			if (line[13] == '1') {
+				a[13] = '1';
+				B7Table4PRed->Show();
+				B7Table4P->Hide();
+			}
+			else {
+				B7Table4P->Show();
+			}
+
+			if (line[14] == '1') {
+				a[14] = '1';
+				C1Table4PRed->Show();
+				C1Table4P->Hide();
+			}
+			else {
+				C1Table4P->Show();
+			}
+
+			if (line[15] == '1') {
+				a[15] = '1';
+				C2Table4PRed->Show();
+				C2Table4P->Hide();
+			}
+			else {
+				C2Table4P->Show();
+			}
+
+			if (line[16] == '1') {
+				a[16] = '1';
+				C3Table4PRed->Show();
+				C3Table4P->Hide();
+			}
+			else {
+				C3Table4P->Show();
+			}
+
+			if (line[17] == '1') {
+				a[17] = '1';
+				C4Table4PRed->Show();
+				C4Table4P->Hide();
+			}
+			else {
+				C4Table4P->Show();
+			}
+
+			if (line[18] == '1') {
+				a[18] = '1';
+				C5Table4PRed->Show();
+				C5Table4P->Hide();
+			}
+			else {
+				C5Table4P->Show();
+			}
+
+			if (line[19] == '1') {
+				a[19] = '1';
+				C6Table4PRed->Show();
+				C6Table4P->Hide();
+			}
+			else {
+				C6Table4P->Show();
+			}
+			
+			if (line[20] == '1') {
+				a[20] = '1';
+				C7Table4PRed->Show();
+				C7Table4P->Hide();
+			}
+			else {
+				C7Table4P->Show();
+			}
+			//label1->Text = gcnew String(line.c_str());
 		}
 
 #pragma endregion
@@ -1583,7 +1915,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	MarshalString(time, timec);
 	MarshalString(date, datec);
 	ofstream fileOutUser(pathUser, ios::app);
-	fileOutUser << "BarName: " << "Mapraw ";
+	fileOutUser << "BarName: " << "Toey ";
 	for (int i = 0; i < dataTable->Length; i++)
 	{
 		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
@@ -1621,12 +1953,194 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
 	fileOutUser.close();
 	//==============mpzone==============
+	UpdateTable();
 	this->Close();
 }
 public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToToey = true;
 	this->Close();
+}
+private: System::Void BarToey_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataTable = gcnew array<bool>(29);
+}
+
+private: System::Void A1Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 0;
+	}
+}
+private: System::Void A2Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 1;
+	}
+}
+private: System::Void A3Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 2;
+	}
+}
+private: System::Void A4Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 3;
+	}
+}
+private: System::Void A5Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 4;
+	}
+}
+private: System::Void A6Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 5;
+	}
+}
+private: System::Void A7Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 6;
+	}
+}
+private: System::Void A8Table1PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 7;
+	}
+}
+private: System::Void B1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 8;
+	}
+}
+private: System::Void B2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 9;
+	}
+}
+private: System::Void B3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 10;
+	}
+}
+private: System::Void B4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 11;
+	}
+}
+private: System::Void B5Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 12;
+	}
+}
+private: System::Void B6Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 13;
+	}
+}
+private: System::Void B7Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 14;
+	}
+}
+private: System::Void C1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 15;
+	}
+}
+private: System::Void C2Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 16;
+	}
+}
+private: System::Void C3Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 17;
+	}
+}
+private: System::Void C4Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 18;
+	}
+}
+private: System::Void C5Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 19;
+	}
+}
+private: System::Void C6Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 20;
+	}
+}
+private: System::Void C7Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (username == "admin") {
+		panel1->Show();
+		tableSelect = 21;
+	}
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	a[tableSelect] = '0';
+	using namespace std;
+
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+
+	string path, line;
+	MarshalString(temp, path);
+
+	ifstream fileIn(path);
+	vector<string> lines;
+
+	while (getline(fileIn, line)) {
+		lines.push_back(line);
+	}
+	fileIn.close();
+
+	for (int i = 0; i < 29; i++) {
+		//a[i] = (dataTable[i] ? '1' : '0');
+		if (dataTable[i]) {
+			a[i] = '1';
+		}
+	}
+	String^ a2 = a->ToString();
+	string newData;
+	MarshalString(a2, newData);
+	int targetline = 4;
+	if (lines.size() >= targetline) {
+		lines[targetline - 1] = newData;
+	}
+
+	ofstream fileOut(path);
+	int i = 0;
+
+	for (const auto& modifiedLine : lines) {
+		fileOut << modifiedLine << endl;
+	}
+	fileOut.close();
+
+	UpdateTable();
+	panel1->Hide();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	panel1->Hide();
 }
 };
 }
