@@ -36,7 +36,15 @@ namespace Pakreserve1 {
 	public:
 		int tableSelect = 0;
 		int targetline = 5;
-			array<bool>^ dataTable;
+	private: System::Windows::Forms::Panel^ exitpnl;
+	public:
+	private: System::Windows::Forms::PictureBox^ noExit;
+	private: System::Windows::Forms::PictureBox^ yesExit;
+
+	public:
+
+
+		   array<bool>^ dataTable;
 		BarNepjune(User^ user)
 		{
 			InitializeComponent();
@@ -54,6 +62,7 @@ namespace Pakreserve1 {
 			A8Table4PGreen->Hide();
 			username = user->username;
 			panel1->Hide();
+			exitpnl->Hide();
 			UpdateTable();
 		}
 
@@ -148,6 +157,9 @@ namespace Pakreserve1 {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->exitpnl = (gcnew System::Windows::Forms::Panel());
+			this->noExit = (gcnew System::Windows::Forms::PictureBox());
+			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->BeginInit();
@@ -177,6 +189,9 @@ namespace Pakreserve1 {
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->exitpnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table4P
@@ -574,11 +589,45 @@ namespace Pakreserve1 {
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &BarNepjune::pictureBox2_Click);
 			// 
+			// exitpnl
+			// 
+			this->exitpnl->BackColor = System::Drawing::Color::Transparent;
+			this->exitpnl->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitpnl.BackgroundImage")));
+			this->exitpnl->Controls->Add(this->noExit);
+			this->exitpnl->Controls->Add(this->yesExit);
+			this->exitpnl->Location = System::Drawing::Point(437, 237);
+			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->Size = System::Drawing::Size(407, 247);
+			this->exitpnl->TabIndex = 97;
+			// 
+			// noExit
+			// 
+			this->noExit->BackColor = System::Drawing::Color::Transparent;
+			this->noExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noExit.BackgroundImage")));
+			this->noExit->Location = System::Drawing::Point(242, 172);
+			this->noExit->Name = L"noExit";
+			this->noExit->Size = System::Drawing::Size(133, 56);
+			this->noExit->TabIndex = 1;
+			this->noExit->TabStop = false;
+			this->noExit->Click += gcnew System::EventHandler(this, &BarNepjune::noExit_Click);
+			// 
+			// yesExit
+			// 
+			this->yesExit->BackColor = System::Drawing::Color::Transparent;
+			this->yesExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yesExit.BackgroundImage")));
+			this->yesExit->Location = System::Drawing::Point(32, 173);
+			this->yesExit->Name = L"yesExit";
+			this->yesExit->Size = System::Drawing::Size(133, 56);
+			this->yesExit->TabIndex = 0;
+			this->yesExit->TabStop = false;
+			this->yesExit->Click += gcnew System::EventHandler(this, &BarNepjune::yesExit_Click);
+			// 
 			// BarNepjune
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->pictureBox1);
@@ -612,6 +661,7 @@ namespace Pakreserve1 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarNepjune";
 			this->Load += gcnew System::EventHandler(this, &BarNepjune::BarNepjune_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &BarNepjune::BarNepjune_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->EndInit();
@@ -641,6 +691,9 @@ namespace Pakreserve1 {
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->exitpnl->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1070,6 +1123,17 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
+}
+private: System::Void BarNepjune_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Escape) {
+		exitpnl->Show();
+	}
+}
+private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	exitpnl->Hide();
 }
 };
 }
