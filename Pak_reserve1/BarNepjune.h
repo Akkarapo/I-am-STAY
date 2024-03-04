@@ -609,6 +609,7 @@ namespace Pakreserve1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNepjune";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarNepjune";
 			this->Load += gcnew System::EventHandler(this, &BarNepjune::BarNepjune_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->EndInit();
