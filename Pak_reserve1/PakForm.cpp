@@ -158,6 +158,7 @@ using namespace System::Windows::Forms;
         {
             bar7.ShowDialog();
             Toeyform.switchToBarSajui = false;
+        }
         else if (Toeyform.switchToBarSTEVE)
         {
             bar12.ShowDialog();
