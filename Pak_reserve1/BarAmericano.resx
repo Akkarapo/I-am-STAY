@@ -1115,7 +1115,7 @@
   <data name="ConfirmTableBarAmericano.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAP8AAAA4CAYAAAAy5S7GAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABW1JREFUeF7t3T9sHEUYxmH3lqiQ5SoUSUNkkhRGQYIisptEwteBcAsnpbQsQZMi
+        EAAACxABrSO9dQAABW1JREFUeF7t3T9sHEUYxmH3lqiQ5SoUSUNkkhRGQYIisptEwteBcAsnpbQsQZMi
         ShTcABKHXIEtxVEKJyVQgARF/oBALqAgGIJEQ4NIKEIRCijM997tR8bD7N1tOM/d7f1GehTfzOzuWcq7
         M7O7d5563LK3tzdnGuac2TDb5iMAB0o5axnlbtnMFZE82GIHmi4OSNCB0bFpVsxMEdXBFdupQt80qQMD
         GB2DOwnYjjS1Z6QHxodmAotFhB+v2A4Y7YHx1Syi3H+xjTTNXwt2AmA86eLgdBHt3sU6vxdsDGC8rRXR
@@ -2193,7 +2193,7 @@
   <data name="HomeBTN.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADUAAAAVCAYAAADmSqZGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAYBJREFUWEftlstKw0AUhosVdONKioobod6gCHUjrkSkFC94hVRBcOkNoVpwn+fJ
+        DQAACw0B7QfALAAAAYBJREFUWEftlstKw0AUhosVdONKioobod6gCHUjrkSkFC94hVRBcOkNoVpwn+fJ
         e+UB0n2I30knYTqmOkGoSemBj5me+Tnlg2aaShRFronv+9uVMtdUqiw1lSpL2UrR34DnP9BWo9LyPK+a
         kROOVCQtetdGRniAJXhS1JOwrdSumctJR41Ky3Xd2YxcwolkWGfA0fo6vXgQxf4YzqFZZCmhDbdGT6cH
         Ij0HZ3AKO0WX+g2RqsGjYi0ezOZbuGRSi9DRcPJIrcChJS9gzrWWCsPwLaMvAlm9VbiHG9iHmrVUnmKG
@@ -2205,7 +2205,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAYAAADPfd1WAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAA/7JJREFUeF7svYd7FEfy/4/SaqVVAiShAIigBEjkjMFgsDHY+JzOEWec7XO2zznb
+        DwAACw8BkvkDpQAA/7JJREFUeF7svYd7FEfy/4/SaqVVAiShAIigBEjkjMFgsDHY+JzOEWec7XO2zznb
         2AQBQgTf3ef7/P7S+tW7qmunNZ5VWmkti7rneV13V1d3z870NJ63qmeW8f/IcRzHcRzHcRzHcRzHcZwl
         S6bRcRzHcRzHcRzHcRzHcZylQabRcRzHcRzHcRzHcRzHcZylQabRcRzHcRzHcRzHcRzHcZylQabRcRzH
         cRzHcRzHcRzHcZylQabRcRzHcRzHcRzHcRzHcZylQabRcRzHcRzHcRzHcRzHcZylQabRcRzHcRzHcRzH
