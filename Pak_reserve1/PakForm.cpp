@@ -17,6 +17,7 @@
 #include "BarNepjune.h"
 #include "BarOakkhara.h"
 #include "BarGarpanya.h"
+#include "BarSajui.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -62,6 +63,7 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarNepjune bar5(user);
         Pakreserve1::BarOakkhara bar6(user);
         Pakreserve1::BarGarpanya bar11(user);
+        Pakreserve1::BarSajui bar7(user);
 
         
         while (true) {
@@ -74,7 +76,7 @@ using namespace System::Windows::Forms;
 
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey||form.switchToToey){
+        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey||form.switchToToey||bar7.switchToToey){
         
             Toeyform.ShowDialog();
             form2.switchToToey = false;
@@ -84,6 +86,7 @@ using namespace System::Windows::Forms;
             bar5.switchToToey = false;
             bar6.switchToToey = false;
             bar11.switchToToey = false;
+            bar7.switchToToey = false;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
@@ -94,13 +97,14 @@ using namespace System::Windows::Forms;
             registForm.switchToReg2 = false;
             
         }
-        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP||bar7.switchToMP)
         {
             mpform.ShowDialog();
             bar2.switchToMP = false;
             bar3.switchToMP = false;
             bar4.switchToMP = false;
             bar5.switchToMP = false;
+            bar7.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 
@@ -137,6 +141,11 @@ using namespace System::Windows::Forms;
         {
             bar11.ShowDialog();
             Toeyform.switchToBarGarpanya = false;
+        }
+        else if (Toeyform.switchToBarSajui)
+        {
+            bar7.ShowDialog();
+            Toeyform.switchToBarSajui = false;
         }
         else
         {
