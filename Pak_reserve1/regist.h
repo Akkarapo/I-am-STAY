@@ -557,7 +557,7 @@ namespace Pakreserve1 {
 			errortext->Show();
 			return;
 		}
-		if (email2 == email55) {
+		else if (email2 == email55) {
 			errortext->Text = "Email already exist";
 			errortext->Show();
 			return;
