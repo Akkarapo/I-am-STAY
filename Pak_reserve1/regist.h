@@ -295,7 +295,7 @@ namespace Pakreserve1 {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
 				static_cast<System::Int32>(static_cast<System::Byte>(61)));
-			this->label11->Location = System::Drawing::Point(1103, 595);
+			this->label11->Location = System::Drawing::Point(1101, 595);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(88, 17);
 			this->label11->TabIndex = 16;
@@ -307,7 +307,7 @@ namespace Pakreserve1 {
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->pictureBox2->Location = System::Drawing::Point(754, 530);
+			this->pictureBox2->Location = System::Drawing::Point(751, 530);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(438, 55);
 			this->pictureBox2->TabIndex = 22;
@@ -390,11 +390,12 @@ namespace Pakreserve1 {
 			// 
 			this->errortext->AutoSize = true;
 			this->errortext->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->errortext->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->errortext->Font = (gcnew System::Drawing::Font(L"ABeeZee", 9.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->errortext->ForeColor = System::Drawing::Color::Red;
 			this->errortext->Location = System::Drawing::Point(750, 487);
 			this->errortext->Name = L"errortext";
-			this->errortext->Size = System::Drawing::Size(105, 20);
+			this->errortext->Size = System::Drawing::Size(91, 15);
 			this->errortext->TabIndex = 97;
 			this->errortext->Text = L"xxxxxxxxxxxx";
 			// 
@@ -402,8 +403,8 @@ namespace Pakreserve1 {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->ClientSize = System::Drawing::Size(1280, 720);
-			this->Controls->Add(this->errortext);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->errortext);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->pictureBox2);
