@@ -68,7 +68,6 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarOakkhara bar6(user);
         Pakreserve1::BarSajui bar7(user);
         Pakreserve1::BarGarpanya bar11(user);
-        Pakreserve1::BarSajui bar7(user);
         Pakreserve1::BarSTEVE bar12(user);
 
         

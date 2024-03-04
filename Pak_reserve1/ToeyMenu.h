@@ -1137,10 +1137,5 @@ private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
-public: bool switchToBarSajui = false;
-private: System::Void panel7_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToBarSajui = true;
-	   this->Close();
-}
 };
 }
