@@ -136,24 +136,22 @@ namespace Pakreserve1 {
 			this->Name->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->Name->AutoSize = true;
 			this->Name->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Name->ForeColor = System::Drawing::Color::White;
-			this->Name->Location = System::Drawing::Point(646, 362);
+			this->Name->Location = System::Drawing::Point(554, 362);
 			this->Name->Name = L"Name";
-			this->Name->Size = System::Drawing::Size(74, 19);
+			this->Name->Size = System::Drawing::Size(222, 19);
 			this->Name->TabIndex = 4;
 			this->Name->Text = L"AAAAA";
 			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// BarNameFront
 			// 
-			this->BarNameFront->AutoSize = true;
 			this->BarNameFront->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F));
 			this->BarNameFront->ForeColor = System::Drawing::Color::White;
-			this->BarNameFront->Location = System::Drawing::Point(389, 275);
+			this->BarNameFront->Location = System::Drawing::Point(346, 275);
 			this->BarNameFront->Name = L"BarNameFront";
-			this->BarNameFront->Size = System::Drawing::Size(127, 30);
+			this->BarNameFront->Size = System::Drawing::Size(209, 42);
 			this->BarNameFront->TabIndex = 3;
 			this->BarNameFront->Text = L"OverTime";
 			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -163,25 +161,23 @@ namespace Pakreserve1 {
 			this->Time->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->Time->AutoSize = true;
 			this->Time->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Time->ForeColor = System::Drawing::Color::White;
-			this->Time->Location = System::Drawing::Point(424, 362);
+			this->Time->Location = System::Drawing::Point(351, 362);
 			this->Time->Name = L"Time";
-			this->Time->Size = System::Drawing::Size(92, 19);
+			this->Time->Size = System::Drawing::Size(204, 19);
 			this->Time->TabIndex = 1;
 			this->Time->Text = L"AAAA AA";
 			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date
 			// 
-			this->Date->AutoSize = true;
 			this->Date->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F));
 			this->Date->ForeColor = System::Drawing::Color::White;
-			this->Date->Location = System::Drawing::Point(174, 362);
+			this->Date->Location = System::Drawing::Point(131, 362);
 			this->Date->Name = L"Date";
 			this->Date->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Date->Size = System::Drawing::Size(175, 19);
+			this->Date->Size = System::Drawing::Size(218, 16);
 			this->Date->TabIndex = 0;
 			this->Date->Text = L"AA AAAAAAAA AA";
 			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -247,12 +243,12 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			//this->Name = L"MPBarnd";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBarnd::MPBarnd_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

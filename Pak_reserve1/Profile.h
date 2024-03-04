@@ -205,30 +205,30 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Time1 = (gcnew System::Windows::Forms::Label());
 			this->Date1 = (gcnew System::Windows::Forms::Label());
 			this->TicketF2 = (gcnew System::Windows::Forms::Panel());
+			this->Table2 = (gcnew System::Windows::Forms::Label());
 			this->BarNameF2 = (gcnew System::Windows::Forms::Label());
 			this->Name2 = (gcnew System::Windows::Forms::Label());
 			this->Time2 = (gcnew System::Windows::Forms::Label());
 			this->Date2 = (gcnew System::Windows::Forms::Label());
 			this->TicketF3 = (gcnew System::Windows::Forms::Panel());
+			this->Table3 = (gcnew System::Windows::Forms::Label());
 			this->BarNameF3 = (gcnew System::Windows::Forms::Label());
 			this->Name3 = (gcnew System::Windows::Forms::Label());
 			this->Time3 = (gcnew System::Windows::Forms::Label());
 			this->Date3 = (gcnew System::Windows::Forms::Label());
 			this->TicketF4 = (gcnew System::Windows::Forms::Panel());
+			this->Table4 = (gcnew System::Windows::Forms::Label());
 			this->BarNameF4 = (gcnew System::Windows::Forms::Label());
 			this->Name4 = (gcnew System::Windows::Forms::Label());
 			this->Time4 = (gcnew System::Windows::Forms::Label());
 			this->Date4 = (gcnew System::Windows::Forms::Label());
 			this->TicketF5 = (gcnew System::Windows::Forms::Panel());
+			this->Table5 = (gcnew System::Windows::Forms::Label());
 			this->BarNameF5 = (gcnew System::Windows::Forms::Label());
 			this->Name5 = (gcnew System::Windows::Forms::Label());
 			this->Time5 = (gcnew System::Windows::Forms::Label());
 			this->Date5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->Table2 = (gcnew System::Windows::Forms::Label());
-			this->Table3 = (gcnew System::Windows::Forms::Label());
-			this->Table4 = (gcnew System::Windows::Forms::Label());
-			this->Table5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -256,14 +256,13 @@ private: System::Windows::Forms::Label^ Date5;
 			// 
 			// CustomerName
 			// 
-			this->CustomerName->AutoSize = true;
 			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
 			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CustomerName->ForeColor = System::Drawing::Color::White;
 			this->CustomerName->Location = System::Drawing::Point(167, 70);
 			this->CustomerName->Name = L"CustomerName";
-			this->CustomerName->Size = System::Drawing::Size(154, 24);
+			this->CustomerName->Size = System::Drawing::Size(181, 20);
 			this->CustomerName->TabIndex = 14;
 			this->CustomerName->Text = L"CustomerName";
 			// 
@@ -280,14 +279,13 @@ private: System::Windows::Forms::Label^ Date5;
 			// 
 			// CustomerMail
 			// 
-			this->CustomerMail->AutoSize = true;
 			this->CustomerMail->BackColor = System::Drawing::Color::Transparent;
 			this->CustomerMail->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->CustomerMail->ForeColor = System::Drawing::Color::White;
-			this->CustomerMail->Location = System::Drawing::Point(168, 129);
+			this->CustomerMail->Location = System::Drawing::Point(168, 113);
 			this->CustomerMail->Name = L"CustomerMail";
-			this->CustomerMail->Size = System::Drawing::Size(109, 18);
+			this->CustomerMail->Size = System::Drawing::Size(180, 60);
 			this->CustomerMail->TabIndex = 15;
 			this->CustomerMail->Text = L"CustomerMail";
 			// 
@@ -314,9 +312,9 @@ private: System::Windows::Forms::Label^ Date5;
 			this->flowLayoutPanel1->Controls->Add(this->TicketF3);
 			this->flowLayoutPanel1->Controls->Add(this->TicketF4);
 			this->flowLayoutPanel1->Controls->Add(this->TicketF5);
-			this->flowLayoutPanel1->Location = System::Drawing::Point(485, 69);
+			this->flowLayoutPanel1->Location = System::Drawing::Point(485, 57);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(721, 576);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(797, 660);
 			this->flowLayoutPanel1->TabIndex = 20;
 			// 
 			// TicketF1
@@ -331,7 +329,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF1->Controls->Add(this->Date1);
 			this->TicketF1->Location = System::Drawing::Point(3, 3);
 			this->TicketF1->Name = L"TicketF1";
-			this->TicketF1->Size = System::Drawing::Size(692, 279);
+			this->TicketF1->Size = System::Drawing::Size(773, 342);
 			this->TicketF1->TabIndex = 13;
 			// 
 			// Table1
@@ -349,54 +347,50 @@ private: System::Windows::Forms::Label^ Date5;
 			// 
 			// BarNameF1
 			// 
-			this->BarNameF1->AutoSize = true;
 			this->BarNameF1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarNameF1->ForeColor = System::Drawing::Color::White;
-			this->BarNameF1->Location = System::Drawing::Point(251, 140);
+			this->BarNameF1->Location = System::Drawing::Point(251, 185);
 			this->BarNameF1->Name = L"BarNameF1";
-			this->BarNameF1->Size = System::Drawing::Size(127, 30);
+			this->BarNameF1->Size = System::Drawing::Size(173, 24);
 			this->BarNameF1->TabIndex = 3;
 			this->BarNameF1->Text = L"OverTime";
 			this->BarNameF1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name1
 			// 
-			this->Name1->AutoSize = true;
 			this->Name1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Name1->ForeColor = System::Drawing::Color::White;
-			this->Name1->Location = System::Drawing::Point(398, 207);
+			this->Name1->Location = System::Drawing::Point(422, 252);
 			this->Name1->Name = L"Name1";
-			this->Name1->Size = System::Drawing::Size(84, 19);
+			this->Name1->Size = System::Drawing::Size(144, 16);
 			this->Name1->TabIndex = 2;
-			this->Name1->Text = L"CxCxNuT";
+			this->Name1->Text = L"AAAAAAAAAAAA";
 			this->Name1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time1
 			// 
-			this->Time1->AutoSize = true;
 			this->Time1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time1->ForeColor = System::Drawing::Color::White;
-			this->Time1->Location = System::Drawing::Point(267, 207);
+			this->Time1->Location = System::Drawing::Point(264, 252);
 			this->Time1->Name = L"Time1";
-			this->Time1->Size = System::Drawing::Size(94, 19);
+			this->Time1->Size = System::Drawing::Size(152, 16);
 			this->Time1->TabIndex = 1;
 			this->Time1->Text = L"01.00 A.M.";
 			this->Time1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date1
 			// 
-			this->Date1->AutoSize = true;
 			this->Date1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date1->ForeColor = System::Drawing::Color::White;
-			this->Date1->Location = System::Drawing::Point(128, 207);
+			this->Date1->Location = System::Drawing::Point(93, 252);
 			this->Date1->Name = L"Date1";
-			this->Date1->Size = System::Drawing::Size(43, 19);
+			this->Date1->Size = System::Drawing::Size(173, 16);
 			this->Date1->TabIndex = 0;
-			this->Date1->Text = L"Date";
+			this->Date1->Text = L"04 November 2024";
 			this->Date1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// TicketF2
@@ -409,59 +403,67 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF2->Controls->Add(this->Name2);
 			this->TicketF2->Controls->Add(this->Time2);
 			this->TicketF2->Controls->Add(this->Date2);
-			this->TicketF2->Location = System::Drawing::Point(3, 288);
+			this->TicketF2->Location = System::Drawing::Point(3, 351);
 			this->TicketF2->Name = L"TicketF2";
-			this->TicketF2->Size = System::Drawing::Size(692, 279);
+			this->TicketF2->Size = System::Drawing::Size(773, 342);
 			this->TicketF2->TabIndex = 11;
+			// 
+			// Table2
+			// 
+			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table2->ForeColor = System::Drawing::Color::DimGray;
+			this->Table2->Location = System::Drawing::Point(118, 30);
+			this->Table2->Name = L"Table2";
+			this->Table2->Size = System::Drawing::Size(397, 36);
+			this->Table2->TabIndex = 5;
+			this->Table2->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// BarNameF2
 			// 
-			this->BarNameF2->AutoSize = true;
 			this->BarNameF2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarNameF2->ForeColor = System::Drawing::Color::White;
-			this->BarNameF2->Location = System::Drawing::Point(251, 140);
+			this->BarNameF2->Location = System::Drawing::Point(260, 187);
 			this->BarNameF2->Name = L"BarNameF2";
-			this->BarNameF2->Size = System::Drawing::Size(141, 30);
+			this->BarNameF2->Size = System::Drawing::Size(160, 24);
 			this->BarNameF2->TabIndex = 3;
 			this->BarNameF2->Text = L"OverTime2";
 			this->BarNameF2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name2
 			// 
-			this->Name2->AutoSize = true;
 			this->Name2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Name2->ForeColor = System::Drawing::Color::White;
-			this->Name2->Location = System::Drawing::Point(398, 207);
+			this->Name2->Location = System::Drawing::Point(422, 253);
 			this->Name2->Name = L"Name2";
-			this->Name2->Size = System::Drawing::Size(84, 19);
+			this->Name2->Size = System::Drawing::Size(149, 16);
 			this->Name2->TabIndex = 2;
-			this->Name2->Text = L"CxCxNuT";
+			this->Name2->Text = L"AAAAAAAAAAAA";
 			this->Name2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time2
 			// 
-			this->Time2->AutoSize = true;
 			this->Time2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time2->ForeColor = System::Drawing::Color::White;
-			this->Time2->Location = System::Drawing::Point(267, 207);
+			this->Time2->Location = System::Drawing::Point(276, 253);
 			this->Time2->Name = L"Time2";
-			this->Time2->Size = System::Drawing::Size(94, 19);
+			this->Time2->Size = System::Drawing::Size(128, 16);
 			this->Time2->TabIndex = 1;
 			this->Time2->Text = L"01.00 A.M.";
 			this->Time2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date2
 			// 
-			this->Date2->AutoSize = true;
 			this->Date2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date2->ForeColor = System::Drawing::Color::White;
-			this->Date2->Location = System::Drawing::Point(128, 207);
+			this->Date2->Location = System::Drawing::Point(97, 253);
 			this->Date2->Name = L"Date2";
-			this->Date2->Size = System::Drawing::Size(43, 19);
+			this->Date2->Size = System::Drawing::Size(169, 16);
 			this->Date2->TabIndex = 0;
 			this->Date2->Text = L"Date";
 			this->Date2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -476,59 +478,67 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF3->Controls->Add(this->Name3);
 			this->TicketF3->Controls->Add(this->Time3);
 			this->TicketF3->Controls->Add(this->Date3);
-			this->TicketF3->Location = System::Drawing::Point(3, 573);
+			this->TicketF3->Location = System::Drawing::Point(3, 699);
 			this->TicketF3->Name = L"TicketF3";
-			this->TicketF3->Size = System::Drawing::Size(692, 279);
+			this->TicketF3->Size = System::Drawing::Size(773, 342);
 			this->TicketF3->TabIndex = 12;
+			// 
+			// Table3
+			// 
+			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table3->ForeColor = System::Drawing::Color::DimGray;
+			this->Table3->Location = System::Drawing::Point(118, 30);
+			this->Table3->Name = L"Table3";
+			this->Table3->Size = System::Drawing::Size(397, 36);
+			this->Table3->TabIndex = 6;
+			this->Table3->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// BarNameF3
 			// 
-			this->BarNameF3->AutoSize = true;
 			this->BarNameF3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarNameF3->ForeColor = System::Drawing::Color::White;
-			this->BarNameF3->Location = System::Drawing::Point(251, 140);
+			this->BarNameF3->Location = System::Drawing::Point(265, 181);
 			this->BarNameF3->Name = L"BarNameF3";
-			this->BarNameF3->Size = System::Drawing::Size(141, 30);
+			this->BarNameF3->Size = System::Drawing::Size(151, 30);
 			this->BarNameF3->TabIndex = 3;
-			this->BarNameF3->Text = L"OverTime3";
+			this->BarNameF3->Text = L"Americano";
 			this->BarNameF3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name3
 			// 
-			this->Name3->AutoSize = true;
 			this->Name3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Name3->ForeColor = System::Drawing::Color::White;
-			this->Name3->Location = System::Drawing::Point(398, 207);
+			this->Name3->Location = System::Drawing::Point(426, 254);
 			this->Name3->Name = L"Name3";
-			this->Name3->Size = System::Drawing::Size(84, 19);
+			this->Name3->Size = System::Drawing::Size(145, 16);
 			this->Name3->TabIndex = 2;
 			this->Name3->Text = L"CxCxNuT";
 			this->Name3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time3
 			// 
-			this->Time3->AutoSize = true;
 			this->Time3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time3->ForeColor = System::Drawing::Color::White;
-			this->Time3->Location = System::Drawing::Point(267, 207);
+			this->Time3->Location = System::Drawing::Point(268, 254);
 			this->Time3->Name = L"Time3";
-			this->Time3->Size = System::Drawing::Size(94, 19);
+			this->Time3->Size = System::Drawing::Size(148, 16);
 			this->Time3->TabIndex = 1;
 			this->Time3->Text = L"01.00 A.M.";
 			this->Time3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date3
 			// 
-			this->Date3->AutoSize = true;
 			this->Date3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date3->ForeColor = System::Drawing::Color::White;
-			this->Date3->Location = System::Drawing::Point(128, 207);
+			this->Date3->Location = System::Drawing::Point(101, 254);
 			this->Date3->Name = L"Date3";
-			this->Date3->Size = System::Drawing::Size(43, 19);
+			this->Date3->Size = System::Drawing::Size(165, 16);
 			this->Date3->TabIndex = 0;
 			this->Date3->Text = L"Date";
 			this->Date3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -543,59 +553,67 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF4->Controls->Add(this->Name4);
 			this->TicketF4->Controls->Add(this->Time4);
 			this->TicketF4->Controls->Add(this->Date4);
-			this->TicketF4->Location = System::Drawing::Point(3, 858);
+			this->TicketF4->Location = System::Drawing::Point(3, 1047);
 			this->TicketF4->Name = L"TicketF4";
-			this->TicketF4->Size = System::Drawing::Size(692, 279);
+			this->TicketF4->Size = System::Drawing::Size(773, 342);
 			this->TicketF4->TabIndex = 13;
+			// 
+			// Table4
+			// 
+			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table4->ForeColor = System::Drawing::Color::DimGray;
+			this->Table4->Location = System::Drawing::Point(118, 30);
+			this->Table4->Name = L"Table4";
+			this->Table4->Size = System::Drawing::Size(397, 36);
+			this->Table4->TabIndex = 5;
+			this->Table4->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// BarNameF4
 			// 
-			this->BarNameF4->AutoSize = true;
 			this->BarNameF4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarNameF4->ForeColor = System::Drawing::Color::White;
-			this->BarNameF4->Location = System::Drawing::Point(251, 140);
+			this->BarNameF4->Location = System::Drawing::Point(265, 187);
 			this->BarNameF4->Name = L"BarNameF4";
-			this->BarNameF4->Size = System::Drawing::Size(141, 30);
+			this->BarNameF4->Size = System::Drawing::Size(151, 24);
 			this->BarNameF4->TabIndex = 3;
 			this->BarNameF4->Text = L"OverTime4";
 			this->BarNameF4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name4
 			// 
-			this->Name4->AutoSize = true;
 			this->Name4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Name4->ForeColor = System::Drawing::Color::White;
-			this->Name4->Location = System::Drawing::Point(398, 207);
+			this->Name4->Location = System::Drawing::Point(422, 254);
 			this->Name4->Name = L"Name4";
-			this->Name4->Size = System::Drawing::Size(84, 19);
+			this->Name4->Size = System::Drawing::Size(144, 16);
 			this->Name4->TabIndex = 2;
 			this->Name4->Text = L"CxCxNuT";
 			this->Name4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Time4
 			// 
-			this->Time4->AutoSize = true;
 			this->Time4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time4->ForeColor = System::Drawing::Color::White;
-			this->Time4->Location = System::Drawing::Point(267, 207);
+			this->Time4->Location = System::Drawing::Point(265, 254);
 			this->Time4->Name = L"Time4";
-			this->Time4->Size = System::Drawing::Size(94, 19);
+			this->Time4->Size = System::Drawing::Size(151, 16);
 			this->Time4->TabIndex = 1;
 			this->Time4->Text = L"01.00 A.M.";
 			this->Time4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date4
 			// 
-			this->Date4->AutoSize = true;
 			this->Date4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date4->ForeColor = System::Drawing::Color::White;
-			this->Date4->Location = System::Drawing::Point(128, 207);
+			this->Date4->Location = System::Drawing::Point(97, 254);
 			this->Date4->Name = L"Date4";
-			this->Date4->Size = System::Drawing::Size(43, 19);
+			this->Date4->Size = System::Drawing::Size(169, 16);
 			this->Date4->TabIndex = 0;
 			this->Date4->Text = L"Date";
 			this->Date4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -610,33 +628,43 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF5->Controls->Add(this->Name5);
 			this->TicketF5->Controls->Add(this->Time5);
 			this->TicketF5->Controls->Add(this->Date5);
-			this->TicketF5->Location = System::Drawing::Point(3, 1143);
+			this->TicketF5->Location = System::Drawing::Point(3, 1395);
 			this->TicketF5->Name = L"TicketF5";
-			this->TicketF5->Size = System::Drawing::Size(692, 279);
+			this->TicketF5->Size = System::Drawing::Size(773, 342);
 			this->TicketF5->TabIndex = 14;
+			// 
+			// Table5
+			// 
+			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table5->ForeColor = System::Drawing::Color::DimGray;
+			this->Table5->Location = System::Drawing::Point(118, 31);
+			this->Table5->Name = L"Table5";
+			this->Table5->Size = System::Drawing::Size(397, 36);
+			this->Table5->TabIndex = 5;
+			this->Table5->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// BarNameF5
 			// 
-			this->BarNameF5->AutoSize = true;
 			this->BarNameF5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->BarNameF5->ForeColor = System::Drawing::Color::White;
-			this->BarNameF5->Location = System::Drawing::Point(251, 140);
+			this->BarNameF5->Location = System::Drawing::Point(265, 189);
 			this->BarNameF5->Name = L"BarNameF5";
-			this->BarNameF5->Size = System::Drawing::Size(141, 30);
+			this->BarNameF5->Size = System::Drawing::Size(151, 24);
 			this->BarNameF5->TabIndex = 3;
 			this->BarNameF5->Text = L"OverTime5";
 			this->BarNameF5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Name5
 			// 
-			this->Name5->AutoSize = true;
 			this->Name5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Name5->ForeColor = System::Drawing::Color::White;
-			this->Name5->Location = System::Drawing::Point(398, 207);
+			this->Name5->Location = System::Drawing::Point(422, 256);
 			this->Name5->Name = L"Name5";
-			this->Name5->Size = System::Drawing::Size(84, 19);
+			this->Name5->Size = System::Drawing::Size(149, 16);
 			this->Name5->TabIndex = 2;
 			this->Name5->Text = L"CxCxNuT";
 			this->Name5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -644,26 +672,24 @@ private: System::Windows::Forms::Label^ Date5;
 			// 
 			// Time5
 			// 
-			this->Time5->AutoSize = true;
 			this->Time5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time5->ForeColor = System::Drawing::Color::White;
-			this->Time5->Location = System::Drawing::Point(267, 207);
+			this->Time5->Location = System::Drawing::Point(265, 256);
 			this->Time5->Name = L"Time5";
-			this->Time5->Size = System::Drawing::Size(94, 19);
+			this->Time5->Size = System::Drawing::Size(151, 16);
 			this->Time5->TabIndex = 1;
 			this->Time5->Text = L"01.00 A.M.";
 			this->Time5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Date5
 			// 
-			this->Date5->AutoSize = true;
 			this->Date5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Date5->ForeColor = System::Drawing::Color::White;
-			this->Date5->Location = System::Drawing::Point(128, 207);
+			this->Date5->Location = System::Drawing::Point(97, 256);
 			this->Date5->Name = L"Date5";
-			this->Date5->Size = System::Drawing::Size(43, 19);
+			this->Date5->Size = System::Drawing::Size(169, 16);
 			this->Date5->TabIndex = 0;
 			this->Date5->Text = L"Date";
 			this->Date5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -681,54 +707,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &Profile::pictureBox1_Click);
 			// 
-			// Table2
-			// 
-			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table2->ForeColor = System::Drawing::Color::DimGray;
-			this->Table2->Location = System::Drawing::Point(118, 30);
-			this->Table2->Name = L"Table2";
-			this->Table2->Size = System::Drawing::Size(397, 36);
-			this->Table2->TabIndex = 5;
-			this->Table2->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
-				L"1Table2P";
-			// 
-			// Table3
-			// 
-			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table3->ForeColor = System::Drawing::Color::DimGray;
-			this->Table3->Location = System::Drawing::Point(118, 30);
-			this->Table3->Name = L"Table3";
-			this->Table3->Size = System::Drawing::Size(397, 36);
-			this->Table3->TabIndex = 6;
-			this->Table3->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
-				L"1Table2P";
-			// 
-			// Table4
-			// 
-			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table4->ForeColor = System::Drawing::Color::DimGray;
-			this->Table4->Location = System::Drawing::Point(118, 30);
-			this->Table4->Name = L"Table4";
-			this->Table4->Size = System::Drawing::Size(397, 36);
-			this->Table4->TabIndex = 5;
-			this->Table4->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
-				L"1Table2P";
-			// 
-			// Table5
-			// 
-			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table5->ForeColor = System::Drawing::Color::DimGray;
-			this->Table5->Location = System::Drawing::Point(118, 31);
-			this->Table5->Name = L"Table5";
-			this->Table5->Size = System::Drawing::Size(397, 36);
-			this->Table5->TabIndex = 5;
-			this->Table5->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
-				L"1Table2P";
-			// 
 			// Profile
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -742,24 +720,19 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Profile";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
 			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->TicketF1->ResumeLayout(false);
-			this->TicketF1->PerformLayout();
 			this->TicketF2->ResumeLayout(false);
-			this->TicketF2->PerformLayout();
 			this->TicketF3->ResumeLayout(false);
-			this->TicketF3->PerformLayout();
 			this->TicketF4->ResumeLayout(false);
-			this->TicketF4->PerformLayout();
 			this->TicketF5->ResumeLayout(false);
-			this->TicketF5->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 

@@ -37,6 +37,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Panel^ exitpnl;
 	private: System::Windows::Forms::PictureBox^ noExit;
 	private: System::Windows::Forms::PictureBox^ yesExit;
+	private: System::Windows::Forms::Label^ Table;
 	public:
 
 	public:
@@ -219,6 +220,7 @@ namespace Pakreserve1 {
 			this->exitpnl = (gcnew System::Windows::Forms::Panel());
 			this->noExit = (gcnew System::Windows::Forms::PictureBox());
 			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
+			this->Table = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -967,6 +969,17 @@ namespace Pakreserve1 {
 			this->yesExit->TabIndex = 0;
 			this->yesExit->TabStop = false;
 			this->yesExit->Click += gcnew System::EventHandler(this, &BarAmericano::yesExit_Click);
+			// Table
+			// 
+			this->Table->BackColor = System::Drawing::Color::Transparent;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(85, 497);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(144, 40);
+			this->Table->TabIndex = 182;
+			this->Table->Text = L"XX/29";
 			// 
 			// BarAmericano
 			// 
@@ -975,6 +988,7 @@ namespace Pakreserve1 {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->exitpnl);
+			this->Controls->Add(this->Table);
 			this->Controls->Add(this->HomeBTN);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->D2Table2PRed);
@@ -1028,6 +1042,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A1Table2P);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"BarAmericano";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarAmericano";
@@ -1569,6 +1584,22 @@ namespace Pakreserve1 {
 	}
 	private: System::Void BarAmericano_Load_1(System::Object^ sender, System::EventArgs^ e) {
 		dataTable = gcnew array<bool>(29);
+		using namespace std;
+		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		string path, line;
+		int count = 0;
+		MarshalString(temp, path);
+		std::ifstream fileIn(path);
+		for (int i = 0; i < targetline; i++)
+		{
+			getline(fileIn, line);
+		}
+		count = 0;
+		for (int i = 0; i < line.size(); i++)
+		{
+			if (line[i] == '1') count++;
+		}
+		Table->Text = count.ToString() + "/" + line.size();
 	}
 	public: bool switchToToey = false;
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -40,6 +40,7 @@ namespace Pakreserve1 {
 	public:
 	private: System::Windows::Forms::PictureBox^ noExit;
 	private: System::Windows::Forms::PictureBox^ yesExit;
+	private: System::Windows::Forms::Label^ Table;
 
 	public:
 
@@ -160,6 +161,7 @@ namespace Pakreserve1 {
 			this->exitpnl = (gcnew System::Windows::Forms::Panel());
 			this->noExit = (gcnew System::Windows::Forms::PictureBox());
 			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
+			this->Table = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->BeginInit();
@@ -535,7 +537,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Location = System::Drawing::Point(24, 22);
+			this->pictureBox1->Location = System::Drawing::Point(22, 18);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(53, 21);
@@ -622,11 +624,24 @@ namespace Pakreserve1 {
 			this->yesExit->TabStop = false;
 			this->yesExit->Click += gcnew System::EventHandler(this, &BarNepjune::yesExit_Click);
 			// 
+			// Table
+			// 
+			this->Table->BackColor = System::Drawing::Color::Transparent;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(87, 497);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(144, 40);
+			this->Table->TabIndex = 145;
+			this->Table->Text = L"XX/29";
+			// 
 			// BarNepjune
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->Table);
 			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->ConfirmTableBarMapraw);
@@ -656,6 +671,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A4Table4PGreen);
 			this->Controls->Add(this->A3Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNepjune";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -1000,6 +1016,22 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void BarNepjune_Load(System::Object^ sender, System::EventArgs^ e) {
 	dataTable = gcnew array<bool>(29);
+	using namespace std;
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path, line;
+	int count = 0;
+	MarshalString(temp, path);
+	std::ifstream fileIn(path);
+	for (int i = 0; i < targetline; i++)
+	{
+		getline(fileIn, line);
+	}
+	count = 0;
+	for (int i = 0; i < line.size(); i++)
+	{
+		if (line[i] == '1') count++;
+	}
+	Table->Text = count.ToString() + "/" + line.size();
 }
 
 private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, System::EventArgs^ e) {
