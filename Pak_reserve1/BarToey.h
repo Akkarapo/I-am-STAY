@@ -22,7 +22,7 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class BarToey : public System::Windows::Forms::Form
 	{
-	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	StringBuilder^ a = gcnew StringBuilder("0000000000000000000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	public:
 		String^ tempUser = nullptr;//==============mpzone==============
@@ -1953,7 +1953,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 22; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}

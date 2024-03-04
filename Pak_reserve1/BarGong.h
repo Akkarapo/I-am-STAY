@@ -23,7 +23,7 @@ namespace Pakreserve1 {
 	/// </summary>
 	public ref class BarGong : public System::Windows::Forms::Form
 	{
-	StringBuilder^ a = gcnew StringBuilder("00000000000000000000000000000");
+	StringBuilder^ a = gcnew StringBuilder("00000000000000000000");
 	array<bool>^ dataTable;
 	public:
 	String^ username = nullptr;

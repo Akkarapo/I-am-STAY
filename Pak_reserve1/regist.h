@@ -83,7 +83,7 @@ namespace Pakreserve1 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -131,7 +131,7 @@ namespace Pakreserve1 {
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label5->Location = System::Drawing::Point(24, 670);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(342, 16);
+			this->label5->Size = System::Drawing::Size(421, 20);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Sociable Seating Reservations Everywhere Made Easy.";
 			// 
@@ -143,7 +143,7 @@ namespace Pakreserve1 {
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label4->Location = System::Drawing::Point(18, 603);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(265, 55);
+			this->label4->Size = System::Drawing::Size(329, 69);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Experience";
 			this->label4->Click += gcnew System::EventHandler(this, &regist::label4_Click);
@@ -156,7 +156,7 @@ namespace Pakreserve1 {
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label3->Location = System::Drawing::Point(18, 543);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(396, 55);
+			this->label3->Size = System::Drawing::Size(491, 69);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Your Reservation";
 			// 
@@ -168,7 +168,7 @@ namespace Pakreserve1 {
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label2->Location = System::Drawing::Point(18, 483);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(190, 55);
+			this->label2->Size = System::Drawing::Size(242, 69);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Simplify";
 			this->label2->Click += gcnew System::EventHandler(this, &regist::label2_Click);
@@ -181,7 +181,7 @@ namespace Pakreserve1 {
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->label1->Location = System::Drawing::Point(22, 19);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(121, 18);
+			this->label1->Size = System::Drawing::Size(158, 24);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"I STAY you STAY";
 			this->label1->Click += gcnew System::EventHandler(this, &regist::label1_Click);
@@ -203,7 +203,7 @@ namespace Pakreserve1 {
 			this->label7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label7->Location = System::Drawing::Point(735, 140);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(77, 18);
+			this->label7->Size = System::Drawing::Size(97, 24);
 			this->label7->TabIndex = 5;
 			this->label7->Text = L"Username";
 			// 
@@ -215,7 +215,7 @@ namespace Pakreserve1 {
 			this->label8->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label8->Location = System::Drawing::Point(735, 320);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(75, 18);
+			this->label8->Size = System::Drawing::Size(92, 24);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"Password";
 			// 
@@ -226,7 +226,7 @@ namespace Pakreserve1 {
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(754, 170);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 31);
+			this->textBox1->Size = System::Drawing::Size(430, 39);
 			this->textBox1->TabIndex = 8;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &regist::textBox1_TextChanged);
 			// 
@@ -236,7 +236,7 @@ namespace Pakreserve1 {
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
 			this->textBox2->Location = System::Drawing::Point(754, 260);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 31);
+			this->textBox2->Size = System::Drawing::Size(430, 39);
 			this->textBox2->TabIndex = 9;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &regist::textBox2_TextChanged);
 			// 
@@ -246,7 +246,7 @@ namespace Pakreserve1 {
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
 			this->textBox3->Location = System::Drawing::Point(754, 350);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(430, 31);
+			this->textBox3->Size = System::Drawing::Size(430, 39);
 			this->textBox3->TabIndex = 10;
 			this->textBox3->UseSystemPasswordChar = true;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &regist::textBox3_TextChanged);
@@ -259,7 +259,7 @@ namespace Pakreserve1 {
 			this->label9->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label9->Location = System::Drawing::Point(735, 230);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(45, 18);
+			this->label9->Size = System::Drawing::Size(57, 24);
 			this->label9->TabIndex = 11;
 			this->label9->Text = L"Email";
 			// 
@@ -271,7 +271,7 @@ namespace Pakreserve1 {
 			this->label10->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label10->Location = System::Drawing::Point(735, 410);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(132, 18);
+			this->label10->Size = System::Drawing::Size(162, 24);
 			this->label10->TabIndex = 12;
 			this->label10->Text = L"Confirm Password";
 			this->label10->Click += gcnew System::EventHandler(this, &regist::label10_Click);
@@ -282,7 +282,7 @@ namespace Pakreserve1 {
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F));
 			this->textBox4->Location = System::Drawing::Point(754, 440);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(430, 31);
+			this->textBox4->Size = System::Drawing::Size(430, 39);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->UseSystemPasswordChar = true;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &regist::textBox4_TextChanged);
@@ -297,7 +297,7 @@ namespace Pakreserve1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->label11->Location = System::Drawing::Point(1101, 595);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(88, 17);
+			this->label11->Size = System::Drawing::Size(103, 20);
 			this->label11->TabIndex = 16;
 			this->label11->Text = L"back to login";
 			this->label11->Click += gcnew System::EventHandler(this, &regist::label11_Click);
@@ -335,7 +335,7 @@ namespace Pakreserve1 {
 			this->label6->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label6->Location = System::Drawing::Point(890, 51);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(171, 83);
+			this->label6->Size = System::Drawing::Size(215, 104);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"Sign Up";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -348,7 +348,7 @@ namespace Pakreserve1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->label12->Location = System::Drawing::Point(659, 652);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(19, 13);
+			this->label12->Size = System::Drawing::Size(20, 17);
 			this->label12->TabIndex = 28;
 			this->label12->Text = L"....";
 			this->label12->Click += gcnew System::EventHandler(this, &regist::label12_Click);
@@ -462,82 +462,82 @@ namespace Pakreserve1 {
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-}
-public : bool switchToLogin = false;
-private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToLogin = true;
-	this->Close();
-	
-}
+	}
+	public: bool switchToLogin = false;
+	private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->switchToLogin = true;
+		this->Close();
 
-private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void regist_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->BackColor = Color::White;
-	textBox3->ForeColor = Color::Black;
-	errortext->Hide();
-}
+	private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void regist_Load(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->BackColor = Color::White;
+		textBox3->ForeColor = Color::Black;
+		errortext->Hide();
+	}
 
 
-private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-	using namespace std;
-	String^ username = textBox1->Text;
-	String^ email = textBox2->Text;
-	String^ password = textBox3->Text;
-	String^ password2 = textBox4->Text;
+	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+		using namespace std;
+		String^ username = textBox1->Text;
+		String^ email = textBox2->Text;
+		String^ password = textBox3->Text;
+		String^ password2 = textBox4->Text;
 
-	if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
-		if (username->Length == 0) {
-			textBox1->BackColor = Color::Red;
+		if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
+			if (username->Length == 0) {
+				textBox1->BackColor = Color::Red;
+			}
+			if (email->Length == 0) {
+				textBox2->BackColor = Color::Red;
+			}
+			if (password->Length == 0) {
+				textBox3->BackColor = Color::Red;
+			}
+			if (password2->Length == 0) {
+				textBox4->BackColor = Color::Red;
+			}
+			errortext->Show();
+			errortext->Text = "Plese fill all forms";
+			return;
 		}
-		if (email->Length == 0) {
-			textBox2->BackColor = Color::Red;
+		else if (username->Length > 9) {
+			textBox1->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "Username must be less than 10 characters";
+			return;
 		}
-		if (password->Length == 0) {
-			textBox3->BackColor = Color::Red;
+		else if (email->IndexOf("@gmail") == -1) {
+			textBox2->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "This app only support gmail";
+			return;
 		}
-		if (password2->Length == 0) {
-			textBox4->BackColor = Color::Red;
+		else if (password != password2) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "Confirm password doesn't match";
+			return;
 		}
-		errortext->Show();
-		errortext->Text = "Plese fill all forms";
-		return;
-	}
-	else if (username->Length > 9) {
-		textBox1->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "Username must be less than 10 characters";
-		return;
-	}
-	else if (email->IndexOf("@gmail") == -1) {
-		textBox2->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "This app only support gmail";
-		return;
-	}
-	else if (password != password2) {
-		textBox3->ForeColor = Color::Red;
-		textBox4->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "Confirm password doesn't match";
-		return;
-	}
-	else if (password->Length < 7) {
-		textBox3->ForeColor = Color::Red;
-		textBox4->ForeColor = Color::Red;
-		//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
-		errortext->Show();
-		errortext->Text = "Password must be longer than 8 characters";
-		return;
-	}
+		else if (password->Length < 7) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+			errortext->Show();
+			errortext->Text = "Password must be longer than 8 characters";
+			return;
+		}
 
 	String^ tempPath = Application::StartupPath +"\\Data\\UserData\\" + username + ".txt";
 	String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
@@ -547,6 +547,23 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	MarshalString(password,password3);
 	MarshalString(email,email2);
 	MarshalString(tempPath2, path2);
+	ifstream fileIn(path2);
+	string line;
+	char format[] = "%s %s %s";
+	while (getline(fileIn, line)) {
+		char email55[50], pwd55[50], username55[50];
+		sscanf(line.c_str(), format, username55, pwd55, email55);
+		if (username2 == username55) {
+			errortext->Text = "Username already exist";
+			errortext->Show();
+			return;
+		}
+		else if (email2 == email55) {
+			errortext->Text = "Email already exist";
+			errortext->Show();
+			return;
+		}
+	}
 	ofstream fileOut(path);
 	ofstream AllFile(path2,ios::app);
 	fileOut << username2 << " " << password3 << " " << email2 << endl;
@@ -555,116 +572,116 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	this->Close();
 	//MessageBox::Show("Successfully Create User","Welcome",MessageBoxButtons::OK);
 
-	/*try {
-		String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
-		SqlConnection sqlConn(connString);
-		sqlConn.Open();
+		/*try {
+			String^ connString = "Data Source=iamstay.database.windows.net;Initial Catalog=iamstay;User ID=gongz;Password=12345%aA";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
 
-		String^ sqlQuery = "INSERT INTO users " + "(username,email,password) VALUES" + "(@username,@email,@password);";
-		SqlCommand command(sqlQuery, % sqlConn);
-		command.Parameters->AddWithValue("@username", username);
-		command.Parameters->AddWithValue("@email", email);
-		command.Parameters->AddWithValue("@password", password);
+			String^ sqlQuery = "INSERT INTO users " + "(username,email,password) VALUES" + "(@username,@email,@password);";
+			SqlCommand command(sqlQuery, % sqlConn);
+			command.Parameters->AddWithValue("@username", username);
+			command.Parameters->AddWithValue("@email", email);
+			command.Parameters->AddWithValue("@password", password);
 
-		command.ExecuteNonQuery();
-		switchToLogin = true;
-		this->Close();
+			command.ExecuteNonQuery();
+			switchToLogin = true;
+			this->Close();
+		}
+		catch (Exception^ e) {
+			MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
+
+		}
+		*/
+
+
 	}
-	catch (Exception^ e) {
-		MessageBox::Show("Fail to connect to database", "Error", MessageBoxButtons::OK);
+
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		textBox1->BackColor = Color::White;
+		textBox1->ForeColor = Color::Black;
+		errortext->Hide();
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		textBox2->BackColor = Color::White;
+		textBox2->ForeColor = Color::Black;
+		errortext->Hide();
+	}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		textBox4->BackColor = Color::White;
+		textBox4->ForeColor = Color::Black;
+		errortext->Hide();
+	}
+
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	}
-	*/
+	private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 
-}
-
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	textBox1->BackColor = Color::White;
-	textBox1->ForeColor = Color::Black;
-	errortext->Hide();
-}
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	textBox2->BackColor = Color::White;
-	textBox2->ForeColor = Color::Black;
-	errortext->Hide();
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	textBox4->BackColor = Color::White;
-	textBox4->ForeColor = Color::Black;
-	errortext->Hide();
-}
-
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
-}
-private: System::Void checkBox2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
-
-}
+	}
 	public:bool switchToReg2 = false;
-private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
-	switchToReg2 = true;
-	this->Close();
-	
-}
+	private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchToReg2 = true;
+		this->Close();
 
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	}
 
-}
-private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	using namespace std;
-	String^ username = textBox1->Text;
-	String^ email = textBox2->Text;
-	String^ password = textBox3->Text;
-	String^ password2 = textBox4->Text;
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 
-	if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
-		if (username->Length == 0) {
-			textBox1->BackColor = Color::Red;
+	}
+	private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		using namespace std;
+		String^ username = textBox1->Text;
+		String^ email = textBox2->Text;
+		String^ password = textBox3->Text;
+		String^ password2 = textBox4->Text;
+
+		if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
+			if (username->Length == 0) {
+				textBox1->BackColor = Color::Red;
+			}
+			if (email->Length == 0) {
+				textBox2->BackColor = Color::Red;
+			}
+			if (password->Length == 0) {
+				textBox3->BackColor = Color::Red;
+			}
+			if (password2->Length == 0) {
+				textBox4->BackColor = Color::Red;
+			}
+			errortext->Show();
+			errortext->Text = "Plese fill all forms";
+			return;
 		}
-		if (email->Length == 0) {
-			textBox2->BackColor = Color::Red;
+		else if (username->Length > 9) {
+			textBox1->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "Username must be less than 10 characters";
+			return;
 		}
-		if (password->Length == 0) {
-			textBox3->BackColor = Color::Red;
+		else if (email->IndexOf("@gmail") == -1) {
+			textBox2->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "This app only support gmail";
+			return;
 		}
-		if (password2->Length == 0) {
-			textBox4->BackColor = Color::Red;
+		else if (password != password2) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			errortext->Show();
+			errortext->Text = "Confirm password doesn't match";
+			return;
 		}
-		errortext->Show();
-		errortext->Text = "Plese fill all forms";
-		return;
-	}
-	else if (username->Length > 9) {
-		textBox1->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "Username must be less than 10 characters";
-		return;
-	}
-	else if (email->IndexOf("@gmail") == -1) {
-		textBox2->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "This app only support gmail";
-		return;
-	}
-	else if (password != password2) {
-		textBox3->ForeColor = Color::Red;
-		textBox4->ForeColor = Color::Red;
-		errortext->Show();
-		errortext->Text = "Confirm password doesn't match";
-		return;
-	}
-	else if (password->Length < 7) {
-		textBox3->ForeColor = Color::Red;
-		textBox4->ForeColor = Color::Red;
-		//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
-		errortext->Show();
-		errortext->Text = "Password must be longer than 8 characters";
-		return;
-	}
+		else if (password->Length < 7) {
+			textBox3->ForeColor = Color::Red;
+			textBox4->ForeColor = Color::Red;
+			//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+			errortext->Show();
+			errortext->Text = "Password must be longer than 8 characters";
+			return;
+		}
 
 	String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + username + ".txt";
 	String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";

@@ -23,6 +23,8 @@
 #include "BarSTEVE.h"
 #include "BarHoney.h"
 #include "BarNatwaa.h"
+#include "BarSRTxz.h"
+#include "Bar422.h"
 
 
 using namespace System;
@@ -76,6 +78,8 @@ void main(array<String^>^ args)
     Pakreserve1::BarGarpanya bar11(user);
     Pakreserve1::BarSTEVE bar12(user);
     Pakreserve1::BarHoney bar13(user);
+    Pakreserve1::BarSRTxz bar14(user);
+    Pakreserve1::Bar422 bar15(user);
 
 
     while (true) {
@@ -88,7 +92,7 @@ void main(array<String^>^ args)
 
         }
 
-        else if (form2.switchToToey || bar2.switchToToey || bar10.switchToToey || bar3.switchToToey || bar4.switchToToey || bar5.switchToToey || bar6.switchToToey || bar11.switchToToey || profileform.switchToToey || mpform.switchToToey || form.switchToToey || bar7.switchToToey || bar12.switchToToey || bar8.switchToToey || bar13.switchToToey || bar9.switchToToey) {
+        else if (form2.switchToToey || bar2.switchToToey || bar15.switchToToey || bar14.switchToToey || bar10.switchToToey || bar3.switchToToey || bar4.switchToToey || bar5.switchToToey || bar6.switchToToey || bar11.switchToToey || profileform.switchToToey || mpform.switchToToey || form.switchToToey || bar7.switchToToey || bar12.switchToToey || bar8.switchToToey || bar13.switchToToey || bar9.switchToToey) {
 
             Toeyform.ShowDialog();
             form2.switchToToey = false;
@@ -104,6 +108,8 @@ void main(array<String^>^ args)
             bar11.switchToToey = false;
             bar12.switchToToey = false;
             bar13.switchToToey = false;
+            bar14.switchToToey = false;
+            bar15.switchToToey = false;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
@@ -114,7 +120,7 @@ void main(array<String^>^ args)
             registForm.switchToReg2 = false;
 
         }
-        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar10.switchToMP || bar9.switchToMP || bar4.switchToMP || bar5.switchToMP || bar7.switchToMP || bar6.switchToMP || bar12.switchToMP|| bar8.switchToMP || bar11.switchToMP || bar13.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar14.switchToMP || bar15.switchToMP || bar3.switchToMP || bar10.switchToMP || bar9.switchToMP || bar4.switchToMP || bar5.switchToMP || bar7.switchToMP || bar6.switchToMP || bar12.switchToMP|| bar8.switchToMP || bar11.switchToMP || bar13.switchToMP)
         {
             mpform.ShowDialog();
             bar2.switchToMP = false;
@@ -129,6 +135,8 @@ void main(array<String^>^ args)
             bar11.switchToMP = false;
             bar12.switchToMP = false;
             bar13.switchToMP = false;
+            bar14.switchToMP = false;
+            bar15.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm)
@@ -196,6 +204,16 @@ void main(array<String^>^ args)
             bar13.ShowDialog();
             Toeyform.switchToBarHoney = false;
         }
+        else if (Toeyform.switchToBarSRTxz)
+        {
+            bar14.ShowDialog();
+            Toeyform.switchToBarSRTxz = false;
+        }
+        else if (Toeyform.switchToBar422)
+        {
+            bar15.ShowDialog();
+            Toeyform.switchToBar422 = false;
+            }
         else
         {
             break;
