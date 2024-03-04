@@ -523,7 +523,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->Location = System::Drawing::Point(24, 22);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(71, 26);
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarNepjune::pictureBox1_Click);
@@ -590,14 +590,8 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A7Table4PRed);
 			this->Controls->Add(this->A8Table4PRed);
 			this->Controls->Add(this->A1Table4PRed);
-			this->Controls->Add(this->A8Table4PGreen);
 			this->Controls->Add(this->A7Table4PGreen);
-			this->Controls->Add(this->A6Table4PGreen);
-			this->Controls->Add(this->A5Table4PGreen);
-			this->Controls->Add(this->A4Table4PGreen);
-			this->Controls->Add(this->A3Table4PGreen);
 			this->Controls->Add(this->A2Table4PGreen);
-			this->Controls->Add(this->A1Table4PGreen);
 			this->Controls->Add(this->A7Table4P);
 			this->Controls->Add(this->A8Table4P);
 			this->Controls->Add(this->A6Table4P);
@@ -606,9 +600,16 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A3Table4P);
 			this->Controls->Add(this->A2Table4P);
 			this->Controls->Add(this->A1Table4P);
+			this->Controls->Add(this->A1Table4PGreen);
+			this->Controls->Add(this->A8Table4PGreen);
+			this->Controls->Add(this->A6Table4PGreen);
+			this->Controls->Add(this->A5Table4PGreen);
+			this->Controls->Add(this->A4Table4PGreen);
+			this->Controls->Add(this->A3Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNepjune";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarNepjune";
 			this->Load += gcnew System::EventHandler(this, &BarNepjune::BarNepjune_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->EndInit();
@@ -889,40 +890,6 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 
 
 	fileOut.close();
-	//==============mpzone==============
-	CultureInfo^ culture = gcnew CultureInfo("en-US");
-	String^ time = DateTime::Now.ToString("hh:mm tt");
-	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
-	using namespace std;
-	string pathUser, datec, timec;
-	MarshalString(tempUser, pathUser);
-	MarshalString(time, timec);
-	MarshalString(date, datec);
-	ofstream fileOutUser(pathUser, ios::app);
-	fileOutUser << "BarName: " << "MaewNoi ";
-	for (int i = 0; i < dataTable->Length; i++)
-	{
-		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
-		{
-			switch (i)
-			{
-			case 0: fileOutUser << "A1Table2P" << " "; break;
-			case 1: fileOutUser << "A2Table2P" << " "; break;
-			case 2: fileOutUser << "A3Table2P" << " "; break;
-			case 3: fileOutUser << "A4Table4P" << " "; break;
-			case 4: fileOutUser << "A5Table4P" << " "; break;
-			case 5: fileOutUser << "A6Table4P" << " "; break;
-			case 6: fileOutUser << "A7Table4P" << " "; break;
-			case 7: fileOutUser << "A8Table4P" << " "; break;
-			default:
-				break;
-			}
-		}
-
-	}
-	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
-	fileOutUser.close();
-	//==============mpzone==============
 	this->Close();
 }
 private: System::Void A1Table4PRed_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1008,7 +975,7 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	string newData;
 	MarshalString(a2, newData);
 	switchToMP = true;
-	int targetline = 3;
+	int targetline = 5;
 	if (lines.size() >= targetline) {
 		lines[targetline - 1] = newData;
 	}
@@ -1024,6 +991,40 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	fileOut.close();
 	UpdateTable();
 	switchToMP = true;
+	//==============mpzone==============
+	CultureInfo^ culture = gcnew CultureInfo("en-US");
+	String^ time = DateTime::Now.ToString("hh:mm tt");
+	String^ date = DateTime::Now.ToString("dd MMMM yyyy", culture);
+	using namespace std;
+	string pathUser, datec, timec;
+	MarshalString(tempUser, pathUser);
+	MarshalString(time, timec);
+	MarshalString(date, datec);
+	ofstream fileOutUser(pathUser, ios::app);
+	fileOutUser << "BarName: " << "Nepjune ";
+	for (int i = 0; i < dataTable->Length; i++)
+	{
+		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
+		{
+			switch (i)
+			{
+			case 0: fileOutUser << "A1Table2P" << " "; break;
+			case 1: fileOutUser << "A2Table2P" << " "; break;
+			case 2: fileOutUser << "A3Table2P" << " "; break;
+			case 3: fileOutUser << "A4Table4P" << " "; break;
+			case 4: fileOutUser << "A5Table4P" << " "; break;
+			case 5: fileOutUser << "A6Table4P" << " "; break;
+			case 6: fileOutUser << "A7Table4P" << " "; break;
+			case 7: fileOutUser << "A8Table4P" << " "; break;
+			default:
+				break;
+			}
+		}
+
+	}
+	fileOutUser << "/Date: " << datec << " Time: " << timec << " complete" << endl;
+	fileOutUser.close();
+	//==============mpzone==============
 	this->Close();
 }
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {

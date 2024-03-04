@@ -24,17 +24,27 @@ namespace Pakreserve1 {
 		String^ bar = nullptr;
 		String^ table = nullptr;
 
-	private: System::Windows::Forms::Label^ Table2;
-	private: System::Windows::Forms::Label^ Table3;
 
 
-	private: System::Windows::Forms::Label^ Table4;
 
-	private: System::Windows::Forms::Label^ Table5;
+
+
+
+
 	private: System::Windows::Forms::Label^ Table1;
 
 	public:
 		String^ temp = nullptr;
+	private: System::Windows::Forms::Label^ Table2;
+	private: System::Windows::Forms::Label^ Table3;
+	private: System::Windows::Forms::Label^ Table4;
+	private: System::Windows::Forms::Label^ Table5;
+	public:
+
+
+
+
+	public:
 		String^ username = nullptr;
 		Profile(User^ user)
 		{
@@ -189,6 +199,7 @@ private: System::Windows::Forms::Label^ Date5;
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->TicketF1 = (gcnew System::Windows::Forms::Panel());
+			this->Table1 = (gcnew System::Windows::Forms::Label());
 			this->BarNameF1 = (gcnew System::Windows::Forms::Label());
 			this->Name1 = (gcnew System::Windows::Forms::Label());
 			this->Time1 = (gcnew System::Windows::Forms::Label());
@@ -218,7 +229,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Table3 = (gcnew System::Windows::Forms::Label());
 			this->Table4 = (gcnew System::Windows::Forms::Label());
 			this->Table5 = (gcnew System::Windows::Forms::Label());
-			this->Table1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
 			this->panel1->SuspendLayout();
@@ -323,6 +333,19 @@ private: System::Windows::Forms::Label^ Date5;
 			this->TicketF1->Name = L"TicketF1";
 			this->TicketF1->Size = System::Drawing::Size(692, 279);
 			this->TicketF1->TabIndex = 13;
+			// 
+			// Table1
+			// 
+			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table1->ForeColor = System::Drawing::Color::DimGray;
+			this->Table1->Location = System::Drawing::Point(118, 29);
+			this->Table1->Name = L"Table1";
+			this->Table1->Size = System::Drawing::Size(397, 36);
+			this->Table1->TabIndex = 4;
+			this->Table1->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
+			this->Table1->Click += gcnew System::EventHandler(this, &Profile::Table1_Click);
 			// 
 			// BarNameF1
 			// 
@@ -663,62 +686,47 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table2->ForeColor = System::Drawing::Color::DimGray;
-			this->Table2->Location = System::Drawing::Point(118, 28);
+			this->Table2->Location = System::Drawing::Point(118, 30);
 			this->Table2->Name = L"Table2";
-			this->Table2->Size = System::Drawing::Size(422, 56);
+			this->Table2->Size = System::Drawing::Size(397, 36);
 			this->Table2->TabIndex = 5;
-			this->Table2->Text = L"B1Table2P";
-			this->Table2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Table2->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// Table3
 			// 
-			this->Table3->AutoSize = true;
 			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table3->ForeColor = System::Drawing::Color::DimGray;
-			this->Table3->Location = System::Drawing::Point(118, 29);
+			this->Table3->Location = System::Drawing::Point(118, 30);
 			this->Table3->Name = L"Table3";
-			this->Table3->Size = System::Drawing::Size(43, 14);
+			this->Table3->Size = System::Drawing::Size(397, 36);
 			this->Table3->TabIndex = 6;
-			this->Table3->Text = L"AAAA";
-			this->Table3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Table3->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// Table4
 			// 
-			this->Table4->AutoSize = true;
 			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table4->ForeColor = System::Drawing::Color::DimGray;
 			this->Table4->Location = System::Drawing::Point(118, 30);
 			this->Table4->Name = L"Table4";
-			this->Table4->Size = System::Drawing::Size(43, 14);
-			this->Table4->TabIndex = 7;
-			this->Table4->Text = L"AAAA";
-			this->Table4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Table4->Size = System::Drawing::Size(397, 36);
+			this->Table4->TabIndex = 5;
+			this->Table4->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+				L"1Table2P";
 			// 
 			// Table5
 			// 
-			this->Table5->AutoSize = true;
 			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table5->ForeColor = System::Drawing::Color::DimGray;
 			this->Table5->Location = System::Drawing::Point(118, 31);
 			this->Table5->Name = L"Table5";
-			this->Table5->Size = System::Drawing::Size(43, 14);
-			this->Table5->TabIndex = 8;
-			this->Table5->Text = L"AAAA";
-			this->Table5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// Table1
-			// 
-			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table1->ForeColor = System::Drawing::Color::DimGray;
-			this->Table1->Location = System::Drawing::Point(118, 29);
-			this->Table1->Name = L"Table1";
-			this->Table1->Size = System::Drawing::Size(397, 36);
-			this->Table1->TabIndex = 4;
-			this->Table1->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
+			this->Table5->Size = System::Drawing::Size(397, 36);
+			this->Table5->TabIndex = 5;
+			this->Table5->Text = L"B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B1Table2P B"
 				L"1Table2P";
 			// 
 			// Profile
@@ -887,6 +895,8 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 private: System::Void label18_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Table1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
