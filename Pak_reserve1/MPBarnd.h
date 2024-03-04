@@ -141,7 +141,7 @@ namespace Pakreserve1 {
 			this->Name->ForeColor = System::Drawing::Color::White;
 			this->Name->Location = System::Drawing::Point(646, 362);
 			this->Name->Name = L"Name";
-			this->Name->Size = System::Drawing::Size(74, 19);
+			this->Name->Size = System::Drawing::Size(62, 16);
 			this->Name->TabIndex = 4;
 			this->Name->Text = L"AAAAA";
 			this->Name->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -153,7 +153,7 @@ namespace Pakreserve1 {
 			this->BarNameFront->ForeColor = System::Drawing::Color::White;
 			this->BarNameFront->Location = System::Drawing::Point(389, 275);
 			this->BarNameFront->Name = L"BarNameFront";
-			this->BarNameFront->Size = System::Drawing::Size(127, 30);
+			this->BarNameFront->Size = System::Drawing::Size(100, 24);
 			this->BarNameFront->TabIndex = 3;
 			this->BarNameFront->Text = L"OverTime";
 			this->BarNameFront->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -168,7 +168,7 @@ namespace Pakreserve1 {
 			this->Time->ForeColor = System::Drawing::Color::White;
 			this->Time->Location = System::Drawing::Point(424, 362);
 			this->Time->Name = L"Time";
-			this->Time->Size = System::Drawing::Size(92, 19);
+			this->Time->Size = System::Drawing::Size(77, 16);
 			this->Time->TabIndex = 1;
 			this->Time->Text = L"AAAA AA";
 			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -181,7 +181,7 @@ namespace Pakreserve1 {
 			this->Date->Location = System::Drawing::Point(174, 362);
 			this->Date->Name = L"Date";
 			this->Date->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Date->Size = System::Drawing::Size(175, 19);
+			this->Date->Size = System::Drawing::Size(147, 16);
 			this->Date->TabIndex = 0;
 			this->Date->Text = L"AA AAAAAAAA AA";
 			this->Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -216,7 +216,7 @@ namespace Pakreserve1 {
 			this->BarName->ForeColor = System::Drawing::Color::White;
 			this->BarName->Location = System::Drawing::Point(139, 64);
 			this->BarName->Name = L"BarName";
-			this->BarName->Size = System::Drawing::Size(127, 30);
+			this->BarName->Size = System::Drawing::Size(100, 24);
 			this->BarName->TabIndex = 2;
 			this->BarName->Text = L"OverTime";
 			this->BarName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -247,7 +247,8 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->panel2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//this->Name = L"MPBarnd";
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Name = L"MPBarnd";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBarnd::MPBarnd_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
