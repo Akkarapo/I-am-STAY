@@ -2612,7 +2612,7 @@ namespace Pakreserve1 {
 		MarshalString(time, timec);
 		MarshalString(date, datec);
 		ofstream fileOutUser(pathUser, ios::app);
-		fileOutUser << "BarName: " << "MaewNoi ";
+		fileOutUser << "BarName: " << "Oakkhara ";
 		for (int i = 0; i < dataTable->Length; i++)
 		{
 			if (dataTable[i]) //fileOutUser << to_string(i) << " ";

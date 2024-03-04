@@ -812,18 +812,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel12->Size = System::Drawing::Size(230, 343);
 			this->panel12->TabIndex = 30;
 			this->panel12->Click += gcnew System::EventHandler(this, &ToeyMenu::panel12_Click);
-			// 
-			// Table12
-			// 
-			this->Table12->AutoSize = true;
-			this->Table12->BackColor = System::Drawing::Color::Transparent;
-			this->Table12->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Table12->Location = System::Drawing::Point(50, 77);
-			this->Table12->Name = L"Table12";
-			this->Table12->Size = System::Drawing::Size(68, 24);
-			this->Table12->TabIndex = 12;
-			this->Table12->Text = L"XX/30";
+			this->panel12->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ToeyMenu::panel12_Paint);
 			// 
 			// Table12
 			// 
@@ -901,8 +890,10 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table14->Location = System::Drawing::Point(50, 77);
 			this->Table14->Name = L"Table14";
-			this->Table14->Size = System::Drawing::Size(89, 30);
+			this->Table14->Size = System::Drawing::Size(0, 30);
 			this->Table14->TabIndex = 14;
+			// 
+			// pictureBox17
 			// 
 			this->pictureBox17->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox17->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox17.BackgroundImage")));
@@ -1137,10 +1128,7 @@ private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
-public: bool switchToBarSajui = false;
-private: System::Void panel7_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToBarSajui = true;
-	   this->Close();
+private: System::Void panel12_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

@@ -26,7 +26,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
 
-    void main(array<String ^> ^ args)
+void main(array<String^>^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
@@ -38,42 +38,41 @@ using namespace System::Windows::Forms;
     form2.ShowDialog();
 
 
-   
-        while (form2.user == nullptr) {
-            if (form2.switchToRegister) {
-                registForm.ShowDialog();
-                form2.switchToRegister = false;
-            }
-            else if (registForm.switchToLogin || mailForm.switchToLogin) {
-                form2.ShowDialog();
-                registForm.switchToLogin = false;
-                mailForm.switchToLogin = false;
-            }
-            else if (form2.switchToForgetPwd) {
-                mailForm.ShowDialog();
-                form2.switchToForgetPwd = false;
-            }
-            else {
-                return;
-            }
-        }  
-        User^ user = form2.user;
-        Pakreserve1::PakForm form(user);
-        Pakreserve1::MPBarnd mpform(user);
-        Pakreserve1::Profile profileform(user);
-        Pakreserve1::BarGong bar2(user);
-        Pakreserve1::BarMapraw bar3(user);
-        Pakreserve1::BarToey bar4(user);
-        Pakreserve1::BarNepjune bar5(user);
-        Pakreserve1::BarOakkhara bar6(user);
-        Pakreserve1::BarSajui bar7(user);
-        Pakreserve1::BarGarpanya bar11(user);
-        Pakreserve1::BarSajui bar7(user);
-        Pakreserve1::BarSTEVE bar12(user);
 
-        
-        while (true) {
-        if (mpform.switchToProfile||form.switchToProfile||profileform.switchToProfile||Toeyform.switchToProfile) {
+    while (form2.user == nullptr) {
+        if (form2.switchToRegister) {
+            registForm.ShowDialog();
+            form2.switchToRegister = false;
+        }
+        else if (registForm.switchToLogin || mailForm.switchToLogin) {
+            form2.ShowDialog();
+            registForm.switchToLogin = false;
+            mailForm.switchToLogin = false;
+        }
+        else if (form2.switchToForgetPwd) {
+            mailForm.ShowDialog();
+            form2.switchToForgetPwd = false;
+        }
+        else {
+            return;
+        }
+    }
+    User^ user = form2.user;
+    Pakreserve1::PakForm form(user);
+    Pakreserve1::MPBarnd mpform(user);
+    Pakreserve1::Profile profileform(user);
+    Pakreserve1::BarGong bar2(user);
+    Pakreserve1::BarMapraw bar3(user);
+    Pakreserve1::BarToey bar4(user);
+    Pakreserve1::BarNepjune bar5(user);
+    Pakreserve1::BarOakkhara bar6(user);
+    Pakreserve1::BarSajui bar7(user);
+    Pakreserve1::BarGarpanya bar11(user);
+    Pakreserve1::BarSTEVE bar12(user);
+
+
+    while (true) {
+        if (mpform.switchToProfile || form.switchToProfile || profileform.switchToProfile || Toeyform.switchToProfile) {
             profileform.ShowDialog();
             mpform.switchToProfile = false;
             form.switchToProfile = false;
@@ -82,8 +81,8 @@ using namespace System::Windows::Forms;
 
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey||form.switchToToey||bar7.switchToToey){
-        
+        else if (form2.switchToToey || bar2.switchToToey || bar3.switchToToey || bar4.switchToToey || bar5.switchToToey || bar6.switchToToey || bar11.switchToToey || profileform.switchToToey || mpform.switchToToey || form.switchToToey || bar7.switchToToey || bar12.switchToToey) {
+
             Toeyform.ShowDialog();
             form2.switchToToey = false;
             bar2.switchToToey = false;
@@ -93,17 +92,18 @@ using namespace System::Windows::Forms;
             bar6.switchToToey = false;
             bar11.switchToToey = false;
             bar7.switchToToey = false;
+            bar12.switchToToey = false;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
         }
-        
+
         else if (registForm.switchToReg2) {
             regist2Form.ShowDialog();
             registForm.switchToReg2 = false;
-            
+
         }
-        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP||bar7.switchToMP||bar6.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP || bar7.switchToMP || bar6.switchToMP || bar12.switchToMP)
         {
             mpform.ShowDialog();
             bar2.switchToMP = false;
@@ -112,26 +112,27 @@ using namespace System::Windows::Forms;
             bar5.switchToMP = false;
             bar7.switchToMP = false;
             bar6.switchToMP = false;
+            bar12.switchToMP = false;
             form.switchToMP = false;
         }
-        else if (Toeyform.switchToPakForm) 
+        else if (Toeyform.switchToPakForm)
         {
             form.ShowDialog();
             Toeyform.switchToPakForm = false;
         }
-        else if (Toeyform.switchToBarGong) 
+        else if (Toeyform.switchToBarGong)
         {
             bar2.ShowDialog();
             Toeyform.switchToBarGong = false;
         }
-        else if (Toeyform.switchToBarMP) 
+        else if (Toeyform.switchToBarMP)
         {
             bar3.ShowDialog();
             Toeyform.switchToBarMP = false;
         }
         else if (Toeyform.switchToBarToey)
         {
-            bar4.ShowDialog(); 
+            bar4.ShowDialog();
             Toeyform.switchToBarToey = false;
         }
         else if (Toeyform.switchToBarNepjune)
@@ -154,10 +155,6 @@ using namespace System::Windows::Forms;
             bar11.ShowDialog();
             Toeyform.switchToBarGarpanya = false;
         }
-        else if (Toeyform.switchToBarSajui)
-        {
-            bar7.ShowDialog();
-            Toeyform.switchToBarSajui = false;
         else if (Toeyform.switchToBarSTEVE)
         {
             bar12.ShowDialog();
@@ -167,5 +164,5 @@ using namespace System::Windows::Forms;
         {
             break;
         }
+        }
     }
-}
