@@ -74,7 +74,7 @@ using namespace System::Windows::Forms;
 
         }
 
-        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey){
+        else if (form2.switchToToey||bar2.switchToToey||bar3.switchToToey||bar4.switchToToey||bar5.switchToToey||bar6.switchToToey||bar11.switchToToey||profileform.switchToToey||mpform.switchToToey||form.switchToToey){
         
             Toeyform.ShowDialog();
             form2.switchToToey = false;
@@ -87,8 +87,6 @@ using namespace System::Windows::Forms;
             profileform.switchToToey = false;
             mpform.switchToToey = false;
             form.switchToToey = false;
-            bar2.switchToToey = false;
-            bar3.switchToToey = false;
         }
         
         else if (registForm.switchToReg2) {
