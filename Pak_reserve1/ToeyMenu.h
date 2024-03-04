@@ -717,6 +717,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel9->Name = L"panel9";
 			this->panel9->Size = System::Drawing::Size(230, 343);
 			this->panel9->TabIndex = 25;
+			this->panel9->Click += gcnew System::EventHandler(this, &ToeyMenu::panel9_Click);
 			// 
 			// Table9
 			// 
@@ -1094,6 +1095,16 @@ private: System::Void panel7_Click(System::Object^ sender, System::EventArgs^ e)
 	this->switchToBarSajui = true;
 	this->Close();
 }
+public: bool switchToBarAmericano = false;
+private: System::Void panel8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarAmericano = true;
+	this->Close();
+}
+public: bool switchToBarSaran = false;
+private: System::Void panel9_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarSaran = true;
+	this->Close();
+}
 public: bool switchToBarGarpanya = false;
 private: System::Void panel11_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarGarpanya = true;
@@ -1102,6 +1113,12 @@ private: System::Void panel11_Click(System::Object^ sender, System::EventArgs^ e
 public: bool switchToBarSTEVE = false;
 private: System::Void panel12_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarSTEVE = true;
+	this->Close();
+}
+
+public: bool switchToBarHoney = false;
+private: System::Void panel13_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarHoney = true;
 	this->Close();
 }
 public: bool switchToToey = false;
@@ -1150,15 +1167,6 @@ private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Form
 }
 private: System::Void panel12_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
-public: bool switchToBarAmericano = false;
-private: System::Void panel8_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToBarAmericano = true;
-	this->Close();
-}
-	public: bool switchToBarHoney = false;
-private: System::Void panel13_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->switchToBarHoney = true;
-	this->Close();
-}
+
 };
 }

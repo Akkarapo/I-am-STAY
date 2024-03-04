@@ -17,10 +17,10 @@
 #include "BarNepjune.h"
 #include "BarOakkhara.h"
 #include "BarSajui.h"
-#include "BarGarpanya.h"
-#include "BarSajui.h"
-#include "BarSTEVE.h"
 #include "BarAmericano.h"
+#include "BarSaran.h"
+#include "BarGarpanya.h"
+#include "BarSTEVE.h"
 #include "BarHoney.h"
 
 
@@ -70,6 +70,7 @@ void main(array<String^>^ args)
     Pakreserve1::BarOakkhara bar6(user);
     Pakreserve1::BarSajui bar7(user);
     Pakreserve1::BarAmericano bar8(user);
+    Pakreserve1::BarSaran bar9(user);
     Pakreserve1::BarGarpanya bar11(user);
     Pakreserve1::BarSTEVE bar12(user);
     Pakreserve1::BarHoney bar13(user);
@@ -163,6 +164,11 @@ void main(array<String^>^ args)
         {
             bar8.ShowDialog();
             Toeyform.switchToBarAmericano = false;
+        }
+        else if (Toeyform.switchToBarSaran)
+        {
+            bar9.ShowDialog();
+            Toeyform.switchToBarSaran = false;
         }
         else if (Toeyform.switchToBarGarpanya)
         {
