@@ -439,7 +439,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table1->Location = System::Drawing::Point(50, 77);
 			this->Table1->Name = L"Table1";
-			this->Table1->Size = System::Drawing::Size(68, 24);
+			this->Table1->Size = System::Drawing::Size(89, 30);
 			this->Table1->TabIndex = 1;
 			this->Table1->Text = L"XX/30";
 			// 
@@ -474,7 +474,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table2->Location = System::Drawing::Point(50, 77);
 			this->Table2->Name = L"Table2";
-			this->Table2->Size = System::Drawing::Size(68, 24);
+			this->Table2->Size = System::Drawing::Size(89, 30);
 			this->Table2->TabIndex = 2;
 			this->Table2->Text = L"XX/30";
 			// 
@@ -509,7 +509,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table3->Location = System::Drawing::Point(50, 77);
 			this->Table3->Name = L"Table3";
-			this->Table3->Size = System::Drawing::Size(68, 24);
+			this->Table3->Size = System::Drawing::Size(89, 30);
 			this->Table3->TabIndex = 3;
 			this->Table3->Text = L"XX/30";
 			// 
@@ -544,7 +544,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table4->Location = System::Drawing::Point(50, 77);
 			this->Table4->Name = L"Table4";
-			this->Table4->Size = System::Drawing::Size(68, 24);
+			this->Table4->Size = System::Drawing::Size(89, 30);
 			this->Table4->TabIndex = 4;
 			this->Table4->Text = L"XX/30";
 			// 
@@ -579,7 +579,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table5->Location = System::Drawing::Point(50, 77);
 			this->Table5->Name = L"Table5";
-			this->Table5->Size = System::Drawing::Size(68, 24);
+			this->Table5->Size = System::Drawing::Size(89, 30);
 			this->Table5->TabIndex = 5;
 			this->Table5->Text = L"XX/30";
 			// 
@@ -614,7 +614,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table6->Location = System::Drawing::Point(50, 77);
 			this->Table6->Name = L"Table6";
-			this->Table6->Size = System::Drawing::Size(68, 24);
+			this->Table6->Size = System::Drawing::Size(89, 30);
 			this->Table6->TabIndex = 6;
 			this->Table6->Text = L"XX/30";
 			// 
@@ -649,7 +649,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table7->Location = System::Drawing::Point(50, 77);
 			this->Table7->Name = L"Table7";
-			this->Table7->Size = System::Drawing::Size(68, 24);
+			this->Table7->Size = System::Drawing::Size(89, 30);
 			this->Table7->TabIndex = 7;
 			this->Table7->Text = L"XX/30";
 			// 
@@ -684,7 +684,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table8->Location = System::Drawing::Point(50, 77);
 			this->Table8->Name = L"Table8";
-			this->Table8->Size = System::Drawing::Size(68, 24);
+			this->Table8->Size = System::Drawing::Size(89, 30);
 			this->Table8->TabIndex = 8;
 			this->Table8->Text = L"XX/30";
 			// 
@@ -718,7 +718,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table9->Location = System::Drawing::Point(50, 77);
 			this->Table9->Name = L"Table9";
-			this->Table9->Size = System::Drawing::Size(68, 24);
+			this->Table9->Size = System::Drawing::Size(89, 30);
 			this->Table9->TabIndex = 9;
 			this->Table9->Text = L"XX/30";
 			// 
@@ -752,7 +752,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table10->Location = System::Drawing::Point(50, 77);
 			this->Table10->Name = L"Table10";
-			this->Table10->Size = System::Drawing::Size(68, 24);
+			this->Table10->Size = System::Drawing::Size(89, 30);
 			this->Table10->TabIndex = 10;
 			this->Table10->Text = L"XX/30";
 			// 
@@ -787,7 +787,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table11->Location = System::Drawing::Point(50, 77);
 			this->Table11->Name = L"Table11";
-			this->Table11->Size = System::Drawing::Size(68, 24);
+			this->Table11->Size = System::Drawing::Size(89, 30);
 			this->Table11->TabIndex = 11;
 			this->Table11->Text = L"XX/30";
 			// 
@@ -823,7 +823,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table12->Location = System::Drawing::Point(50, 77);
 			this->Table12->Name = L"Table12";
-			this->Table12->Size = System::Drawing::Size(68, 24);
+			this->Table12->Size = System::Drawing::Size(89, 30);
 			this->Table12->TabIndex = 12;
 			this->Table12->Text = L"XX/30";
 			// 
@@ -848,6 +848,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel13->Name = L"panel13";
 			this->panel13->Size = System::Drawing::Size(230, 343);
 			this->panel13->TabIndex = 30;
+			this->panel13->Click += gcnew System::EventHandler(this, &ToeyMenu::panel13_Click);
 			// 
 			// Table13
 			// 
@@ -857,7 +858,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table13->Location = System::Drawing::Point(50, 77);
 			this->Table13->Name = L"Table13";
-			this->Table13->Size = System::Drawing::Size(68, 24);
+			this->Table13->Size = System::Drawing::Size(89, 30);
 			this->Table13->TabIndex = 13;
 			this->Table13->Text = L"XX/30";
 			// 
@@ -891,7 +892,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table14->Location = System::Drawing::Point(50, 77);
 			this->Table14->Name = L"Table14";
-			this->Table14->Size = System::Drawing::Size(0, 24);
+			this->Table14->Size = System::Drawing::Size(0, 30);
 			this->Table14->TabIndex = 14;
 			// 
 			// pictureBox17
@@ -924,7 +925,7 @@ private: System::Windows::Forms::Label^ Table15;
 				static_cast<System::Byte>(0)));
 			this->Table15->Location = System::Drawing::Point(50, 77);
 			this->Table15->Name = L"Table15";
-			this->Table15->Size = System::Drawing::Size(68, 24);
+			this->Table15->Size = System::Drawing::Size(89, 30);
 			this->Table15->TabIndex = 15;
 			this->Table15->Text = L"XX/30";
 			// 
@@ -1135,6 +1136,11 @@ private: System::Void panel12_Paint(System::Object^ sender, System::Windows::For
 public: bool switchToBarAmericano = false;
 private: System::Void panel8_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarAmericano = true;
+	this->Close();
+}
+	public: bool switchToBarHoney = false;
+private: System::Void panel13_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarHoney = true;
 	this->Close();
 }
 };
