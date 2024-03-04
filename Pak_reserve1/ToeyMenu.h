@@ -1224,6 +1224,7 @@ public: bool switchToBarNatwaa = false;
 private: System::Void panel10_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarNatwaa = true;
 	this->Close();
+}
 private: System::Void ToeyMenu_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyCode == Keys::Escape) {
 		exitpnl->Show();
@@ -1234,6 +1235,8 @@ private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
 	exitpnl->Hide();
+
 }
 };
 }
+
