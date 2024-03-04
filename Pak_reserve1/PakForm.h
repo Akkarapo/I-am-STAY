@@ -2294,7 +2294,7 @@ public:
 			{
 				if (line[i] == '1') count++;
 			}
-			Table->Text = count.ToString() + "/" + line.size(); break;
+			Table->Text = count.ToString() + "/" + line.size();
 		}
 	}
 	private: System::Void A1Table2P_Click(System::Object^ sender, System::EventArgs^ e) {

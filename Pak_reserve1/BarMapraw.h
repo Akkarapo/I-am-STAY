@@ -34,6 +34,7 @@ namespace Pakreserve1 {
 		int targetline = 3;
 		   array<bool>^ dataTable;
 	private: System::Windows::Forms::PictureBox^ HomeBTN;
+	private: System::Windows::Forms::Label^ Table;
 	public:
 
 	public:
@@ -212,6 +213,7 @@ namespace Pakreserve1 {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->HomeBTN = (gcnew System::Windows::Forms::PictureBox());
+			this->Table = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table2P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table2P))->BeginInit();
@@ -925,12 +927,25 @@ namespace Pakreserve1 {
 			this->HomeBTN->TabStop = false;
 			this->HomeBTN->Click += gcnew System::EventHandler(this, &BarMapraw::HomeBTN_Click);
 			// 
+			// Table
+			// 
+			this->Table->BackColor = System::Drawing::Color::Transparent;
+			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Table->ForeColor = System::Drawing::Color::White;
+			this->Table->Location = System::Drawing::Point(87, 497);
+			this->Table->Name = L"Table";
+			this->Table->Size = System::Drawing::Size(144, 40);
+			this->Table->TabIndex = 144;
+			this->Table->Text = L"XX/29";
+			// 
 			// BarMapraw
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->Table);
 			this->Controls->Add(this->HomeBTN);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->D2Table2PRed);
@@ -1522,6 +1537,23 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void BarMapraw_Load_1(System::Object^ sender, System::EventArgs^ e) {
 	dataTable = gcnew array<bool>(29);
+	using namespace std;
+	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+	string path, line;
+	int count = 0;
+	MarshalString(temp, path);
+	std::ifstream fileIn(path);
+	for (int i = 0; i < targetline; i++)
+	{
+		getline(fileIn, line);
+	}
+	count = 0;
+	for (int i = 0; i < line.size(); i++)
+	{
+		if (line[i] == '1') count++;
+	}
+	Table->Text = count.ToString() + "/" + line.size();
+
 }
 public: bool switchToToey = false;
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
