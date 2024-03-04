@@ -17,9 +17,9 @@ namespace Pakreserve1 {
 	using namespace System::Text;
 	using namespace System::Globalization;
 	/// <summary>
-	/// Summary for BarNatwaa
+	/// Summary for Bar422
 	/// </summary>
-	public ref class BarNatwaa : public System::Windows::Forms::Form
+	public ref class Bar422 : public System::Windows::Forms::Form
 	{
 		StringBuilder^ a = gcnew StringBuilder("00000000");
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -35,18 +35,19 @@ namespace Pakreserve1 {
 
 	public:
 		int tableSelect = 0;
-		int targetline = 10;
+		int targetline = 15;
 	private: System::Windows::Forms::Panel^ exitpnl;
 	public:
 	private: System::Windows::Forms::PictureBox^ noExit;
 	private: System::Windows::Forms::PictureBox^ yesExit;
 	private: System::Windows::Forms::Label^ Table;
+	private: System::Windows::Forms::PictureBox^ A8Table4PGreen;
 
 	public:
 
 
 		array<bool>^ dataTable;
-		BarNatwaa(User^ user)
+		Bar422(User^ user)
 		{
 			InitializeComponent();
 			tempUser = Application::StartupPath + "\\Data\\UserData\\" + user->username + ".txt";//==============mpzone==============
@@ -71,7 +72,7 @@ namespace Pakreserve1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~BarNatwaa()
+		~Bar422()
 		{
 			if (components)
 			{
@@ -93,7 +94,7 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ A5Table4PGreen;
 	private: System::Windows::Forms::PictureBox^ A6Table4PGreen;
 	private: System::Windows::Forms::PictureBox^ A7Table4PGreen;
-	private: System::Windows::Forms::PictureBox^ A8Table4PGreen;
+
 	private: System::Windows::Forms::PictureBox^ A1Table4PRed;
 	private: System::Windows::Forms::PictureBox^ A8Table4PRed;
 
@@ -128,7 +129,7 @@ namespace Pakreserve1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(BarNatwaa::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Bar422::typeid));
 			this->A1Table4P = (gcnew System::Windows::Forms::PictureBox());
 			this->A2Table4P = (gcnew System::Windows::Forms::PictureBox());
 			this->A3Table4P = (gcnew System::Windows::Forms::PictureBox());
@@ -144,7 +145,6 @@ namespace Pakreserve1 {
 			this->A5Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->A6Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->A7Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
-			this->A8Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
 			this->A1Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A8Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->A7Table4PRed = (gcnew System::Windows::Forms::PictureBox());
@@ -162,6 +162,7 @@ namespace Pakreserve1 {
 			this->noExit = (gcnew System::Windows::Forms::PictureBox());
 			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			this->Table = (gcnew System::Windows::Forms::Label());
+			this->A8Table4PGreen = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->BeginInit();
@@ -177,7 +178,6 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A5Table4PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A6Table4PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A7Table4PGreen))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PGreen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A7Table4PRed))->BeginInit();
@@ -194,6 +194,7 @@ namespace Pakreserve1 {
 			this->exitpnl->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PGreen))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table4P
@@ -208,7 +209,7 @@ namespace Pakreserve1 {
 			this->A1Table4P->Size = System::Drawing::Size(64, 64);
 			this->A1Table4P->TabIndex = 6;
 			this->A1Table4P->TabStop = false;
-			this->A1Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A1Table4P_Click);
+			this->A1Table4P->Click += gcnew System::EventHandler(this, &Bar422::A1Table4P_Click);
 			// 
 			// A2Table4P
 			// 
@@ -222,7 +223,7 @@ namespace Pakreserve1 {
 			this->A2Table4P->Size = System::Drawing::Size(64, 64);
 			this->A2Table4P->TabIndex = 7;
 			this->A2Table4P->TabStop = false;
-			this->A2Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A2Table4P_Click);
+			this->A2Table4P->Click += gcnew System::EventHandler(this, &Bar422::A2Table4P_Click);
 			// 
 			// A3Table4P
 			// 
@@ -236,7 +237,7 @@ namespace Pakreserve1 {
 			this->A3Table4P->Size = System::Drawing::Size(64, 64);
 			this->A3Table4P->TabIndex = 8;
 			this->A3Table4P->TabStop = false;
-			this->A3Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A3Table4P_Click);
+			this->A3Table4P->Click += gcnew System::EventHandler(this, &Bar422::A3Table4P_Click);
 			// 
 			// A4Table4P
 			// 
@@ -250,7 +251,7 @@ namespace Pakreserve1 {
 			this->A4Table4P->Size = System::Drawing::Size(64, 64);
 			this->A4Table4P->TabIndex = 9;
 			this->A4Table4P->TabStop = false;
-			this->A4Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A4Table4P_Click);
+			this->A4Table4P->Click += gcnew System::EventHandler(this, &Bar422::A4Table4P_Click);
 			// 
 			// A5Table4P
 			// 
@@ -264,7 +265,7 @@ namespace Pakreserve1 {
 			this->A5Table4P->Size = System::Drawing::Size(64, 64);
 			this->A5Table4P->TabIndex = 10;
 			this->A5Table4P->TabStop = false;
-			this->A5Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A5Table4P_Click);
+			this->A5Table4P->Click += gcnew System::EventHandler(this, &Bar422::A5Table4P_Click);
 			// 
 			// A6Table4P
 			// 
@@ -278,7 +279,7 @@ namespace Pakreserve1 {
 			this->A6Table4P->Size = System::Drawing::Size(64, 64);
 			this->A6Table4P->TabIndex = 11;
 			this->A6Table4P->TabStop = false;
-			this->A6Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A6Table4P_Click);
+			this->A6Table4P->Click += gcnew System::EventHandler(this, &Bar422::A6Table4P_Click);
 			// 
 			// A7Table4P
 			// 
@@ -292,7 +293,7 @@ namespace Pakreserve1 {
 			this->A7Table4P->Size = System::Drawing::Size(64, 64);
 			this->A7Table4P->TabIndex = 13;
 			this->A7Table4P->TabStop = false;
-			this->A7Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A7Table4P_Click);
+			this->A7Table4P->Click += gcnew System::EventHandler(this, &Bar422::A7Table4P_Click);
 			// 
 			// A8Table4P
 			// 
@@ -306,7 +307,7 @@ namespace Pakreserve1 {
 			this->A8Table4P->Size = System::Drawing::Size(64, 64);
 			this->A8Table4P->TabIndex = 12;
 			this->A8Table4P->TabStop = false;
-			this->A8Table4P->Click += gcnew System::EventHandler(this, &BarNatwaa::A8Table4P_Click);
+			this->A8Table4P->Click += gcnew System::EventHandler(this, &Bar422::A8Table4P_Click);
 			// 
 			// A1Table4PGreen
 			// 
@@ -320,7 +321,7 @@ namespace Pakreserve1 {
 			this->A1Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A1Table4PGreen->TabIndex = 22;
 			this->A1Table4PGreen->TabStop = false;
-			this->A1Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A1Table4PGreen_Click);
+			this->A1Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A1Table4PGreen_Click);
 			// 
 			// A2Table4PGreen
 			// 
@@ -334,7 +335,7 @@ namespace Pakreserve1 {
 			this->A2Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A2Table4PGreen->TabIndex = 23;
 			this->A2Table4PGreen->TabStop = false;
-			this->A2Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A2Table4PGreen_Click);
+			this->A2Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A2Table4PGreen_Click);
 			// 
 			// A3Table4PGreen
 			// 
@@ -348,7 +349,7 @@ namespace Pakreserve1 {
 			this->A3Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A3Table4PGreen->TabIndex = 24;
 			this->A3Table4PGreen->TabStop = false;
-			this->A3Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A3Table4PGreen_Click);
+			this->A3Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A3Table4PGreen_Click);
 			// 
 			// A4Table4PGreen
 			// 
@@ -362,7 +363,7 @@ namespace Pakreserve1 {
 			this->A4Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A4Table4PGreen->TabIndex = 25;
 			this->A4Table4PGreen->TabStop = false;
-			this->A4Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A4Table4PGreen_Click);
+			this->A4Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A4Table4PGreen_Click);
 			// 
 			// A5Table4PGreen
 			// 
@@ -376,7 +377,7 @@ namespace Pakreserve1 {
 			this->A5Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A5Table4PGreen->TabIndex = 26;
 			this->A5Table4PGreen->TabStop = false;
-			this->A5Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A5Table4PGreen_Click);
+			this->A5Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A5Table4PGreen_Click);
 			// 
 			// A6Table4PGreen
 			// 
@@ -390,7 +391,7 @@ namespace Pakreserve1 {
 			this->A6Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A6Table4PGreen->TabIndex = 27;
 			this->A6Table4PGreen->TabStop = false;
-			this->A6Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A6Table4PGreen_Click);
+			this->A6Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A6Table4PGreen_Click);
 			// 
 			// A7Table4PGreen
 			// 
@@ -404,21 +405,7 @@ namespace Pakreserve1 {
 			this->A7Table4PGreen->Size = System::Drawing::Size(64, 64);
 			this->A7Table4PGreen->TabIndex = 28;
 			this->A7Table4PGreen->TabStop = false;
-			this->A7Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A7Table4PGreen_Click);
-			// 
-			// A8Table4PGreen
-			// 
-			this->A8Table4PGreen->BackColor = System::Drawing::Color::Transparent;
-			this->A8Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table4PGreen.BackgroundImage")));
-			this->A8Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->A8Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->A8Table4PGreen->Location = System::Drawing::Point(1017, 353);
-			this->A8Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->A8Table4PGreen->Name = L"A8Table4PGreen";
-			this->A8Table4PGreen->Size = System::Drawing::Size(64, 64);
-			this->A8Table4PGreen->TabIndex = 29;
-			this->A8Table4PGreen->TabStop = false;
-			this->A8Table4PGreen->Click += gcnew System::EventHandler(this, &BarNatwaa::A8Table4PGreen_Click);
+			this->A7Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A7Table4PGreen_Click);
 			// 
 			// A1Table4PRed
 			// 
@@ -432,7 +419,7 @@ namespace Pakreserve1 {
 			this->A1Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A1Table4PRed->TabIndex = 30;
 			this->A1Table4PRed->TabStop = false;
-			this->A1Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A1Table4PRed_Click);
+			this->A1Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A1Table4PRed_Click);
 			// 
 			// A8Table4PRed
 			// 
@@ -446,7 +433,7 @@ namespace Pakreserve1 {
 			this->A8Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A8Table4PRed->TabIndex = 31;
 			this->A8Table4PRed->TabStop = false;
-			this->A8Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A8Table4PRed_Click);
+			this->A8Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A8Table4PRed_Click);
 			// 
 			// A7Table4PRed
 			// 
@@ -460,7 +447,7 @@ namespace Pakreserve1 {
 			this->A7Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A7Table4PRed->TabIndex = 32;
 			this->A7Table4PRed->TabStop = false;
-			this->A7Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A7Table4PRed_Click);
+			this->A7Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A7Table4PRed_Click);
 			// 
 			// A6Table4PRed
 			// 
@@ -474,7 +461,7 @@ namespace Pakreserve1 {
 			this->A6Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A6Table4PRed->TabIndex = 33;
 			this->A6Table4PRed->TabStop = false;
-			this->A6Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A6Table4PRed_Click);
+			this->A6Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A6Table4PRed_Click);
 			// 
 			// A5Table4PRed
 			// 
@@ -488,7 +475,7 @@ namespace Pakreserve1 {
 			this->A5Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A5Table4PRed->TabIndex = 34;
 			this->A5Table4PRed->TabStop = false;
-			this->A5Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A5Table4PRed_Click);
+			this->A5Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A5Table4PRed_Click);
 			// 
 			// A4Table4PRed
 			// 
@@ -502,7 +489,7 @@ namespace Pakreserve1 {
 			this->A4Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A4Table4PRed->TabIndex = 35;
 			this->A4Table4PRed->TabStop = false;
-			this->A4Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A4Table4PRed_Click);
+			this->A4Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A4Table4PRed_Click);
 			// 
 			// A3Table4PRed
 			// 
@@ -516,7 +503,7 @@ namespace Pakreserve1 {
 			this->A3Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A3Table4PRed->TabIndex = 36;
 			this->A3Table4PRed->TabStop = false;
-			this->A3Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A3Table4PRed_Click);
+			this->A3Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A3Table4PRed_Click);
 			// 
 			// A2Table4PRed
 			// 
@@ -530,7 +517,7 @@ namespace Pakreserve1 {
 			this->A2Table4PRed->Size = System::Drawing::Size(64, 64);
 			this->A2Table4PRed->TabIndex = 37;
 			this->A2Table4PRed->TabStop = false;
-			this->A2Table4PRed->Click += gcnew System::EventHandler(this, &BarNatwaa::A2Table4PRed_Click);
+			this->A2Table4PRed->Click += gcnew System::EventHandler(this, &Bar422::A2Table4PRed_Click);
 			// 
 			// pictureBox1
 			// 
@@ -543,7 +530,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->Size = System::Drawing::Size(53, 21);
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarNatwaa::pictureBox1_Click);
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &Bar422::pictureBox1_Click);
 			// 
 			// ConfirmTableBarMapraw
 			// 
@@ -556,7 +543,7 @@ namespace Pakreserve1 {
 			this->ConfirmTableBarMapraw->Size = System::Drawing::Size(267, 66);
 			this->ConfirmTableBarMapraw->TabIndex = 39;
 			this->ConfirmTableBarMapraw->TabStop = false;
-			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &BarNatwaa::ConfirmTableBarMapraw_Click_1);
+			this->ConfirmTableBarMapraw->Click += gcnew System::EventHandler(this, &Bar422::ConfirmTableBarMapraw_Click_1);
 			// 
 			// panel1
 			// 
@@ -577,7 +564,7 @@ namespace Pakreserve1 {
 			this->pictureBox3->Size = System::Drawing::Size(133, 56);
 			this->pictureBox3->TabIndex = 1;
 			this->pictureBox3->TabStop = false;
-			this->pictureBox3->Click += gcnew System::EventHandler(this, &BarNatwaa::pictureBox3_Click);
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &Bar422::pictureBox3_Click);
 			// 
 			// pictureBox2
 			// 
@@ -587,7 +574,7 @@ namespace Pakreserve1 {
 			this->pictureBox2->Size = System::Drawing::Size(133, 56);
 			this->pictureBox2->TabIndex = 0;
 			this->pictureBox2->TabStop = false;
-			this->pictureBox2->Click += gcnew System::EventHandler(this, &BarNatwaa::pictureBox2_Click);
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &Bar422::pictureBox2_Click);
 			// 
 			// exitpnl
 			// 
@@ -597,6 +584,7 @@ namespace Pakreserve1 {
 			this->exitpnl->Controls->Add(this->yesExit);
 			this->exitpnl->Location = System::Drawing::Point(437, 237);
 			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->exitpnl->Size = System::Drawing::Size(407, 247);
 			this->exitpnl->TabIndex = 97;
 			// 
@@ -609,7 +597,7 @@ namespace Pakreserve1 {
 			this->noExit->Size = System::Drawing::Size(133, 56);
 			this->noExit->TabIndex = 1;
 			this->noExit->TabStop = false;
-			this->noExit->Click += gcnew System::EventHandler(this, &BarNatwaa::noExit_Click);
+			this->noExit->Click += gcnew System::EventHandler(this, &Bar422::noExit_Click);
 			// 
 			// yesExit
 			// 
@@ -620,7 +608,7 @@ namespace Pakreserve1 {
 			this->yesExit->Size = System::Drawing::Size(133, 56);
 			this->yesExit->TabIndex = 0;
 			this->yesExit->TabStop = false;
-			this->yesExit->Click += gcnew System::EventHandler(this, &BarNatwaa::yesExit_Click);
+			this->yesExit->Click += gcnew System::EventHandler(this, &Bar422::yesExit_Click);
 			// 
 			// Table
 			// 
@@ -634,7 +622,21 @@ namespace Pakreserve1 {
 			this->Table->TabIndex = 145;
 			this->Table->Text = L"XX/29";
 			// 
-			// BarNatwaa
+			// A8Table4PGreen
+			// 
+			this->A8Table4PGreen->BackColor = System::Drawing::Color::Transparent;
+			this->A8Table4PGreen->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"A8Table4PGreen.BackgroundImage")));
+			this->A8Table4PGreen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->A8Table4PGreen->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->A8Table4PGreen->Location = System::Drawing::Point(1017, 353);
+			this->A8Table4PGreen->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->A8Table4PGreen->Name = L"A8Table4PGreen";
+			this->A8Table4PGreen->Size = System::Drawing::Size(64, 64);
+			this->A8Table4PGreen->TabIndex = 29;
+			this->A8Table4PGreen->TabStop = false;
+			this->A8Table4PGreen->Click += gcnew System::EventHandler(this, &Bar422::A8Table4PGreen_Click);
+			// 
+			// Bar422
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -652,7 +654,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A7Table4PRed);
 			this->Controls->Add(this->A8Table4PRed);
 			this->Controls->Add(this->A1Table4PRed);
-			this->Controls->Add(this->A7Table4PGreen);
 			this->Controls->Add(this->A7Table4P);
 			this->Controls->Add(this->A8Table4P);
 			this->Controls->Add(this->A6Table4P);
@@ -667,14 +668,15 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A5Table4PGreen);
 			this->Controls->Add(this->A4Table4PGreen);
 			this->Controls->Add(this->A3Table4PGreen);
+			this->Controls->Add(this->A7Table4PGreen);
 			this->Controls->Add(this->A2Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->Name = L"BarNatwaa";
+			this->Name = L"Bar422";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"BarNatwaa";
-			this->Load += gcnew System::EventHandler(this, &BarNatwaa::BarNatwaa_Load);
-			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &BarNatwaa::BarNatwaa_KeyDown);
+			this->Text = L"Bar422";
+			this->Load += gcnew System::EventHandler(this, &Bar422::Bar422_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Bar422::Bar422_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table4P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table4P))->EndInit();
@@ -690,7 +692,6 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A5Table4PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A6Table4PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A7Table4PGreen))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PGreen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A7Table4PRed))->EndInit();
@@ -707,6 +708,7 @@ namespace Pakreserve1 {
 			this->exitpnl->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A8Table4PGreen))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -740,7 +742,7 @@ namespace Pakreserve1 {
 
 
 			using namespace std;
-			int BarNo = 10;
+			int BarNo = 15;
 
 			String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
 			string path, line;
@@ -942,7 +944,7 @@ namespace Pakreserve1 {
 		string newData;
 		MarshalString(a2, newData);
 		switchToMP = true;
-		int targetline = 10;
+		int targetline = 15;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -1011,7 +1013,7 @@ namespace Pakreserve1 {
 		this->switchToToey = true;
 		this->Close();
 	}
-	private: System::Void BarNatwaa_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Bar422_Load(System::Object^ sender, System::EventArgs^ e) {
 		dataTable = gcnew array<bool>(29);
 		using namespace std;
 		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
@@ -1057,7 +1059,7 @@ namespace Pakreserve1 {
 		string newData;
 		MarshalString(a2, newData);
 		switchToMP = true;
-		int targetline = 10;
+		int targetline = 15;
 		if (lines.size() >= targetline) {
 			lines[targetline - 1] = newData;
 		}
@@ -1153,7 +1155,7 @@ namespace Pakreserve1 {
 	private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 		panel1->Hide();
 	}
-	private: System::Void BarNatwaa_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	private: System::Void Bar422_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		if (e->KeyCode == Keys::Escape) {
 			exitpnl->Show();
 		}

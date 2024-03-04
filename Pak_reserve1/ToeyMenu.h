@@ -764,6 +764,7 @@ private: System::Windows::Forms::PictureBox^ yesExit;
 			this->panel10->Name = L"panel10";
 			this->panel10->Size = System::Drawing::Size(230, 343);
 			this->panel10->TabIndex = 25;
+			this->panel10->Click += gcnew System::EventHandler(this, &ToeyMenu::panel10_Click);
 			// 
 			// Table10
 			// 
@@ -908,6 +909,7 @@ private: System::Windows::Forms::PictureBox^ yesExit;
 			this->panel14->Name = L"panel14";
 			this->panel14->Size = System::Drawing::Size(230, 343);
 			this->panel14->TabIndex = 30;
+			this->panel14->Click += gcnew System::EventHandler(this, &ToeyMenu::panel14_Click);
 			// 
 			// Table14
 			// 
@@ -943,6 +945,7 @@ private: System::Windows::Forms::PictureBox^ yesExit;
 			this->panel15->Name = L"panel15";
 			this->panel15->Size = System::Drawing::Size(230, 343);
 			this->panel15->TabIndex = 30;
+			this->panel15->Click += gcnew System::EventHandler(this, &ToeyMenu::panel15_Click);
 			// 
 			// Table15
 			// 
@@ -1219,6 +1222,11 @@ private: System::Void panel12_Paint(System::Object^ sender, System::Windows::For
 
 private: System::Void panel9_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+public: bool switchToBarNatwaa = false;
+private: System::Void panel10_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarNatwaa = true;
+	this->Close();
+}
 private: System::Void ToeyMenu_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyCode == Keys::Escape) {
 		exitpnl->Show();
@@ -1229,6 +1237,18 @@ private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
 	exitpnl->Hide();
+
+}
+public: bool switchToBar422 = false;
+private: System::Void panel15_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBar422 = true;
+	this->Close();
+}
+public: bool switchToBarSRTxz = false;
+private: System::Void panel14_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarSRTxz = true;
+	this->Close();
 }
 };
 }
+
