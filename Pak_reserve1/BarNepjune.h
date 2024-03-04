@@ -899,7 +899,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	MarshalString(time, timec);
 	MarshalString(date, datec);
 	ofstream fileOutUser(pathUser, ios::app);
-	fileOutUser << "BarName: " << "MaewNoi ";
+	fileOutUser << "BarName: " << "Nepjune ";
 	for (int i = 0; i < dataTable->Length; i++)
 	{
 		if (dataTable[i]) //fileOutUser << to_string(i) << " ";
