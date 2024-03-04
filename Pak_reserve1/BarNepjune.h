@@ -535,7 +535,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Location = System::Drawing::Point(24, 22);
+			this->pictureBox1->Location = System::Drawing::Point(22, 18);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(53, 21);
@@ -656,6 +656,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A4Table4PGreen);
 			this->Controls->Add(this->A3Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNepjune";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
