@@ -248,7 +248,7 @@ namespace Pakreserve1 {
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"MPBarnd";
+			//this->Name = L"MPBarnd";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &MPBarnd::MPBarnd_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
