@@ -21,6 +21,7 @@ namespace Pakreserve1 {
 		ToeyMenu(void)
 		{
 			InitializeComponent();
+			exitpnl->Hide();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -178,6 +179,9 @@ private: System::Windows::Forms::Label^ Table12;
 private: System::Windows::Forms::Label^ Table13;
 private: System::Windows::Forms::Label^ Table14;
 private: System::Windows::Forms::Label^ Table15;
+private: System::Windows::Forms::Panel^ exitpnl;
+private: System::Windows::Forms::PictureBox^ noExit;
+private: System::Windows::Forms::PictureBox^ yesExit;
 
 
 
@@ -350,6 +354,9 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel15 = (gcnew System::Windows::Forms::Panel());
 			this->Table15 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox18 = (gcnew System::Windows::Forms::PictureBox());
+			this->exitpnl = (gcnew System::Windows::Forms::Panel());
+			this->noExit = (gcnew System::Windows::Forms::PictureBox());
+			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -383,6 +390,9 @@ private: System::Windows::Forms::Label^ Table15;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->BeginInit();
 			this->panel15->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox18))->BeginInit();
+			this->exitpnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -959,12 +969,46 @@ private: System::Windows::Forms::Label^ Table15;
 			this->pictureBox18->TabIndex = 1;
 			this->pictureBox18->TabStop = false;
 			// 
+			// exitpnl
+			// 
+			this->exitpnl->BackColor = System::Drawing::Color::Transparent;
+			this->exitpnl->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitpnl.BackgroundImage")));
+			this->exitpnl->Controls->Add(this->noExit);
+			this->exitpnl->Controls->Add(this->yesExit);
+			this->exitpnl->Location = System::Drawing::Point(437, 237);
+			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->Size = System::Drawing::Size(407, 247);
+			this->exitpnl->TabIndex = 98;
+			// 
+			// noExit
+			// 
+			this->noExit->BackColor = System::Drawing::Color::Transparent;
+			this->noExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noExit.BackgroundImage")));
+			this->noExit->Location = System::Drawing::Point(242, 172);
+			this->noExit->Name = L"noExit";
+			this->noExit->Size = System::Drawing::Size(133, 56);
+			this->noExit->TabIndex = 1;
+			this->noExit->TabStop = false;
+			this->noExit->Click += gcnew System::EventHandler(this, &ToeyMenu::noExit_Click);
+			// 
+			// yesExit
+			// 
+			this->yesExit->BackColor = System::Drawing::Color::Transparent;
+			this->yesExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yesExit.BackgroundImage")));
+			this->yesExit->Location = System::Drawing::Point(32, 173);
+			this->yesExit->Name = L"yesExit";
+			this->yesExit->Size = System::Drawing::Size(133, 56);
+			this->yesExit->TabIndex = 0;
+			this->yesExit->TabStop = false;
+			this->yesExit->Click += gcnew System::EventHandler(this, &ToeyMenu::yesExit_Click);
+			// 
 			// ToeyMenu
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->AutoScroll = true;
 			this->AutoScrollMargin = System::Drawing::Size(0, 20);
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel15);
 			this->Controls->Add(this->panel14);
 			this->Controls->Add(this->panel13);
@@ -989,6 +1033,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->Name = L"ToeyMenu";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &ToeyMenu::ToeyMenu_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ToeyMenu::ToeyMenu_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1037,6 +1082,9 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel15->ResumeLayout(false);
 			this->panel15->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox18))->EndInit();
+			this->exitpnl->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1176,6 +1224,16 @@ public: bool switchToBarNatwaa = false;
 private: System::Void panel10_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->switchToBarNatwaa = true;
 	this->Close();
+private: System::Void ToeyMenu_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Escape) {
+		exitpnl->Show();
+	}
+}
+private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	exitpnl->Hide();
 }
 };
 }
