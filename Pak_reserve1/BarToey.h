@@ -1953,7 +1953,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	}
 	fileIn.close();
 
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 22; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
 		}
