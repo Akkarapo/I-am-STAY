@@ -60,8 +60,8 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarMapraw bar3(user);
         Pakreserve1::BarToey bar4(user);
         Pakreserve1::BarNepjune bar5(user);
-        Pakreserve1::BarOakkhara bar6;
-        Pakreserve1::BarGarpanya bar11;
+        Pakreserve1::BarOakkhara bar6(user);
+        Pakreserve1::BarGarpanya bar11(user);
 
         
         while (true) {
