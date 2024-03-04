@@ -435,11 +435,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table1->AutoSize = true;
 			this->Table1->BackColor = System::Drawing::Color::Transparent;
+			this->Table1->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table1->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table1->Location = System::Drawing::Point(50, 77);
 			this->Table1->Name = L"Table1";
-			this->Table1->Size = System::Drawing::Size(89, 30);
+			this->Table1->Size = System::Drawing::Size(68, 24);
 			this->Table1->TabIndex = 1;
 			this->Table1->Text = L"XX/30";
 			// 
@@ -470,11 +471,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table2->AutoSize = true;
 			this->Table2->BackColor = System::Drawing::Color::Transparent;
+			this->Table2->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table2->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table2->Location = System::Drawing::Point(50, 77);
 			this->Table2->Name = L"Table2";
-			this->Table2->Size = System::Drawing::Size(89, 30);
+			this->Table2->Size = System::Drawing::Size(68, 24);
 			this->Table2->TabIndex = 2;
 			this->Table2->Text = L"XX/30";
 			// 
@@ -505,11 +507,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table3->AutoSize = true;
 			this->Table3->BackColor = System::Drawing::Color::Transparent;
+			this->Table3->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table3->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table3->Location = System::Drawing::Point(50, 77);
 			this->Table3->Name = L"Table3";
-			this->Table3->Size = System::Drawing::Size(89, 30);
+			this->Table3->Size = System::Drawing::Size(68, 24);
 			this->Table3->TabIndex = 3;
 			this->Table3->Text = L"XX/30";
 			// 
@@ -540,11 +543,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table4->AutoSize = true;
 			this->Table4->BackColor = System::Drawing::Color::Transparent;
+			this->Table4->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table4->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table4->Location = System::Drawing::Point(50, 77);
 			this->Table4->Name = L"Table4";
-			this->Table4->Size = System::Drawing::Size(89, 30);
+			this->Table4->Size = System::Drawing::Size(68, 24);
 			this->Table4->TabIndex = 4;
 			this->Table4->Text = L"XX/30";
 			// 
@@ -575,11 +579,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table5->AutoSize = true;
 			this->Table5->BackColor = System::Drawing::Color::Transparent;
+			this->Table5->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table5->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table5->Location = System::Drawing::Point(50, 77);
 			this->Table5->Name = L"Table5";
-			this->Table5->Size = System::Drawing::Size(89, 30);
+			this->Table5->Size = System::Drawing::Size(68, 24);
 			this->Table5->TabIndex = 5;
 			this->Table5->Text = L"XX/30";
 			// 
@@ -610,11 +615,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table6->AutoSize = true;
 			this->Table6->BackColor = System::Drawing::Color::Transparent;
+			this->Table6->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table6->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table6->Location = System::Drawing::Point(50, 77);
 			this->Table6->Name = L"Table6";
-			this->Table6->Size = System::Drawing::Size(89, 30);
+			this->Table6->Size = System::Drawing::Size(68, 24);
 			this->Table6->TabIndex = 6;
 			this->Table6->Text = L"XX/30";
 			// 
@@ -645,11 +651,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table7->AutoSize = true;
 			this->Table7->BackColor = System::Drawing::Color::Transparent;
+			this->Table7->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table7->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table7->Location = System::Drawing::Point(50, 77);
 			this->Table7->Name = L"Table7";
-			this->Table7->Size = System::Drawing::Size(89, 30);
+			this->Table7->Size = System::Drawing::Size(68, 24);
 			this->Table7->TabIndex = 7;
 			this->Table7->Text = L"XX/30";
 			// 
@@ -680,11 +687,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table8->AutoSize = true;
 			this->Table8->BackColor = System::Drawing::Color::Transparent;
+			this->Table8->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table8->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table8->Location = System::Drawing::Point(50, 77);
 			this->Table8->Name = L"Table8";
-			this->Table8->Size = System::Drawing::Size(89, 30);
+			this->Table8->Size = System::Drawing::Size(68, 24);
 			this->Table8->TabIndex = 8;
 			this->Table8->Text = L"XX/30";
 			// 
@@ -714,11 +722,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table9->AutoSize = true;
 			this->Table9->BackColor = System::Drawing::Color::Transparent;
+			this->Table9->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table9->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table9->Location = System::Drawing::Point(50, 77);
 			this->Table9->Name = L"Table9";
-			this->Table9->Size = System::Drawing::Size(89, 30);
+			this->Table9->Size = System::Drawing::Size(68, 24);
 			this->Table9->TabIndex = 9;
 			this->Table9->Text = L"XX/30";
 			// 
@@ -748,11 +757,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table10->AutoSize = true;
 			this->Table10->BackColor = System::Drawing::Color::Transparent;
+			this->Table10->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table10->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table10->Location = System::Drawing::Point(50, 77);
 			this->Table10->Name = L"Table10";
-			this->Table10->Size = System::Drawing::Size(89, 30);
+			this->Table10->Size = System::Drawing::Size(68, 24);
 			this->Table10->TabIndex = 10;
 			this->Table10->Text = L"XX/30";
 			// 
@@ -783,11 +793,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table11->AutoSize = true;
 			this->Table11->BackColor = System::Drawing::Color::Transparent;
+			this->Table11->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table11->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table11->Location = System::Drawing::Point(50, 77);
 			this->Table11->Name = L"Table11";
-			this->Table11->Size = System::Drawing::Size(89, 30);
+			this->Table11->Size = System::Drawing::Size(68, 24);
 			this->Table11->TabIndex = 11;
 			this->Table11->Text = L"XX/30";
 			// 
@@ -819,11 +830,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table12->AutoSize = true;
 			this->Table12->BackColor = System::Drawing::Color::Transparent;
+			this->Table12->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table12->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table12->Location = System::Drawing::Point(50, 77);
 			this->Table12->Name = L"Table12";
-			this->Table12->Size = System::Drawing::Size(89, 30);
+			this->Table12->Size = System::Drawing::Size(68, 24);
 			this->Table12->TabIndex = 12;
 			this->Table12->Text = L"XX/30";
 			// 
@@ -854,11 +866,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table13->AutoSize = true;
 			this->Table13->BackColor = System::Drawing::Color::Transparent;
+			this->Table13->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table13->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table13->Location = System::Drawing::Point(50, 77);
 			this->Table13->Name = L"Table13";
-			this->Table13->Size = System::Drawing::Size(89, 30);
+			this->Table13->Size = System::Drawing::Size(68, 24);
 			this->Table13->TabIndex = 13;
 			this->Table13->Text = L"XX/30";
 			// 
@@ -888,12 +901,14 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table14->AutoSize = true;
 			this->Table14->BackColor = System::Drawing::Color::Transparent;
+			this->Table14->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table14->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table14->Location = System::Drawing::Point(50, 77);
 			this->Table14->Name = L"Table14";
-			this->Table14->Size = System::Drawing::Size(0, 30);
+			this->Table14->Size = System::Drawing::Size(68, 24);
 			this->Table14->TabIndex = 14;
+			this->Table14->Text = L"XX/30";
 			// 
 			// pictureBox17
 			// 
@@ -921,11 +936,12 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->Table15->AutoSize = true;
 			this->Table15->BackColor = System::Drawing::Color::Transparent;
+			this->Table15->Cursor = System::Windows::Forms::Cursors::Default;
 			this->Table15->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table15->Location = System::Drawing::Point(50, 77);
 			this->Table15->Name = L"Table15";
-			this->Table15->Size = System::Drawing::Size(89, 30);
+			this->Table15->Size = System::Drawing::Size(68, 24);
 			this->Table15->TabIndex = 15;
 			this->Table15->Text = L"XX/30";
 			// 
@@ -944,6 +960,7 @@ private: System::Windows::Forms::Label^ Table15;
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->AutoScroll = true;
+			this->AutoScrollMargin = System::Drawing::Size(0, 20);
 			this->ClientSize = System::Drawing::Size(1280, 720);
 			this->Controls->Add(this->panel15);
 			this->Controls->Add(this->panel14);
