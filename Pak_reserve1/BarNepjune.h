@@ -523,7 +523,7 @@ namespace Pakreserve1 {
 			this->pictureBox1->Location = System::Drawing::Point(24, 22);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(71, 26);
+			this->pictureBox1->Size = System::Drawing::Size(53, 21);
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &BarNepjune::pictureBox1_Click);
