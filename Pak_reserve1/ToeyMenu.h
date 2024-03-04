@@ -674,6 +674,7 @@ private: System::Windows::Forms::Label^ Table15;
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(230, 343);
 			this->panel8->TabIndex = 25;
+			this->panel8->Click += gcnew System::EventHandler(this, &ToeyMenu::panel8_Click);
 			// 
 			// Table8
 			// 
@@ -1129,6 +1130,11 @@ private: System::Void ToeyMenu_Load(System::Object^ sender, System::EventArgs^ e
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void panel12_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+public: bool switchToBarAmericano = false;
+private: System::Void panel8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->switchToBarAmericano = true;
+	this->Close();
 }
 };
 }

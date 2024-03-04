@@ -1508,6 +1508,15 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 
 			if (line[7] == '1') {
 				a[7] = '1';
+				A8Table1PRed->Show();
+				A8Table1P->Hide();
+			}
+			else {
+				A8Table1P->Show();
+			}
+
+			if (line[8] == '1') {
+				a[8] = '1';
 				B1Table4PRed->Show();
 				B1Table4P->Hide();
 			}
@@ -1515,8 +1524,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B1Table4P->Show();
 			}
 
-			if (line[8] == '1') {
-				a[8] = '1';
+			if (line[9] == '1') {
+				a[9] = '1';
 				B2Table4PRed->Show();
 				B2Table4P->Hide();
 			}
@@ -1524,8 +1533,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B2Table4P->Show();
 			}
 
-			if (line[9] == '1') {
-				a[9] = '1';
+			if (line[10] == '1') {
+				a[10] = '1';
 				B3Table4PRed->Show();
 				B3Table4P->Hide();
 			}
@@ -1533,8 +1542,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B3Table4P->Show();
 			}
 
-			if (line[10] == '1') {
-				a[10] = '1';
+			if (line[11] == '1') {
+				a[11] = '1';
 				B4Table4PRed->Show();
 				B4Table4P->Hide();
 			}
@@ -1542,8 +1551,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B4Table4P->Show();
 			}
 
-			if (line[11] == '1') {
-				a[11] = '1';
+			if (line[12] == '1') {
+				a[12] = '1';
 				B5Table4PRed->Show();
 				B5Table4P->Hide();
 			}
@@ -1551,8 +1560,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B5Table4P->Show();
 			}
 
-			if (line[12] == '1') {
-				a[12] = '1';
+			if (line[13] == '1') {
+				a[13] = '1';
 				B6Table4PRed->Show();
 				B6Table4P->Hide();
 			}
@@ -1560,8 +1569,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B6Table4P->Show();
 			}
 
-			if (line[13] == '1') {
-				a[13] = '1';
+			if (line[14] == '1') {
+				a[14] = '1';
 				B7Table4PRed->Show();
 				B7Table4P->Hide();
 			}
@@ -1569,8 +1578,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				B7Table4P->Show();
 			}
 
-			if (line[14] == '1') {
-				a[14] = '1';
+			if (line[15] == '1') {
+				a[15] = '1';
 				C1Table4PRed->Show();
 				C1Table4P->Hide();
 			}
@@ -1578,8 +1587,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C1Table4P->Show();
 			}
 
-			if (line[15] == '1') {
-				a[15] = '1';
+			if (line[16] == '1') {
+				a[16] = '1';
 				C2Table4PRed->Show();
 				C2Table4P->Hide();
 			}
@@ -1587,8 +1596,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C2Table4P->Show();
 			}
 
-			if (line[16] == '1') {
-				a[16] = '1';
+			if (line[17] == '1') {
+				a[17] = '1';
 				C3Table4PRed->Show();
 				C3Table4P->Hide();
 			}
@@ -1596,8 +1605,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C3Table4P->Show();
 			}
 
-			if (line[17] == '1') {
-				a[17] = '1';
+			if (line[18] == '1') {
+				a[18] = '1';
 				C4Table4PRed->Show();
 				C4Table4P->Hide();
 			}
@@ -1605,8 +1614,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C4Table4P->Show();
 			}
 
-			if (line[18] == '1') {
-				a[18] = '1';
+			if (line[19] == '1') {
+				a[19] = '1';
 				C5Table4PRed->Show();
 				C5Table4P->Hide();
 			}
@@ -1614,8 +1623,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C5Table4P->Show();
 			}
 
-			if (line[19] == '1') {
-				a[19] = '1';
+			if (line[20] == '1') {
+				a[20] = '1';
 				C6Table4PRed->Show();
 				C6Table4P->Hide();
 			}
@@ -1623,8 +1632,8 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 				C6Table4P->Show();
 			}
 			
-			if (line[20] == '1') {
-				a[20] = '1';
+			if (line[21] == '1') {
+				a[21] = '1';
 				C7Table4PRed->Show();
 				C7Table4P->Hide();
 			}
