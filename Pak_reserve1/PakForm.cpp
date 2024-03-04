@@ -16,7 +16,11 @@
 #include "BarToey.h"
 #include "BarNepjune.h"
 #include "BarOakkhara.h"
+#include "BarSajui.h"
 #include "BarGarpanya.h"
+#include "BarSTEVE.h"
+
+
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -61,7 +65,9 @@ using namespace System::Windows::Forms;
         Pakreserve1::BarToey bar4(user);
         Pakreserve1::BarNepjune bar5(user);
         Pakreserve1::BarOakkhara bar6(user);
+        Pakreserve1::BarSajui bar7(user);
         Pakreserve1::BarGarpanya bar11(user);
+        Pakreserve1::BarSTEVE bar12(user);
 
         
         while (true) {
@@ -94,13 +100,14 @@ using namespace System::Windows::Forms;
             registForm.switchToReg2 = false;
             
         }
-        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP)
+        else if (form.switchToMP || bar2.switchToMP || bar3.switchToMP || bar4.switchToMP || bar5.switchToMP||bar6.switchToMP)
         {
             mpform.ShowDialog();
             bar2.switchToMP = false;
             bar3.switchToMP = false;
             bar4.switchToMP = false;
             bar5.switchToMP = false;
+            bar6.switchToMP = false;
             form.switchToMP = false;
         }
         else if (Toeyform.switchToPakForm) 
@@ -133,10 +140,20 @@ using namespace System::Windows::Forms;
             bar6.ShowDialog();
             Toeyform.switchToBarOakkhara = false;
         }
+        else if (Toeyform.switchToBarSajui)
+        {
+            bar7.ShowDialog();
+            Toeyform.switchToBarSajui = false;
+        }
         else if (Toeyform.switchToBarGarpanya)
         {
             bar11.ShowDialog();
             Toeyform.switchToBarGarpanya = false;
+        }
+        else if (Toeyform.switchToBarSTEVE)
+        {
+            bar12.ShowDialog();
+            Toeyform.switchToBarSTEVE = false;
         }
         else
         {
