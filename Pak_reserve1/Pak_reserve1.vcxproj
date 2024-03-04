@@ -134,10 +134,12 @@
     <ClCompile Include="BarGong.cpp" />
     <ClCompile Include="BarHoney.cpp" />
     <ClCompile Include="BarMapraw.cpp" />
+    <ClCompile Include="BarNatwaa.cpp" />
     <ClCompile Include="BarNepjune.cpp" />
     <ClCompile Include="BarOakkhara.cpp" />
     <ClCompile Include="BarSajui.cpp" />
     <ClCompile Include="BarSaran.cpp" />
+    <ClCompile Include="BarSRTxz.cpp" />
     <ClCompile Include="BarSTEVE.cpp" />
     <ClCompile Include="BarToey.cpp" />
     <ClCompile Include="Login.cpp" />
@@ -169,6 +171,9 @@
     <ClInclude Include="BarMapraw.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="BarNatwaa.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="BarNepjune.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -179,6 +184,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarSaran.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BarSRTxz.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="BarSTEVE.h">
@@ -240,6 +248,9 @@
       <DependentUpon>BarMapraw.h</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarNatwaa.resx">
+      <DependentUpon>BarNatwaa.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarNepjune.resx">
       <DependentUpon>BarNepjune.h</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarSaran.resx">
       <DependentUpon>BarSaran.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarSRTxz.resx">
+      <DependentUpon>BarSRTxz.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarSTEVE.resx">
       <DependentUpon>BarSTEVE.h</DependentUpon>
