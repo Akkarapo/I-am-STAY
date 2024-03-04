@@ -40,10 +40,14 @@ namespace Pakreserve1 {
 
 	public:
 		String^ username = nullptr;
-	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Panel^ exitpnl;
+	private: System::Windows::Forms::PictureBox^ noExit;
 	public:
-	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::PictureBox^ pictureBox5;
+
+	public:
+
+	private: System::Windows::Forms::PictureBox^ yesExit;
+
 
 	public:
 		String^ tempUser = nullptr;//==============mpzone==============
@@ -97,7 +101,7 @@ namespace Pakreserve1 {
 			H6Table1PGreen->Hide();
 			H7Table1PGreen->Hide();
 
-			panel2->Hide();
+			exitpnl->Hide();
 
 			panel1->Hide();
 			UpdateTable();
@@ -380,9 +384,9 @@ namespace Pakreserve1 {
 			this->F3Table4PRed = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->exitpnl = (gcnew System::Windows::Forms::Panel());
+			this->noExit = (gcnew System::Windows::Forms::PictureBox());
+			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->HomeBTN = (gcnew System::Windows::Forms::PictureBox());
@@ -476,9 +480,9 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			this->exitpnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->BeginInit();
@@ -489,7 +493,7 @@ namespace Pakreserve1 {
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(144, 167);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(0, 13);
+			this->label2->Size = System::Drawing::Size(0, 16);
 			this->label2->TabIndex = 1;
 			// 
 			// ConfirmTableNo1
@@ -1653,7 +1657,7 @@ namespace Pakreserve1 {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->Controls->Add(this->panel2);
+			this->panel1->Controls->Add(this->exitpnl);
 			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->pictureBox1);
 			this->panel1->Location = System::Drawing::Point(433, 237);
@@ -1661,38 +1665,38 @@ namespace Pakreserve1 {
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 94;
 			// 
-			// panel2
+			// exitpnl
 			// 
-			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->Controls->Add(this->pictureBox4);
-			this->panel2->Controls->Add(this->pictureBox5);
-			this->panel2->Location = System::Drawing::Point(0, 0);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(407, 247);
-			this->panel2->TabIndex = 95;
+			this->exitpnl->BackColor = System::Drawing::Color::Transparent;
+			this->exitpnl->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitpnl.BackgroundImage")));
+			this->exitpnl->Controls->Add(this->noExit);
+			this->exitpnl->Controls->Add(this->yesExit);
+			this->exitpnl->Location = System::Drawing::Point(0, 0);
+			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->Size = System::Drawing::Size(407, 247);
+			this->exitpnl->TabIndex = 95;
 			// 
-			// pictureBox4
+			// noExit
 			// 
-			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->Location = System::Drawing::Point(242, 172);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(133, 56);
-			this->pictureBox4->TabIndex = 1;
-			this->pictureBox4->TabStop = false;
-			this->pictureBox4->Click += gcnew System::EventHandler(this, &BarOakkhara::pictureBox4_Click);
+			this->noExit->BackColor = System::Drawing::Color::Transparent;
+			this->noExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noExit.BackgroundImage")));
+			this->noExit->Location = System::Drawing::Point(242, 172);
+			this->noExit->Name = L"noExit";
+			this->noExit->Size = System::Drawing::Size(133, 56);
+			this->noExit->TabIndex = 1;
+			this->noExit->TabStop = false;
+			this->noExit->Click += gcnew System::EventHandler(this, &BarOakkhara::pictureBox4_Click);
 			// 
-			// pictureBox5
+			// yesExit
 			// 
-			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.BackgroundImage")));
-			this->pictureBox5->Location = System::Drawing::Point(32, 173);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(133, 56);
-			this->pictureBox5->TabIndex = 0;
-			this->pictureBox5->TabStop = false;
-			this->pictureBox5->Click += gcnew System::EventHandler(this, &BarOakkhara::pictureBox5_Click);
+			this->yesExit->BackColor = System::Drawing::Color::Transparent;
+			this->yesExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yesExit.BackgroundImage")));
+			this->yesExit->Location = System::Drawing::Point(32, 173);
+			this->yesExit->Name = L"yesExit";
+			this->yesExit->Size = System::Drawing::Size(133, 56);
+			this->yesExit->TabIndex = 0;
+			this->yesExit->TabStop = false;
+			this->yesExit->Click += gcnew System::EventHandler(this, &BarOakkhara::pictureBox5_Click);
 			// 
 			// pictureBox3
 			// 
@@ -1923,9 +1927,9 @@ namespace Pakreserve1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->F3Table4PRed))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel1->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			this->exitpnl->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->EndInit();
@@ -2897,7 +2901,7 @@ namespace Pakreserve1 {
 
 		if (e->KeyCode == Keys::Escape)
 		{
-			panel2->Show();
+			exitpnl->Show();
 			//Application::Exit(); 
 		}
 	}
@@ -2905,7 +2909,7 @@ namespace Pakreserve1 {
 		Application::Exit();
 	}
 	private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
-		panel2->Hide();
+		exitpnl->Hide();
 	}
 	public: bool switchToToey = false;
 	private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {

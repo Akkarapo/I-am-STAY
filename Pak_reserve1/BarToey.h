@@ -35,6 +35,9 @@ namespace Pakreserve1 {
 	public:
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::Panel^ exitpnl;
+	private: System::Windows::Forms::PictureBox^ noExit;
+	private: System::Windows::Forms::PictureBox^ yesExit;
 		   array<bool>^ dataTable;
 	
 	public:
@@ -67,7 +70,7 @@ namespace Pakreserve1 {
 			C5Table4PGreen->Hide();
 			C6Table4PGreen->Hide();
 			C7Table4PGreen->Hide();
-			
+			exitpnl->Hide();
 			username = user->username;
 			panel1->Hide();
 			UpdateTable();
@@ -258,6 +261,9 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->exitpnl = (gcnew System::Windows::Forms::Panel());
+			this->noExit = (gcnew System::Windows::Forms::PictureBox());
+			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -329,6 +335,9 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->exitpnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1231,11 +1240,45 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &BarToey::pictureBox2_Click);
 			// 
+			// exitpnl
+			// 
+			this->exitpnl->BackColor = System::Drawing::Color::Transparent;
+			this->exitpnl->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitpnl.BackgroundImage")));
+			this->exitpnl->Controls->Add(this->noExit);
+			this->exitpnl->Controls->Add(this->yesExit);
+			this->exitpnl->Location = System::Drawing::Point(437, 237);
+			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->Size = System::Drawing::Size(407, 247);
+			this->exitpnl->TabIndex = 178;
+			// 
+			// noExit
+			// 
+			this->noExit->BackColor = System::Drawing::Color::Transparent;
+			this->noExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noExit.BackgroundImage")));
+			this->noExit->Location = System::Drawing::Point(242, 172);
+			this->noExit->Name = L"noExit";
+			this->noExit->Size = System::Drawing::Size(133, 56);
+			this->noExit->TabIndex = 1;
+			this->noExit->TabStop = false;
+			this->noExit->Click += gcnew System::EventHandler(this, &BarToey::noExit_Click);
+			// 
+			// yesExit
+			// 
+			this->yesExit->BackColor = System::Drawing::Color::Transparent;
+			this->yesExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yesExit.BackgroundImage")));
+			this->yesExit->Location = System::Drawing::Point(32, 173);
+			this->yesExit->Name = L"yesExit";
+			this->yesExit->Size = System::Drawing::Size(133, 56);
+			this->yesExit->TabIndex = 0;
+			this->yesExit->TabStop = false;
+			this->yesExit->Click += gcnew System::EventHandler(this, &BarToey::yesExit_Click);
+			// 
 			// BarToey
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->A3Table1PRed);
 			this->Controls->Add(this->A4Table1PRed);
@@ -1310,6 +1353,7 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarToey";
 			this->Load += gcnew System::EventHandler(this, &BarToey::BarToey_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &BarToey::BarToey_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->EndInit();
@@ -1381,6 +1425,9 @@ private: System::Windows::Forms::PictureBox^ C3Table4PRed;
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->exitpnl->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2141,6 +2188,17 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->Hide();
+}
+private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	exitpnl->Hide();
+}
+private: System::Void BarToey_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Escape) {
+		exitpnl->Show();
+	}
 }
 };
 }
