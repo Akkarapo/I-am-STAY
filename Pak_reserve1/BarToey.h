@@ -1958,7 +1958,9 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 			a[i] = '1';
 		}
 	}
-
+	if (!isChecked) {
+		return;
+	}
 	String^ a2 = a->ToString();
 	string newData;
 	MarshalString(a2, newData);

@@ -2666,6 +2666,9 @@ namespace Pakreserve1 {
 				isChecked = true;
 			}
 		}
+		if (!isChecked) {
+			return;
+		}
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
