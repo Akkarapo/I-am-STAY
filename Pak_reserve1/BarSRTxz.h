@@ -1223,7 +1223,6 @@ namespace Pakreserve1 {
 			// pictureBox3
 			// 
 			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
 			this->pictureBox3->Location = System::Drawing::Point(242, 172);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(133, 56);
@@ -1234,7 +1233,6 @@ namespace Pakreserve1 {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			this->pictureBox2->Location = System::Drawing::Point(32, 173);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(133, 56);
@@ -1301,7 +1299,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A6Table1PRed);
 			this->Controls->Add(this->A7Table1PRed);
 			this->Controls->Add(this->A8Table1PRed);
-			this->Controls->Add(this->A3Table1PGreen);
 			this->Controls->Add(this->A3Table1P);
 			this->Controls->Add(this->A2Table1PRed);
 			this->Controls->Add(this->A1Table1PRed);
@@ -1321,27 +1318,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->C1Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
 			this->Controls->Add(this->B1Table4PRed);
-			this->Controls->Add(this->C7Table4PGreen);
-			this->Controls->Add(this->C6Table4PGreen);
-			this->Controls->Add(this->C5Table4PGreen);
-			this->Controls->Add(this->C4Table4PGreen);
-			this->Controls->Add(this->C3Table4PGreen);
-			this->Controls->Add(this->C2Table4PGreen);
-			this->Controls->Add(this->C1Table4PGreen);
-			this->Controls->Add(this->B7Table4PGreen);
-			this->Controls->Add(this->B6Table4PGreen);
-			this->Controls->Add(this->B5Table4PGreen);
-			this->Controls->Add(this->B4Table4PGreen);
-			this->Controls->Add(this->B3Table4PGreen);
-			this->Controls->Add(this->B2Table4PGreen);
-			this->Controls->Add(this->B1Table4PGreen);
-			this->Controls->Add(this->A8Table1PGreen);
-			this->Controls->Add(this->A7Table1PGreen);
-			this->Controls->Add(this->A6Table1PGreen);
-			this->Controls->Add(this->A5Table1PGreen);
-			this->Controls->Add(this->A4Table1PGreen);
-			this->Controls->Add(this->A2Table1PGreen);
-			this->Controls->Add(this->A1Table1PGreen);
 			this->Controls->Add(this->C7Table4P);
 			this->Controls->Add(this->C6Table4P);
 			this->Controls->Add(this->C5Table4P);
@@ -1363,6 +1339,28 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A4Table1P);
 			this->Controls->Add(this->A2Table1P);
 			this->Controls->Add(this->A1Table1P);
+			this->Controls->Add(this->A3Table1PGreen);
+			this->Controls->Add(this->A8Table1PGreen);
+			this->Controls->Add(this->A7Table1PGreen);
+			this->Controls->Add(this->A6Table1PGreen);
+			this->Controls->Add(this->A5Table1PGreen);
+			this->Controls->Add(this->A4Table1PGreen);
+			this->Controls->Add(this->A2Table1PGreen);
+			this->Controls->Add(this->A1Table1PGreen);
+			this->Controls->Add(this->C7Table4PGreen);
+			this->Controls->Add(this->C6Table4PGreen);
+			this->Controls->Add(this->C5Table4PGreen);
+			this->Controls->Add(this->C4Table4PGreen);
+			this->Controls->Add(this->C3Table4PGreen);
+			this->Controls->Add(this->C2Table4PGreen);
+			this->Controls->Add(this->C1Table4PGreen);
+			this->Controls->Add(this->B7Table4PGreen);
+			this->Controls->Add(this->B6Table4PGreen);
+			this->Controls->Add(this->B5Table4PGreen);
+			this->Controls->Add(this->B4Table4PGreen);
+			this->Controls->Add(this->B3Table4PGreen);
+			this->Controls->Add(this->B2Table4PGreen);
+			this->Controls->Add(this->B1Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"BarSRTxz";
@@ -1953,7 +1951,7 @@ namespace Pakreserve1 {
 		}
 		fileIn.close();
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 22; i++) {
 			if (dataTable[i]) {
 				a[i] = '1';
 			}
