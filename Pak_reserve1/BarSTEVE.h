@@ -2115,6 +2115,7 @@ namespace Pakreserve1 {
 		for (int i = 0; i < 29; i++) {
 			if (dataTable[i]) {
 				a[i] = '1';
+				bool isChecked = false;
 			}
 		}
 
