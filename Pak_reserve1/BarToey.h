@@ -1941,7 +1941,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	using namespace std;
 
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
-
+	bool isChecked = false;
 	string path, line;
 	MarshalString(temp, path);
 
