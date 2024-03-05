@@ -1054,7 +1054,7 @@ private: System::Void ConfirmTableBarMapraw_Click_1(System::Object^ sender, Syst
 	for (int i = 0; i < 16; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
-			bool isChecked = false;
+			isChecked = true;
 		}
 	}
 	if (!isChecked) {
@@ -1121,7 +1121,7 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	using namespace std;
 
 	String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
-
+	bool isChecked = false;
 	string path, line;
 	MarshalString(temp, path);
 
@@ -1137,7 +1137,11 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 		//a[i] = (dataTable[i] ? '1' : '0');
 		if (dataTable[i]) {
 			a[i] = '1';
+			isChecked = true;
 		}
+	}
+	if (!isChecked) {
+		return;
 	}
 	String^ a2 = a->ToString();
 	string newData;
