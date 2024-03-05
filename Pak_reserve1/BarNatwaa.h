@@ -1057,7 +1057,9 @@ namespace Pakreserve1 {
 				bool isChecked = false;
 			}
 		}
-
+		if (!isChecked) {
+			return;
+		}
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
