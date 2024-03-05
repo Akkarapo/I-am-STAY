@@ -669,6 +669,7 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A3Table4PGreen);
 			this->Controls->Add(this->A2Table4PGreen);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"BarNatwaa";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

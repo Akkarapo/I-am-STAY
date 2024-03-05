@@ -39,6 +39,8 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::Label^ Table3;
 	private: System::Windows::Forms::Label^ Table4;
 	private: System::Windows::Forms::Label^ Table5;
+	private: System::Windows::Forms::Label^ CustomerName;
+	private: System::Windows::Forms::Label^ CustomerMail;
 	public:
 
 
@@ -75,10 +77,10 @@ namespace Pakreserve1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 
-	private: System::Windows::Forms::Label^ CustomerName;
-	private: System::Windows::Forms::PictureBox^ CustomerPhoto;
-	private: System::Windows::Forms::Label^ CustomerMail;
-	private: System::Windows::Forms::Panel^ panel1;
+
+
+
+
 
 
 
@@ -193,10 +195,6 @@ private: System::Windows::Forms::Label^ Date5;
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Profile::typeid));
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->CustomerName = (gcnew System::Windows::Forms::Label());
-			this->CustomerPhoto = (gcnew System::Windows::Forms::PictureBox());
-			this->CustomerMail = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->TicketF1 = (gcnew System::Windows::Forms::Panel());
 			this->Table1 = (gcnew System::Windows::Forms::Label());
@@ -229,9 +227,9 @@ private: System::Windows::Forms::Label^ Date5;
 			this->Time5 = (gcnew System::Windows::Forms::Label());
 			this->Date5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->CustomerName = (gcnew System::Windows::Forms::Label());
+			this->CustomerMail = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->BeginInit();
-			this->panel1->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->TicketF1->SuspendLayout();
 			this->TicketF2->SuspendLayout();
@@ -253,54 +251,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->pictureBox2->TabIndex = 9;
 			this->pictureBox2->TabStop = false;
 			this->pictureBox2->Click += gcnew System::EventHandler(this, &Profile::pictureBox2_Click);
-			// 
-			// CustomerName
-			// 
-			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerName->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->CustomerName->ForeColor = System::Drawing::Color::White;
-			this->CustomerName->Location = System::Drawing::Point(167, 70);
-			this->CustomerName->Name = L"CustomerName";
-			this->CustomerName->Size = System::Drawing::Size(181, 20);
-			this->CustomerName->TabIndex = 14;
-			this->CustomerName->Text = L"CustomerName";
-			// 
-			// CustomerPhoto
-			// 
-			this->CustomerPhoto->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerPhoto->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CustomerPhoto.Image")));
-			this->CustomerPhoto->Location = System::Drawing::Point(35, 56);
-			this->CustomerPhoto->Name = L"CustomerPhoto";
-			this->CustomerPhoto->Size = System::Drawing::Size(110, 117);
-			this->CustomerPhoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->CustomerPhoto->TabIndex = 11;
-			this->CustomerPhoto->TabStop = false;
-			// 
-			// CustomerMail
-			// 
-			this->CustomerMail->BackColor = System::Drawing::Color::Transparent;
-			this->CustomerMail->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->CustomerMail->ForeColor = System::Drawing::Color::White;
-			this->CustomerMail->Location = System::Drawing::Point(168, 113);
-			this->CustomerMail->Name = L"CustomerMail";
-			this->CustomerMail->Size = System::Drawing::Size(180, 60);
-			this->CustomerMail->TabIndex = 15;
-			this->CustomerMail->Text = L"CustomerMail";
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::Transparent;
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->panel1->Controls->Add(this->CustomerMail);
-			this->panel1->Controls->Add(this->CustomerPhoto);
-			this->panel1->Controls->Add(this->CustomerName);
-			this->panel1->Location = System::Drawing::Point(54, 78);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(375, 218);
-			this->panel1->TabIndex = 18;
 			// 
 			// flowLayoutPanel1
 			// 
@@ -707,6 +657,30 @@ private: System::Windows::Forms::Label^ Date5;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &Profile::pictureBox1_Click);
 			// 
+			// CustomerName
+			// 
+			this->CustomerName->BackColor = System::Drawing::Color::Transparent;
+			this->CustomerName->Font = (gcnew System::Drawing::Font(L"ABeeZee", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CustomerName->ForeColor = System::Drawing::Color::White;
+			this->CustomerName->Location = System::Drawing::Point(154, 599);
+			this->CustomerName->Name = L"CustomerName";
+			this->CustomerName->Size = System::Drawing::Size(181, 20);
+			this->CustomerName->TabIndex = 14;
+			this->CustomerName->Text = L"CustomerName";
+			// 
+			// CustomerMail
+			// 
+			this->CustomerMail->BackColor = System::Drawing::Color::Transparent;
+			this->CustomerMail->Font = (gcnew System::Drawing::Font(L"ABeeZee", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CustomerMail->ForeColor = System::Drawing::Color::White;
+			this->CustomerMail->Location = System::Drawing::Point(155, 637);
+			this->CustomerMail->Name = L"CustomerMail";
+			this->CustomerMail->Size = System::Drawing::Size(180, 60);
+			this->CustomerMail->TabIndex = 15;
+			this->CustomerMail->Text = L"CustomerMail";
+			// 
 			// Profile
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -714,10 +688,11 @@ private: System::Windows::Forms::Label^ Date5;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->CustomerMail);
 			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->CustomerName);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -725,8 +700,6 @@ private: System::Windows::Forms::Label^ Date5;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &Profile::Profile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CustomerPhoto))->EndInit();
-			this->panel1->ResumeLayout(false);
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->TicketF1->ResumeLayout(false);
 			this->TicketF2->ResumeLayout(false);
