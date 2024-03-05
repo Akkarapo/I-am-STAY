@@ -1038,6 +1038,7 @@ namespace Pakreserve1 {
 		using namespace std;
 
 		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
+		bool isChecked = false;
 
 		string path, line;
 		MarshalString(temp, path);
