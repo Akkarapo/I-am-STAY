@@ -1217,10 +1217,10 @@ namespace Pakreserve1 {
 			this->Table->Font = (gcnew System::Drawing::Font(L"Mongolian Baiti", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Table->ForeColor = System::Drawing::Color::White;
-			this->Table->Location = System::Drawing::Point(86, 494);
+			this->Table->Location = System::Drawing::Point(89, 494);
 			this->Table->Name = L"Table";
 			this->Table->Size = System::Drawing::Size(144, 40);
-			this->Table->TabIndex = 182;
+			this->Table->TabIndex = 143;
 			this->Table->Text = L"XX/29";
 			// 
 			// BarSTEVE
@@ -1234,7 +1234,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->ConfirmTableBarMapraw);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->B6Table6PRed);
-			this->Controls->Add(this->B6Table6PGreen);
 			this->Controls->Add(this->B3Table6PRed);
 			this->Controls->Add(this->C3Table4PRed);
 			this->Controls->Add(this->C2Table4PRed);
@@ -1254,25 +1253,6 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A4Table1PRed);
 			this->Controls->Add(this->A2Table1PRed);
 			this->Controls->Add(this->A1Table1PRed);
-			this->Controls->Add(this->E4Table4PGreen);
-			this->Controls->Add(this->E3Table4PGreen);
-			this->Controls->Add(this->E2Table4PGreen);
-			this->Controls->Add(this->E1Table4PGreen);
-			this->Controls->Add(this->D3Table4PGreen);
-			this->Controls->Add(this->D2Table4PGreen);
-			this->Controls->Add(this->D1Table4PGreen);
-			this->Controls->Add(this->C3Table4PGreen);
-			this->Controls->Add(this->C2Table4PGreen);
-			this->Controls->Add(this->C1Table4PGreen);
-			this->Controls->Add(this->B5Table4PGreen);
-			this->Controls->Add(this->B4Table4PGreen);
-			this->Controls->Add(this->B3Table6PGreen);
-			this->Controls->Add(this->B2Table4PGreen);
-			this->Controls->Add(this->B1Table4PGreen);
-			this->Controls->Add(this->A4Table1PGreen);
-			this->Controls->Add(this->A3Table1PGreen);
-			this->Controls->Add(this->A2Table1PGreen);
-			this->Controls->Add(this->A1Table1PGreen);
 			this->Controls->Add(this->A4Table1P);
 			this->Controls->Add(this->E4Table4P);
 			this->Controls->Add(this->E3Table4P);
@@ -1293,6 +1273,26 @@ namespace Pakreserve1 {
 			this->Controls->Add(this->A3Table1P);
 			this->Controls->Add(this->A2Table1P);
 			this->Controls->Add(this->A1Table1P);
+			this->Controls->Add(this->A4Table1PGreen);
+			this->Controls->Add(this->A2Table1PGreen);
+			this->Controls->Add(this->A1Table1PGreen);
+			this->Controls->Add(this->A3Table1PGreen);
+			this->Controls->Add(this->B6Table6PGreen);
+			this->Controls->Add(this->C3Table4PGreen);
+			this->Controls->Add(this->C2Table4PGreen);
+			this->Controls->Add(this->C1Table4PGreen);
+			this->Controls->Add(this->B5Table4PGreen);
+			this->Controls->Add(this->B4Table4PGreen);
+			this->Controls->Add(this->B3Table6PGreen);
+			this->Controls->Add(this->B2Table4PGreen);
+			this->Controls->Add(this->B1Table4PGreen);
+			this->Controls->Add(this->E4Table4PGreen);
+			this->Controls->Add(this->E3Table4PGreen);
+			this->Controls->Add(this->E2Table4PGreen);
+			this->Controls->Add(this->E1Table4PGreen);
+			this->Controls->Add(this->D3Table4PGreen);
+			this->Controls->Add(this->D2Table4PGreen);
+			this->Controls->Add(this->D1Table4PGreen);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -1999,6 +1999,7 @@ namespace Pakreserve1 {
 			if (line[i] == '1') count++;
 		}
 		Table->Text = count.ToString() + "/" + line.size();
+
 	}
 	private: System::Void B6Table6P_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		B6Table6P->Hide();
@@ -2063,7 +2064,7 @@ namespace Pakreserve1 {
 		}
 		fileIn.close();
 
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 29; i++) {
 			if (dataTable[i]) {
 				a[i] = '1';
 			}
