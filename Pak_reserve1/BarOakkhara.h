@@ -2663,6 +2663,7 @@ namespace Pakreserve1 {
 			//a[i] = (dataTable[i] ? '1' : '0');
 			if (dataTable[i]) {
 				a[i] = '1';
+				isChecked = true;
 			}
 		}
 		String^ a2 = a->ToString();

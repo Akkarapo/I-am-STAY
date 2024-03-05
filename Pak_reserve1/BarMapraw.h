@@ -1495,6 +1495,7 @@ private: System::Void ConfirmTableBarMapraw_Click(System::Object^ sender, System
 	for (int i = 0; i < 16; i++) {
 		if (dataTable[i]) {
 			a[i] = '1';
+			isChecked = true;
 		}
 	}
 
