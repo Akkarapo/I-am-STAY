@@ -2100,7 +2100,7 @@ namespace Pakreserve1 {
 		using namespace std;
 
 		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
-
+		bool isChecked = false;
 		string path, line;
 		MarshalString(temp, path);
 
@@ -2115,10 +2115,12 @@ namespace Pakreserve1 {
 		for (int i = 0; i < 29; i++) {
 			if (dataTable[i]) {
 				a[i] = '1';
-				bool isChecked = false;
+				isChecked = true;
 			}
 		}
-
+		if (!isChecked) {
+			return;
+		}
 		String^ a2 = a->ToString();
 		string newData;
 		MarshalString(a2, newData);
