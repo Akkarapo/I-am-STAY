@@ -1736,6 +1736,52 @@
         DyZu/vsCJsCjLS55xeThzuHh4RtR59cl/5zLzs7/ALpH8T14GGlEAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIUAAAA4CAYAAADTjjuXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAA9NJREFUeF7tnT9MVEEQxulJrAyh0gIaCUEKDCZaEGgshE7j1ZJYEhJtKAhGqTTx
+        DJVKYqyIpVpoIoWKRmNDoZ5gYmNjBAsssNDinO94E4ZlOP4EQ27n2+SXuzc7+15y+93s7Nt3e017LdVq
+        tVMYEsaEe8KM8JgcGPj8ywL6oyR0Fl31f4tcqLm4IAXQGEwLI0JL0YX7V+SkEMOw4F2YNAb7Jw45EYYI
+        RoY8QOQYKLp2b0VOwOiQJ8NFF++8SCMMF5PmJCQ/kJQ2F12+fRHn26YxyZfJosvrF3HkkBGL+kOJOPQn
+        DUgMhgoJbCxS0SIgO/UakbzB7HJzfiFGzGO9BiQGG4cRMSBKeI4kFuvRQg4YJQgoFZKoiYK5BAEzKgis
+        dnoOJCadEAVWPb1KEpMhiALr714lickYRMFb2sQyDVFwWZxYZiAKr4IEJmtR3H/w8H1bR+/qudLwN68e
+        nOob/Hm8p3/lx9LyU68+IlmLYvTK+MKhw+1V8OjJszeej9ZXFhZnvfqIhBFFW8fJVc+HothMGFGAW1N3
+        51MfimIzIURxvGdgBa9etKgnCgw5Fy+Nfj1z9sJ3vHqiypEQokCi2Xqk6y/eT1y78dH6bCWKNMooo5fH
+        F61fjoQQxXkRhb5vPdr1x840tLOtKCqfvzxXuyaoeFVhbZW05kIYUSyJENqP9f7Gsf22a+dbUcAftnQq
+        e1WiDOyYxlp7boQRBY7LU3fmcWyjBY6BFUX3ibUcJI0InyqLs9re2nMjlChAGi3wHlhRqG3u9bsXakvr
+        0hwkJ8KJIo0WXid7NkXzCoqiQfFEAU73DS7DjmjhCcCz7aQuF0KKArkC7IgWuHeRdrLa0uEDySrsIOe1
+        kpCiABotFCsKrZu4fvODbaNiQl5i7bkRVhTawYoVhU4909VTnAf2equuORBWFMBGizRH6O7p/wU7hhK0
+        x70JHCNKYGpqfXMjhCi2ujVto0WaI6DjERG0HkAYr+bevrR+OQJR8HG8OkAsFRFIzollQu1xPOxs51WS
+        mJQhCj7iTyy1R/yx0ZlXSWJSgij4s0FiWduUVd4w2SRguiYIFDng70kJGCkkURMFtkj0nEgsNu7IKwbu
+        iheb9SihRYyIFswtYoJNa/x9u6WC09OY1N+vWxw4jMRiZ/t0iyP35Y5Buejy7Ys4I7/Aht7eiUge4Iu/
+        8w3btUgjDiV5svu/drBFToD9urmSmgeYXfr7cO+2yImwIy83YG1sEPV3P1xsV+SkKg5GjsYAkQFLGPsv
+        Bq/IhbC6igvieQwkpbzxdbDg88eXFf2B+017/AvKpqZ/lzRF54Zwm34AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIUAAAA4CAYAAADTjjuXAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAABCRJREFUeF7tnT9MVEEQh+lJrAyhwgIaCf4pSDDRgmAjidBpuFaIloREGwqCUSpN
+        PEOlkgChAEq10EQLFY2GxkJFMdHChggWWmChxTnf8Ub21uUOLhhyu7PJF3g7s/uS2x+zs/see3XVlkKh
+        0Cb0CsPCHWFWuGfsGXz+eYHxyAlt2VD93yI3qs9uaAKoDSaEQaEhG8LdK9IpYhgQQjc2aoPdE4d0xBRh
+        kSEOiBwns6GtrkgHFh3iZCAb4u0XacR0MeZ0YsQHSWl9NuSVizjfdBob8TKWDXn5Io42ZaRF+alEHLq8
+        BkYa9GYSKC1iaBDITkONjLhhdflvfiGVrGNDDYw0KJ1GpIIoEXI00mIzWsiFRQkDcpkkiqKwXMKAWRUE
+        TztDDkaatCEKnnqGjEaa9CIKnr+HjEaaDCMK29I2XCYQhT0WN1xmEUXIYCRMdKLoPz/0ubm1Y330yrW3
+        Ifvk9Pwi9jO5gS8huxGhKPLjt17v299SaDxw+NfX1bUHvr259dg6dvx8m7FBlNNHy8GOnwz80MWRZbf+
+        7v2HL6jH/m5p+bFrMzaJUhRDl0Y+aLRw68/KlBESi1FKlKJYlWmjsenwbwRwY/x2cZpYev/x0VZRYuH5
+        qyf9F4Y+nTrdt4JwtI0PkQb78c6eb/hzHfKrdaIUBWi0YAC51ijhJ5h5EQD1Pn40uSyJa8jP9YmFaEXh
+        RwsdRDdKaPSA0avX35CYPlt4+VTbuZFAE1Stw482ao+JaEUBbm7BTz9KMAWE6rXdObFzjZC4RhiuX6xE
+        LQo3WoCfS5zo7Fmjfmp6btGtn5qZX3RFQD/aB/mH6xsjUYsCNBqQRPo2nRKYXpZEMIouXd3ViwqIuq02
+        xmIhelHoVECi6duor4T6EmVUGICgyEnUHhNJi0KnFnIK/HxCu57U6eYYwgjtmtY6SYtCpw8/p6gEOcbR
+        9q4ftI1xBZK0KLp7+lawVbPDqf3yM2SvZZIWxdTMXHGVQfLo5wdsVrl1k140oT/aWqSoQcqJAjR5ZCrR
+        be4j7V3f3TbuEpXVTLf4cR3rg7VkRKEbUT7kBySajU2H/u5n8Dvb4zrg6qN2QBDsavr9xQCisNfxMnSf
+        ImQDVhrsYZTziYDi63icbBcyGmmSRxT2ir/hUnzFn4POQkYjTXKIwv5t0HDZOJRVfrFk04CJoiAocmH/
+        T2rAYCaJoig4IjHkZKRF6Ym8UmGn4qXNZpTQIpVEC8st0oRDa8LndovBlqdpUv68bnGwaSQttndOtzja
+        udxpkM+GvHIRZ/ILDvQOdWTEAX/42z+wXYs0sqkkTnb+1Q5ukQ44r9uepMYBq8vwOdw7LdIRJ/LaAay1
+        DVF/59NFpSKdqjgsctQGRAYeYey+GEJFbsTTVW7I+xgkpbbxtbfw+fPHyniw31TlV1DW1f0BswFBDuJp
+        USMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="exitpnl.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZcAAAD3CAYAAADR5RnjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

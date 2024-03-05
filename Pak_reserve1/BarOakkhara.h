@@ -1671,7 +1671,7 @@ namespace Pakreserve1 {
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
 			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->pictureBox1);
-			this->panel1->Location = System::Drawing::Point(433, 237);
+			this->panel1->Location = System::Drawing::Point(437, 237);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(407, 247);
 			this->panel1->TabIndex = 94;
@@ -1776,6 +1776,7 @@ namespace Pakreserve1 {
 			this->pictureBox5->TabIndex = 0;
 			this->pictureBox5->TabStop = false;
 			this->pictureBox5->Click += gcnew System::EventHandler(this, &BarOakkhara::pictureBox5_Click_1);
+			// 
 			// Table
 			// 
 			this->Table->BackColor = System::Drawing::Color::Transparent;

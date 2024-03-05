@@ -969,6 +969,7 @@ namespace Pakreserve1 {
 			this->yesExit->TabIndex = 0;
 			this->yesExit->TabStop = false;
 			this->yesExit->Click += gcnew System::EventHandler(this, &BarAmericano::yesExit_Click);
+			// 
 			// Table
 			// 
 			this->Table->BackColor = System::Drawing::Color::Transparent;
