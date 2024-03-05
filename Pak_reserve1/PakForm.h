@@ -2597,7 +2597,7 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 	using namespace std;
 	
 	String^ temp = Application::StartupPath +"\\Data\\" + "Table.txt";
-	
+	bool isChecked = false;
 	string path,line;
 	MarshalString(temp, path);
 
@@ -2613,7 +2613,11 @@ private: System::Void ConfirmTableNo1_Click(System::Object^ sender, System::Even
 		//a[i] = (dataTable[i] ? '1' : '0');
 		if (dataTable[i]) {
 			a[i] = '1';
+			isChecked = true;
 		}
+	}
+	if (!isChecked) {
+		return;
 	}
 	String^ a2 = a->ToString();
 	string newData;
