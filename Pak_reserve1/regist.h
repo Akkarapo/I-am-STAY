@@ -632,72 +632,73 @@ namespace Pakreserve1 {
 
 	}
 	private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-		using namespace std;
-		String^ username = textBox1->Text;
-		String^ email = textBox2->Text;
-		String^ password = textBox3->Text;
-		String^ password2 = textBox4->Text;
+		if (e->KeyCode == Keys::Enter) {
+			using namespace std;
+			String^ username = textBox1->Text;
+			String^ email = textBox2->Text;
+			String^ password = textBox3->Text;
+			String^ password2 = textBox4->Text;
 
-		if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
-			if (username->Length == 0) {
-				textBox1->BackColor = Color::Red;
+			if (username->Length == 0 || email->Length == 0 || password->Length == 0 || password2->Length == 0) {
+				if (username->Length == 0) {
+					textBox1->BackColor = Color::Red;
+				}
+				if (email->Length == 0) {
+					textBox2->BackColor = Color::Red;
+				}
+				if (password->Length == 0) {
+					textBox3->BackColor = Color::Red;
+				}
+				if (password2->Length == 0) {
+					textBox4->BackColor = Color::Red;
+				}
+				errortext->Show();
+				errortext->Text = "Plese fill all forms";
+				return;
 			}
-			if (email->Length == 0) {
-				textBox2->BackColor = Color::Red;
+			else if (username->Length > 9) {
+				textBox1->ForeColor = Color::Red;
+				errortext->Show();
+				errortext->Text = "Username must be less than 10 characters";
+				return;
 			}
-			if (password->Length == 0) {
-				textBox3->BackColor = Color::Red;
+			else if (email->IndexOf("@gmail") == -1) {
+				textBox2->ForeColor = Color::Red;
+				errortext->Show();
+				errortext->Text = "This app only support gmail";
+				return;
 			}
-			if (password2->Length == 0) {
-				textBox4->BackColor = Color::Red;
+			else if (password != password2) {
+				textBox3->ForeColor = Color::Red;
+				textBox4->ForeColor = Color::Red;
+				errortext->Show();
+				errortext->Text = "Confirm password doesn't match";
+				return;
 			}
-			errortext->Show();
-			errortext->Text = "Plese fill all forms";
-			return;
-		}
-		else if (username->Length > 9) {
-			textBox1->ForeColor = Color::Red;
-			errortext->Show();
-			errortext->Text = "Username must be less than 10 characters";
-			return;
-		}
-		else if (email->IndexOf("@gmail") == -1) {
-			textBox2->ForeColor = Color::Red;
-			errortext->Show();
-			errortext->Text = "This app only support gmail";
-			return;
-		}
-		else if (password != password2) {
-			textBox3->ForeColor = Color::Red;
-			textBox4->ForeColor = Color::Red;
-			errortext->Show();
-			errortext->Text = "Confirm password doesn't match";
-			return;
-		}
-		else if (password->Length < 7) {
-			textBox3->ForeColor = Color::Red;
-			textBox4->ForeColor = Color::Red;
-			//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
-			errortext->Show();
-			errortext->Text = "Password must be longer than 8 characters";
-			return;
-		}
+			else if (password->Length < 7) {
+				textBox3->ForeColor = Color::Red;
+				textBox4->ForeColor = Color::Red;
+				//MessageBox::Show("Password must be at least 8 characters long", "please check the password again", MessageBoxButtons::OK);
+				errortext->Show();
+				errortext->Text = "Password must be longer than 8 characters";
+				return;
+			}
 
-	String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + username + ".txt";
-	String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
-	string path, username2, password3, email2, path2;
-	MarshalString(tempPath, path);
-	MarshalString(username, username2);
-	MarshalString(password, password3);
-	MarshalString(email, email2);
-	MarshalString(tempPath2, path2);
-	ofstream fileOut(path);
-	ofstream AllFile(path2, ios::app);
-	fileOut << username2 << " " << password3 << " " << email2 << endl;
-	AllFile << username2 << " " << password3 << " " << email2 << endl;
-	switchToLogin = true;
-	this->Close();
-	
+			String^ tempPath = Application::StartupPath + "\\Data\\UserData\\" + username + ".txt";
+			String^ tempPath2 = Application::StartupPath + "\\Data\\UserData\\" + "AllData" + ".txt";
+			string path, username2, password3, email2, path2;
+			MarshalString(tempPath, path);
+			MarshalString(username, username2);
+			MarshalString(password, password3);
+			MarshalString(email, email2);
+			MarshalString(tempPath2, path2);
+			ofstream fileOut(path);
+			ofstream AllFile(path2, ios::app);
+			fileOut << username2 << " " << password3 << " " << email2 << endl;
+			AllFile << username2 << " " << password3 << " " << email2 << endl;
+			switchToLogin = true;
+			this->Close();
+		}
 }
 private: System::Void regist_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyCode == Keys::Escape)
