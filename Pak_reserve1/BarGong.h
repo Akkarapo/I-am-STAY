@@ -38,6 +38,9 @@ namespace Pakreserve1 {
 		   int tableSelect = 0;
 	private: System::Windows::Forms::PictureBox^ HomeBTN;
 	private: System::Windows::Forms::Label^ Table;
+	private: System::Windows::Forms::Panel^ exitpnl;
+	private: System::Windows::Forms::PictureBox^ noExit;
+	private: System::Windows::Forms::PictureBox^ yesExit;
 	public:
 		int targetline = 2;
 		BarGong(User^ user)
@@ -71,6 +74,7 @@ namespace Pakreserve1 {
 
 		UpdateTable();
 		username = user->username;
+		exitpnl->Hide();
 		}
 
 	protected:
@@ -242,6 +246,9 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->ConfirmTableBarMapraw = (gcnew System::Windows::Forms::PictureBox());
 			this->HomeBTN = (gcnew System::Windows::Forms::PictureBox());
 			this->Table = (gcnew System::Windows::Forms::Label());
+			this->exitpnl = (gcnew System::Windows::Forms::Panel());
+			this->noExit = (gcnew System::Windows::Forms::PictureBox());
+			this->yesExit = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->BeginInit();
@@ -307,6 +314,9 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->BeginInit();
+			this->exitpnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// A1Table1P
@@ -1223,12 +1233,46 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->Table->TabIndex = 143;
 			this->Table->Text = L"XX/29";
 			// 
+			// exitpnl
+			// 
+			this->exitpnl->BackColor = System::Drawing::Color::Transparent;
+			this->exitpnl->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitpnl.BackgroundImage")));
+			this->exitpnl->Controls->Add(this->noExit);
+			this->exitpnl->Controls->Add(this->yesExit);
+			this->exitpnl->Location = System::Drawing::Point(437, 237);
+			this->exitpnl->Name = L"exitpnl";
+			this->exitpnl->Size = System::Drawing::Size(407, 247);
+			this->exitpnl->TabIndex = 179;
+			// 
+			// noExit
+			// 
+			this->noExit->BackColor = System::Drawing::Color::Transparent;
+			this->noExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noExit.BackgroundImage")));
+			this->noExit->Location = System::Drawing::Point(242, 172);
+			this->noExit->Name = L"noExit";
+			this->noExit->Size = System::Drawing::Size(133, 56);
+			this->noExit->TabIndex = 1;
+			this->noExit->TabStop = false;
+			this->noExit->Click += gcnew System::EventHandler(this, &BarGong::noExit_Click);
+			// 
+			// yesExit
+			// 
+			this->yesExit->BackColor = System::Drawing::Color::Transparent;
+			this->yesExit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yesExit.BackgroundImage")));
+			this->yesExit->Location = System::Drawing::Point(32, 173);
+			this->yesExit->Name = L"yesExit";
+			this->yesExit->Size = System::Drawing::Size(133, 56);
+			this->yesExit->TabIndex = 0;
+			this->yesExit->TabStop = false;
+			this->yesExit->Click += gcnew System::EventHandler(this, &BarGong::yesExit_Click);
+			// 
 			// BarGong
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(1280, 720);
+			this->Controls->Add(this->exitpnl);
 			this->Controls->Add(this->Table);
 			this->Controls->Add(this->HomeBTN);
 			this->Controls->Add(this->ConfirmTableBarMapraw);
@@ -1301,6 +1345,7 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"BarGong";
 			this->Load += gcnew System::EventHandler(this, &BarGong::BarGong_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &BarGong::BarGong_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A1Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A2Table1P))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->A3Table1P))->EndInit();
@@ -1366,6 +1411,9 @@ private: System::Windows::Forms::PictureBox^ B6Table6PRed;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ConfirmTableBarMapraw))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HomeBTN))->EndInit();
+			this->exitpnl->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->noExit))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yesExit))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2143,6 +2191,17 @@ private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArg
 private: System::Void HomeBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToToey = true;
 	this->Close();
+}
+private: System::Void yesExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void noExit_Click(System::Object^ sender, System::EventArgs^ e) {
+	exitpnl->Hide();
+}
+private: System::Void BarGong_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Escape) {
+		exitpnl->Show();
+	}
 }
 };
 }
