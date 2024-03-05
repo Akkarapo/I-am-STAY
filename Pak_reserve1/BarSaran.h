@@ -1956,6 +1956,7 @@ namespace Pakreserve1 {
 		for (int i = 0; i < 22; i++) {
 			if (dataTable[i]) {
 				a[i] = '1';
+				isChecked = true;
 			}
 		}
 
@@ -2188,9 +2189,9 @@ namespace Pakreserve1 {
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 		a[tableSelect] = '0';
 		using namespace std;
-
+		
 		String^ temp = Application::StartupPath + "\\Data\\" + "Table.txt";
-
+		bool isChecked = false;
 		string path, line;
 		MarshalString(temp, path);
 
@@ -2206,6 +2207,7 @@ namespace Pakreserve1 {
 			//a[i] = (dataTable[i] ? '1' : '0');
 			if (dataTable[i]) {
 				a[i] = '1';
+				isChecked = true;
 			}
 		}
 		String^ a2 = a->ToString();
